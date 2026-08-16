@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StatPitch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E11; --surface:#12161C; --surface-2:#171C22; --border:#212830;
+    --text:#E7ECEF; --text-dim:#8A97A0; --text-faint:#525C66;
+    --accent:#4C8DFF; --flag:#FFB454; --good:#6BCB77; --bad:#FF6B6B;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  #app{max-width:860px;margin:0 auto;padding:20px 16px 64px;}
+
+  header.top{display:flex;flex-direction:column;gap:2px;padding-bottom:18px;border-bottom:1px solid var(--border);margin-bottom:16px;}
+  .wordmark-row{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .wordmark{font-size:20px;font-weight:700;letter-spacing:0.04em;display:flex;align-items:baseline;gap:10px;}
+  .wordmark .dot{color:var(--accent);}
+  .refresh-btn{flex:0 0 auto;background:var(--surface);border:1px solid var(--border);color:var(--text-dim);
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:16px;cursor:pointer;
+    transition:border-color .15s, color .15s;}
+  .refresh-btn:hover{color:var(--text);border-color:var(--accent);}
+  .refresh-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .subline{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--text-faint);letter-spacing:0.02em;text-transform:uppercase;}
+  .offline-badge{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--good);border:1px solid var(--good);border-radius:10px;padding:1px 8px;display:inline-flex;align-items:center;gap:5px;margin-top:6px;width:fit-content;}
+  .offline-badge .dot2{width:5px;height:5px;border-radius:50%;background:var(--good);}
+
+  .date-scope{display:flex;gap:6px;margin-top:14px;}
+  .scope-btn{flex:1;text-align:center;background:var(--surface);border:1px solid var(--border);color:var(--text-dim);
+    font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:0.03em;padding:9px 10px;border-radius:8px;
+    cursor:pointer;transition:border-color .15s, color .15s, background .15s;}
+  .scope-btn:hover{color:var(--text);}
+  .scope-btn.active{color:var(--bg);background:var(--accent);border-color:var(--accent);}
+  .scope-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  .tabs{display:flex;gap:6px;overflow-x:auto;padding:14px 0 4px;scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{flex:0 0 auto;display:flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--border);color:var(--text-dim);
+    font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;padding:7px 12px;border-radius:20px;cursor:pointer;white-space:nowrap;
+    transition:border-color .15s, color .15s;}
+  .tab .sw{width:7px;height:7px;border-radius:50%;flex:0 0 auto;}
+  .tab:hover{color:var(--text);}
+  .tab.active{color:var(--text);border-color:var(--tab-color, var(--accent));background:var(--surface-2);}
+  .tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  .search{width:100%;margin-top:10px;background:var(--surface);border:1px solid var(--border);color:var(--text);
+    font-family:'Space Grotesk',sans-serif;font-size:13.5px;padding:10px 12px;border-radius:8px;}
+  .search::placeholder{color:var(--text-faint);}
+  .search:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+
+  .stats-line{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-faint);}
+
+  .day-group{margin-top:22px;scroll-margin-top:8px;}
+  .day-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--text-faint);padding:8px 0;display:flex;align-items:center;gap:8px;
+    position:sticky;top:0;background:var(--bg);z-index:2;}
+  .day-label .relative{color:var(--flag);}
+  .day-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+  .date-nav{display:none;gap:6px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:none;}
+  .date-nav::-webkit-scrollbar{display:none;}
+  .date-nav .dn-chip{flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-dim);
+    background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px 10px;cursor:pointer;white-space:nowrap;}
+  .date-nav .dn-chip:hover{color:var(--text);border-color:var(--accent);}
+
+  .match{margin-bottom:6px;}
+  .row{display:flex;align-items:center;gap:12px;background:var(--surface);
+    border:1px solid var(--border);border-left:3px solid var(--row-color, var(--border));
+    border-radius:6px;padding:11px 12px;cursor:pointer;transition:background .12s;}
+  .row:hover{background:var(--surface-2);}
+  .row:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+  .row .time{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--text-dim);width:44px;flex:0 0 auto;}
+  .row .teams{flex:1;font-size:14px;font-weight:500;min-width:0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+  .row .teams .vs{color:var(--text-faint);font-weight:400;font-size:12px;}
+  .row .div-badge{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-faint);flex:0 0 auto;}
+  .row .badges{display:flex;gap:3px;flex:0 0 auto;}
+  .row .badge{width:14px;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;line-height:1;}
+  .row .badge.odds{background:rgba(76,141,255,.18);color:var(--accent);}
+  .row .badge.news{background:rgba(255,180,84,.18);color:var(--flag);}
+  .row .badge.graded{background:rgba(107,203,119,.18);color:var(--good);}
+  .row .chev{color:var(--text-faint);font-size:12px;flex:0 0 auto;transition:transform .15s;}
+  .row.expanded .chev{transform:rotate(90deg);}
+  .row .seen-mark{width:6px;height:6px;border-radius:50%;background:var(--flag);flex:0 0 auto;}
+  .row .seen-mark.hidden{visibility:hidden;}
+
+  .panel{background:var(--surface-2);border:1px solid var(--border);border-top:none;border-radius:0 0 6px 6px;
+    padding:14px 14px 16px;margin-top:-6px;margin-bottom:6px;font-size:13px;}
+  .panel .meta-line{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-faint);margin-bottom:10px;display:flex;gap:14px;flex-wrap:wrap;}
+  .panel .conf{padding:1px 7px;border-radius:10px;font-weight:600;}
+  .conf.High{background:rgba(107,203,119,.15);color:var(--good);}
+  .conf.Medium{background:rgba(255,180,84,.15);color:var(--flag);}
+  .conf.Low{background:rgba(82,92,102,.25);color:var(--text-dim);}
+  .panel .error{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--flag);padding:8px 0;}
+  .odds-status{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-bottom:10px;}
+  .odds-status a{color:var(--accent);}
+  .result-badge{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--text);
+    background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;display:inline-block;margin-bottom:10px;}
+  table.markets td.grade{font-family:'IBM Plex Mono',monospace;text-align:center;font-weight:700;}
+  table.markets td.grade.hit{color:var(--good);}
+  table.markets td.grade.miss{color:var(--flag);}
+  table.markets td.group-header{background:var(--surface);color:var(--text-faint);font-family:'IBM Plex Mono',monospace;
+    font-size:10px;text-transform:uppercase;letter-spacing:0.05em;padding:5px 8px;white-space:nowrap;}
+
+  .team-context{display:flex;gap:10px;margin-bottom:4px;flex-wrap:wrap;}
+  .team-card{flex:1 1 220px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 12px;min-width:0;}
+  .team-card .tc-name{font-size:12.5px;font-weight:600;margin-bottom:7px;}
+  .tc-form{display:flex;gap:4px;margin-bottom:7px;}
+  .tc-chip{width:20px;height:20px;border-radius:4px;display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;flex:0 0 auto;}
+  .tc-chip.W{background:rgba(107,203,119,.18);color:var(--good);}
+  .tc-chip.D{background:rgba(82,92,102,.25);color:var(--text-dim);}
+  .tc-chip.L{background:rgba(255,107,107,.18);color:var(--bad);}
+  .tc-xg{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-bottom:7px;}
+  .tc-absences{list-style:none;margin:0 0 7px;padding:0;font-size:11.5px;}
+  .tc-absences li{padding:4px 0;border-top:1px solid var(--border);color:var(--text-dim);}
+  .tc-absences li:first-child{border-top:none;}
+  .tc-absences .status{color:var(--flag);font-weight:600;text-transform:capitalize;}
+  .tc-absences a{color:var(--accent);font-size:10px;margin-left:4px;white-space:nowrap;}
+  .tc-source{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-faint);}
+  .tc-source.stale{color:var(--flag);}
+  .tc-empty{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-faint);}
+  .tc-caption{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-faint);margin:6px 0 12px;}
+
+  .h2h{margin-bottom:12px;}
+  .h2h-title{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-faint);margin-bottom:6px;}
+  .h2h-list{list-style:none;margin:0;padding:0;font-size:12px;}
+  .h2h-list li{padding:4px 0;border-top:1px solid var(--border);color:var(--text-dim);}
+  .h2h-list li:first-child{border-top:none;}
+  .h2h-season{font-family:'IBM Plex Mono',monospace;color:var(--text-faint);margin-right:6px;}
+
+  .top-pick{background:var(--surface);border:1px solid var(--accent);border-radius:8px;padding:10px 12px;
+    margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .top-pick .tp-label{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-faint);}
+  .top-pick .tp-main{font-size:15px;font-weight:600;}
+  .top-pick .tp-right{text-align:right;}
+  .top-pick .tp-prob{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:700;color:var(--accent);}
+  .top-pick .tp-edge{font-family:'IBM Plex Mono',monospace;font-size:11px;}
+
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  table.markets{width:100%;min-width:460px;border-collapse:collapse;}
+  table.markets th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;
+    letter-spacing:0.05em;color:var(--text-faint);padding:6px 8px;border-bottom:1px solid var(--border);white-space:nowrap;}
+  table.markets td{padding:7px 8px;border-bottom:1px solid var(--border);font-size:12.5px;white-space:nowrap;}
+  table.markets tr:last-child td{border-bottom:none;}
+  table.markets td.market{color:var(--text-dim);}
+  table.markets td.sel{font-weight:600;}
+  table.markets td.prob{font-family:'IBM Plex Mono',monospace;text-align:right;}
+  table.markets td.prob.edge.pos{color:var(--good);}
+  table.markets td.prob.edge.neg{color:var(--text-dim);}
+  .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-top:10px;line-height:1.5;}
+
+  .empty{padding:48px 12px;text-align:center;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
+
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
+</style>
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <div class="wordmark-row">
+      <div class="wordmark">STATPITCH<span class="dot">·</span><span class="mono" style="font-size:12px;font-weight:400;color:var(--text-dim);">FIXTURE BOARD</span></div>
+      <button class="refresh-btn" id="refreshBtn" title="Reloads the page to pick up newly recorded odds/results/team news — ask Claude Code to fetch them first, this button doesn't fetch anything itself">↻ Refresh</button>
+    </div>
+    <div class="subline" id="statline">loading…</div>
+    <div class="subline" id="trackRecord"></div>
+    <div class="subline" id="buildTime"></div>
+    <div class="offline-badge"><span class="dot2"></span>runs fully offline — nothing leaves this page</div>
+  </header>
+
+  <div class="date-scope" id="dateScope"></div>
+  <div class="tabs" id="tabs"></div>
+  <input class="search" id="search" type="text" placeholder="Filter by team…" />
+  <div class="stats-line" id="statsLine"></div>
+  <div class="date-nav" id="dateNav"></div>
+
+  <div id="list"></div>
+</div>
+
+<script>
+/* ===== embedded engine.js ===== */
+__ENGINE_JS__
+/* ===== end embedded engine.js ===== */
+
+const FIXTURE_DATA = __FIXTURES_DATA_JSON__;
+const TEAM_MAP = __TEAM_MAP_JSON__;
+const MATCH_ROWS = __TRIMMED_MATCHES_JSON__;
+const LIVE_ODDS = __LIVE_ODDS_JSON__;
+const RESULTS = __RESULTS_JSON__;
+const PREDICTIONS_LOG = __PREDICTIONS_LOG_JSON__;
+const TEAM_NEWS = __TEAM_NEWS_JSON__;
+const BUILD_TIME = __BUILD_TIME_JSON__;
+
+const LEAGUES = FIXTURE_DATA.leagues;
+const FIXTURES = FIXTURE_DATA.fixtures;
+const ENGINE = new Engine(MATCH_ROWS, TEAM_MAP);
+
+let activeLeague = 'ALL';
+let dateScope = 'today-tomorrow';
+let searchTerm = '';
+let seen = JSON.parse(localStorage.getItem('statpitch-seen') || '{}');
+let expandedKey = null;
+const cache = {};
+
+function matchKey(f){ return f[0]+'|'+f[1]+'|'+f[4]+'|'+f[5]; }
+
+function todayISO(){
+  const d = new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+
+function tomorrowISO(){
+  const d = new Date();
+  d.setDate(d.getDate()+1);
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+
+function relativeDayLabel(iso){
+  const today = new Date(todayISO()+'T00:00:00');
+  const target = new Date(iso+'T00:00:00');
+  const diff = Math.round((target-today)/86400000);
+  if(diff === 0) return 'TODAY';
+  if(diff === 1) return 'TOMORROW';
+  if(diff > 1 && diff <= 6) return `IN ${diff}D`;
+  return null;
+}
+
+function renderDateScope(){
+  const el = document.getElementById('dateScope');
+  const today = todayISO(), tomorrow = tomorrowISO();
+  const todayTomorrowCount = FIXTURES.filter(f => f[1]===today || f[1]===tomorrow).length;
+  el.innerHTML = '';
+  el.appendChild(makeScopeBtn('today-tomorrow', `Today & Tomorrow (${todayTomorrowCount})`));
+  el.appendChild(makeScopeBtn('all', 'All Fixtures'));
+}
+
+function makeScopeBtn(scope, label){
+  const btn = document.createElement('div');
+  btn.className = 'scope-btn' + (dateScope===scope ? ' active' : '');
+  btn.tabIndex = 0;
+  btn.textContent = label;
+  btn.onclick = () => { dateScope = scope; renderDateScope(); renderTabs(); renderList(); };
+  btn.onkeydown = (e) => { if(e.key==='Enter'||e.key===' ') btn.onclick(); };
+  return btn;
+}
+
+function renderTabs(){
+  const tabs = document.getElementById('tabs');
+  tabs.innerHTML = '';
+  let scoped = FIXTURES;
+  if(dateScope === 'today-tomorrow'){
+    const today = todayISO(), tomorrow = tomorrowISO();
+    scoped = FIXTURES.filter(f => f[1]===today || f[1]===tomorrow);
+  }
+  tabs.appendChild(makeTab('ALL', 'All leagues', scoped.length, '#8A97A0'));
+  for(const code of Object.keys(LEAGUES)){
+    const lg = LEAGUES[code];
+    const count = scoped.filter(f=>f[0]===code).length;
+    tabs.appendChild(makeTab(code, lg.name, count, lg.color));
+  }
+}
+
+function makeTab(code, name, count, color){
+  const el = document.createElement('div');
+  el.className = 'tab' + (activeLeague===code ? ' active' : '');
+  el.style.setProperty('--tab-color', color);
+  el.tabIndex = 0;
+  el.innerHTML = `<span class="sw" style="background:${color}"></span>${code==='ALL'?'All':code} <span style="color:var(--text-faint)">${count}</span>`;
+  el.title = name;
+  el.onclick = () => { activeLeague = code; renderTabs(); renderList(); };
+  el.onkeydown = (e) => { if(e.key==='Enter'||e.key===' ') el.onclick(); };
+  return el;
+}
+
+function renderDateNav(order){
+  const el = document.getElementById('dateNav');
+  if(dateScope !== 'all' || order.length <= 1){
+    el.style.display = 'none';
+    el.innerHTML = '';
+    return;
+  }
+  el.style.display = 'flex';
+  el.innerHTML = '';
+  for(const iso of order.slice(0, 20)){
+    const chip = document.createElement('div');
+    chip.className = 'dn-chip';
+    const rel = relativeDayLabel(iso);
+    const d = new Date(iso+'T00:00:00');
+    chip.textContent = rel || d.toLocaleDateString('en-GB', { day:'2-digit', month:'short' });
+    chip.tabIndex = 0;
+    chip.onclick = () => {
+      const target = document.getElementById('day-'+iso);
+      if(target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+    };
+    chip.onkeydown = (e) => { if(e.key==='Enter'||e.key===' ') chip.onclick(); };
+    el.appendChild(chip);
+  }
+}
+
+function renderList(){
+  const list = document.getElementById('list');
+  const statsLine = document.getElementById('statsLine');
+  list.innerHTML = '';
+
+  let filtered = FIXTURES.filter(f => activeLeague==='ALL' || f[0]===activeLeague);
+  if(dateScope === 'today-tomorrow'){
+    const today = todayISO(), tomorrow = tomorrowISO();
+    filtered = filtered.filter(f => f[1]===today || f[1]===tomorrow);
+  }
+  if(searchTerm.trim()){
+    const s = searchTerm.trim().toLowerCase();
+    filtered = filtered.filter(f => f[4].toLowerCase().includes(s) || f[5].toLowerCase().includes(s));
+  }
+  statsLine.textContent = `${filtered.length} fixture${filtered.length===1?'':'s'} shown`;
+
+  if(filtered.length === 0){
+    const msg = dateScope === 'today-tomorrow'
+      ? 'No matches today or tomorrow for this filter. Try "All Fixtures" or a different league.'
+      : 'No fixtures match. Try a different team or league.';
+    list.innerHTML = `<div class="empty">${msg}</div>`;
+    renderDateNav([]);
+    return;
+  }
+
+  const groups = {}, order = [];
+  for(const f of filtered){
+    if(!groups[f[1]]){ groups[f[1]] = []; order.push(f[1]); }
+    groups[f[1]].push(f);
+  }
+  order.sort();
+  const MAX_GROUPS = 40;
+  const shown = order.slice(0, MAX_GROUPS);
+
+  for(const iso of shown){
+    const dayEl = document.createElement('div');
+    dayEl.className = 'day-group';
+    dayEl.id = 'day-'+iso;
+    const rel = relativeDayLabel(iso);
+    const label = groups[iso][0][2];
+    dayEl.innerHTML = `<div class="day-label">${label}${rel?` <span class="relative">${rel}</span>`:''}</div>`;
+    const wrap = document.createElement('div');
+    for(const f of groups[iso]) wrap.appendChild(makeMatchBlock(f));
+    dayEl.appendChild(wrap);
+    list.appendChild(dayEl);
+  }
+
+  renderDateNav(shown);
+
+  if(order.length > MAX_GROUPS){
+    const more = document.createElement('div');
+    more.className = 'empty';
+    more.textContent = `Showing first ${MAX_GROUPS} matchdays — narrow with search or a league tab to see further ahead.`;
+    list.appendChild(more);
+  }
+}
+
+function rowBadgesHtml(f){
+  const [div, , , , home, away] = f;
+  const key = matchKey(f);
+  const bits = [];
+  if(LIVE_ODDS[key]) bits.push('<span class="badge odds" title="Live odds fetched">$</span>');
+  if(TEAM_NEWS[div+'|'+home] || TEAM_NEWS[div+'|'+away]) bits.push('<span class="badge news" title="Team news / context available">i</span>');
+  if(RESULTS[key]) bits.push('<span class="badge graded" title="Result recorded">✓</span>');
+  return bits.join('');
+}
+
+function makeMatchBlock(f){
+  const [div, iso, label, time, home, away] = f;
+  const lg = LEAGUES[div];
+  const key = matchKey(f);
+
+  const container = document.createElement('div');
+  container.className = 'match';
+
+  const row = document.createElement('div');
+  row.className = 'row' + (expandedKey===key ? ' expanded' : '');
+  row.style.setProperty('--row-color', lg.color);
+  row.tabIndex = 0;
+  const isSeen = !!seen[key];
+  row.innerHTML = `
+    <div class="time mono">${time}</div>
+    <div class="teams">${home} <span class="vs">vs</span> ${away}</div>
+    <div class="div-badge">${div}</div>
+    <div class="badges">${rowBadgesHtml(f)}</div>
+    <div class="seen-mark${isSeen?'':' hidden'}" title="Already analyzed"></div>
+    <div class="chev">▸</div>
+  `;
+  container.appendChild(row);
+
+  const panelHolder = document.createElement('div');
+  container.appendChild(panelHolder);
+
+  row.onclick = () => toggleMatch(f, panelHolder);
+  row.onkeydown = (e) => { if(e.key==='Enter'||e.key===' ') row.onclick(); };
+
+  if(expandedKey === key) renderPanel(f, panelHolder);
+
+  return container;
+}
+
+function toggleMatch(f, panelHolder){
+  const key = matchKey(f);
+  if(expandedKey === key){
+    expandedKey = null;
+    renderList();
+    return;
+  }
+  expandedKey = key;
+  seen[key] = { ts: Date.now() };
+  localStorage.setItem('statpitch-seen', JSON.stringify(seen));
+  renderList();
+}
+
+function timeAgo(iso){
+  const diffMs = Date.now() - new Date(iso).getTime();
+  const mins = Math.round(diffMs / 60000);
+  if(mins < 1) return 'just now';
+  if(mins < 60) return `${mins}m ago`;
+  const hrs = Math.round(mins/60);
+  if(hrs < 48) return `${hrs}h ago`;
+  return `${Math.round(hrs/24)}d ago`;
+}
+
+function formChip(r){
+  const title = `${r.result} vs ${r.opponent} (${r.score}) · ${r.venue==='H'?'Home':'Away'} · ${r.date}`;
+  return `<span class="tc-chip ${r.result}" title="${title}">${r.result}</span>`;
+}
+
+function teamCardHtml(div, teamName){
+  const entry = TEAM_NEWS[div+'|'+teamName];
+  if(!entry){
+    return `<div class="team-card"><div class="tc-name">${teamName}</div><div class="tc-empty">no fresh team news fetched for ${teamName} yet</div></div>`;
+  }
+  const form = entry.recent_form || [];
+  const formHtml = form.length ? `<div class="tc-form">${form.map(formChip).join('')}</div>` : '';
+  const xgRows = form.filter(r => r.xg_for != null && r.xg_against != null);
+  const xgHtml = xgRows.length
+    ? `<div class="tc-xg">xG last ${xgRows.length}: ${(xgRows.reduce((s,r)=>s+r.xg_for,0)/xgRows.length).toFixed(2)} for · ${(xgRows.reduce((s,r)=>s+r.xg_against,0)/xgRows.length).toFixed(2)} against</div>`
+    : '';
+  const absences = entry.absences || [];
+  const absencesHtml = absences.length
+    ? `<ul class="tc-absences">${absences.map(a => `<li><span class="status">${a.status}</span> ${a.player}${a.note?` — ${a.note}`:''}${a.source_url?` <a href="${a.source_url}" target="_blank" rel="noopener">${a.source||'source'}</a>`:''}</li>`).join('')}</ul>`
+    : `<div class="tc-xg">no reported absences</div>`;
+  const ageMs = Date.now() - new Date(entry.fetched_at).getTime();
+  const stale = ageMs > 4*86400000;
+  return `
+    <div class="team-card">
+      <div class="tc-name">${teamName}</div>
+      ${formHtml}
+      ${xgHtml}
+      ${absencesHtml}
+      <div class="tc-source${stale?' stale':''}">${entry.form_source||'source'} · fetched ${timeAgo(entry.fetched_at)}${entry.form_source_url?` · <a href="${entry.form_source_url}" target="_blank" rel="noopener">link</a>`:''}</div>
+    </div>
+  `;
+}
+
+function teamContextHtml(div, home, away){
+  return `
+    <div class="team-context">${teamCardHtml(div, home)}${teamCardHtml(div, away)}</div>
+    <div class="tc-caption">Context above is sourced, timestamped team news — not part of the probability model below.</div>
+  `;
+}
+
+function h2hHtml(h2h){
+  if(h2h == null) return '';
+  if(h2h.length === 0){
+    return `<div class="h2h"><div class="h2h-title">Head-to-Head</div><div class="tc-empty">no head-to-head meetings found in this dataset</div></div>`;
+  }
+  const rows = h2h.map(m => {
+    const scoreLine = `${m.home} ${m.fthg!=null?m.fthg:'?'}–${m.ftag!=null?m.ftag:'?'} ${m.away}`;
+    const extra = (m.hc!=null && m.ac!=null) ? ` · corners ${m.hc}-${m.ac}` : '';
+    return `<li><span class="h2h-season">${m.season}</span>${scoreLine}${extra}</li>`;
+  }).join('');
+  return `<div class="h2h"><div class="h2h-title">Head-to-Head (last ${h2h.length})</div><ul class="h2h-list">${rows}</ul></div>`;
+}
+
+const MARKET_GROUP_ORDER = ['1X2 & Double Chance', 'Goals', 'BTTS', 'Corners', 'Cards', 'Other'];
+function marketGroup(market){
+  if(market==='Home Win (1X2)' || market==='Draw (1X2)' || market==='Away Win (1X2)' || market==='Double Chance') return '1X2 & Double Chance';
+  if(market.startsWith('Total Goals')) return 'Goals';
+  if(market==='Both Teams to Score') return 'BTTS';
+  if(market.startsWith('Corners')) return 'Corners';
+  if(market.startsWith('Cards')) return 'Cards';
+  return 'Other';
+}
+
+function marketRowHtml(m, hasOdds, graded){
+  return `
+    <tr>
+      <td class="market">${m.market}</td>
+      <td class="sel">${m.selection}</td>
+      <td class="prob">${(m.probability*100).toFixed(1)}%</td>
+      ${hasOdds ? `
+      <td class="prob odds">${m.market_odds!=null ? m.market_odds.toFixed(2) : '—'}</td>
+      <td class="prob">${m.market_prob!=null ? (m.market_prob*100).toFixed(1)+'%' : '—'}</td>
+      <td class="prob edge ${m.edge!=null ? (m.edge>0?'pos':'neg') : ''}">${m.edge!=null ? (m.edge>0?'+':'')+(m.edge*100).toFixed(1)+'pp' : '—'}</td>
+      ` : ''}
+      ${graded ? `<td class="grade ${m.grade===true?'hit':(m.grade===false?'miss':'')}">${m.grade===true?'✓':(m.grade===false?'✗':'—')}</td>` : ''}
+    </tr>
+  `;
+}
+
+function renderPanel(f, holder){
+  const [div, iso, label, time, home, away] = f;
+  const key = matchKey(f);
+  const contextHtml = teamContextHtml(div, home, away);
+
+  const result = RESULTS[key];
+  const graded = result && PREDICTIONS_LOG[key];
+
+  if(result && !graded){
+    // A result exists but no prediction was ever logged for it (e.g. the team
+    // had zero history at kickoff, like a newly-promoted side's first match).
+    // Don't fall through to a live analyze() here: master.csv may since have
+    // been fed this match's own result, which would make a "live" prediction
+    // self-referential — computed from the very match it's predicting.
+    holder.innerHTML = `
+      <div class="panel">
+        <div class="result-badge">FINAL ${result.fthg!=null?result.fthg:'?'} – ${result.ftag!=null?result.ftag:'?'}${result.hc!=null&&result.ac!=null?` · corners ${result.hc}-${result.ac}`:''}</div>
+        ${contextHtml}
+        <div class="odds-status"><span>no prediction was logged before this match — most likely one side had no prior history at kickoff, so there was nothing to grade</span></div>
+      </div>
+    `;
+    return;
+  }
+
+  let data, top, live;
+  if(graded){
+    data = PREDICTIONS_LOG[key];
+    top = gradeSnapshot(data.markets, result);
+    live = { source: data.source, fetched_at: data.logged_at, source_url: data.source_url };
+  } else {
+    data = cache[key];
+    if(!data){
+      try{
+        data = ENGINE.analyze(div, home, away);
+        cache[key] = data;
+      }catch(e){
+        holder.innerHTML = `<div class="panel"><div class="error">Something went wrong computing this: ${e.message}</div>${contextHtml}</div>`;
+        return;
+      }
+    }
+    if(data.error){
+      holder.innerHTML = `<div class="panel"><div class="error">${data.error}</div>${contextHtml}</div>`;
+      return;
+    }
+    live = LIVE_ODDS[key];
+    top = attachLiveOdds(data.markets, live).slice(0, 10);
+  }
+
+  const hasOdds = top.some(m => m.market_prob != null);
+  const isPast = iso < todayISO();
+
+  const buckets = {};
+  for(const g of MARKET_GROUP_ORDER) buckets[g] = [];
+  for(const m of top) buckets[marketGroup(m.market)].push(m);
+  const colspan = 3 + (hasOdds ? 3 : 0) + (graded ? 1 : 0);
+  const rowsHtml = MARKET_GROUP_ORDER
+    .filter(g => buckets[g].length)
+    .map(g => `<tr><td colspan="${colspan}" class="group-header">${g}</td></tr>` + buckets[g].map(m => marketRowHtml(m, hasOdds, graded)).join(''))
+    .join('');
+
+  const topPick = top[0];
+  const topPickHtml = topPick ? `
+    <div class="top-pick">
+      <div>
+        <div class="tp-label">Highest-probability market</div>
+        <div class="tp-main">${topPick.market} — ${topPick.selection}</div>
+      </div>
+      <div class="tp-right">
+        <div class="tp-prob">${(topPick.probability*100).toFixed(1)}%</div>
+        ${topPick.edge!=null ? `<div class="tp-edge" style="color:${topPick.edge>0?'var(--good)':'var(--text-dim)'}">${topPick.edge>0?'+':''}${(topPick.edge*100).toFixed(1)}pp edge</div>` : ''}
+      </div>
+    </div>
+  ` : '';
+
+  const oddsStatusHtml = graded
+    ? `<span>graded vs final result · odds were via ${live.source||'Superbet'} · picks logged ${timeAgo(live.fetched_at)}</span>`
+    : live
+    ? `<span>live odds via ${live.source||'Superbet'} · fetched ${timeAgo(live.fetched_at)}${live.source_url ? ` · <a href="${live.source_url}" target="_blank" rel="noopener">source</a>` : ''}</span>`
+    : isPast
+    ? `<span>no live odds were fetched for this match — ask Claude Code to record the result if it's finished</span>`
+    : `<span>no live odds fetched for this match yet — ask Claude Code to pull the current Superbet price</span>`;
+
+  const resultBadgeHtml = result
+    ? `<div class="result-badge">FINAL ${result.fthg!=null?result.fthg:'?'} – ${result.ftag!=null?result.ftag:'?'}${result.hc!=null&&result.ac!=null?` · corners ${result.hc}-${result.ac}`:''}</div>`
+    : (isPast ? `<div class="result-badge" style="color:var(--text-faint)">no result recorded yet — ask Claude Code to record it</div>` : '');
+
+  holder.innerHTML = `
+    <div class="panel">
+      <div class="meta-line">
+        <span>λ home ${data.lambda_home} · λ away ${data.lambda_away}</span>
+        <span>n = ${data.n_used} (home:${data.n_home_matches} / away:${data.n_away_matches})</span>
+        <span class="conf ${data.confidence}">${data.confidence} confidence</span>
+      </div>
+      ${resultBadgeHtml}
+      ${contextHtml}
+      ${h2hHtml(data.h2h)}
+      ${topPickHtml}
+      <div class="odds-status">${oddsStatusHtml}</div>
+      <div class="table-scroll">
+        <table class="markets">
+          <thead><tr>
+            <th>Market</th><th>Selection</th><th style="text-align:right">Historical Prob.</th>
+            ${hasOdds ? `<th style="text-align:right">Market Odds</th><th style="text-align:right">Market Prob.</th><th style="text-align:right">Edge</th>` : ''}
+            ${graded ? `<th style="text-align:center">Result</th>` : ''}
+          </tr></thead>
+          <tbody>${rowsHtml}</tbody>
+        </table>
+      </div>
+      <div class="disclaimer">
+        Ranked by model-derived historical probability, not market value.
+        ${hasOdds ? 'Market Prob. is the live price with the overround removed (proportional de-vig); Edge is model minus market, in percentage points — not a recommendation, and not adjusted for the favourite-longshot bias documented in the project instructions.' : ''}
+        ${graded ? 'Result column grades the prediction as it stood before the match — frozen at the time it was logged, not recomputed afterward. "—" means this market couldn\'t be graded from the recorded result (e.g. no corner/card count available).' : ''}
+        ${data.dc_rho_note} Never treat these as guarantees; sample sizes and variance still apply.
+      </div>
+    </div>
+  `;
+}
+
+function renderTrackRecord(){
+  const el = document.getElementById('trackRecord');
+  let hits = 0, misses = 0;
+  for(const key in PREDICTIONS_LOG){
+    const result = RESULTS[key];
+    if(!result) continue;
+    const graded = gradeSnapshot(PREDICTIONS_LOG[key].markets, result);
+    for(const m of graded){
+      if(m.grade === true) hits++;
+      else if(m.grade === false) misses++;
+    }
+  }
+  const total = hits + misses;
+  el.textContent = total > 0
+    ? `Track record: ${hits}/${total} graded picks correct (${(hits/total*100).toFixed(0)}%)`
+    : 'Track record: no graded picks yet';
+}
+
+function init(){
+  document.getElementById('statline').textContent = `${FIXTURES.length} fixtures · ${Object.keys(LEAGUES).length} leagues · 2026/27 season`;
+  document.getElementById('buildTime').textContent = `snapshot built ${timeAgo(BUILD_TIME)}`;
+  renderTrackRecord();
+  renderDateScope();
+  renderTabs();
+  renderList();
+  document.getElementById('refreshBtn').addEventListener('click', () => location.reload());
+  document.getElementById('search').addEventListener('input', (e)=>{
+    searchTerm = e.target.value;
+    renderList();
+  });
+}
+init();
+</script>
+</body>
+</html>

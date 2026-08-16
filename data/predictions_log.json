@@ -1,0 +1,834 @@
+{
+  "N1|2026-08-16|Ajax|sc Heerenveen": {
+    "lambda_home": 3.34,
+    "lambda_away": 0.61,
+    "n_used": 102,
+    "n_home_matches": 102,
+    "n_away_matches": 102,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9667515953187539,
+        "n": 102,
+        "market_prob": 0.8351840759342026,
+        "edge": 0.13156751938455125
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.9081820825186477,
+        "n": 102,
+        "market_odds": 1.12,
+        "market_prob": 0.8469945355191256,
+        "overround": 1.054147465437788,
+        "edge": 0.06118754699952211
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.8743175099732124,
+        "n": 102,
+        "market_odds": 1.46,
+        "market_prob": 0.6434594295719486,
+        "overround": 1.0644517359936043,
+        "edge": 0.23085808040126388
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.8684166444824961,
+        "n": 102
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7682720451612132,
+        "n": 102,
+        "market_odds": 1.37,
+        "market_prob": 0.6730310262529833,
+        "overround": 1.0845369363772843,
+        "edge": 0.09524101890822989
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.753123239319484,
+        "n": 102,
+        "market_odds": 1.41,
+        "market_prob": 0.6705607476635514,
+        "overround": 1.0576519139051572,
+        "edge": 0.08256249165593255
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7394546072325546,
+        "n": 102
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.6675756145560665,
+        "n": 102,
+        "market_odds": 1.59,
+        "market_prob": 0.5804749340369394,
+        "overround": 1.0834762721555173,
+        "edge": 0.08710068051912712
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.557538651906163,
+        "n": 102,
+        "market_odds": 1.9,
+        "market_prob": 0.4836956521739131,
+        "overround": 1.0881135422826729,
+        "edge": 0.07384299973224995
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.5540174409021099,
+        "n": 102,
+        "market_odds": 2.02,
+        "market_prob": 0.4684210526315789,
+        "overround": 1.0568472577594838,
+        "edge": 0.08559638827053101
+      }
+    ],
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/ajax-amsterdam-vs-heerenveen-13573163",
+    "logged_at": "2026-08-16T21:14:13.829Z"
+  },
+  "N1|2026-08-16|ADO Den Haag|FC Groningen": {
+    "lambda_home": 1.43,
+    "lambda_away": 1.38,
+    "n_used": 17,
+    "n_home_matches": 17,
+    "n_away_matches": 85,
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "markets": [
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8316383368183228,
+        "n": 17
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7822272706122558,
+        "n": 17
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.7496426500145194,
+        "n": 17
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.691806448491761,
+        "n": 17
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.690091146896039,
+        "n": 17
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6823135939329374,
+        "n": 17
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.6492634109088459,
+        "n": 17
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.6462537042836536,
+        "n": 17
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.6268000552609432,
+        "n": 17
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.5809040886829258,
+        "n": 17
+      }
+    ],
+    "logged_at": "2026-08-16T21:25:00.000Z"
+  },
+  "N1|2026-08-16|FC Twente|PEC Zwolle": {
+    "lambda_home": 3.36,
+    "lambda_away": 0.74,
+    "n_used": 85,
+    "n_home_matches": 102,
+    "n_away_matches": 85,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9564799981115449,
+        "n": 85
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.9189174777834019,
+        "n": 85
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.8558549000526086,
+        "n": 85
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.835963674296988,
+        "n": 85
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7802165266081225,
+        "n": 85
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7743317810914846,
+        "n": 85
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6929366512861231,
+        "n": 85
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.687097816504379,
+        "n": 85
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.5824417889025595,
+        "n": 85
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.5760052922095978,
+        "n": 85
+      }
+    ],
+    "logged_at": "2026-08-16T21:25:00.000Z"
+  },
+  "N1|2026-08-16|Feyenoord|Go Ahead Eagles": {
+    "lambda_home": 2.99,
+    "lambda_away": 0.64,
+    "n_used": 85,
+    "n_home_matches": 102,
+    "n_away_matches": 85,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9537623918395461,
+        "n": 85
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8812059806446144,
+        "n": 85
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.8357211763664808,
+        "n": 85
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.8311496908073694,
+        "n": 85
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.8253858505063838,
+        "n": 85
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.738491175227445,
+        "n": 85
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.700214912320081,
+        "n": 85
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6863063936021274,
+        "n": 85
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.6377894957013037,
+        "n": 85
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5474964919253673,
+        "n": 85
+      }
+    ],
+    "logged_at": "2026-08-16T21:25:00.000Z"
+  },
+  "P1|2026-08-16|CD Nacional|Estoril Praia": {
+    "lambda_home": 2.01,
+    "lambda_away": 1.33,
+    "n_used": 51,
+    "n_home_matches": 51,
+    "n_away_matches": 85,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8662796029434313,
+        "n": 51
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8550688919136582,
+        "n": 51,
+        "market_odds": 1.29,
+        "market_prob": 0.7361963190184049,
+        "overround": 1.0529715762273901,
+        "edge": 0.11887257289525333
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.771579907902951,
+        "n": 51,
+        "market_odds": 1.5,
+        "market_prob": 0.6124031007751938,
+        "overround": 1.0886075949367089,
+        "edge": 0.15917680712775717
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.7573261092799399,
+        "n": 51,
+        "market_prob": 0.6234593262119967,
+        "edge": 0.1338667830679432
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.7323625813240283,
+        "n": 51
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.679049384044153,
+        "n": 51,
+        "market_odds": 1.77,
+        "market_prob": 0.5203252032520325,
+        "overround": 1.0858050847457628,
+        "edge": 0.15872418079212058
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6474676278450733,
+        "n": 51,
+        "market_odds": 1.92,
+        "market_prob": 0.49340369393139843,
+        "overround": 1.0555926916221035,
+        "edge": 0.15406393391367484
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.6457299272372535,
+        "n": 51,
+        "market_odds": 1.69,
+        "market_prob": 0.5564304461942258,
+        "overround": 1.0634140895389081,
+        "edge": 0.08929948104302776
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.572761027923394,
+        "n": 51,
+        "market_odds": 1.34,
+        "market_prob": 0.7048458149779735,
+        "overround": 1.0587686567164178,
+        "edge": -0.1320847870545795
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Over 4.5",
+        "probability": 0.5711520856815226,
+        "n": 51
+      }
+    ],
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/cd-nacional-vs-estoril-praia-13881196",
+    "logged_at": "2026-08-16T21:24:42.592Z"
+  },
+  "P1|2026-08-16|FC Arouca|Moreirense FC": {
+    "lambda_home": 1.63,
+    "lambda_away": 0.96,
+    "n_used": 85,
+    "n_home_matches": 85,
+    "n_away_matches": 85,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.882779937819557,
+        "n": 85
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8643361413223447,
+        "n": 85,
+        "market_odds": 1.29,
+        "market_prob": 0.7126948775055678,
+        "overround": 1.0876937984496124,
+        "edge": 0.1516412638167769
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.7932121837232518,
+        "n": 85,
+        "market_odds": 1.46,
+        "market_prob": 0.6313131313131313,
+        "overround": 1.084931506849315,
+        "edge": 0.16189905241012048
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.7894711355271613,
+        "n": 85,
+        "market_prob": 0.754457050243112,
+        "edge": 0.03501408528404926
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.7588882569616899,
+        "n": 85
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7435073235211264,
+        "n": 85,
+        "market_odds": 1.37,
+        "market_prob": 0.6935123042505593,
+        "overround": 1.0525076524605603,
+        "edge": 0.04999501927056704
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7369621712008614,
+        "n": 85,
+        "market_odds": 1.26,
+        "market_prob": 0.7534246575342466,
+        "overround": 1.0533910533910533,
+        "edge": -0.016462486333385207
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.6999107100661658,
+        "n": 85,
+        "market_odds": 1.72,
+        "market_prob": 0.5338753387533877,
+        "overround": 1.0890095620351787,
+        "edge": 0.16603537131277812
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Over 4.5",
+        "probability": 0.6042150968281922,
+        "n": 85
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Under 8.5",
+        "probability": 0.5863262602174137,
+        "n": 85,
+        "market_odds": 2.12,
+        "market_prob": 0.43466666666666665,
+        "overround": 1.0851950457228845,
+        "edge": 0.1516595935507471
+      }
+    ],
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/arouca-vs-moreirense-13881192",
+    "logged_at": "2026-08-16T21:24:42.592Z"
+  },
+  "SP1|2026-08-16|RCD Espanyol de Barcelona|Levante UD": {
+    "lambda_home": 1.99,
+    "lambda_away": 0.95,
+    "n_used": 57,
+    "n_home_matches": 76,
+    "n_away_matches": 57,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8370328505325508,
+        "n": 57,
+        "market_prob": 0.7384330660086366,
+        "edge": 0.09859978452391427
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8247324645129955,
+        "n": 57,
+        "market_odds": 1.39,
+        "market_prob": 0.669833729216152,
+        "overround": 1.074034389509669,
+        "edge": 0.1548987352968435
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8019324511898538,
+        "n": 57,
+        "market_odds": 1.37,
+        "market_prob": 0.6900452488687784,
+        "overround": 1.0577958597582864,
+        "edge": 0.11188720232107541
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8018728572847822,
+        "n": 57
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.740290907618752,
+        "n": 57,
+        "market_odds": 1.6,
+        "market_prob": 0.5811518324607331,
+        "overround": 1.0754504504504503,
+        "edge": 0.15913907515801895
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6604135572713488,
+        "n": 57,
+        "market_odds": 1.25,
+        "market_prob": 0.7572815533980582,
+        "overround": 1.0564102564102564,
+        "edge": -0.09686799612670949
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6395679173085027,
+        "n": 57
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.6346357248304799,
+        "n": 57,
+        "market_odds": 1.92,
+        "market_prob": 0.48387096774193555,
+        "overround": 1.0763888888888888,
+        "edge": 0.15076475708854437
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6059776932060487,
+        "n": 57,
+        "market_odds": 2.12,
+        "market_prob": 0.4441702652683528,
+        "overround": 1.061975890985325,
+        "edge": 0.16180742793769587
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.5635521296618838,
+        "n": 57,
+        "market_odds": 2.17,
+        "market_prob": 0.4363636363636364,
+        "overround": 1.0560675883256527,
+        "edge": 0.12718849329824744
+      }
+    ],
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/espanyol-vs-levante-13846970",
+    "logged_at": "2026-08-16T21:24:42.592Z"
+  },
+  "T1|2026-08-16|Istanbul Basaksehir|Kocaelispor": {
+    "lambda_home": 2.05,
+    "lambda_away": 0.44,
+    "n_used": 17,
+    "n_home_matches": 111,
+    "n_away_matches": 17,
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.939652797398031,
+        "n": 17,
+        "market_prob": 0.8090152323045825,
+        "edge": 0.13063756509344848
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8356449729260754,
+        "n": 17,
+        "market_odds": 1.25,
+        "market_prob": 0.7368421052631579,
+        "overround": 1.0857142857142859,
+        "edge": 0.09880286766291757
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8077958852704361,
+        "n": 17
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7594478366286768,
+        "n": 17,
+        "market_odds": 1.3,
+        "market_prob": 0.7291666666666667,
+        "overround": 1.0549450549450547,
+        "edge": 0.030281169962010024
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.7532674437835305,
+        "n": 17,
+        "market_odds": 1.4,
+        "market_prob": 0.656019656019656,
+        "overround": 1.088817549491707,
+        "edge": 0.09724778776387455
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.7486253989842527,
+        "n": 17,
+        "market_odds": 1.69,
+        "market_prob": 0.5480923806643642,
+        "overround": 1.0795916841867406,
+        "edge": 0.20053301831988857
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7184962030801665,
+        "n": 17,
+        "market_odds": 1.33,
+        "market_prob": 0.712742980561555,
+        "overround": 1.0549100022784232,
+        "edge": 0.005753222518611434
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.6823971443136478,
+        "n": 17,
+        "market_odds": 1.8,
+        "market_prob": 0.5225464190981433,
+        "overround": 1.063169768753525,
+        "edge": 0.15985072521550459
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.648816388893821,
+        "n": 17,
+        "market_odds": 1.63,
+        "market_prob": 0.5653333333333334,
+        "overround": 1.0851950457228845,
+        "edge": 0.08348305556048763
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6486767975094524,
+        "n": 17
+      }
+    ],
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/basaksehir-vs-kocaelispor-13985485",
+    "logged_at": "2026-08-16T21:30:19.594Z"
+  },
+  "T1|2026-08-16|Besiktas|Eyüpspor": {
+    "lambda_home": 2.21,
+    "lambda_away": 0.63,
+    "n_used": 35,
+    "n_home_matches": 111,
+    "n_away_matches": 35,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9166165428167187,
+        "n": 35,
+        "market_prob": 0.8561499831149165,
+        "edge": 0.06046655970180215
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8384491103744002,
+        "n": 35
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7848293741424763,
+        "n": 35,
+        "market_odds": 1.42,
+        "market_prob": 0.6485148514851486,
+        "overround": 1.085904741425653,
+        "edge": 0.13631452265732769
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7842877514383411,
+        "n": 35,
+        "market_odds": 1.17,
+        "market_prob": 0.8072487644151565,
+        "overround": 1.058782487353916,
+        "edge": -0.02296101297681541
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.7272944690030755,
+        "n": 35,
+        "market_odds": 1.39,
+        "market_prob": 0.6623310129960673,
+        "overround": 1.0862007762211285,
+        "edge": 0.06496345600700815
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6928434250831098,
+        "n": 35
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6910942557512849,
+        "n": 35,
+        "market_odds": 1.65,
+        "market_prob": 0.56,
+        "overround": 1.0822510822510822,
+        "edge": 0.13109425575128486
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6825442514316612,
+        "n": 35,
+        "market_odds": 1.57,
+        "market_prob": 0.6015228426395939,
+        "overround": 1.058883603429278,
+        "edge": 0.08102140879206732
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.578750428450871,
+        "n": 35,
+        "market_odds": 2,
+        "market_prob": 0.46091644204851756,
+        "overround": 1.0847953216374269,
+        "edge": 0.11783398640235343
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5744519638168529,
+        "n": 35,
+        "market_odds": 2,
+        "market_prob": 0.4708994708994709,
+        "overround": 1.0617977528089888,
+        "edge": 0.10355249291738206
+      }
+    ],
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/besiktas-vs-eyupspor-13985468",
+    "logged_at": "2026-08-16T21:24:42.593Z"
+  }
+}

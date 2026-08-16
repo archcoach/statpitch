@@ -1,0 +1,123 @@
+{
+  "N1|2026-08-16|Ajax|sc Heerenveen": {
+    "fthg": 2,
+    "ftag": 2,
+    "hc": 7,
+    "ac": 2,
+    "hy": 3,
+    "ay": 1,
+    "fetched_at": "2026-08-16T21:14:26Z",
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.pl/mecz/pilka-nozna/ajax-8UOvIwnb/heerenveen-EDjXSyWG/?mid=QkoxM0QF"
+  },
+  "N1|2026-08-16|ADO Den Haag|FC Groningen": {
+    "fthg": 1,
+    "ftag": 4,
+    "hc": 5,
+    "ac": 2,
+    "hy": 0,
+    "ay": 1,
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.pl/mecz/pilka-nozna/den-haag-lAgLCkT3/groningen-MBUGcjb9/?mid=vFdz2uZq",
+    "fetched_at": "2026-08-16T21:25:17Z"
+  },
+  "N1|2026-08-16|FC Twente|PEC Zwolle": {
+    "fthg": 3,
+    "ftag": 1,
+    "hc": 6,
+    "ac": 3,
+    "hy": 0,
+    "ay": 0,
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.pl/mecz/pilka-nozna/twente-dhOKTHGA/zwolle-r1L5w2EB/?mid=vZnUNMe3",
+    "fetched_at": "2026-08-16T21:25:17Z"
+  },
+  "N1|2026-08-16|Feyenoord|Go Ahead Eagles": {
+    "fthg": 2,
+    "ftag": 2,
+    "hc": 6,
+    "ac": 6,
+    "hy": 0,
+    "ay": 0,
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.pl/mecz/pilka-nozna/feyenoord-8zjySeoN/g-a-eagles-hG8POBb8/?mid=nu0r0J3d",
+    "fetched_at": "2026-08-16T21:25:17Z"
+  },
+  "P1|2026-08-16|CD Nacional|Estoril Praia": {
+    "fthg": 2,
+    "ftag": 0,
+    "hc": 7,
+    "ac": 4,
+    "hy": 2,
+    "ay": 4,
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.pl/mecz/pilka-nozna/estoril-htoKuYZl/nacional-4ETLrR7n/?mid=fga2tkho",
+    "fetched_at": "2026-08-16T21:25:17Z"
+  },
+  "P1|2026-08-16|FC Arouca|Moreirense FC": {
+    "fthg": 4,
+    "ftag": 0,
+    "hc": 5,
+    "ac": 3,
+    "hy": 3,
+    "ay": 4,
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.pl/mecz/pilka-nozna/arouca-fJqfm7CG/moreirense-8d9NGt9H/?mid=dG88iF0n",
+    "fetched_at": "2026-08-16T21:25:17Z"
+  },
+  "SP1|2026-08-16|RCD Espanyol de Barcelona|Levante UD": {
+    "fthg": 3,
+    "ftag": 0,
+    "hc": 0,
+    "ac": 1,
+    "hy": 3,
+    "ay": 0,
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.pl/mecz/pilka-nozna/espanyol-QFfPdh1J/levante-G8FL0ShI/?mid=4ve9lHOQ",
+    "fetched_at": "2026-08-16T21:25:17Z"
+  },
+  "T1|2026-08-16|Istanbul Basaksehir|Kocaelispor": {
+    "fthg": 2,
+    "ftag": 0,
+    "hc": 8,
+    "ac": 2,
+    "hy": 2,
+    "ay": 2,
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.pl/mecz/pilka-nozna/basaksehir-YqP5NmC1/kocaelispor-hfvQIzKf/?mid=CO2gHy84",
+    "fetched_at": "2026-08-16T21:25:17Z"
+  },
+  "T1|2026-08-16|Amedspor|Erzurumspor": {
+    "fthg": 3,
+    "ftag": 0,
+    "hc": 4,
+    "ac": 4,
+    "hy": 1,
+    "ay": 0,
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.pl/mecz/pilka-nozna/amedspor-EHdgkFvm/erzurumspor-fk-xQZ3CpVE/?mid=px11FFxH",
+    "fetched_at": "2026-08-16T21:25:17Z"
+  },
+  "T1|2026-08-16|Besiktas|Eyüpspor": {
+    "fthg": 1,
+    "ftag": 0,
+    "hc": 8,
+    "ac": 2,
+    "hy": 2,
+    "ay": 3,
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.pl/mecz/pilka-nozna/besiktas-IDmErJCR/eyupspor-276zKCgt/?mid=OMWZGSDL",
+    "fetched_at": "2026-08-16T21:25:17Z"
+  },
+  "SP1|2026-08-16|R. Racing Club|Villarreal CF": {
+    "fthg": 2,
+    "ftag": 2,
+    "hc": 6,
+    "ac": 10,
+    "hy": 2,
+    "ay": 4,
+    "fetched_at": "2026-08-16T21:35:00Z",
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.pl/mecz/pilka-nozna/racing-santander-nVpEwOrl/villarreal-lUatW5jE/?mid=8zpmsZG0"
+  }
+}
