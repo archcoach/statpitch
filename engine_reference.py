@@ -72,6 +72,7 @@ class Engine:
                     'hc': _f(row, 'HC'), 'ac': _f(row, 'AC'),
                     'hy': _f(row, 'HY'), 'ay': _f(row, 'AY'),
                     'hr': _f(row, 'HR'), 'ar': _f(row, 'AR'),
+                    'hxg': _f(row, 'HXG'), 'axg': _f(row, 'AXG'),
                     'w': w,
                 }
                 self.matches.append(parsed)
@@ -212,22 +213,35 @@ def _var(vals):
     return sum((v - m) ** 2 for v in vals) / (len(vals) - 1)
 
 
+def _goal_or_xg(row, xg_field, goal_field):
+    """Prefers expected goals over the actual goal count for a row — xG is a
+    steadier signal of attacking/defensive quality than the final scoreline.
+    Falls back to the actual goal count whenever xG wasn't recorded."""
+    xg = row.get(xg_field)
+    return xg if xg is not None else row.get(goal_field)
+
+
 def _weighted_splits(rows, side):
     wsum = sum(r['w'] for r in rows)
     n = len(rows)
     if wsum == 0 or n == 0:
-        return {'goals_for': 0, 'goals_against': 0, 'corners_for': 0, 'cards_for': 0, 'n': 0}
+        return {'goals_for': 0, 'goals_against': 0, 'corners_for': 0, 'cards_for': 0, 'n': 0, 'n_xg_used': 0}
+    # n_xg_used: how many of these matches actually had xG recorded (vs.
+    # falling back to actual goals) — 0 today for every division, since no
+    # row in master.csv has xG populated yet (see DATA_README.md).
+    xg_key = 'hxg' if side == 'home' else 'axg'
+    n_xg_used = sum(1 for r in rows if r.get(xg_key) is not None)
     if side == 'home':
-        gf = sum(r['w'] * r['fthg'] for r in rows if r['fthg'] is not None) / wsum
-        ga = sum(r['w'] * r['ftag'] for r in rows if r['ftag'] is not None) / wsum
+        gf = sum(r['w'] * _goal_or_xg(r, 'hxg', 'fthg') for r in rows if _goal_or_xg(r, 'hxg', 'fthg') is not None) / wsum
+        ga = sum(r['w'] * _goal_or_xg(r, 'axg', 'ftag') for r in rows if _goal_or_xg(r, 'axg', 'ftag') is not None) / wsum
         cf = sum(r['w'] * r['hc'] for r in rows if r['hc'] is not None) / wsum
         cardf = sum(r['w'] * r['hy'] for r in rows if r['hy'] is not None) / wsum
     else:
-        gf = sum(r['w'] * r['ftag'] for r in rows if r['ftag'] is not None) / wsum
-        ga = sum(r['w'] * r['fthg'] for r in rows if r['fthg'] is not None) / wsum
+        gf = sum(r['w'] * _goal_or_xg(r, 'axg', 'ftag') for r in rows if _goal_or_xg(r, 'axg', 'ftag') is not None) / wsum
+        ga = sum(r['w'] * _goal_or_xg(r, 'hxg', 'fthg') for r in rows if _goal_or_xg(r, 'hxg', 'fthg') is not None) / wsum
         cf = sum(r['w'] * r['ac'] for r in rows if r['ac'] is not None) / wsum
         cardf = sum(r['w'] * r['ay'] for r in rows if r['ay'] is not None) / wsum
-    return {'goals_for': gf, 'goals_against': ga, 'corners_for': cf, 'cards_for': cardf, 'n': n}
+    return {'goals_for': gf, 'goals_against': ga, 'corners_for': cf, 'cards_for': cardf, 'n': n, 'n_xg_used': n_xg_used}
 
 
 def _poisson_pmf(k, lam):

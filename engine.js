@@ -18,13 +18,16 @@ function seasonWeight(season){
 
 class Engine {
   constructor(matchRows, teamMap){
-    // matchRows: [season, div, home, away, fthg, ftag, hc, ac, hy, ay]
+    // matchRows: [season, div, home, away, fthg, ftag, hc, ac, hy, ay, hxg, axg]
+    // hxg/axg (expected goals) are optional/trailing — rows built before this
+    // field existed, or any row where the source has no xG, simply have
+    // r[10]/r[11] undefined, which weightedSplits treats the same as null.
     this.byDiv = {};
     this.teamMap = teamMap;
     for(const r of matchRows){
       const w = seasonWeight(r[0]);
       if(w <= 0) continue;
-      const m = { season:r[0], div:r[1], home:r[2], away:r[3], fthg:r[4], ftag:r[5], hc:r[6], ac:r[7], hy:r[8], ay:r[9], w };
+      const m = { season:r[0], div:r[1], home:r[2], away:r[3], fthg:r[4], ftag:r[5], hc:r[6], ac:r[7], hy:r[8], ay:r[9], hxg:(r[10] ?? null), axg:(r[11] ?? null), w };
       (this.byDiv[r[1]] ||= []).push(m);
     }
     this.leagueStats = {};
@@ -147,23 +150,39 @@ function variance(a){
 function clip(v, lo, hi){ return Math.min(Math.max(v, lo), hi); }
 function round2(v){ return Math.round(v*100)/100; }
 
+// Prefers a row's expected-goals value over its actual goal count — xG is a
+// steadier signal of attacking/defensive quality than the final scoreline,
+// which is noisy at low sample sizes (a scrappy 1-0 and a dominant 1-0 count
+// identically under raw goals). Falls back to the actual goal count whenever
+// xG wasn't recorded for that specific match.
+function goalOrXg(r, xgField, goalField){
+  const xg = r[xgField];
+  return xg != null ? xg : r[goalField];
+}
+
 function weightedSplits(rows, side){
   const wsum = rows.reduce((s,r)=>s+r.w, 0);
   const n = rows.length;
-  if(wsum === 0 || n === 0) return { goalsFor:0, goalsAgainst:0, cornersFor:0, cardsFor:0, n:0 };
+  if(wsum === 0 || n === 0) return { goalsFor:0, goalsAgainst:0, cornersFor:0, cardsFor:0, n:0, nXgUsed:0 };
   let gf, ga, cf, cardf;
+  // nXgUsed: how many of these matches actually had xG recorded (vs. falling
+  // back to actual goals) — 0 for every division today, since no row in
+  // master.csv has xG populated yet (see DATA_README.md). This makes the
+  // fallback's effect visible/debuggable once xG data does get added,
+  // without changing any current output.
+  const nXgUsed = rows.filter(r => (side==='home' ? r.hxg : r.axg) != null).length;
   if(side === 'home'){
-    gf = rows.filter(r=>r.fthg!=null).reduce((s,r)=>s+r.w*r.fthg,0) / wsum;
-    ga = rows.filter(r=>r.ftag!=null).reduce((s,r)=>s+r.w*r.ftag,0) / wsum;
+    gf = rows.filter(r=>goalOrXg(r,'hxg','fthg')!=null).reduce((s,r)=>s+r.w*goalOrXg(r,'hxg','fthg'),0) / wsum;
+    ga = rows.filter(r=>goalOrXg(r,'axg','ftag')!=null).reduce((s,r)=>s+r.w*goalOrXg(r,'axg','ftag'),0) / wsum;
     cf = rows.filter(r=>r.hc!=null).reduce((s,r)=>s+r.w*r.hc,0) / wsum;
     cardf = rows.filter(r=>r.hy!=null).reduce((s,r)=>s+r.w*r.hy,0) / wsum;
   } else {
-    gf = rows.filter(r=>r.ftag!=null).reduce((s,r)=>s+r.w*r.ftag,0) / wsum;
-    ga = rows.filter(r=>r.fthg!=null).reduce((s,r)=>s+r.w*r.fthg,0) / wsum;
+    gf = rows.filter(r=>goalOrXg(r,'axg','ftag')!=null).reduce((s,r)=>s+r.w*goalOrXg(r,'axg','ftag'),0) / wsum;
+    ga = rows.filter(r=>goalOrXg(r,'hxg','fthg')!=null).reduce((s,r)=>s+r.w*goalOrXg(r,'hxg','fthg'),0) / wsum;
     cf = rows.filter(r=>r.ac!=null).reduce((s,r)=>s+r.w*r.ac,0) / wsum;
     cardf = rows.filter(r=>r.ay!=null).reduce((s,r)=>s+r.w*r.ay,0) / wsum;
   }
-  return { goalsFor:gf, goalsAgainst:ga, cornersFor:cf, cardsFor:cardf, n };
+  return { goalsFor:gf, goalsAgainst:ga, cornersFor:cf, cardsFor:cardf, n, nXgUsed };
 }
 
 function poissonPmf(k, lam){
@@ -249,18 +268,81 @@ function negbinPmf(k, r, p){
 }
 
 // ---- Live odds comparison (Step 4 of the pipeline: compare model vs market) ----
-// Odds in, de-vigged probabilities out. Proportional (basic) overround removal —
-// not Shin's method — consistent with the closing-odds treatment described in
-// STATPITCH_INSTRUCTIONS.md.
+// Odds in, de-vigged probabilities out. Shin's method (Shin 1992/1993), not
+// proportional overround removal — Shin's explicitly models a "insider
+// trading" / longshot-bias parameter z and backs true probabilities out of
+// it, which corrects (rather than just flags) the favourite-longshot bias
+// documented in STATPITCH_INSTRUCTIONS.md: naive proportional de-vig leaves
+// favourites under-priced and longshots over-priced in probability terms;
+// Shin's shifts probability mass from longshots toward favourites to
+// compensate. z is solved numerically per market (bisection) since there's
+// no closed form for more than two outcomes.
+//
+// Reference formula, for raw implied probabilities pi_i = 1/odds_i summing
+// to Sigma (=1+overround):
+//   p_i(z) = (sqrt(z^2 + 4(1-z)*pi_i^2/Sigma) - z) / (2*(1-z))
+// z is chosen so that sum_i p_i(z) = 1.
+function shinTrueProbs(impliedProbs, z){
+  const sigma = impliedProbs.reduce((s, p) => s + p, 0);
+  return impliedProbs.map(pi => {
+    const inner = z*z + 4*(1-z)*(pi*pi)/sigma;
+    return (Math.sqrt(Math.max(inner, 0)) - z) / (2*(1-z));
+  });
+}
+
+function shinSolve(impliedProbs){
+  const sigma = impliedProbs.reduce((s, p) => s + p, 0);
+  if(sigma <= 1){
+    // No overround (or a degenerate/underround quote) — nothing to correct.
+    return impliedProbs.map(pi => pi/sigma);
+  }
+  const excess = z => shinTrueProbs(impliedProbs, z).reduce((s, p) => s + p, 0) - 1;
+  let lo = 0, hi = 1 - 1e-9;
+  const fLo = excess(lo), fHi = excess(hi);
+  if(!(fLo > 0 && fHi < 0)){
+    // No sign change (extreme/degenerate odds) — fall back to proportional
+    // rather than trusting a bisection with no guaranteed root in range.
+    return impliedProbs.map(pi => pi/sigma);
+  }
+  let z = (lo+hi)/2;
+  for(let i = 0; i < 100; i++){
+    z = (lo+hi)/2;
+    const fz = excess(z);
+    if(Math.abs(fz) < 1e-12) break;
+    if(fz > 0) lo = z; else hi = z;
+  }
+  return shinTrueProbs(impliedProbs, z);
+}
+
 function devig2(oddsA, oddsB){
   const iA = 1/oddsA, iB = 1/oddsB;
-  const sum = iA + iB;
-  return { a: iA/sum, b: iB/sum, overround: sum };
+  const overround = iA + iB;
+  const [a, b] = shinSolve([iA, iB]);
+  return { a, b, overround };
 }
 function devig3(oddsA, oddsB, oddsC){
   const iA = 1/oddsA, iB = 1/oddsB, iC = 1/oddsC;
-  const sum = iA + iB + iC;
-  return { a: iA/sum, b: iB/sum, c: iC/sum, overround: sum };
+  const overround = iA + iB + iC;
+  const [a, b, c] = shinSolve([iA, iB, iC]);
+  return { a, b, c, overround };
+}
+
+// ---- Bankroll math (informational only — see UI disclaimer) ----
+// Quarter-Kelly (0.25x) fraction-of-bankroll figure, computed straight from
+// the textbook Kelly criterion formula using the model's own probability and
+// the live decimal odds: full Kelly f* = (p*decimalOdds - 1) / (decimalOdds
+// - 1). This is a raw mathematical output, not a stake recommendation — it
+// inherits every uncertainty already disclosed elsewhere in this file (fixed
+// Dixon-Coles rho, division-level corners/cards variance approximation, xG
+// not yet populated for any match, partial favourite-longshot correction),
+// and Kelly is specifically known to be sensitive to probability-estimation
+// error. Negative full-Kelly (model sees no edge) clips to 0 rather than
+// suggesting a "negative stake", which isn't a meaningful concept.
+function quarterKelly(modelProb, decimalOdds){
+  if(decimalOdds == null || decimalOdds <= 1 || modelProb == null) return null;
+  const b = decimalOdds - 1;
+  const fullKelly = (modelProb * decimalOdds - 1) / b;
+  return Math.max(fullKelly, 0) * 0.25;
 }
 
 // Merges a live-odds snapshot (see data/live_odds.json) onto model markets.
@@ -313,6 +395,7 @@ function attachLiveOdds(markets, live){
   }
   for(const m of out){
     if(m.market_prob != null) m.edge = m.probability - m.market_prob;
+    if(m.market_odds != null) m.quarter_kelly = quarterKelly(m.probability, m.market_odds);
   }
   return out;
 }

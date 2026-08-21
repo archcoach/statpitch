@@ -154,6 +154,7 @@
   table.markets td.prob{font-family:'IBM Plex Mono',monospace;text-align:right;}
   table.markets td.prob.edge.pos{color:var(--good);}
   table.markets td.prob.edge.neg{color:var(--text-dim);}
+  table.markets td.prob.kelly{color:var(--text-faint);}
   .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-top:10px;line-height:1.5;}
 
   .empty{padding:48px 12px;text-align:center;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
@@ -188,18 +189,22 @@
 __ENGINE_JS__
 /* ===== end embedded engine.js ===== */
 
-const FIXTURE_DATA = __FIXTURES_DATA_JSON__;
-const TEAM_MAP = __TEAM_MAP_JSON__;
-const MATCH_ROWS = __TRIMMED_MATCHES_JSON__;
+// Inline fallback copies of the three largest datasets — only used when
+// fetch() can't reach data/*.json (e.g. this file was opened directly as a
+// file:// URL, where browsers block fetch() of local files via CORS). When
+// served over http(s) — e.g. via .devserver.ps1 or any static host — the
+// data/ JSON files are loaded fresh instead. Both stay in sync automatically
+// since build.py writes both every time; see boot() below.
+const FIXTURE_DATA_INLINE = __FIXTURES_DATA_JSON__;
+const TEAM_MAP_INLINE = __TEAM_MAP_JSON__;
+const MATCH_ROWS_INLINE = __TRIMMED_MATCHES_JSON__;
 const LIVE_ODDS = __LIVE_ODDS_JSON__;
 const RESULTS = __RESULTS_JSON__;
 const PREDICTIONS_LOG = __PREDICTIONS_LOG_JSON__;
 const TEAM_NEWS = __TEAM_NEWS_JSON__;
 const BUILD_TIME = __BUILD_TIME_JSON__;
 
-const LEAGUES = FIXTURE_DATA.leagues;
-const FIXTURES = FIXTURE_DATA.fixtures;
-const ENGINE = new Engine(MATCH_ROWS, TEAM_MAP);
+let LEAGUES, FIXTURES, ENGINE;
 
 let activeLeague = 'ALL';
 let dateScope = 'today-tomorrow';
@@ -500,6 +505,7 @@ function marketRowHtml(m, hasOdds, graded){
       <td class="prob odds">${m.market_odds!=null ? m.market_odds.toFixed(2) : '—'}</td>
       <td class="prob">${m.market_prob!=null ? (m.market_prob*100).toFixed(1)+'%' : '—'}</td>
       <td class="prob edge ${m.edge!=null ? (m.edge>0?'pos':'neg') : ''}">${m.edge!=null ? (m.edge>0?'+':'')+(m.edge*100).toFixed(1)+'pp' : '—'}</td>
+      <td class="prob kelly">${m.quarter_kelly!=null ? (m.quarter_kelly*100).toFixed(1)+'%' : '—'}</td>
       ` : ''}
       ${graded ? `<td class="grade ${m.grade===true?'hit':(m.grade===false?'miss':'')}">${m.grade===true?'✓':(m.grade===false?'✗':'—')}</td>` : ''}
     </tr>
@@ -560,7 +566,7 @@ function renderPanel(f, holder){
   const buckets = {};
   for(const g of MARKET_GROUP_ORDER) buckets[g] = [];
   for(const m of top) buckets[marketGroup(m.market)].push(m);
-  const colspan = 3 + (hasOdds ? 3 : 0) + (graded ? 1 : 0);
+  const colspan = 3 + (hasOdds ? 4 : 0) + (graded ? 1 : 0);
   const rowsHtml = MARKET_GROUP_ORDER
     .filter(g => buckets[g].length)
     .map(g => `<tr><td colspan="${colspan}" class="group-header">${g}</td></tr>` + buckets[g].map(m => marketRowHtml(m, hasOdds, graded)).join(''))
@@ -608,7 +614,7 @@ function renderPanel(f, holder){
         <table class="markets">
           <thead><tr>
             <th>Market</th><th>Selection</th><th style="text-align:right">Historical Prob.</th>
-            ${hasOdds ? `<th style="text-align:right">Market Odds</th><th style="text-align:right">Market Prob.</th><th style="text-align:right">Edge</th>` : ''}
+            ${hasOdds ? `<th style="text-align:right">Market Odds</th><th style="text-align:right">Market Prob.</th><th style="text-align:right">Edge</th><th style="text-align:right" title="Quarter-Kelly bankroll fraction — a formula output, not a stake recommendation. See note below.">¼-Kelly</th>` : ''}
             ${graded ? `<th style="text-align:center">Result</th>` : ''}
           </tr></thead>
           <tbody>${rowsHtml}</tbody>
@@ -616,7 +622,7 @@ function renderPanel(f, holder){
       </div>
       <div class="disclaimer">
         Ranked by model-derived historical probability, not market value.
-        ${hasOdds ? 'Market Prob. is the live price with the overround removed (proportional de-vig); Edge is model minus market, in percentage points — not a recommendation, and not adjusted for the favourite-longshot bias documented in the project instructions.' : ''}
+        ${hasOdds ? "Market Prob. is the live price with the overround removed via Shin's method (corrects for the favourite-longshot bias documented in the project instructions, rather than just flagging it); Edge is model minus market, in percentage points — not a recommendation. ¼-Kelly is a raw output of the Kelly criterion formula (quarter-strength) using the model's probability and the live odds — a bankroll-math calculation, not a stake suggestion or betting advice. It inherits every uncertainty already listed here (fixed rho, variance approximations, sample size), and Kelly itself is known to be highly sensitive to probability-estimation error, so a nonzero number here is not an endorsement to wager anything." : ''}
         ${graded ? 'Result column grades the prediction as it stood before the match — frozen at the time it was logged, not recomputed afterward. "—" means this market couldn\'t be graded from the recorded result (e.g. no corner/card count available).' : ''}
         ${data.dc_rho_note} Never treat these as guarantees; sample sizes and variance still apply.
       </div>
@@ -655,7 +661,34 @@ function init(){
     renderList();
   });
 }
-init();
+
+// Tries data/<file> first (fresh data when served over http/https), falls
+// back to the inline copy embedded above when fetch fails — which is the
+// normal, expected outcome when this file was opened directly (file://)
+// rather than through a server, not an error worth surfacing to the user.
+async function loadJsonWithFallback(url, inlineValue, label){
+  try{
+    const resp = await fetch(url);
+    if(!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    return await resp.json();
+  }catch(e){
+    console.info(`[StatPitch] Using embedded ${label} (couldn't fetch ${url}: ${e.message}). Normal when opening this file directly instead of via a server.`);
+    return inlineValue;
+  }
+}
+
+async function boot(){
+  const [fixtureData, teamMap, matchRows] = await Promise.all([
+    loadJsonWithFallback('data/fixture_data.json', FIXTURE_DATA_INLINE, 'fixture data'),
+    loadJsonWithFallback('data/team_map.json', TEAM_MAP_INLINE, 'team map'),
+    loadJsonWithFallback('data/trimmed_matches.json', MATCH_ROWS_INLINE, 'match history'),
+  ]);
+  LEAGUES = fixtureData.leagues;
+  FIXTURES = fixtureData.fixtures;
+  ENGINE = new Engine(matchRows, teamMap);
+  init();
+}
+boot();
 </script>
 </body>
 </html>

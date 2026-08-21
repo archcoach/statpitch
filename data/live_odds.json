@@ -172,5 +172,23 @@
     "fetched_at": "2026-08-16T13:38:30Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/besiktas-vs-eyupspor-13985468"
+  },
+  "SP1|2026-08-17|RC Deportivo|Elche CF": {
+    "1x2": { "home": 2.20, "draw": 3.05, "away": 3.60 },
+    "fetched_at": "2026-08-17T17:38:46Z",
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/deportivo-de-a-coruna-vs-elche-13846967"
+  },
+  "P1|2026-08-17|Casa Pia AC|SL Benfica": {
+    "1x2": { "home": 12.00, "draw": 6.60, "away": 1.20 },
+    "fetched_at": "2026-08-17T17:38:46Z",
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/casa-pia-vs-benfica-13881194"
+  },
+  "T1|2026-08-17|Samsunspor|Göztepe": {
+    "1x2": { "home": 2.27, "draw": 3.20, "away": 3.05 },
+    "fetched_at": "2026-08-17T17:38:46Z",
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/samsunspor-vs-goztepe-13985473"
   }
 }

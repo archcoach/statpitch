@@ -3,7 +3,9 @@
 ## Just want to use it?
 
 Open **`statpitch.html`** in any browser. That's the entire app — double-click
-it, no install, no server, no terminal. Works offline once downloaded.
+it, no install, no server, no terminal. Works offline once downloaded. (If
+you do serve it over http/https — e.g. the included `.devserver.ps1` — it
+picks up fresher data from `data/*.json` automatically; either way works.)
 
 Click any match to see ranked historical-probability markets, computed live
 in your browser from the embedded dataset.
@@ -33,8 +35,9 @@ build.py                 — regenerates statpitch.html from the pieces above
 data/
   master.csv              — full historical dataset, 2020/21–2026/27
   fixtures.csv            — 2026/27 fixture list, 8 leagues
-  team_map.json            — fixture-name -> historical-name mapping
-  trimmed_matches.json    — slimmed dataset actually embedded in statpitch.html
+  fixture_data.json       — generated from fixtures.csv; fetched at runtime (fallback embedded)
+  team_map.json            — fixture-name -> historical-name mapping; fetched at runtime (fallback embedded)
+  trimmed_matches.json    — slimmed dataset; fetched at runtime (fallback embedded)
   live_odds.json          — live-odds snapshot (ask Claude to fetch per match)
   results.json            — final match stats, for grading past predictions
   predictions_log.json    — frozen prediction snapshots, logged before results

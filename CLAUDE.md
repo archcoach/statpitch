@@ -2,15 +2,16 @@
 
 Football analytics tool: 2026/27 fixture board across 8 European leagues,
 click a match, get historical-probability estimates computed live in the
-browser. No server, no backend, no build step. Open `statpitch.html` in any
-browser and it works.
+browser. No server required, no backend, no build step to *use* it — open
+`statpitch.html` in any browser and it works, though serving it over
+http(s) (e.g. `.devserver.ps1`) lets it load fresher data too, see below.
 
 ## How this project is put together
 
 **`statpitch.html`** is the entire product — a single self-contained HTML
 file (~1.5MB) with the UI, the analytics engine, and all data embedded
-inline. There is no separate frontend/backend split at runtime; everything
-executes client-side in the browser.
+inline as a fallback. There is no separate frontend/backend split at
+runtime; everything executes client-side in the browser.
 
 It is *built* from three source pieces, which is why you'll also see:
 
@@ -21,15 +22,39 @@ It is *built* from three source pieces, which is why you'll also see:
 - **`index_template.html`** — the UI template, with placeholders
   (`__ENGINE_JS__`, `__FIXTURES_DATA_JSON__`, `__TEAM_MAP_JSON__`,
   `__TRIMMED_MATCHES_JSON__`, `__LIVE_ODDS_JSON__`, `__RESULTS_JSON__`,
-  `__PREDICTIONS_LOG_JSON__`) that `build.py` fills in.
+  `__PREDICTIONS_LOG_JSON__`, `__TEAM_NEWS_JSON__`, `__BUILD_TIME_JSON__`)
+  that `build.py` fills in.
 - **`build.py`** — run `python3 build.py` after changing `engine.js`,
   `index_template.html`, or anything in `data/` to regenerate
-  `statpitch.html`. It also regenerates `data/trimmed_matches.json` from
-  `data/master.csv` each time, so editing `master.csv` and re-running the
-  build is enough to pick up new data. Idempotent, safe to re-run anytime.
-  Needs a real Python install (not the Windows Store `python.exe` stub,
-  which just prints an install prompt and exits nonzero) — confirmed
-  working via `python3` on this machine as of 2026-08-16.
+  `statpitch.html`. It also regenerates `data/fixture_data.json` and
+  `data/trimmed_matches.json` from `data/fixtures.csv`/`data/master.csv`
+  each time, so editing those and re-running the build is enough to pick up
+  new data. Idempotent, safe to re-run anytime. Needs a real Python install
+  (not the Windows Store `python.exe` stub, which just prints an install
+  prompt and exits nonzero) — confirmed working via `python3` on this
+  machine as of 2026-08-16.
+
+### Fetch-with-fallback for the three largest datasets
+
+`FIXTURE_DATA`, `TEAM_MAP`, and `MATCH_ROWS` (the fixture list, the team-name
+mapping, and the full match-history table — by far the biggest chunk of the
+file) are loaded by `boot()` in `index_template.html` via `fetch()` from
+`data/fixture_data.json`, `data/team_map.json`, and
+`data/trimmed_matches.json`. If any fetch fails — which is the normal,
+expected outcome when someone opens `statpitch.html` directly as a `file://`
+URL, since browsers block `fetch()` of local files via CORS — `boot()`
+silently falls back to a copy of the same data embedded inline in the HTML
+(`FIXTURE_DATA_INLINE`/`TEAM_MAP_INLINE`/`MATCH_ROWS_INLINE`, filled in by
+the same `build.py` placeholders as before). This is why the "no server
+needed" promise still holds: double-clicking the file still works exactly
+as before, it just uses the embedded copy instead of fetching. Serving it
+over http(s) instead lets the page pick up updated `data/*.json` files
+without needing a full rebuild+redistribute of `statpitch.html`. Both
+copies are written by `build.py` on every run, so they can't drift out of
+sync as long as the normal "run `python3 build.py` after changing `data/`"
+workflow is followed. `LIVE_ODDS`, `RESULTS`, `PREDICTIONS_LOG`, and
+`TEAM_NEWS` are **not** part of this — they stay embedded-only, unchanged
+from before.
 
 ## Data files
 
@@ -37,8 +62,9 @@ It is *built* from three source pieces, which is why you'll also see:
   10 leagues originally, ~20k matches, ~28 columns (goals, shots, corners,
   cards, closing odds). This is the source of truth. Read `DATA_README.md`
   for the full schema and known gaps before changing anything data-related.
-- **`data/trimmed_matches.json`** — a stripped-down version of `master.csv`
-  actually embedded in `statpitch.html`: just
+- **`data/trimmed_matches.json`** — a stripped-down version of `master.csv`,
+  fetched by `statpitch.html` when served over http(s) (embedded inline as a
+  fallback otherwise — see "Fetch-with-fallback" above): just
   `[season, div, home, away, fthg, ftag, hc, ac, hy, ay]` per match, as a
   compact array-of-arrays (no keys, to save space). This is what
   `engine.js`'s `Engine` class consumes at runtime. If you add a new stat to
@@ -47,9 +73,14 @@ It is *built* from three source pieces, which is why you'll also see:
 - **`data/fixtures.csv`** — 2026/27 fixture list, 8 leagues (2,670 fixtures).
   Belgium and Poland were deliberately excluded (user's call, not a data
   limitation) — don't re-add them without asking.
+- **`data/fixture_data.json`** — generated from `data/fixtures.csv` by
+  `build.py` (do not hand-edit — edit `fixtures.csv` and rebuild instead):
+  `{leagues: LEAGUE_META, fixtures: [[div, iso-date, label, time, home,
+  away], ...]}`. Same fetch-with-fallback treatment as `trimmed_matches.json`.
 - **`data/team_map.json`** — maps each league's fixture-list team name (e.g.
   "Internazionale") to the historical dataset's team name (e.g. "Inter"),
-  per division. Built via normalization + fuzzy matching + manual correction
+  per division. Same fetch-with-fallback treatment as the two files above.
+  Built via normalization + fuzzy matching + manual correction
   — see the git history / conversation this came from for the method. Teams
   mapped to `null` are newly promoted/relegated clubs with zero history in
   `master.csv` — this is intentional, the app shows an honest "no data"
@@ -110,21 +141,53 @@ Workflow to refresh a match's odds:
 4. Run `python3 build.py` to re-embed it into `statpitch.html`.
 
 `engine.js` does the actual comparison: `devig2`/`devig3` strip the
-overround (proportional method, not Shin's — matches the treatment already
-described for closing odds in `STATPITCH_INSTRUCTIONS.md`), and
-`attachLiveOdds()` merges market odds/probability/edge onto the model's
-market rows without touching the model itself (lambda, Dixon-Coles, negbin
-markets are all unaffected — this is purely a display-time comparison
-layer). Double Chance is derived from the 1X2 devig rather than fetched
-separately (Home-or-Draw = P(home)+P(draw), etc.) — exact, and one fewer
-market to scrape per match. Only rows with a matching live-odds entry get
-the extra columns; everything else still shows as before. If you touch
+overround using **Shin's method** (`shinSolve`/`shinTrueProbs` — solves
+numerically via bisection for the insider-trading/bias parameter `z`, since
+there's no closed form beyond two outcomes), not plain proportional
+removal. This was a deliberate upgrade specifically to correct the
+favourite-longshot bias documented in `STATPITCH_INSTRUCTIONS.md` (market
+probabilities around ~84% actually win ~87%, ~14% probabilities actually
+win ~11%) rather than just disclosing it uncorrected — Shin's shifts
+probability mass from longshots toward favourites relative to naive
+proportional de-vig, which is the correct direction to compensate for that
+bias. Falls back to plain proportional division if there's no overround to
+solve for (fair/underround odds) or bisection finds no sign change
+(degenerate odds) — never crashes or returns probabilities that don't sum
+to 1. `attachLiveOdds()` merges market odds/probability/edge onto the
+model's market rows without touching the model itself (lambda, Dixon-Coles,
+negbin markets are all unaffected — this is purely a display-time
+comparison layer). Double Chance is derived from the 1X2 devig rather than
+fetched separately (Home-or-Draw = P(home)+P(draw), etc.) — exact, and one
+fewer market to scrape per match. Only rows with a matching live-odds entry
+get the extra columns; everything else still shows as before. If you touch
 `attachLiveOdds` or the devig math, there's no `engine_reference.py` parity
 to check since that file only covers the probability model, not this
 layer.
 
+**¼-Kelly column — deliberately informational, not advice. Don't "upgrade"
+this without a real conversation first.** `quarterKelly()` in `engine.js`
+computes a raw quarter-strength Kelly-criterion fraction from the model's
+probability and the live decimal odds, shown as a plain percentage next to
+Edge. This was pushed back on when first requested, specifically because
+Kelly is a *stake-sizing prescription*, not a comparison like every other
+number in this app — and `STATPITCH_INSTRUCTIONS.md` says outright "You do
+not give betting advice and never guarantee outcomes." The resolution: show
+it as a bare formula output only — no dollar amounts, no "recommended"
+language, always rendered in muted/neutral color (never the green
+"positive" styling Edge gets), negative values clipped to 0 rather than
+shown as-is, and its own disclaimer sentence stating it's not a stake
+suggestion and inherits every uncertainty already disclosed about the model
+(fixed rho, variance approximations, sample size, partial favourite-longshot
+correction). It deliberately does **not** appear in the top-pick callout —
+keeping it out of the one place in the UI designed to draw the eye first
+matters as much as the disclaimer text does. If asked to make this more
+prominent, add a dollar/currency amount, or otherwise push it toward looking
+like a recommendation, treat that the same as being asked to add "lock" or
+"guaranteed" language — flag the conflict with the honesty rules rather than
+just implementing it.
+
 The markets table also has a `.table-scroll` wrapper (`overflow-x:auto`)
-around it — with the odds columns present it's 6 columns wide and doesn't
+around it — with the odds columns present it's 7 columns wide and doesn't
 fit a phone screen. Without the wrapper the *whole page* scrolls sideways
 and clips content instead of just the table. Keep this if you touch the
 panel markup.

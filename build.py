@@ -2,8 +2,13 @@
 """
 Rebuilds statpitch.html from engine.js + data/*.
 
-Run whenever engine.js changes, or when data/trimmed_matches.json,
-data/fixtures.csv, or data/team_map.json are regenerated.
+Run whenever engine.js changes, or when data/fixtures.csv, data/master.csv,
+or data/team_map.json are edited — this regenerates data/fixture_data.json
+and data/trimmed_matches.json from them automatically. statpitch.html fetches
+those two plus data/team_map.json fresh when served over http(s), falling
+back to copies embedded inline in the HTML when opened directly as a file
+(fetch() can't reach local files that way) — both paths are written by this
+script every run, so they never drift out of sync.
 
 Usage:  python3 build.py
 Output: statpitch.html (overwritten)
@@ -30,6 +35,9 @@ SEASON_ORDER = ['2020/21', '2021/22', '2022/23', '2023/24', '2024/25', '2025/26'
 
 
 def build_fixtures_json():
+    """Regenerates data/fixture_data.json from data/fixtures.csv, then returns it.
+    Fetched fresh by statpitch.html when served over http(s); the same JSON is
+    also embedded inline as a fallback for when the file is opened directly."""
     rows = []
     with open(os.path.join(BASE, 'data', 'fixtures.csv'), encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -40,13 +48,22 @@ def build_fixtures_json():
             dt = datetime.date(int(y), int(m), int(d))
             rows.append([r['Div'], dt.isoformat(), dt.strftime('%a %d %b %Y'), r['Time'], r['HomeTeam'], r['AwayTeam']])
     rows.sort(key=lambda r: (r[1], r[3]))
-    return json.dumps({'leagues': LEAGUE_META, 'fixtures': rows}, ensure_ascii=False, separators=(',', ':'))
+    j = json.dumps({'leagues': LEAGUE_META, 'fixtures': rows}, ensure_ascii=False, separators=(',', ':'))
+    with open(os.path.join(BASE, 'data', 'fixture_data.json'), 'w', encoding='utf-8') as f:
+        f.write(j)
+    return j
 
 
 def build_trimmed_matches_json():
     """Regenerates data/trimmed_matches.json from data/master.csv, then returns it.
     Only the columns engine.js actually needs — keep in sync with Engine's
-    constructor if you add stats to the model."""
+    constructor if you add stats to the model.
+
+    HXG/AXG (expected goals) are included but empty for every row today —
+    master.csv has no xG source wired in yet (see DATA_README.md's "no xG
+    anywhere" gap). Engine.weightedSplits() falls back to actual goals
+    (FTHG/FTAG) per-row whenever xG is null, so this is a no-op until xG
+    data actually gets populated for some rows."""
     rows = []
     with open(os.path.join(BASE, 'data', 'master.csv'), encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -61,6 +78,7 @@ def build_trimmed_matches_json():
             rows.append([
                 row['Season'], row['Div'], row['HomeTeam'], row['AwayTeam'],
                 fv('FTHG'), fv('FTAG'), fv('HC'), fv('AC'), fv('HY'), fv('AY'),
+                fv('HXG'), fv('AXG'),
             ])
     j = json.dumps(rows, separators=(',', ':'))
     with open(os.path.join(BASE, 'data', 'trimmed_matches.json'), 'w', encoding='utf-8') as f:
