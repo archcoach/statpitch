@@ -31,8 +31,29 @@ import re
 import subprocess
 import sys
 import time
+import unicodedata
 
 from playwright.sync_api import sync_playwright
+
+
+def norm_loose(name):
+    """Accent/case/punctuation-insensitive, and tolerant of Flashscore
+    showing a shorter or longer form of a name than we have cached (e.g.
+    "Hull" vs "Hull City", "Corum" vs "Corum FK") -- one being a substring
+    of the other counts as a match. Shared across fetch_team_stats.py and
+    fetch_odds.py; keep them in sync if this changes."""
+    if not name:
+        return ''
+    name = unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode('ascii')
+    name = re.sub(r'\s*\([^)]*\)\s*$', '', name)  # strip trailing "(Eng)" etc
+    return re.sub(r'[^a-z0-9]', '', name.lower())
+
+
+def names_match(a, b):
+    na, nb = norm_loose(a), norm_loose(b)
+    if not na or not nb:
+        return False
+    return na == nb or na in nb or nb in na
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -147,10 +168,6 @@ def fetch_recent_match_rows(page, slug, fs_id, team_name):
         }).filter(Boolean)
     """)
 
-    def norm(name):
-        return re.sub(r'\s*\([^)]*\)\s*$', '', name).strip().lower()
-
-    team_norm = norm(team_name)
     out = []
     seen_hrefs = set()
     seen_signatures = set()
@@ -173,8 +190,8 @@ def fetch_recent_match_rows(page, slug, fs_id, team_name):
             away_goals = int(r['away_score'])
         except ValueError:
             continue  # penalty shootout / non-numeric score -- skip, don't guess
-        is_home = norm(r['home']) == team_norm
-        is_away = norm(r['away']) == team_norm
+        is_home = names_match(r['home'], team_name)
+        is_away = names_match(r['away'], team_name)
         if not (is_home or is_away):
             continue
         out.append({

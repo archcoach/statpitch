@@ -475,30 +475,550 @@
     "1x2": {
       "home": 1.23,
       "draw": 7.25,
-      "away": 14.69
+      "away": 14.66
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/arsenal-hA1Zm19f/coventry-GOvB22xg/odds/?mid=2q2NhX43",
-    "fetched_at": "2026-08-21T13:53:56Z"
+    "fetched_at": "2026-08-21T15:55:49Z"
   },
   "F1|2026-08-21|Olympique de Marseille|RC Strasbourg Alsace": {
     "1x2": {
-      "home": 1.76,
+      "home": 1.77,
       "draw": 4.2,
-      "away": 4.5
+      "away": 4.55
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/marseille-SblU3Hee/strasbourg-nP6UzIU1/odds/?mid=6i9H6E5l",
-    "fetched_at": "2026-08-21T13:54:03Z"
+    "fetched_at": "2026-08-21T15:57:12Z"
   },
   "SP1|2026-08-24|Málaga CF|RC Deportivo": {
     "1x2": {
       "home": 2.59,
-      "draw": 3.1,
-      "away": 3.1
+      "draw": 3.15,
+      "away": 3.15
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/dep-a-coruna-Q51ZzMS6/malaga-25tIqYiJ/odds/?mid=2V09g36N",
-    "fetched_at": "2026-08-21T13:54:11Z"
+    "fetched_at": "2026-08-21T16:03:22Z"
+  },
+  "E0|2026-08-22|Hull|Man Utd": {
+    "1x2": {
+      "home": 8.91,
+      "draw": 5.2,
+      "away": 1.4
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/hull-city-S66R0t75/manchester-united-ppjDR086/odds/?mid=zc0VjBZF",
+    "fetched_at": "2026-08-21T15:55:56Z"
+  },
+  "E0|2026-08-22|Everton|Crystal Palace": {
+    "1x2": {
+      "home": 2.27,
+      "draw": 3.4,
+      "away": 3.34
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/crystal-palace-AovF1Mia/everton-KluSTr9s/odds/?mid=rN3wkk4S",
+    "fetched_at": "2026-08-21T15:56:06Z"
+  },
+  "E0|2026-08-22|Ipswich|Sunderland": {
+    "1x2": {
+      "home": 2.76,
+      "draw": 3.3,
+      "away": 2.7
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/ipswich-thqhB2MB/sunderland-WSzc94ws/odds/?mid=Cxf9qTRk",
+    "fetched_at": "2026-08-21T15:56:15Z"
+  },
+  "E0|2026-08-22|Nott'm Forest|Leeds": {
+    "1x2": {
+      "home": 2.37,
+      "draw": 3.45,
+      "away": 3.15
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/leeds-tUxUbLR2/nottingham-UsushcZr/odds/?mid=pjhHs7d2",
+    "fetched_at": "2026-08-21T15:56:22Z"
+  },
+  "E0|2026-08-22|Brentford|Spurs": {
+    "1x2": {
+      "home": 2.4,
+      "draw": 3.65,
+      "away": 2.9
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/brentford-xYe7DwID/tottenham-UDg08Ohm/odds/?mid=EPW0kJF8",
+    "fetched_at": "2026-08-21T15:56:30Z"
+  },
+  "E0|2026-08-23|Brighton|Aston Villa": {
+    "1x2": {
+      "home": 2.25,
+      "draw": 3.6,
+      "away": 3.2
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/aston-villa-W00wmLO0/brighton-2XrRecc3/odds/?mid=Mkz9mcpL",
+    "fetched_at": "2026-08-21T15:56:37Z"
+  },
+  "E0|2026-08-23|Man City|Bournemouth": {
+    "1x2": {
+      "home": 1.5,
+      "draw": 5.05,
+      "away": 5.85
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/bournemouth-OtpNdwrc/manchester-city-Wtn9Stg0/odds/?mid=ILLvry8r",
+    "fetched_at": "2026-08-21T15:56:47Z"
+  },
+  "E0|2026-08-23|Newcastle|Liverpool": {
+    "1x2": {
+      "home": 3.8,
+      "draw": 3.95,
+      "away": 1.9
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/liverpool-lId4TMwf/newcastle-utd-p6ahwuwJ/odds/?mid=4xKntFxe",
+    "fetched_at": "2026-08-21T15:56:55Z"
+  },
+  "E0|2026-08-24|Fulham|Chelsea": {
+    "1x2": {
+      "home": 3.9,
+      "draw": 3.9,
+      "away": 1.91
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/chelsea-4fGZN2oK/fulham-69ZiU2Om/odds/?mid=C2Nfvg77",
+    "fetched_at": "2026-08-21T15:57:03Z"
+  },
+  "F1|2026-08-22|RC Lens|AJ Auxerre": {
+    "1x2": {
+      "home": 1.57,
+      "draw": 4.55,
+      "away": 5.66
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/auxerre-MTLr36WA/lens-IBmris38/odds/?mid=z9IoCzrR",
+    "fetched_at": "2026-08-21T15:57:20Z"
+  },
+  "F1|2026-08-22|Le Mans FC|Stade Brestois 29": {
+    "1x2": {
+      "home": 2.55,
+      "draw": 3.38,
+      "away": 2.8
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/brest-Cr4VGaUl/le-mans-ER0NeOOp/odds/?mid=2eKwEdDE",
+    "fetched_at": "2026-08-21T15:57:27Z"
+  },
+  "F1|2026-08-22|OGC Nice|FC Lorient": {
+    "1x2": {
+      "home": 2.15,
+      "draw": 3.5,
+      "away": 3.4
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/lorient-jgNAYRGi/nice-YagoQJpq/odds/?mid=ClCP4hz1",
+    "fetched_at": "2026-08-21T15:57:35Z"
+  },
+  "F1|2026-08-22|Toulouse FC|Olympique Lyonnais": {
+    "1x2": {
+      "home": 2.8,
+      "draw": 3.45,
+      "away": 2.5
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/lyon-2akflumR/toulouse-MLmY2yB1/odds/?mid=C82JQZdK",
+    "fetched_at": "2026-08-21T15:57:42Z"
+  },
+  "F1|2026-08-22|Estac Troyes|Paris FC": {
+    "1x2": {
+      "home": 3.1,
+      "draw": 3.5,
+      "away": 2.3
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/paris-fc-0OEHEprs/troyes-fsfAHubD/odds/?mid=rigkLDKs",
+    "fetched_at": "2026-08-21T15:57:50Z"
+  },
+  "F1|2026-08-23|Angers SCO|LOSC Lille": {
+    "1x2": {
+      "home": 4.95,
+      "draw": 3.8,
+      "away": 1.73
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/angers-SAlF91iL/lille-pfDZL71o/odds/?mid=lYTqhFje",
+    "fetched_at": "2026-08-21T15:57:58Z"
+  },
+  "F1|2026-08-23|Havre Athletic Club|AS Monaco": {
+    "1x2": {
+      "home": 3.8,
+      "draw": 4.0,
+      "away": 1.92
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/le-havre-CIEe04GT/monaco-2PIvr8o4/odds/?mid=zkSijgL7",
+    "fetched_at": "2026-08-21T15:58:05Z"
+  },
+  "F1|2026-08-23|Paris Saint-Germain|Stade Rennais FC": {
+    "1x2": {
+      "home": 5.75,
+      "draw": 4.65,
+      "away": 1.55
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/psg-CjhkPw0k/rennes-d2nnj1IE/odds/?mid=p2AX2W4D",
+    "fetched_at": "2026-08-21T15:58:12Z"
+  },
+  "I1|2026-08-22|Internazionale|Monza": {
+    "1x2": {
+      "home": 1.23,
+      "draw": 7.24,
+      "away": 14.0
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/inter-Iw7eKK25/monza-4YSMlwj7/odds/?mid=8Mn7Y8Zh",
+    "fetched_at": "2026-08-21T15:58:19Z"
+  },
+  "I1|2026-08-22|Udinese|Como": {
+    "1x2": {
+      "home": 4.65,
+      "draw": 3.55,
+      "away": 1.85
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/como-ttyLthOA/udinese-rXw8YKDE/odds/?mid=QuSvm8ln",
+    "fetched_at": "2026-08-21T15:58:27Z"
+  },
+  "I1|2026-08-22|Genoa|Napoli": {
+    "1x2": {
+      "home": 4.9,
+      "draw": 3.3,
+      "away": 1.9
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/genoa-d0PJxeie/napoli-69Dxbc61/odds/?mid=z9lazV4t",
+    "fetched_at": "2026-08-21T15:58:36Z"
+  },
+  "I1|2026-08-22|Parma|Cagliari": {
+    "1x2": {
+      "home": 2.55,
+      "draw": 3.05,
+      "away": 3.25
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/cagliari-SCGVmKHb/parma-6DxlaxHN/odds/?mid=GnjFWn45",
+    "fetched_at": "2026-08-21T15:58:43Z"
+  },
+  "I1|2026-08-23|Frosinone|Juventus": {
+    "1x2": {
+      "home": 7.5,
+      "draw": 4.7,
+      "away": 1.47
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/frosinone-pfo9H1Wp/juventus-C06aJvIB/odds/?mid=nD9kGRJO",
+    "fetched_at": "2026-08-21T15:58:51Z"
+  },
+  "I1|2026-08-23|Venezia|Lecce": {
+    "1x2": {
+      "home": 2.27,
+      "draw": 3.2,
+      "away": 3.55
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/lecce-G8lYsMgU/venezia-MkPmVv50/odds/?mid=Y5VnonJb",
+    "fetched_at": "2026-08-21T15:58:59Z"
+  },
+  "I1|2026-08-23|Atalanta|Sassuolo": {
+    "1x2": {
+      "home": 1.55,
+      "draw": 4.4,
+      "away": 5.95
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/atalanta-8C9JjMXu/sassuolo-QDdvI0zl/odds/?mid=6Z7ZJ9Ka",
+    "fetched_at": "2026-08-21T15:59:06Z"
+  },
+  "I1|2026-08-23|Torino|Milan": {
+    "1x2": {
+      "home": 4.65,
+      "draw": 3.75,
+      "away": 1.8
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/ac-milan-8Sa8HInO/torino-MZFZnvX4/odds/?mid=dQiVS43U",
+    "fetched_at": "2026-08-21T15:59:14Z"
+  },
+  "I1|2026-08-24|Bologna|Lazio": {
+    "1x2": {
+      "home": 2.22,
+      "draw": 3.2,
+      "away": 3.7
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/bologna-0M9xNN8N/lazio-URcSl02h/odds/?mid=vm6sImkC",
+    "fetched_at": "2026-08-21T15:59:21Z"
+  },
+  "I1|2026-08-24|Roma|Fiorentina": {
+    "1x2": {
+      "home": 1.6,
+      "draw": 4.1,
+      "away": 5.9
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/as-roma-zVqqL0ma/fiorentina-Q3A3IbXH/odds/?mid=OCgNUQYH",
+    "fetched_at": "2026-08-21T15:59:29Z"
+  },
+  "N1|2026-08-22|Fortuna Sittard|AZ": {
+    "1x2": {
+      "home": 5.45,
+      "draw": 4.36,
+      "away": 1.6
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/az-alkmaar-2RxOow1i/sittard-YH8HX5iP/odds/?mid=YFlpKveS",
+    "fetched_at": "2026-08-21T15:59:36Z"
+  },
+  "N1|2026-08-22|Sparta Rotterdam|FC Utrecht": {
+    "1x2": {
+      "home": 2.62,
+      "draw": 3.45,
+      "away": 2.7
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/sparta-rotterdam-KK4FaFV3/utrecht-p6QXMgOj/odds/?mid=xCwOCdm2",
+    "fetched_at": "2026-08-21T15:59:44Z"
+  },
+  "N1|2026-08-22|sc Heerenveen|PEC Zwolle": {
+    "1x2": {
+      "home": 1.58,
+      "draw": 4.55,
+      "away": 5.0
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/heerenveen-EDjXSyWG/zwolle-r1L5w2EB/odds/?mid=l0p9z0u9",
+    "fetched_at": "2026-08-21T15:59:55Z"
+  },
+  "N1|2026-08-23|Go Ahead Eagles|ADO Den Haag": {
+    "1x2": {
+      "home": 1.75,
+      "draw": 4.1,
+      "away": 4.4
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/den-haag-lAgLCkT3/g-a-eagles-hG8POBb8/odds/?mid=MDrHYwAL",
+    "fetched_at": "2026-08-21T16:00:02Z"
+  },
+  "N1|2026-08-23|PSV|FC Groningen": {
+    "1x2": {
+      "home": 1.36,
+      "draw": 5.8,
+      "away": 7.46
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/groningen-MBUGcjb9/psv-M9UEHJWi/odds/?mid=hdZnTHXr",
+    "fetched_at": "2026-08-21T16:00:10Z"
+  },
+  "N1|2026-08-23|SC Cambuur|Feyenoord": {
+    "1x2": {
+      "home": 9.9,
+      "draw": 6.0,
+      "away": 1.3
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/cambuur-QRyYgO7J/feyenoord-8zjySeoN/odds/?mid=0MxeRe2e",
+    "fetched_at": "2026-08-21T16:00:21Z"
+  },
+  "P1|2026-08-22|Marítimo M.|Académico": {
+    "1x2": {
+      "home": 2.05,
+      "draw": 3.4,
+      "away": 3.8
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/academico-viseu-GrRgeTHo/maritimo-noguvetP/odds/?mid=bsWQ0vec",
+    "fetched_at": "2026-08-21T16:00:31Z"
+  },
+  "P1|2026-08-22|Estoril Praia|Rio Ave FC": {
+    "1x2": {
+      "home": 1.97,
+      "draw": 3.65,
+      "away": 3.9
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/estoril-htoKuYZl/rio-ave-jPzXLi4l/odds/?mid=8zdCblET",
+    "fetched_at": "2026-08-21T16:00:39Z"
+  },
+  "P1|2026-08-22|Sporting CP|FC Alverca": {
+    "1x2": {
+      "home": 1.23,
+      "draw": 7.25,
+      "away": 11.77
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/alverca-roaMksQg/sporting-cp-tljXuHBC/odds/?mid=G0RKkEnd",
+    "fetched_at": "2026-08-21T16:00:46Z"
+  },
+  "P1|2026-08-23|Vitória SC|CD Nacional": {
+    "1x2": {
+      "home": 1.7,
+      "draw": 3.95,
+      "away": 4.89
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/nacional-4ETLrR7n/vitoria-guimaraes-pQYVZyD2/odds/?mid=8fE6DHv3",
+    "fetched_at": "2026-08-21T16:00:54Z"
+  },
+  "P1|2026-08-23|Santa Clara|FC Famalicão": {
+    "1x2": {
+      "home": 2.7,
+      "draw": 3.0,
+      "away": 2.85
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/famalicao-ABBgitC3/santa-clara-YmQyLBJf/odds/?mid=A3OCizIq",
+    "fetched_at": "2026-08-21T16:01:02Z"
+  },
+  "P1|2026-08-23|FC Porto|FC Arouca": {
+    "1x2": {
+      "home": 1.23,
+      "draw": 6.75,
+      "away": 12.63
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/arouca-fJqfm7CG/fc-porto-S2NmScGp/odds/?mid=vLXtcdfM",
+    "fetched_at": "2026-08-21T16:01:09Z"
+  },
+  "P1|2026-08-24|Gil Vicente FC|Casa Pia AC": {
+    "1x2": {
+      "home": 1.75,
+      "draw": 3.55,
+      "away": 5.52
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/casa-pia-QFHt9Zgs/gil-vicente-CS0fFFd8/odds/?mid=46srgSyi",
+    "fetched_at": "2026-08-21T16:01:17Z"
+  },
+  "SP1|2026-08-25|Valencia CF|Real Betis": {
+    "1x2": {
+      "home": 2.71,
+      "draw": 3.3,
+      "away": 2.71
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/betis-vJbTeCGP/valencia-CQeaytrD/odds/?mid=xAQCcf1s",
+    "fetched_at": "2026-08-21T16:01:26Z"
+  },
+  "SP1|2026-08-26|Real Madrid|Real Sociedad": {
+    "1x2": {
+      "home": 1.42,
+      "draw": 5.25,
+      "away": 7.7
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/real-madrid-W8mj7MDD/real-sociedad-jNvak2f3/odds/?mid=EXneuDoD",
+    "fetched_at": "2026-08-21T16:01:34Z"
+  },
+  "SP1|2026-08-22|Athletic Club|Sevilla FC": {
+    "1x2": {
+      "home": 1.75,
+      "draw": 3.75,
+      "away": 5.1
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/ath-bilbao-IP5zl0cJ/sevilla-h8oAv4Ts/odds/?mid=pzUKeYVg",
+    "fetched_at": "2026-08-21T16:02:08Z"
+  },
+  "SP1|2026-08-22|Valencia CF|Celta": {
+    "1x2": {
+      "home": 2.44,
+      "draw": 3.3,
+      "away": 3.15
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/celta-vigo-8pvUZFhf/valencia-CQeaytrD/odds/?mid=YXsZ9Oj4",
+    "fetched_at": "2026-08-21T16:02:16Z"
+  },
+  "SP1|2026-08-22|RCD Espanyol de Barcelona|Real Madrid": {
+    "1x2": {
+      "home": 7.7,
+      "draw": 4.85,
+      "away": 1.45
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/espanyol-QFfPdh1J/real-madrid-W8mj7MDD/odds/?mid=l8fgco7b",
+    "fetched_at": "2026-08-21T16:02:26Z"
+  },
+  "SP1|2026-08-23|Atlético de Madrid|Villarreal CF": {
+    "1x2": {
+      "home": 1.88,
+      "draw": 3.75,
+      "away": 4.2
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/atl-madrid-jaarqpLQ/villarreal-lUatW5jE/odds/?mid=ImSSgC06",
+    "fetched_at": "2026-08-21T16:02:36Z"
+  },
+  "SP1|2026-08-23|Elche CF|FC Barcelona": {
+    "1x2": {
+      "home": 8.6,
+      "draw": 5.75,
+      "away": 1.34
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/barcelona-SKbpVP5K/elche-4jl02tPF/odds/?mid=Gfdoa7xn",
+    "fetched_at": "2026-08-21T16:03:07Z"
+  },
+  "SP1|2026-08-24|CA Osasuna|Levante UD": {
+    "1x2": {
+      "home": 1.83,
+      "draw": 3.65,
+      "away": 4.65
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/levante-G8FL0ShI/osasuna-ETdxjU8a/odds/?mid=b1nulsUp",
+    "fetched_at": "2026-08-21T16:03:15Z"
+  },
+  "T1|2026-08-23|Trabzonspor|Istanbul Basaksehir": {
+    "1x2": {
+      "home": 2.15,
+      "draw": 3.55,
+      "away": 3.3
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/basaksehir-YqP5NmC1/trabzonspor-MmsYDc03/odds/?mid=vJfkRim4",
+    "fetched_at": "2026-08-21T16:03:36Z"
+  },
+  "T1|2026-08-23|Eyüpspor|Gaziantep": {
+    "1x2": {
+      "home": 3.0,
+      "draw": 3.2,
+      "away": 2.55
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/eyupspor-276zKCgt/gaziantep-ITkIKZ7q/odds/?mid=nqbcPVHG",
+    "fetched_at": "2026-08-21T16:03:43Z"
+  },
+  "T1|2026-08-23|Alanyaspor|Besiktas": {
+    "1x2": {
+      "home": 3.95,
+      "draw": 3.65,
+      "away": 1.92
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/alanyaspor-IcN8oPcJ/besiktas-IDmErJCR/odds/?mid=ht15N9nT",
+    "fetched_at": "2026-08-21T16:03:50Z"
+  },
+  "T1|2026-08-23|Göztepe|Gençlerbirligi": {
+    "1x2": {
+      "home": 1.65,
+      "draw": 3.9,
+      "away": 5.37
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/genclerbirligi-GOPqBIRK/goztepe-0MJlDkrA/odds/?mid=GIvNui2c",
+    "fetched_at": "2026-08-21T16:04:02Z"
   }
 }

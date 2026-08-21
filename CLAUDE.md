@@ -285,15 +285,61 @@ Scheduler), independent of Claude Code:
    **Playwright** (headless Chromium — `pip install playwright && playwright
    install chromium`) to open that team's Flashscore results page, take the
    last 3 completed matches, and pull each one's stats page
-   (`/summary/stats/`) for possession, passes, pass accuracy, shots, and
-   shots on target, via structured DOM selectors
+   (`/summary/stats/`) for **expected goals (xG)**, possession, passes, pass
+   accuracy, shots, and shots on target, via structured DOM selectors
    (`[data-testid="wcl-statistics-category"]` and sibling
    `[class*="homeValue"/"awayValue"]` elements — not text-scraping, which
-   broke on the site's multi-line stat rows during development).
+   broke on the site's multi-line stat rows during development). The xG
+   values are what feed `engine.js`'s recent-form blend (see "The model"
+   below) — this script is the only thing populating `xg_for`/`xg_against`.
 3. Writes into `data/team_news.json`'s `recent_form` **only** — never
    touches `absences`. Skips (logs) any team without a cached Flashscore ID
    rather than guessing one.
 4. Runs `python3 build.py` itself at the end.
+
+**`data/flashscore_team_ids.json` has full coverage (all 150 teams across
+all 8 leagues) as of 2026-08-21**, built by matching every `fixtures.csv`
+team name against each league's Flashscore standings page (one page load
+per league gets every team's slug+id at once — far cheaper than resolving
+teams one at a time). 134 of 150 matched automatically via `names_match()`
+(see next paragraph); the other 16 were common-abbreviation mismatches
+("Man City" vs `manchester-city`, "Spurs" vs `tottenham`, numbers-in-names
+like "Bayer 04 Leverkusen" vs `bayer-leverkusen`) fixed by hand. If a new
+team needs adding later (promotion, relegation, a fixtures.csv update),
+redo the same standings-page bulk-match rather than resolving one team at
+a time — it's the efficient path.
+
+**`names_match()`** (in `fetch_team_stats.py`, imported by `fetch_odds.py`)
+replaced an earlier exact-match comparison after it caused real bugs: Hull
+City appears as "Hull (Eng)" in Flashscore's own match rows, Çorum FK as
+"Corum", RC Deportivo as "Dep. A Coruna" — none of which equal the fuller
+names first guessed for `flashscore_name`. It's accent/case/punctuation-
+insensitive and treats either name being a substring of the other as a
+match, which resolves most short-vs-long-form mismatches on its own. It
+does **not** solve irregular abbreviations that share no substring (the
+Dep. A Coruna case) — those still need a manual `flashscore_name`
+correction the first time a team's fetch comes back empty. If you see a
+team logged as skipped with "no parseable recent results" despite having a
+cached ID, check its actual Flashscore row text before assuming the ID
+itself is wrong.
+
+### "Team Form" browser (`index_template.html`)
+
+A second top-level view (`Fixtures` / `Team Form` toggle, above the league
+tabs) for browsing every team's recent form one by one, not just the two
+teams in whatever match panel happens to be open — this is what the user
+asked for by name. It's a thin UI layer: `renderTeamFormGrid()` derives the
+full team list straight from `FIXTURES` (`allFixtureTeams()`), respects the
+same league-tab and search filters the fixture list already uses, and
+renders each team with the **exact same `teamCardHtml()`** the match
+panel's Team Context block already calls — no new data logic, no
+duplicated rendering. Teams with `recent_form` data sort first within their
+league group, then alphabetically; teams with none show the same "no fresh
+team news fetched yet" placeholder used everywhere else. The header button
+label (`Team Form (X/150)`) is a live coverage counter, so it's obvious at
+a glance how much of the league actually has fresh data versus not — don't
+remove that counter if you touch this view, it's the honest signal that
+coverage is partial and growing, not complete.
 
 **Why Flashscore, and why this was worth testing carefully first:** this
 project already tried Flashscore once for *live odds* and dropped it — see

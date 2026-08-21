@@ -116,17 +116,13 @@ def find_match_href(page, slug, fs_id, opponent_flashscore_name, target_date_iso
         }).filter(Boolean)
     """)
 
-    def norm(name):
-        import re
-        return re.sub(r'\s*\([^)]*\)\s*$', '', name).strip().lower()
+    from fetch_team_stats import names_match
 
-    opp_norm = norm(opponent_flashscore_name)
-    target_day_month = None
     d = datetime.date.fromisoformat(target_date_iso)
     target_day_month = f"{d.day:02d}.{d.month:02d}."
 
     for r in rows:
-        if opp_norm not in (norm(r['home']), norm(r['away'])):
+        if not (names_match(r['home'], opponent_flashscore_name) or names_match(r['away'], opponent_flashscore_name)):
             continue
         if r['date_text'] and r['date_text'].startswith(target_day_month):
             return r['href']

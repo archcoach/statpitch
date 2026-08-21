@@ -1,11 +1,752 @@
 {
-  "E0|Arsenal": { "slug": "arsenal", "id": "hA1Zm19f", "flashscore_name": "Arsenal" },
-  "E0|Coventry": { "slug": "coventry", "id": "GOvB22xg", "flashscore_name": "Coventry" },
-  "F1|Olympique de Marseille": { "slug": "marseille", "id": "SblU3Hee", "flashscore_name": "Marseille" },
-  "F1|RC Strasbourg Alsace": { "slug": "strasbourg", "id": "nP6UzIU1", "flashscore_name": "Strasbourg" },
-  "D1|SC Paderborn 07": { "slug": "paderborn", "id": "G2Op923t", "flashscore_name": "Paderborn" },
-  "E0|Hull": { "slug": "hull-city", "id": "S66R0t75", "flashscore_name": "Hull" },
-  "SP1|Málaga CF": { "slug": "malaga", "id": "25tIqYiJ", "flashscore_name": "Malaga" },
-  "SP1|RC Deportivo": { "slug": "dep-a-coruna", "id": "Q51ZzMS6", "flashscore_name": "Dep. A Coruna" },
-  "T1|Çorum": { "slug": "corum-fk", "id": "0vne21BK", "flashscore_name": "Corum" }
+  "D1|1. FC Köln": {
+    "flashscore_name": "1. FC Köln",
+    "id": "WG9pOTse",
+    "slug": "1-fc-koln"
+  },
+  "D1|1. FC Union Berlin": {
+    "flashscore_name": "1. FC Union Berlin",
+    "id": "pzHW4oaE",
+    "slug": "union-berlin"
+  },
+  "D1|1. FSV Mainz 05": {
+    "flashscore_name": "1. FSV Mainz 05",
+    "id": "EuakNmc1",
+    "slug": "mainz"
+  },
+  "D1|Bayer 04 Leverkusen": {
+    "flashscore_name": "Bayer Leverkusen",
+    "id": "4jcj2zMd",
+    "slug": "bayer-leverkusen"
+  },
+  "D1|Borussia Dortmund": {
+    "flashscore_name": "Borussia Dortmund",
+    "id": "nP1i5US1",
+    "slug": "dortmund"
+  },
+  "D1|Borussia Mönchengladbach": {
+    "flashscore_name": "M'gladbach",
+    "id": "88HSzjDr",
+    "slug": "b-monchengladbach"
+  },
+  "D1|Eintracht Frankfurt": {
+    "flashscore_name": "Eintracht Frankfurt",
+    "id": "8vndvXTk",
+    "slug": "eintracht-frankfurt"
+  },
+  "D1|FC Augsburg": {
+    "flashscore_name": "FC Augsburg",
+    "id": "fTVNku3I",
+    "slug": "augsburg"
+  },
+  "D1|FC Bayern München": {
+    "flashscore_name": "Bayern Munich",
+    "id": "nVp0wiqd",
+    "slug": "bayern-munich"
+  },
+  "D1|FC Schalke 04": {
+    "flashscore_name": "FC Schalke 04",
+    "id": "0Ija0Ej9",
+    "slug": "schalke"
+  },
+  "D1|Hamburger SV": {
+    "flashscore_name": "Hamburger SV",
+    "id": "v9k3aY5F",
+    "slug": "hamburger"
+  },
+  "D1|RB Leipzig": {
+    "flashscore_name": "RB Leipzig",
+    "id": "KbS1suSm",
+    "slug": "rb-leipzig"
+  },
+  "D1|SC Paderborn 07": {
+    "flashscore_name": "Paderborn",
+    "id": "G2Op923t",
+    "slug": "paderborn"
+  },
+  "D1|SV Elversberg": {
+    "flashscore_name": "SV Elversberg",
+    "id": "6in2Eknb",
+    "slug": "elversberg"
+  },
+  "D1|SV Werder Bremen": {
+    "flashscore_name": "SV Werder Bremen",
+    "id": "Ig1f1fy3",
+    "slug": "werder-bremen"
+  },
+  "D1|Sport-Club Freiburg": {
+    "flashscore_name": "Sport-Club Freiburg",
+    "id": "fiEQZ7C7",
+    "slug": "freiburg"
+  },
+  "D1|TSG Hoffenheim": {
+    "flashscore_name": "TSG Hoffenheim",
+    "id": "hQAtP9Sl",
+    "slug": "hoffenheim"
+  },
+  "D1|VfB Stuttgart": {
+    "flashscore_name": "VfB Stuttgart",
+    "id": "nJQmYp1B",
+    "slug": "vfb-stuttgart"
+  },
+  "E0|Arsenal": {
+    "flashscore_name": "Arsenal",
+    "id": "hA1Zm19f",
+    "slug": "arsenal"
+  },
+  "E0|Aston Villa": {
+    "flashscore_name": "Aston Villa",
+    "id": "W00wmLO0",
+    "slug": "aston-villa"
+  },
+  "E0|Bournemouth": {
+    "flashscore_name": "Bournemouth",
+    "id": "OtpNdwrc",
+    "slug": "bournemouth"
+  },
+  "E0|Brentford": {
+    "flashscore_name": "Brentford",
+    "id": "xYe7DwID",
+    "slug": "brentford"
+  },
+  "E0|Brighton": {
+    "flashscore_name": "Brighton",
+    "id": "2XrRecc3",
+    "slug": "brighton"
+  },
+  "E0|Chelsea": {
+    "flashscore_name": "Chelsea",
+    "id": "4fGZN2oK",
+    "slug": "chelsea"
+  },
+  "E0|Coventry": {
+    "flashscore_name": "Coventry",
+    "id": "GOvB22xg",
+    "slug": "coventry"
+  },
+  "E0|Crystal Palace": {
+    "flashscore_name": "Crystal Palace",
+    "id": "AovF1Mia",
+    "slug": "crystal-palace"
+  },
+  "E0|Everton": {
+    "flashscore_name": "Everton",
+    "id": "KluSTr9s",
+    "slug": "everton"
+  },
+  "E0|Fulham": {
+    "flashscore_name": "Fulham",
+    "id": "69ZiU2Om",
+    "slug": "fulham"
+  },
+  "E0|Hull": {
+    "flashscore_name": "Hull",
+    "id": "S66R0t75",
+    "slug": "hull-city"
+  },
+  "E0|Ipswich": {
+    "flashscore_name": "Ipswich",
+    "id": "thqhB2MB",
+    "slug": "ipswich"
+  },
+  "E0|Leeds": {
+    "flashscore_name": "Leeds",
+    "id": "tUxUbLR2",
+    "slug": "leeds"
+  },
+  "E0|Liverpool": {
+    "flashscore_name": "Liverpool",
+    "id": "lId4TMwf",
+    "slug": "liverpool"
+  },
+  "E0|Man City": {
+    "flashscore_name": "Manchester City",
+    "id": "Wtn9Stg0",
+    "slug": "manchester-city"
+  },
+  "E0|Man Utd": {
+    "flashscore_name": "Manchester Utd",
+    "id": "ppjDR086",
+    "slug": "manchester-united"
+  },
+  "E0|Newcastle": {
+    "flashscore_name": "Newcastle",
+    "id": "p6ahwuwJ",
+    "slug": "newcastle-utd"
+  },
+  "E0|Nott'm Forest": {
+    "flashscore_name": "Nottingham",
+    "id": "UsushcZr",
+    "slug": "nottingham"
+  },
+  "E0|Spurs": {
+    "flashscore_name": "Tottenham",
+    "id": "UDg08Ohm",
+    "slug": "tottenham"
+  },
+  "E0|Sunderland": {
+    "flashscore_name": "Sunderland",
+    "id": "WSzc94ws",
+    "slug": "sunderland"
+  },
+  "F1|AJ Auxerre": {
+    "flashscore_name": "AJ Auxerre",
+    "id": "MTLr36WA",
+    "slug": "auxerre"
+  },
+  "F1|AS Monaco": {
+    "flashscore_name": "AS Monaco",
+    "id": "2PIvr8o4",
+    "slug": "monaco"
+  },
+  "F1|Angers SCO": {
+    "flashscore_name": "Angers SCO",
+    "id": "SAlF91iL",
+    "slug": "angers"
+  },
+  "F1|Estac Troyes": {
+    "flashscore_name": "Estac Troyes",
+    "id": "fsfAHubD",
+    "slug": "troyes"
+  },
+  "F1|FC Lorient": {
+    "flashscore_name": "FC Lorient",
+    "id": "jgNAYRGi",
+    "slug": "lorient"
+  },
+  "F1|Havre Athletic Club": {
+    "flashscore_name": "Le Havre",
+    "id": "CIEe04GT",
+    "slug": "le-havre"
+  },
+  "F1|LOSC Lille": {
+    "flashscore_name": "LOSC Lille",
+    "id": "pfDZL71o",
+    "slug": "lille"
+  },
+  "F1|Le Mans FC": {
+    "flashscore_name": "Le Mans FC",
+    "id": "ER0NeOOp",
+    "slug": "le-mans"
+  },
+  "F1|OGC Nice": {
+    "flashscore_name": "OGC Nice",
+    "id": "YagoQJpq",
+    "slug": "nice"
+  },
+  "F1|Olympique Lyonnais": {
+    "flashscore_name": "Olympique Lyonnais",
+    "id": "2akflumR",
+    "slug": "lyon"
+  },
+  "F1|Olympique de Marseille": {
+    "flashscore_name": "Marseille",
+    "id": "SblU3Hee",
+    "slug": "marseille"
+  },
+  "F1|Paris FC": {
+    "flashscore_name": "Paris FC",
+    "id": "0OEHEprs",
+    "slug": "paris-fc"
+  },
+  "F1|Paris Saint-Germain": {
+    "flashscore_name": "PSG",
+    "id": "CjhkPw0k",
+    "slug": "psg"
+  },
+  "F1|RC Lens": {
+    "flashscore_name": "RC Lens",
+    "id": "IBmris38",
+    "slug": "lens"
+  },
+  "F1|RC Strasbourg Alsace": {
+    "flashscore_name": "Strasbourg",
+    "id": "nP6UzIU1",
+    "slug": "strasbourg"
+  },
+  "F1|Stade Brestois 29": {
+    "flashscore_name": "Stade Brestois 29",
+    "id": "Cr4VGaUl",
+    "slug": "brest"
+  },
+  "F1|Stade Rennais FC": {
+    "flashscore_name": "Rennes",
+    "id": "d2nnj1IE",
+    "slug": "rennes"
+  },
+  "F1|Toulouse FC": {
+    "flashscore_name": "Toulouse FC",
+    "id": "MLmY2yB1",
+    "slug": "toulouse"
+  },
+  "I1|Atalanta": {
+    "flashscore_name": "Atalanta",
+    "id": "8C9JjMXu",
+    "slug": "atalanta"
+  },
+  "I1|Bologna": {
+    "flashscore_name": "Bologna",
+    "id": "0M9xNN8N",
+    "slug": "bologna"
+  },
+  "I1|Cagliari": {
+    "flashscore_name": "Cagliari",
+    "id": "SCGVmKHb",
+    "slug": "cagliari"
+  },
+  "I1|Como": {
+    "flashscore_name": "Como",
+    "id": "ttyLthOA",
+    "slug": "como"
+  },
+  "I1|Fiorentina": {
+    "flashscore_name": "Fiorentina",
+    "id": "Q3A3IbXH",
+    "slug": "fiorentina"
+  },
+  "I1|Frosinone": {
+    "flashscore_name": "Frosinone",
+    "id": "pfo9H1Wp",
+    "slug": "frosinone"
+  },
+  "I1|Genoa": {
+    "flashscore_name": "Genoa",
+    "id": "d0PJxeie",
+    "slug": "genoa"
+  },
+  "I1|Internazionale": {
+    "flashscore_name": "Internazionale",
+    "id": "Iw7eKK25",
+    "slug": "inter"
+  },
+  "I1|Juventus": {
+    "flashscore_name": "Juventus",
+    "id": "C06aJvIB",
+    "slug": "juventus"
+  },
+  "I1|Lazio": {
+    "flashscore_name": "Lazio",
+    "id": "URcSl02h",
+    "slug": "lazio"
+  },
+  "I1|Lecce": {
+    "flashscore_name": "Lecce",
+    "id": "G8lYsMgU",
+    "slug": "lecce"
+  },
+  "I1|Milan": {
+    "flashscore_name": "Milan",
+    "id": "8Sa8HInO",
+    "slug": "ac-milan"
+  },
+  "I1|Monza": {
+    "flashscore_name": "Monza",
+    "id": "4YSMlwj7",
+    "slug": "monza"
+  },
+  "I1|Napoli": {
+    "flashscore_name": "Napoli",
+    "id": "69Dxbc61",
+    "slug": "napoli"
+  },
+  "I1|Parma": {
+    "flashscore_name": "Parma",
+    "id": "6DxlaxHN",
+    "slug": "parma"
+  },
+  "I1|Roma": {
+    "flashscore_name": "Roma",
+    "id": "zVqqL0ma",
+    "slug": "as-roma"
+  },
+  "I1|Sassuolo": {
+    "flashscore_name": "Sassuolo",
+    "id": "QDdvI0zl",
+    "slug": "sassuolo"
+  },
+  "I1|Torino": {
+    "flashscore_name": "Torino",
+    "id": "MZFZnvX4",
+    "slug": "torino"
+  },
+  "I1|Udinese": {
+    "flashscore_name": "Udinese",
+    "id": "rXw8YKDE",
+    "slug": "udinese"
+  },
+  "I1|Venezia": {
+    "flashscore_name": "Venezia",
+    "id": "MkPmVv50",
+    "slug": "venezia"
+  },
+  "N1|ADO Den Haag": {
+    "flashscore_name": "ADO Den Haag",
+    "id": "lAgLCkT3",
+    "slug": "den-haag"
+  },
+  "N1|AZ": {
+    "flashscore_name": "AZ",
+    "id": "2RxOow1i",
+    "slug": "az-alkmaar"
+  },
+  "N1|Ajax": {
+    "flashscore_name": "Ajax",
+    "id": "8UOvIwnb",
+    "slug": "ajax"
+  },
+  "N1|Excelsior Rotterdam": {
+    "flashscore_name": "Excelsior Rotterdam",
+    "id": "nNlLsRUr",
+    "slug": "excelsior"
+  },
+  "N1|FC Groningen": {
+    "flashscore_name": "FC Groningen",
+    "id": "MBUGcjb9",
+    "slug": "groningen"
+  },
+  "N1|FC Twente": {
+    "flashscore_name": "FC Twente",
+    "id": "dhOKTHGA",
+    "slug": "twente"
+  },
+  "N1|FC Utrecht": {
+    "flashscore_name": "FC Utrecht",
+    "id": "p6QXMgOj",
+    "slug": "utrecht"
+  },
+  "N1|Feyenoord": {
+    "flashscore_name": "Feyenoord",
+    "id": "8zjySeoN",
+    "slug": "feyenoord"
+  },
+  "N1|Fortuna Sittard": {
+    "flashscore_name": "Fortuna Sittard",
+    "id": "YH8HX5iP",
+    "slug": "sittard"
+  },
+  "N1|Go Ahead Eagles": {
+    "flashscore_name": "G.A. Eagles",
+    "id": "hG8POBb8",
+    "slug": "g-a-eagles"
+  },
+  "N1|N.E.C. Nijmegen": {
+    "flashscore_name": "N.E.C. Nijmegen",
+    "id": "nRluRF0T",
+    "slug": "nijmegen"
+  },
+  "N1|PEC Zwolle": {
+    "flashscore_name": "PEC Zwolle",
+    "id": "r1L5w2EB",
+    "slug": "zwolle"
+  },
+  "N1|PSV": {
+    "flashscore_name": "PSV",
+    "id": "M9UEHJWi",
+    "slug": "psv"
+  },
+  "N1|SC Cambuur": {
+    "flashscore_name": "SC Cambuur",
+    "id": "QRyYgO7J",
+    "slug": "cambuur"
+  },
+  "N1|Sparta Rotterdam": {
+    "flashscore_name": "Sparta Rotterdam",
+    "id": "KK4FaFV3",
+    "slug": "sparta-rotterdam"
+  },
+  "N1|Telstar": {
+    "flashscore_name": "Telstar",
+    "id": "Aw0qTPat",
+    "slug": "telstar"
+  },
+  "N1|Willem II": {
+    "flashscore_name": "Willem II",
+    "id": "6u3qag0G",
+    "slug": "willem-ii"
+  },
+  "N1|sc Heerenveen": {
+    "flashscore_name": "sc Heerenveen",
+    "id": "EDjXSyWG",
+    "slug": "heerenveen"
+  },
+  "P1|Académico": {
+    "flashscore_name": "Académico",
+    "id": "GrRgeTHo",
+    "slug": "academico-viseu"
+  },
+  "P1|CD Nacional": {
+    "flashscore_name": "CD Nacional",
+    "id": "4ETLrR7n",
+    "slug": "nacional"
+  },
+  "P1|Casa Pia AC": {
+    "flashscore_name": "Casa Pia AC",
+    "id": "QFHt9Zgs",
+    "slug": "casa-pia"
+  },
+  "P1|Estoril Praia": {
+    "flashscore_name": "Estoril Praia",
+    "id": "htoKuYZl",
+    "slug": "estoril"
+  },
+  "P1|Estrela Amadora": {
+    "flashscore_name": "Estrela",
+    "id": "hrYABE5k",
+    "slug": "estrela-da-amadora"
+  },
+  "P1|FC Alverca": {
+    "flashscore_name": "FC Alverca",
+    "id": "roaMksQg",
+    "slug": "alverca"
+  },
+  "P1|FC Arouca": {
+    "flashscore_name": "FC Arouca",
+    "id": "fJqfm7CG",
+    "slug": "arouca"
+  },
+  "P1|FC Famalicão": {
+    "flashscore_name": "FC Famalicão",
+    "id": "ABBgitC3",
+    "slug": "famalicao"
+  },
+  "P1|FC Porto": {
+    "flashscore_name": "FC Porto",
+    "id": "S2NmScGp",
+    "slug": "fc-porto"
+  },
+  "P1|Gil Vicente FC": {
+    "flashscore_name": "Gil Vicente FC",
+    "id": "CS0fFFd8",
+    "slug": "gil-vicente"
+  },
+  "P1|Marítimo M.": {
+    "flashscore_name": "Marítimo M.",
+    "id": "noguvetP",
+    "slug": "maritimo"
+  },
+  "P1|Moreirense FC": {
+    "flashscore_name": "Moreirense FC",
+    "id": "8d9NGt9H",
+    "slug": "moreirense"
+  },
+  "P1|Rio Ave FC": {
+    "flashscore_name": "Rio Ave FC",
+    "id": "jPzXLi4l",
+    "slug": "rio-ave"
+  },
+  "P1|SC Braga": {
+    "flashscore_name": "SC Braga",
+    "id": "dpUer7ht",
+    "slug": "braga"
+  },
+  "P1|SL Benfica": {
+    "flashscore_name": "SL Benfica",
+    "id": "zBkyuyRI",
+    "slug": "benfica"
+  },
+  "P1|Santa Clara": {
+    "flashscore_name": "Santa Clara",
+    "id": "YmQyLBJf",
+    "slug": "santa-clara"
+  },
+  "P1|Sporting CP": {
+    "flashscore_name": "Sporting CP",
+    "id": "tljXuHBC",
+    "slug": "sporting-cp"
+  },
+  "P1|Vitória SC": {
+    "flashscore_name": "Vitoria Guimaraes",
+    "id": "pQYVZyD2",
+    "slug": "vitoria-guimaraes"
+  },
+  "SP1|Athletic Club": {
+    "flashscore_name": "Ath Bilbao",
+    "id": "IP5zl0cJ",
+    "slug": "ath-bilbao"
+  },
+  "SP1|Atlético de Madrid": {
+    "flashscore_name": "Atl. Madrid",
+    "id": "jaarqpLQ",
+    "slug": "atl-madrid"
+  },
+  "SP1|CA Osasuna": {
+    "flashscore_name": "CA Osasuna",
+    "id": "ETdxjU8a",
+    "slug": "osasuna"
+  },
+  "SP1|Celta": {
+    "flashscore_name": "Celta",
+    "id": "8pvUZFhf",
+    "slug": "celta-vigo"
+  },
+  "SP1|Deportivo Alavés": {
+    "flashscore_name": "Deportivo Alavés",
+    "id": "hxt57t2q",
+    "slug": "alaves"
+  },
+  "SP1|Elche CF": {
+    "flashscore_name": "Elche CF",
+    "id": "4jl02tPF",
+    "slug": "elche"
+  },
+  "SP1|FC Barcelona": {
+    "flashscore_name": "FC Barcelona",
+    "id": "SKbpVP5K",
+    "slug": "barcelona"
+  },
+  "SP1|Getafe CF": {
+    "flashscore_name": "Getafe CF",
+    "id": "dboeiWOt",
+    "slug": "getafe"
+  },
+  "SP1|Levante UD": {
+    "flashscore_name": "Levante UD",
+    "id": "G8FL0ShI",
+    "slug": "levante"
+  },
+  "SP1|Málaga CF": {
+    "flashscore_name": "Malaga",
+    "id": "25tIqYiJ",
+    "slug": "malaga"
+  },
+  "SP1|R. Racing Club": {
+    "flashscore_name": "Racing Santander",
+    "id": "nVpEwOrl",
+    "slug": "racing-santander"
+  },
+  "SP1|RC Deportivo": {
+    "flashscore_name": "Dep. A Coruna",
+    "id": "Q51ZzMS6",
+    "slug": "dep-a-coruna"
+  },
+  "SP1|RCD Espanyol de Barcelona": {
+    "flashscore_name": "RCD Espanyol de Barcelona",
+    "id": "QFfPdh1J",
+    "slug": "espanyol"
+  },
+  "SP1|Rayo Vallecano": {
+    "flashscore_name": "Rayo Vallecano",
+    "id": "8bcjFy6O",
+    "slug": "rayo-vallecano"
+  },
+  "SP1|Real Betis": {
+    "flashscore_name": "Real Betis",
+    "id": "vJbTeCGP",
+    "slug": "betis"
+  },
+  "SP1|Real Madrid": {
+    "flashscore_name": "Real Madrid",
+    "id": "W8mj7MDD",
+    "slug": "real-madrid"
+  },
+  "SP1|Real Sociedad": {
+    "flashscore_name": "Real Sociedad",
+    "id": "jNvak2f3",
+    "slug": "real-sociedad"
+  },
+  "SP1|Sevilla FC": {
+    "flashscore_name": "Sevilla FC",
+    "id": "h8oAv4Ts",
+    "slug": "sevilla"
+  },
+  "SP1|Valencia CF": {
+    "flashscore_name": "Valencia CF",
+    "id": "CQeaytrD",
+    "slug": "valencia"
+  },
+  "SP1|Villarreal CF": {
+    "flashscore_name": "Villarreal CF",
+    "id": "lUatW5jE",
+    "slug": "villarreal"
+  },
+  "T1|Alanyaspor": {
+    "flashscore_name": "Alanyaspor",
+    "id": "IcN8oPcJ",
+    "slug": "alanyaspor"
+  },
+  "T1|Amedspor": {
+    "flashscore_name": "Amedspor",
+    "id": "EHdgkFvm",
+    "slug": "amedspor"
+  },
+  "T1|Besiktas": {
+    "flashscore_name": "Besiktas",
+    "id": "IDmErJCR",
+    "slug": "besiktas"
+  },
+  "T1|Erzurumspor": {
+    "flashscore_name": "Erzurumspor",
+    "id": "xQZ3CpVE",
+    "slug": "erzurumspor-fk"
+  },
+  "T1|Eyüpspor": {
+    "flashscore_name": "Eyüpspor",
+    "id": "276zKCgt",
+    "slug": "eyupspor"
+  },
+  "T1|Fenerbahçe": {
+    "flashscore_name": "Fenerbahçe",
+    "id": "MsbmracL",
+    "slug": "fenerbahce"
+  },
+  "T1|Galatasaray": {
+    "flashscore_name": "Galatasaray",
+    "id": "riaqqurF",
+    "slug": "galatasaray"
+  },
+  "T1|Gaziantep": {
+    "flashscore_name": "Gaziantep",
+    "id": "ITkIKZ7q",
+    "slug": "gaziantep"
+  },
+  "T1|Gençlerbirligi": {
+    "flashscore_name": "Gençlerbirligi",
+    "id": "GOPqBIRK",
+    "slug": "genclerbirligi"
+  },
+  "T1|Göztepe": {
+    "flashscore_name": "Göztepe",
+    "id": "0MJlDkrA",
+    "slug": "goztepe"
+  },
+  "T1|Istanbul Basaksehir": {
+    "flashscore_name": "Istanbul Basaksehir",
+    "id": "YqP5NmC1",
+    "slug": "basaksehir"
+  },
+  "T1|Kasimpasa": {
+    "flashscore_name": "Kasimpasa",
+    "id": "dOlaIG4l",
+    "slug": "kasimpasa"
+  },
+  "T1|Kocaelispor": {
+    "flashscore_name": "Kocaelispor",
+    "id": "hfvQIzKf",
+    "slug": "kocaelispor"
+  },
+  "T1|Konyaspor": {
+    "flashscore_name": "Konyaspor",
+    "id": "YazuCbCE",
+    "slug": "konyaspor"
+  },
+  "T1|Samsunspor": {
+    "flashscore_name": "Samsunspor",
+    "id": "pSc6z7bf",
+    "slug": "samsunspor"
+  },
+  "T1|Trabzonspor": {
+    "flashscore_name": "Trabzonspor",
+    "id": "MmsYDc03",
+    "slug": "trabzonspor"
+  },
+  "T1|Çaykur Rizespor": {
+    "flashscore_name": "Çaykur Rizespor",
+    "id": "EFRnJdkr",
+    "slug": "rizespor"
+  },
+  "T1|Çorum": {
+    "flashscore_name": "Corum",
+    "id": "0vne21BK",
+    "slug": "corum-fk"
+  }
 }

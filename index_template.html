@@ -109,9 +109,12 @@
     font-size:10px;text-transform:uppercase;letter-spacing:0.05em;padding:5px 8px;white-space:nowrap;}
 
   .team-context{display:flex;gap:10px;margin-bottom:4px;flex-wrap:wrap;}
+  .team-form-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));gap:8px;}
+  .team-form-grid .team-card{flex:none;}
   .team-card{flex:1 1 220px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 12px;min-width:0;}
   .team-card .tc-name{font-size:12.5px;font-weight:600;margin-bottom:7px;}
-  .tc-form{display:flex;gap:4px;margin-bottom:7px;}
+  .tc-form{display:flex;gap:4px;margin-bottom:7px;align-items:center;}
+  .tc-form-pts{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-dim);margin-right:4px;}
   .tc-chip{width:20px;height:20px;border-radius:4px;display:flex;align-items:center;justify-content:center;
     font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;flex:0 0 auto;}
   .tc-chip.W{background:rgba(107,203,119,.18);color:var(--good);}
@@ -175,6 +178,7 @@
     <div class="offline-badge"><span class="dot2"></span>runs fully offline — nothing leaves this page</div>
   </header>
 
+  <div class="date-scope" id="viewScope"></div>
   <div class="date-scope" id="dateScope"></div>
   <div class="tabs" id="tabs"></div>
   <input class="search" id="search" type="text" placeholder="Filter by team…" />
@@ -208,6 +212,7 @@ let LEAGUES, FIXTURES, ENGINE;
 
 let activeLeague = 'ALL';
 let dateScope = 'today-tomorrow';
+let view = 'fixtures';
 let searchTerm = '';
 let seen = JSON.parse(localStorage.getItem('statpitch-seen') || '{}');
 let expandedKey = null;
@@ -236,6 +241,32 @@ function relativeDayLabel(iso){
   return null;
 }
 
+function renderViewScope(){
+  const el = document.getElementById('viewScope');
+  el.innerHTML = '';
+  const fixturesBtn = document.createElement('div');
+  fixturesBtn.className = 'scope-btn' + (view==='fixtures' ? ' active' : '');
+  fixturesBtn.tabIndex = 0;
+  fixturesBtn.textContent = 'Fixtures';
+  fixturesBtn.onclick = () => { view = 'fixtures'; renderViewScope(); renderDateScope(); renderTabs(); renderList(); };
+  fixturesBtn.onkeydown = (e) => { if(e.key==='Enter'||e.key===' ') fixturesBtn.onclick(); };
+  const formBtn = document.createElement('div');
+  formBtn.className = 'scope-btn' + (view==='form' ? ' active' : '');
+  formBtn.tabIndex = 0;
+  formBtn.textContent = `Team Form (${Object.keys(TEAM_NEWS).length}/${allFixtureTeams().length})`;
+  formBtn.onclick = () => { view = 'form'; renderViewScope(); renderDateScope(); renderTabs(); renderList(); };
+  formBtn.onkeydown = (e) => { if(e.key==='Enter'||e.key===' ') formBtn.onclick(); };
+  el.appendChild(fixturesBtn);
+  el.appendChild(formBtn);
+  document.getElementById('dateScope').style.display = view==='fixtures' ? 'flex' : 'none';
+}
+
+function allFixtureTeams(){
+  const set = new Set();
+  for(const f of FIXTURES) { set.add(f[0]+'|'+f[4]); set.add(f[0]+'|'+f[5]); }
+  return Array.from(set);
+}
+
 function renderDateScope(){
   const el = document.getElementById('dateScope');
   const today = todayISO(), tomorrow = tomorrowISO();
@@ -258,6 +289,16 @@ function makeScopeBtn(scope, label){
 function renderTabs(){
   const tabs = document.getElementById('tabs');
   tabs.innerHTML = '';
+  if(view === 'form'){
+    const teams = allFixtureTeams();
+    tabs.appendChild(makeTab('ALL', 'All leagues', teams.length, '#8A97A0'));
+    for(const code of Object.keys(LEAGUES)){
+      const lg = LEAGUES[code];
+      const count = teams.filter(t=>t.startsWith(code+'|')).length;
+      tabs.appendChild(makeTab(code, lg.name, count, lg.color));
+    }
+    return;
+  }
   let scoped = FIXTURES;
   if(dateScope === 'today-tomorrow'){
     const today = todayISO(), tomorrow = tomorrowISO();
@@ -313,6 +354,11 @@ function renderList(){
   const statsLine = document.getElementById('statsLine');
   list.innerHTML = '';
 
+  if(view === 'form'){
+    renderTeamFormGrid(list, statsLine);
+    return;
+  }
+
   let filtered = FIXTURES.filter(f => activeLeague==='ALL' || f[0]===activeLeague);
   if(dateScope === 'today-tomorrow'){
     const today = todayISO(), tomorrow = tomorrowISO();
@@ -362,6 +408,49 @@ function renderList(){
     more.className = 'empty';
     more.textContent = `Showing first ${MAX_GROUPS} matchdays — narrow with search or a league tab to see further ahead.`;
     list.appendChild(more);
+  }
+}
+
+// "Team Form" browser — every team in the fixture list, one by one, same
+// teamCardHtml() rendering the match panel's Team Context block already
+// uses (reused as-is, not reimplemented). This is a browsing view only:
+// it reads from the same TEAM_NEWS data the recent-form blend in engine.js
+// already feeds on, it doesn't compute anything new. Coverage is whatever
+// data/team_news.json actually has — teams with no fetched data show the
+// same honest "no fresh team news fetched yet" placeholder as everywhere
+// else, never fabricated.
+function renderTeamFormGrid(list, statsLine){
+  let teams = allFixtureTeams().map(t => { const i = t.indexOf('|'); return [t.slice(0,i), t.slice(i+1)]; });
+  if(activeLeague !== 'ALL') teams = teams.filter(([div]) => div === activeLeague);
+  if(searchTerm.trim()){
+    const s = searchTerm.trim().toLowerCase();
+    teams = teams.filter(([,name]) => name.toLowerCase().includes(s));
+  }
+  const withData = teams.filter(([div,name]) => TEAM_NEWS[div+'|'+name]);
+  statsLine.textContent = `${teams.length} team${teams.length===1?'':'s'} shown · ${withData.length} with fresh form data`;
+
+  if(teams.length === 0){
+    list.innerHTML = `<div class="empty">No teams match. Try a different search or league.</div>`;
+    return;
+  }
+
+  const byLeague = {};
+  for(const [div, name] of teams) (byLeague[div] ||= []).push(name);
+
+  const order = activeLeague !== 'ALL' ? [activeLeague] : Object.keys(LEAGUES).filter(d => byLeague[d]);
+  for(const div of order){
+    const names = (byLeague[div]||[]).slice().sort((a,b) => {
+      const aHas = TEAM_NEWS[div+'|'+a] ? 0 : 1, bHas = TEAM_NEWS[div+'|'+b] ? 0 : 1;
+      return aHas - bHas || a.localeCompare(b); // teams with data first, then alphabetical
+    });
+    const groupEl = document.createElement('div');
+    groupEl.className = 'day-group';
+    groupEl.innerHTML = `<div class="day-label">${LEAGUES[div].name}</div>`;
+    const grid = document.createElement('div');
+    grid.className = 'team-form-grid';
+    for(const name of names) grid.insertAdjacentHTML('beforeend', teamCardHtml(div, name));
+    groupEl.appendChild(grid);
+    list.appendChild(groupEl);
   }
 }
 
@@ -443,7 +532,10 @@ function teamCardHtml(div, teamName){
     return `<div class="team-card"><div class="tc-name">${teamName}</div><div class="tc-empty">no fresh team news fetched for ${teamName} yet</div></div>`;
   }
   const form = entry.recent_form || [];
-  const formHtml = form.length ? `<div class="tc-form">${form.map(formChip).join('')}</div>` : '';
+  const formPoints = form.reduce((s,r) => s + (r.result==='W'?3:(r.result==='D'?1:0)), 0);
+  const formHtml = form.length
+    ? `<div class="tc-form"><span class="tc-form-pts">${formPoints}/${form.length*3} pts</span>${form.map(formChip).join('')}</div>`
+    : '';
   const xgRows = form.filter(r => r.xg_for != null && r.xg_against != null);
   const xgHtml = xgRows.length
     ? `<div class="tc-xg">xG last ${xgRows.length}: ${(xgRows.reduce((s,r)=>s+r.xg_for,0)/xgRows.length).toFixed(2)} for · ${(xgRows.reduce((s,r)=>s+r.xg_against,0)/xgRows.length).toFixed(2)} against</div>`
@@ -705,6 +797,7 @@ function init(){
   document.getElementById('statline').textContent = `${FIXTURES.length} fixtures · ${Object.keys(LEAGUES).length} leagues · 2026/27 season`;
   document.getElementById('buildTime').textContent = `snapshot built ${timeAgo(BUILD_TIME)}`;
   renderTrackRecord();
+  renderViewScope();
   renderDateScope();
   renderTabs();
   renderList();
