@@ -1,0 +1,11 @@
+{
+  "E0|Arsenal": { "slug": "arsenal", "id": "hA1Zm19f", "flashscore_name": "Arsenal" },
+  "E0|Coventry": { "slug": "coventry", "id": "GOvB22xg", "flashscore_name": "Coventry" },
+  "F1|Olympique de Marseille": { "slug": "marseille", "id": "SblU3Hee", "flashscore_name": "Marseille" },
+  "F1|RC Strasbourg Alsace": { "slug": "strasbourg", "id": "nP6UzIU1", "flashscore_name": "Strasbourg" },
+  "D1|SC Paderborn 07": { "slug": "paderborn", "id": "G2Op923t", "flashscore_name": "Paderborn" },
+  "E0|Hull": { "slug": "hull-city", "id": "S66R0t75", "flashscore_name": "Hull" },
+  "SP1|Málaga CF": { "slug": "malaga", "id": "25tIqYiJ", "flashscore_name": "Malaga" },
+  "SP1|RC Deportivo": { "slug": "dep-a-coruna", "id": "Q51ZzMS6", "flashscore_name": "Dep. A Coruna" },
+  "T1|Çorum": { "slug": "corum-fk", "id": "0vne21BK", "flashscore_name": "Corum" }
+}

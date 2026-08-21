@@ -32,6 +32,8 @@ engine.js                — the analytics engine (edit this to change the model
 engine_reference.py      — Python version of the same engine, for cross-checking
 index_template.html      — UI template, filled in by build.py
 build.py                 — regenerates statpitch.html from the pieces above
+fetch_team_stats.py      — scheduled scraper: pulls recent match stats from Flashscore (see CLAUDE.md)
+fetch_odds.py            — scheduled scraper: pulls best-of-N-bookmakers 1X2 odds from Flashscore (see CLAUDE.md)
 data/
   master.csv              — full historical dataset, 2020/21–2026/27
   fixtures.csv            — 2026/27 fixture list, 8 leagues
@@ -41,7 +43,8 @@ data/
   live_odds.json          — live-odds snapshot (ask Claude to fetch per match)
   results.json            — final match stats, for grading past predictions
   predictions_log.json    — frozen prediction snapshots, logged before results
-  team_news.json          — per-team recent form/xG + injury news (ask Claude to fetch)
+  team_news.json          — per-team recent form/xG/match stats (auto) + injury news (ask Claude to fetch)
+  flashscore_team_ids.json — hand-maintained team-name -> Flashscore ID cache for fetch_team_stats.py
 CLAUDE.md                — context file for Claude Code
 DATA_README.md           — full data schema and known gaps
 STATPITCH_INSTRUCTIONS.md — the analytical pipeline spec this was built from

@@ -448,6 +448,18 @@ function teamCardHtml(div, teamName){
   const xgHtml = xgRows.length
     ? `<div class="tc-xg">xG last ${xgRows.length}: ${(xgRows.reduce((s,r)=>s+r.xg_for,0)/xgRows.length).toFixed(2)} for · ${(xgRows.reduce((s,r)=>s+r.xg_against,0)/xgRows.length).toFixed(2)} against</div>`
     : '';
+  const avgOf = (field) => {
+    const vals = form.filter(r => r[field] != null).map(r => r[field]);
+    return vals.length ? vals.reduce((s,v)=>s+v,0)/vals.length : null;
+  };
+  const avgPoss = avgOf('possession'), avgPassAcc = avgOf('pass_accuracy'),
+        avgShots = avgOf('shots'), avgSot = avgOf('shots_on_target');
+  const statParts = [];
+  if(avgPoss != null) statParts.push(`${avgPoss.toFixed(0)}% poss`);
+  if(avgPassAcc != null) statParts.push(`${avgPassAcc.toFixed(0)}% pass acc`);
+  if(avgShots != null) statParts.push(`${avgShots.toFixed(1)} shots/gm`);
+  if(avgSot != null) statParts.push(`${avgSot.toFixed(1)} on target`);
+  const statLineHtml = statParts.length ? `<div class="tc-xg">last ${form.length}: ${statParts.join(' · ')}</div>` : '';
   const absences = entry.absences || [];
   const absencesHtml = absences.length
     ? `<ul class="tc-absences">${absences.map(a => `<li><span class="status">${a.status}</span> ${a.player}${a.note?` — ${a.note}`:''}${a.source_url?` <a href="${a.source_url}" target="_blank" rel="noopener">${a.source||'source'}</a>`:''}</li>`).join('')}</ul>`
@@ -459,6 +471,7 @@ function teamCardHtml(div, teamName){
       <div class="tc-name">${teamName}</div>
       ${formHtml}
       ${xgHtml}
+      ${statLineHtml}
       ${absencesHtml}
       <div class="tc-source${stale?' stale':''}">${entry.form_source||'source'} · fetched ${timeAgo(entry.fetched_at)}${entry.form_source_url?` · <a href="${entry.form_source_url}" target="_blank" rel="noopener">link</a>`:''}</div>
     </div>
@@ -483,6 +496,43 @@ function h2hHtml(h2h){
     return `<li><span class="h2h-season">${m.season}</span>${scoreLine}${extra}</li>`;
   }).join('');
   return `<div class="h2h"><div class="h2h-title">Head-to-Head (last ${h2h.length})</div><ul class="h2h-list">${rows}</ul></div>`;
+}
+
+// Renders fetched market odds with no model comparison — used when the
+// probability model can't run at all (e.g. a newly-promoted team with zero
+// history), so there's nothing to compute an edge against. Never invents a
+// market: only shows whatever's actually present in the live-odds snapshot.
+function rawOddsHtml(live){
+  if(!live) return '';
+  const rows = [];
+  if(live['1x2']){
+    if(live['1x2'].home!=null) rows.push(['Home Win (1X2)','Home',live['1x2'].home]);
+    if(live['1x2'].draw!=null) rows.push(['Draw (1X2)','Draw',live['1x2'].draw]);
+    if(live['1x2'].away!=null) rows.push(['Away Win (1X2)','Away',live['1x2'].away]);
+  }
+  for(const [field, label] of [['goals_ou','Total Goals'],['corners_ou','Corners']]){
+    if(!live[field]) continue;
+    for(const line of Object.keys(live[field])){
+      const entry = live[field][line];
+      if(entry.over!=null) rows.push([`${label} O/U ${line}`,`Over ${line}`,entry.over]);
+      if(entry.under!=null) rows.push([`${label} O/U ${line}`,`Under ${line}`,entry.under]);
+    }
+  }
+  if(live.btts){
+    if(live.btts.yes!=null) rows.push(['Both Teams to Score','Yes',live.btts.yes]);
+    if(live.btts.no!=null) rows.push(['Both Teams to Score','No',live.btts.no]);
+  }
+  if(!rows.length) return '';
+  const rowsHtml = rows.map(([market,selection,odds]) => `<tr><td class="market">${market}</td><td class="sel">${selection}</td><td class="prob odds">${odds.toFixed(2)}</td></tr>`).join('');
+  return `
+    <div class="odds-status"><span>market odds via ${live.source||'source'} · fetched ${timeAgo(live.fetched_at)}${live.source_url ? ` · <a href="${live.source_url}" target="_blank" rel="noopener">source</a>` : ''} — raw market prices only, no model comparison possible without historical data for this match</span></div>
+    <div class="table-scroll">
+      <table class="markets">
+        <thead><tr><th>Market</th><th>Selection</th><th style="text-align:right">Market Odds</th></tr></thead>
+        <tbody>${rowsHtml}</tbody>
+      </table>
+    </div>
+  `;
 }
 
 const MARKET_GROUP_ORDER = ['1X2 & Double Chance', 'Goals', 'BTTS', 'Corners', 'Cards', 'Other'];
@@ -553,7 +603,7 @@ function renderPanel(f, holder){
       }
     }
     if(data.error){
-      holder.innerHTML = `<div class="panel"><div class="error">${data.error}</div>${contextHtml}</div>`;
+      holder.innerHTML = `<div class="panel"><div class="error">${data.error}</div>${contextHtml}${rawOddsHtml(LIVE_ODDS[key])}</div>`;
       return;
     }
     live = LIVE_ODDS[key];

@@ -65,11 +65,14 @@ from before.
 - **`data/trimmed_matches.json`** — a stripped-down version of `master.csv`,
   fetched by `statpitch.html` when served over http(s) (embedded inline as a
   fallback otherwise — see "Fetch-with-fallback" above): just
-  `[season, div, home, away, fthg, ftag, hc, ac, hy, ay]` per match, as a
-  compact array-of-arrays (no keys, to save space). This is what
-  `engine.js`'s `Engine` class consumes at runtime. If you add a new stat to
-  the model (e.g. shots on target), you need to add a column here too and
-  update the trim step in the build script.
+  `[season, div, home, away, fthg, ftag, hc, ac, hy, ay, hxg, axg]` per
+  match, as a compact array-of-arrays (no keys, to save space). `hxg`/`axg`
+  (expected goals) are `null` for every row today — no xG source is wired
+  into `master.csv` yet, see `weightedSplits()` in `engine.js` for the
+  fallback-to-actual-goals logic already built for whenever that changes.
+  This is what `engine.js`'s `Engine` class consumes at runtime. If you add
+  a new stat to the model (e.g. shots on target), you need to add a column
+  here too and update the trim step in the build script.
 - **`data/fixtures.csv`** — 2026/27 fixture list, 8 leagues (2,670 fixtures).
   Belgium and Poland were deliberately excluded (user's call, not a data
   limitation) — don't re-add them without asking.
@@ -110,15 +113,47 @@ from before.
 
 ## Live odds
 
-Odds come from **superbet.pl** (switched from an earlier Flashscore
-prototype — Superbet's odds render in the initial page load rather than
-behind a stalled WebSocket feed, which made it the more reliable source for
-an automated browser). Fetched via Claude's browser tool on request, not a
-live feed — there's no backend polling anything, and that's deliberate (see
-below). The user asks for a given day's or tomorrow's matches; this is a
-recurring manual ask, not a schedule Claude runs on its own.
+**Two coexisting paths now (as of 2026-08-21), same split as Team news
+below: 1X2 is automated, everything else is still manual on request.**
 
-Workflow to refresh a match's odds:
+**Automated — `fetch_odds.py`**, scheduled (Windows Task Scheduler, daily,
+independent of Claude Code). For fixtures in the next 5 days, it finds each
+match on Flashscore (via a known team's fixtures list in
+`data/flashscore_team_ids.json` — see "Team news / context" for how that
+cache works and why it's hand-maintained, not self-resolving) and reads its
+`/odds/` comparison page, which itself aggregates STS, Fortuna, Superbet,
+Betclic, and several more bookmakers in one table. It writes the **best
+price per outcome across all of them** into `data/live_odds.json`'s `1x2`
+field (`source` records how many bookmakers that was, e.g. "Flashscore (best
+of 7 bookmakers)" — never disguises one quote as a consensus), and rebuilds.
+Only `1x2` — it does not touch `goals_ou`/`corners_ou`/`btts` if a manual
+fetch already put those there, but it **does** overwrite `1x2` on every
+run, so a manually-set 1X2 price gets replaced by the next scheduled fetch.
+That's intentional (the whole point is staying current), not a bug to
+"fix" by making it more conservative.
+
+**Why Flashscore odds specifically, given the history below:** this project
+tried Flashscore for odds once already and dropped it for Superbet because
+odds loaded behind a stalled WebSocket feed that an automated browser
+couldn't rely on. That finding does not automatically generalize to every
+Flashscore page — tested headless Playwright against the *odds-comparison*
+page specifically (distinct from the live in-play odds that caused the
+original problem) three times in a row with zero failures before shipping
+this. If it starts failing, check whether Flashscore changed the
+`.oddsCell__odds` / `.ui-table__row` structure this reads, before assuming
+the whole approach is broken again.
+
+**Still manual — everything beyond 1X2 (Over/Under, corners, BTTS), plus
+Superbet as a fallback source.** Automating Flashscore's Over/Under and BTTS
+sub-tabs wasn't nailed down during development (the tab switch didn't
+reliably trigger via a stable selector) — left for later rather than
+shipped flaky. Superbet also similarly failed for its deeper markets during
+this same session for an unrelated reason: its markets lazy-mount via
+`IntersectionObserver` and didn't render in a non-visible/non-composited
+browser context. Both gaps mean the manual Superbet workflow below is still
+the way to get goals/corners/BTTS odds for now.
+
+Workflow to refresh a match's odds manually:
 
 1. User asks for odds on specific fixtures (today's and/or tomorrow's —
    bulk-fetching all 2,670 fixtures isn't practical one page at a time, and
@@ -186,22 +221,44 @@ like a recommendation, treat that the same as being asked to add "lock" or
 "guaranteed" language — flag the conflict with the honesty rules rather than
 just implementing it.
 
+**`rawOddsHtml()`** (`index_template.html`) is the one exception to
+"no odds display without a model": when `ENGINE.analyze()` returns an error
+(no historical data for one/both teams — the newly-promoted-team case, see
+`team_map.json`'s `null` entries), the panel used to just show the error and
+stop, even if `data/live_odds.json` had a real fetched price sitting there
+unused. It now also renders a plain market-odds table with **no model
+probability, no edge, no devig** — just the raw prices, explicitly labeled
+"no model comparison possible without historical data for this match".
+This is deliberately the one place in the UI that shows odds with nothing
+to compare them to; don't let that become a precedent for showing bare odds
+elsewhere without the same explicit caveat.
+
 The markets table also has a `.table-scroll` wrapper (`overflow-x:auto`)
 around it — with the odds columns present it's 7 columns wide and doesn't
 fit a phone screen. Without the wrapper the *whole page* scrolls sideways
 and clips content instead of just the table. Keep this if you touch the
 panel markup.
 
-**The odds refresh is manual, on purpose — this was a deliberate choice,
-not a gap to fill in.** A cloud-scheduled version was considered and
-rejected: cloud routines only work against a GitHub repo (this project
-isn't one, by choice) and can't touch local files. A local Windows
-Task Scheduler + headless Claude alternative was also considered and
-rejected before it was even tested, specifically because it's unverified
-whether a headless session has browser-tool access to render Superbet's
-JS-based odds pages — the user chose to keep asking manually rather than
-risk a scheduled job that silently fetches nothing. Don't set up standing
-automation for this without asking again first.
+**History on the "manual, on purpose" decision, since it's now half-reversed
+and a future session needs the full timeline, not just the current state.**
+Originally *all* odds fetching was manual, deliberately: a cloud-scheduled
+version was rejected because cloud routines need a GitHub repo (this
+project didn't have one yet) and can't touch local files; a local Task
+Scheduler + headless Claude alternative was rejected *before being tested*,
+specifically because it was unverified whether a headless session's browser
+tool could render JS-heavy odds pages unattended. The project later gained
+a GitHub remote (`archcoach/statpitch`, private) for unrelated reasons, and
+the user explicitly asked to automate odds fetching after that — at which
+point the untested assumption above got tested for real (see above): plain
+Playwright, no Claude Code involvement at runtime, reliably reads
+Flashscore's odds-comparison page. That's `fetch_odds.py`. The parts that
+remain manual (Over/Under, corners, BTTS, and Superbet generally) aren't a
+principled "no automation" stance anymore — they're just not solved yet.
+Don't read "the odds refresh used to be manual" as a reason to leave new
+gaps unautomated; the operative rule now is narrower: don't extend
+automation into a *new* site or market without checking it renders reliably
+headless first, the same way `fetch_odds.py` and `fetch_team_stats.py` were
+each spike-tested before being trusted with a schedule.
 
 ## Team news / context
 
@@ -209,29 +266,81 @@ Qualitative context alongside the model — recent underlying-stats form and
 injury/suspension news — kept deliberately separate from the probability
 pipeline both in the data (`data/team_news.json`) and in the UI (its own
 bordered "Team Context" block in the match panel, with a caption saying
-it's not part of the model below). Same manual, on-request fetch pattern as
-Live Odds: no backend, no scheduled scraping, Claude fetches when asked.
+it's not part of the model below).
 
-Workflow to refresh a team's context:
+**`recent_form` is now automated (as of 2026-08-21) — this is the one
+deliberate exception to the "no standing automation" rule elsewhere in this
+file. `absences` is still manual/on-request.** Don't read the automation
+decision below as blanket permission to automate anything else (Live Odds,
+below, is explicitly still manual and should stay that way unless asked
+again) — this was a specific, discussed tradeoff for this one data path.
+
+### Recent form / match stats — automated via `fetch_team_stats.py`
+
+`fetch_team_stats.py` (project root) runs on a schedule (Windows Task
+Scheduler), independent of Claude Code:
+
+1. Reads `data/fixtures.csv` for teams with a fixture in the next 3 days.
+2. For each team with a cached ID in `data/flashscore_team_ids.json`, uses
+   **Playwright** (headless Chromium — `pip install playwright && playwright
+   install chromium`) to open that team's Flashscore results page, take the
+   last 3 completed matches, and pull each one's stats page
+   (`/summary/stats/`) for possession, passes, pass accuracy, shots, and
+   shots on target, via structured DOM selectors
+   (`[data-testid="wcl-statistics-category"]` and sibling
+   `[class*="homeValue"/"awayValue"]` elements — not text-scraping, which
+   broke on the site's multi-line stat rows during development).
+3. Writes into `data/team_news.json`'s `recent_form` **only** — never
+   touches `absences`. Skips (logs) any team without a cached Flashscore ID
+   rather than guessing one.
+4. Runs `python3 build.py` itself at the end.
+
+**Why Flashscore, and why this was worth testing carefully first:** this
+project already tried Flashscore once for *live odds* and dropped it — see
+"Live odds" below — because odds load via a live feed that stalls for an
+automated browser. That specific failure mode does not apply to *finished*
+match stats: they're present in the page once it loads, no live feed
+required, confirmed by testing headless Playwright against the same page
+type six times in a row with zero failures during development. If stats
+start silently failing to fetch, suspect a Flashscore markup change before
+assuming the whole approach is broken again — the `data-testid` selectors
+above are the specific thing to re-check.
+
+**`data/flashscore_team_ids.json`** (`div|fixture-team-name` →
+`{slug, id, flashscore_name}`) is a **hand-maintained cache, not something
+the script resolves itself** — Flashscore's on-page search box fires no
+inspectable network request when typed into (tried during development), so
+there's no scriptable way to look up a team's slug/ID automatically. Ask
+Claude Code to open flashscore.com, find the team, and read the slug/ID out
+of its URL the first time that team's fixture comes up; the script reuses
+the cache forever after. Same bootstrapping shape as `data/team_map.json`.
+`flashscore_name` exists because Flashscore's own name for a team
+(`"Betis (Esp)"` in some contexts) doesn't always match the fixture-list
+name used as the JSON key — it's what the script compares against Flashscore
+row data to work out home/away and derive the opponent.
+
+Known quirk: Flashscore has, at least once during testing, listed the exact
+same finished match twice on a team's results page (identical date/score,
+different match IDs) for a pre-season friendly — the script dedupes on both
+match URL and a full content signature, but a very occasional harmless
+duplicate in "last 3" is possible if a listing differs in some field the
+signature doesn't cover. Not worth chasing further; it doesn't misrepresent
+anything, just occasionally repeats a match.
+
+### Absences — still manual, on-request
 
 1. User asks for context on specific teams (usually the teams in an
    upcoming fixture someone's already looking at).
-2. **Recent form / xG**: Claude opens the team's FBref squad page
-   ("Scores & Fixtures" tab) and reads the last ~5 results — date,
-   opponent, venue, W/D/L, score, and xG for/against where FBref shows it
-   for that league (not all leagues in this dataset have xG on FBref;
-   leave `xg_for`/`xg_against` `null` rather than estimating).
-3. **Absences**: FBref doesn't reliably carry injury/suspension data, so
-   this comes from whichever whitelisted source has it (see
-   `STATPITCH_INSTRUCTIONS.md`'s Research Sources list — FBref, Understat,
-   Opta Analyst, WhoScored, Total Football Analysis, Coaches' Voice, Sky
-   Sports; never a paywalled source). Each absence entry records its own
-   `source`/`source_url`, since different players' news often comes from
-   different articles.
-4. Claude writes both into `data/team_news.json` under `div|team-name`
-   (the fixture-list name, not `master.csv`'s — pull from
-   `data/fixtures.csv`), with `fetched_at` set to now.
-5. Run `python3 build.py` to re-embed it into `statpitch.html`.
+2. FBref doesn't reliably carry injury/suspension data, so this comes from
+   whichever whitelisted source has it (see `STATPITCH_INSTRUCTIONS.md`'s
+   Research Sources list — FBref, Understat, Opta Analyst, WhoScored, Total
+   Football Analysis, Coaches' Voice, Sky Sports; never a paywalled source).
+   Each absence entry records its own `source`/`source_url`, since different
+   players' news often comes from different articles.
+3. Claude writes it into `data/team_news.json` under `div|team-name` (the
+   fixture-list name, not `master.csv`'s — pull from `data/fixtures.csv`),
+   without touching `recent_form`.
+4. Run `python3 build.py` to re-embed it into `statpitch.html`.
 
 The UI treats a `fetched_at` older than 4 days as stale and flags it in the
 flag color — injury news ages fast, and this is exactly the kind of thing

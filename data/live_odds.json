@@ -1,194 +1,504 @@
 {
   "D1|2026-08-28|FC Bayern München|VfB Stuttgart": {
-    "1x2": { "home": 1.27, "draw": 5.75, "away": 6.90 },
-    "goals_ou": {
-      "1.5": { "over": 1.06, "under": 8.90 },
-      "2.5": { "over": 1.24, "under": 4.00 },
-      "3.5": { "over": 1.63, "under": 2.27 }
+    "1x2": {
+      "home": 1.27,
+      "draw": 5.75,
+      "away": 6.9
     },
-    "btts": { "yes": 1.48, "no": 2.62 },
+    "goals_ou": {
+      "1.5": {
+        "over": 1.06,
+        "under": 8.9
+      },
+      "2.5": {
+        "over": 1.24,
+        "under": 4.0
+      },
+      "3.5": {
+        "over": 1.63,
+        "under": 2.27
+      }
+    },
+    "btts": {
+      "yes": 1.48,
+      "no": 2.62
+    },
     "fetched_at": "2026-08-16T12:57:39Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/bayern-monachium-vs-stuttgart-13870803"
   },
   "N1|2026-08-16|Ajax|sc Heerenveen": {
-    "1x2": { "home": 1.46, "draw": 4.90, "away": 5.70 },
+    "1x2": {
+      "home": 1.46,
+      "draw": 4.9,
+      "away": 5.7
+    },
     "goals_ou": {
-      "1.5": { "over": 1.12, "under": 6.20 },
-      "2.5": { "over": 1.41, "under": 2.87 },
-      "3.5": { "over": 2.02, "under": 1.78 }
+      "1.5": {
+        "over": 1.12,
+        "under": 6.2
+      },
+      "2.5": {
+        "over": 1.41,
+        "under": 2.87
+      },
+      "3.5": {
+        "over": 2.02,
+        "under": 1.78
+      }
     },
     "corners_ou": {
-      "8.5": { "over": 1.37, "under": 2.82 },
-      "9.5": { "over": 1.59, "under": 2.20 },
-      "10.5": { "over": 1.90, "under": 1.78 },
-      "11.5": { "over": 2.35, "under": 1.52 }
+      "8.5": {
+        "over": 1.37,
+        "under": 2.82
+      },
+      "9.5": {
+        "over": 1.59,
+        "under": 2.2
+      },
+      "10.5": {
+        "over": 1.9,
+        "under": 1.78
+      },
+      "11.5": {
+        "over": 2.35,
+        "under": 1.52
+      }
     },
-    "btts": { "yes": 1.56, "no": 2.37 },
+    "btts": {
+      "yes": 1.56,
+      "no": 2.37
+    },
     "fetched_at": "2026-08-16T13:38:30Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/ajax-amsterdam-vs-heerenveen-13573163"
   },
   "P1|2026-08-16|CD Nacional|Estoril Praia": {
-    "1x2": { "home": 2.82, "draw": 3.25, "away": 2.50 },
+    "1x2": {
+      "home": 2.82,
+      "draw": 3.25,
+      "away": 2.5
+    },
     "goals_ou": {
-      "1.5": { "over": 1.29, "under": 3.60 },
-      "2.5": { "over": 1.92, "under": 1.87 },
-      "3.5": { "over": 3.20, "under": 1.34 }
+      "1.5": {
+        "over": 1.29,
+        "under": 3.6
+      },
+      "2.5": {
+        "over": 1.92,
+        "under": 1.87
+      },
+      "3.5": {
+        "over": 3.2,
+        "under": 1.34
+      }
     },
     "corners_ou": {
-      "8.5": { "over": 1.38, "under": 2.77 },
-      "9.5": { "over": 1.60, "under": 2.17 },
-      "10.5": { "over": 1.92, "under": 1.77 },
-      "11.5": { "over": 2.37, "under": 1.50 }
+      "8.5": {
+        "over": 1.38,
+        "under": 2.77
+      },
+      "9.5": {
+        "over": 1.6,
+        "under": 2.17
+      },
+      "10.5": {
+        "over": 1.92,
+        "under": 1.77
+      },
+      "11.5": {
+        "over": 2.37,
+        "under": 1.5
+      }
     },
-    "btts": { "yes": 1.69, "no": 2.12 },
+    "btts": {
+      "yes": 1.69,
+      "no": 2.12
+    },
     "fetched_at": "2026-08-16T13:38:30Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/cd-nacional-vs-estoril-praia-13881196"
   },
   "P1|2026-08-16|FC Arouca|Moreirense FC": {
-    "1x2": { "home": 2.02, "draw": 3.30, "away": 3.85 },
+    "1x2": {
+      "home": 2.02,
+      "draw": 3.3,
+      "away": 3.85
+    },
     "goals_ou": {
-      "1.5": { "over": 1.37, "under": 3.10 },
-      "2.5": { "over": 2.15, "under": 1.70 },
-      "3.5": { "over": 3.85, "under": 1.26 }
+      "1.5": {
+        "over": 1.37,
+        "under": 3.1
+      },
+      "2.5": {
+        "over": 2.15,
+        "under": 1.7
+      },
+      "3.5": {
+        "over": 3.85,
+        "under": 1.26
+      }
     },
     "corners_ou": {
-      "8.5": { "over": 1.63, "under": 2.12 },
-      "9.5": { "over": 1.97, "under": 1.72 },
-      "10.5": { "over": 2.50, "under": 1.46 },
-      "11.5": { "over": 3.20, "under": 1.29 }
+      "8.5": {
+        "over": 1.63,
+        "under": 2.12
+      },
+      "9.5": {
+        "over": 1.97,
+        "under": 1.72
+      },
+      "10.5": {
+        "over": 2.5,
+        "under": 1.46
+      },
+      "11.5": {
+        "over": 3.2,
+        "under": 1.29
+      }
     },
-    "btts": { "yes": 1.90, "no": 1.85 },
+    "btts": {
+      "yes": 1.9,
+      "no": 1.85
+    },
     "fetched_at": "2026-08-16T13:38:30Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/arouca-vs-moreirense-13881192"
   },
   "P1|2026-08-16|FC Famalicão|Marítimo M.": {
-    "1x2": { "home": 1.76, "draw": 3.55, "away": 4.70 },
+    "1x2": {
+      "home": 1.76,
+      "draw": 3.55,
+      "away": 4.7
+    },
     "goals_ou": {
-      "1.5": { "over": 1.36, "under": 3.10 },
-      "2.5": { "over": 2.12, "under": 1.72 },
-      "3.5": { "over": 3.80, "under": 1.26 }
+      "1.5": {
+        "over": 1.36,
+        "under": 3.1
+      },
+      "2.5": {
+        "over": 2.12,
+        "under": 1.72
+      },
+      "3.5": {
+        "over": 3.8,
+        "under": 1.26
+      }
     },
     "corners_ou": {
-      "8.5": { "over": 1.57, "under": 2.22 },
-      "9.5": { "over": 1.90, "under": 1.78 },
-      "10.5": { "over": 2.35, "under": 1.51 },
-      "11.5": { "over": 3.00, "under": 1.33 }
+      "8.5": {
+        "over": 1.57,
+        "under": 2.22
+      },
+      "9.5": {
+        "over": 1.9,
+        "under": 1.78
+      },
+      "10.5": {
+        "over": 2.35,
+        "under": 1.51
+      },
+      "11.5": {
+        "over": 3.0,
+        "under": 1.33
+      }
     },
-    "btts": { "yes": 2.00, "no": 1.76 },
+    "btts": {
+      "yes": 2.0,
+      "no": 1.76
+    },
     "fetched_at": "2026-08-16T13:38:30Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/famalicao-vs-maritimo-13881195"
   },
   "SP1|2026-08-16|R. Racing Club|Villarreal CF": {
-    "1x2": { "home": 3.45, "draw": 3.55, "away": 2.05 },
+    "1x2": {
+      "home": 3.45,
+      "draw": 3.55,
+      "away": 2.05
+    },
     "goals_ou": {
-      "1.5": { "over": 1.19, "under": 4.65 },
-      "2.5": { "over": 1.62, "under": 2.27 },
-      "3.5": { "over": 2.50, "under": 1.53 }
+      "1.5": {
+        "over": 1.19,
+        "under": 4.65
+      },
+      "2.5": {
+        "over": 1.62,
+        "under": 2.27
+      },
+      "3.5": {
+        "over": 2.5,
+        "under": 1.53
+      }
     },
     "corners_ou": {
-      "8.5": { "over": 1.51, "under": 2.42 },
-      "9.5": { "over": 1.80, "under": 1.92 },
-      "10.5": { "over": 2.22, "under": 1.60 },
-      "11.5": { "over": 2.80, "under": 1.39 }
+      "8.5": {
+        "over": 1.51,
+        "under": 2.42
+      },
+      "9.5": {
+        "over": 1.8,
+        "under": 1.92
+      },
+      "10.5": {
+        "over": 2.22,
+        "under": 1.6
+      },
+      "11.5": {
+        "over": 2.8,
+        "under": 1.39
+      }
     },
-    "btts": { "yes": 1.56, "no": 2.40 },
+    "btts": {
+      "yes": 1.56,
+      "no": 2.4
+    },
     "fetched_at": "2026-08-16T13:38:30Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/racing-santander-vs-villarreal-13846972"
   },
   "SP1|2026-08-16|RCD Espanyol de Barcelona|Levante UD": {
-    "1x2": { "home": 2.12, "draw": 3.20, "away": 3.60 },
+    "1x2": {
+      "home": 2.12,
+      "draw": 3.2,
+      "away": 3.6
+    },
     "goals_ou": {
-      "1.5": { "over": 1.37, "under": 3.05 },
-      "2.5": { "over": 2.17, "under": 1.68 },
-      "3.5": { "over": 3.90, "under": 1.25 }
+      "1.5": {
+        "over": 1.37,
+        "under": 3.05
+      },
+      "2.5": {
+        "over": 2.17,
+        "under": 1.68
+      },
+      "3.5": {
+        "over": 3.9,
+        "under": 1.25
+      }
     },
     "corners_ou": {
-      "8.5": { "over": 1.51, "under": 2.40 },
-      "9.5": { "over": 1.80, "under": 1.92 },
-      "10.5": { "over": 2.22, "under": 1.60 },
-      "11.5": { "over": 2.82, "under": 1.39 }
+      "8.5": {
+        "over": 1.51,
+        "under": 2.4
+      },
+      "9.5": {
+        "over": 1.8,
+        "under": 1.92
+      },
+      "10.5": {
+        "over": 2.22,
+        "under": 1.6
+      },
+      "11.5": {
+        "over": 2.82,
+        "under": 1.39
+      }
     },
-    "btts": { "yes": 1.92, "no": 1.87 },
+    "btts": {
+      "yes": 1.92,
+      "no": 1.87
+    },
     "fetched_at": "2026-08-16T13:38:30Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/espanyol-vs-levante-13846970"
   },
   "T1|2026-08-16|Istanbul Basaksehir|Kocaelispor": {
-    "1x2": { "home": 1.69, "draw": 3.55, "away": 4.85 },
+    "1x2": {
+      "home": 1.69,
+      "draw": 3.55,
+      "away": 4.85
+    },
     "goals_ou": {
-      "1.5": { "over": 1.33, "under": 3.30 },
-      "2.5": { "over": 2.02, "under": 1.78 },
-      "3.5": { "over": 3.50, "under": 1.30 }
+      "1.5": {
+        "over": 1.33,
+        "under": 3.3
+      },
+      "2.5": {
+        "over": 2.02,
+        "under": 1.78
+      },
+      "3.5": {
+        "over": 3.5,
+        "under": 1.3
+      }
     },
     "corners_ou": {
-      "8.5": { "over": 1.71, "under": 2.00 },
-      "9.5": { "over": 2.12, "under": 1.63 },
-      "10.5": { "over": 2.67, "under": 1.40 },
-      "11.5": { "over": 3.50, "under": 1.25 }
+      "8.5": {
+        "over": 1.71,
+        "under": 2.0
+      },
+      "9.5": {
+        "over": 2.12,
+        "under": 1.63
+      },
+      "10.5": {
+        "over": 2.67,
+        "under": 1.4
+      },
+      "11.5": {
+        "over": 3.5,
+        "under": 1.25
+      }
     },
-    "btts": { "yes": 1.97, "no": 1.80 },
+    "btts": {
+      "yes": 1.97,
+      "no": 1.8
+    },
     "fetched_at": "2026-08-16T13:38:30Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/basaksehir-vs-kocaelispor-13985485"
   },
   "T1|2026-08-16|Amedspor|Erzurumspor": {
-    "1x2": { "home": 2.27, "draw": 3.30, "away": 3.00 },
+    "1x2": {
+      "home": 2.27,
+      "draw": 3.3,
+      "away": 3.0
+    },
     "goals_ou": {
-      "1.5": { "over": 1.26, "under": 3.80 },
-      "2.5": { "over": 1.83, "under": 1.97 },
-      "3.5": { "over": 3.00, "under": 1.38 }
+      "1.5": {
+        "over": 1.26,
+        "under": 3.8
+      },
+      "2.5": {
+        "over": 1.83,
+        "under": 1.97
+      },
+      "3.5": {
+        "over": 3.0,
+        "under": 1.38
+      }
     },
     "corners_ou": {
-      "8.5": { "over": 1.72, "under": 2.00 },
-      "9.5": { "over": 2.12, "under": 1.63 },
-      "10.5": { "over": 2.67, "under": 1.40 },
-      "11.5": { "over": 3.50, "under": 1.25 }
+      "8.5": {
+        "over": 1.72,
+        "under": 2.0
+      },
+      "9.5": {
+        "over": 2.12,
+        "under": 1.63
+      },
+      "10.5": {
+        "over": 2.67,
+        "under": 1.4
+      },
+      "11.5": {
+        "over": 3.5,
+        "under": 1.25
+      }
     },
-    "btts": { "yes": 1.66, "no": 2.15 },
+    "btts": {
+      "yes": 1.66,
+      "no": 2.15
+    },
     "fetched_at": "2026-08-16T13:38:30Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/amedspor-vs-erzurumspor-13985467"
   },
   "T1|2026-08-16|Besiktas|Eyüpspor": {
-    "1x2": { "home": 1.39, "draw": 4.75, "away": 6.40 },
+    "1x2": {
+      "home": 1.39,
+      "draw": 4.75,
+      "away": 6.4
+    },
     "goals_ou": {
-      "1.5": { "over": 1.17, "under": 4.90 },
-      "2.5": { "over": 1.56, "under": 2.42 },
-      "3.5": { "over": 2.37, "under": 1.57 }
+      "1.5": {
+        "over": 1.17,
+        "under": 4.9
+      },
+      "2.5": {
+        "over": 1.56,
+        "under": 2.42
+      },
+      "3.5": {
+        "over": 2.37,
+        "under": 1.57
+      }
     },
     "corners_ou": {
-      "8.5": { "over": 1.45, "under": 2.52 },
-      "9.5": { "over": 1.71, "under": 2.00 },
-      "10.5": { "over": 2.10, "under": 1.65 },
-      "11.5": { "over": 2.62, "under": 1.42 }
+      "8.5": {
+        "over": 1.45,
+        "under": 2.52
+      },
+      "9.5": {
+        "over": 1.71,
+        "under": 2.0
+      },
+      "10.5": {
+        "over": 2.1,
+        "under": 1.65
+      },
+      "11.5": {
+        "over": 2.62,
+        "under": 1.42
+      }
     },
-    "btts": { "yes": 1.78, "no": 2.00 },
+    "btts": {
+      "yes": 1.78,
+      "no": 2.0
+    },
     "fetched_at": "2026-08-16T13:38:30Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/besiktas-vs-eyupspor-13985468"
   },
   "SP1|2026-08-17|RC Deportivo|Elche CF": {
-    "1x2": { "home": 2.20, "draw": 3.05, "away": 3.60 },
+    "1x2": {
+      "home": 2.2,
+      "draw": 3.05,
+      "away": 3.6
+    },
     "fetched_at": "2026-08-17T17:38:46Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/deportivo-de-a-coruna-vs-elche-13846967"
   },
   "P1|2026-08-17|Casa Pia AC|SL Benfica": {
-    "1x2": { "home": 12.00, "draw": 6.60, "away": 1.20 },
+    "1x2": {
+      "home": 12.0,
+      "draw": 6.6,
+      "away": 1.2
+    },
     "fetched_at": "2026-08-17T17:38:46Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/casa-pia-vs-benfica-13881194"
   },
   "T1|2026-08-17|Samsunspor|Göztepe": {
-    "1x2": { "home": 2.27, "draw": 3.20, "away": 3.05 },
+    "1x2": {
+      "home": 2.27,
+      "draw": 3.2,
+      "away": 3.05
+    },
     "fetched_at": "2026-08-17T17:38:46Z",
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/samsunspor-vs-goztepe-13985473"
+  },
+  "E0|2026-08-21|Arsenal|Coventry": {
+    "1x2": {
+      "home": 1.23,
+      "draw": 7.25,
+      "away": 14.69
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/arsenal-hA1Zm19f/coventry-GOvB22xg/odds/?mid=2q2NhX43",
+    "fetched_at": "2026-08-21T13:53:56Z"
+  },
+  "F1|2026-08-21|Olympique de Marseille|RC Strasbourg Alsace": {
+    "1x2": {
+      "home": 1.76,
+      "draw": 4.2,
+      "away": 4.5
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/marseille-SblU3Hee/strasbourg-nP6UzIU1/odds/?mid=6i9H6E5l",
+    "fetched_at": "2026-08-21T13:54:03Z"
+  },
+  "SP1|2026-08-24|Málaga CF|RC Deportivo": {
+    "1x2": {
+      "home": 2.59,
+      "draw": 3.1,
+      "away": 3.1
+    },
+    "source": "Flashscore (best of 7 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/dep-a-coruna-Q51ZzMS6/malaga-25tIqYiJ/odds/?mid=2V09g36N",
+    "fetched_at": "2026-08-21T13:54:11Z"
   }
 }
