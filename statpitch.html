@@ -271,7 +271,7 @@ class Engine {
     }));
   }
 
-  analyze(div, homeFixtureName, awayFixtureName){
+  analyze(div, homeFixtureName, awayFixtureName, recentForm){
     const league = this.leagueStats[div];
     if(!league) return { error: `No historical data available for division ${div}.` };
 
@@ -296,6 +296,28 @@ class Engine {
     const awayAttack = league.avgAwayGoals ? awayA.goalsFor / league.avgAwayGoals : 1;
     const homeDefense = league.avgHomeGoals ? homeH.goalsAgainst / league.avgHomeGoals : 1;
     let lambdaAway = league.avgAwayGoals * awayAttack * homeDefense;
+
+    // Recent-form blend (fresh signal on top of multi-season history) — see
+    // blendRecentForm below for the weighting rationale. Optional and fully
+    // backward compatible: omit recentForm (or lack data for a side) and
+    // that side's lambda is untouched, exactly as before this existed.
+    let formBlendNote = null;
+    if(recentForm){
+      const homeBlend = blendRecentForm(lambdaHome, recentForm.home, nUsed);
+      const awayBlend = blendRecentForm(lambdaAway, recentForm.away, nUsed);
+      const notes = [];
+      if(homeBlend.n != null){
+        lambdaHome = homeBlend.lambda;
+        notes.push(`${homeFixtureName} (${homeBlend.recentWeight.toFixed(1)}-game weight from last ${homeBlend.n})`);
+      }
+      if(awayBlend.n != null){
+        lambdaAway = awayBlend.lambda;
+        notes.push(`${awayFixtureName} (${awayBlend.recentWeight.toFixed(1)}-game weight from last ${awayBlend.n})`);
+      }
+      if(notes.length){
+        formBlendNote = `Recent-form blend applied for ${notes.join(' and ')} against n=${nUsed} historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.`;
+      }
+    }
 
     lambdaHome = clip(lambdaHome, 0.15, 4.5);
     lambdaAway = clip(lambdaAway, 0.15, 4.5);
@@ -323,10 +345,43 @@ class Engine {
       n_home_matches: nHome, n_away_matches: nAway, n_used: nUsed,
       confidence,
       dc_rho_note: `Dixon-Coles low-score correction applied with fixed rho=${DC_RHO} (literature-typical, not fitted to this dataset).`,
+      form_blend_note: formBlendNote,
       markets,
       h2h: this.headToHead(div, homeFixtureName, awayFixtureName),
     };
   }
+}
+
+// ---- Recent-form blend (fresh signal layered onto multi-season history) ----
+// See analyze() for how these are used. RECENT_FORM_MAX_TRUST caps recent
+// form's influence at a flat "2 games' worth" of trust regardless of how
+// much historical data exists, so a hot/cold 3-game streak can nudge the
+// number but never overwhelm it. Historical weight (nUsed) is deliberately
+// NOT capped: a well-established team (100+ historical matches) gets a
+// barely-there nudge (~2%), while a thin-history team (10-15 matches, the
+// same teams already graded Low/Medium confidence) gets proportionally more
+// say from recent form (~15-20%) -- which is the right direction, since
+// thin history is itself less trustworthy. This is a disclosed heuristic,
+// not a fitted/validated parameter, same honesty bar as DC_RHO.
+const RECENT_FORM_MAX_TRUST = 2;
+
+function recentScoringRate(recentForm){
+  if(!recentForm || !recentForm.length) return null;
+  const vals = [];
+  for(const m of recentForm){
+    if(m.xg_for != null){ vals.push(m.xg_for); continue; }
+    const parts = (m.score||'').split('-').map(Number);
+    if(parts.length===2 && !parts.some(isNaN)) vals.push(parts[0]); // score is "team-opponent"
+  }
+  return vals.length ? { rate: mean(vals), n: vals.length } : null;
+}
+
+function blendRecentForm(baseLambda, recentForm, historicalN){
+  const recent = recentScoringRate(recentForm);
+  if(!recent) return { lambda: baseLambda, n: null };
+  const recentWeight = Math.min(recent.n, 3) * (RECENT_FORM_MAX_TRUST/3);
+  const lambda = (baseLambda*historicalN + recent.rate*recentWeight) / (historicalN + recentWeight);
+  return { lambda, recentWeight, n: recent.n };
 }
 
 function mean(a){ return a.length ? a.reduce((s,v)=>s+v,0)/a.length : 0; }
@@ -2305,6 +2360,8 @@ const TEAM_NEWS = {
         "venue": "H",
         "result": "W",
         "score": "3-0",
+        "xg_for": 2.16,
+        "xg_against": 1.12,
         "possession": 41.0,
         "shots": 9.0,
         "shots_on_target": 5.0,
@@ -2317,6 +2374,8 @@ const TEAM_NEWS = {
         "venue": "H",
         "result": "L",
         "score": "2-3",
+        "xg_for": 2.07,
+        "xg_against": 1.37,
         "possession": 56.0,
         "shots": 14.0,
         "shots_on_target": 7.0,
@@ -2329,6 +2388,8 @@ const TEAM_NEWS = {
         "venue": "H",
         "result": "L",
         "score": "1-3",
+        "xg_for": 1.99,
+        "xg_against": 1.6,
         "possession": 56.0,
         "shots": 9.0,
         "shots_on_target": 2.0,
@@ -2338,7 +2399,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/arsenal/hA1Zm19f/results/",
-    "fetched_at": "2026-08-21T13:27:48Z"
+    "fetched_at": "2026-08-21T14:11:54Z"
   },
   "E0|Coventry": {
     "recent_form": [
@@ -2366,7 +2427,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/coventry/GOvB22xg/results/",
-    "fetched_at": "2026-08-21T13:28:31Z"
+    "fetched_at": "2026-08-21T14:12:39Z"
   },
   "F1|Olympique de Marseille": {
     "recent_form": [
@@ -2376,6 +2437,8 @@ const TEAM_NEWS = {
         "venue": "H",
         "result": "L",
         "score": "1-2",
+        "xg_for": 0.83,
+        "xg_against": 1.46,
         "possession": 62.0,
         "shots": 11.0,
         "shots_on_target": 6.0,
@@ -2399,7 +2462,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/marseille/SblU3Hee/results/",
-    "fetched_at": "2026-08-21T13:29:05Z"
+    "fetched_at": "2026-08-21T14:13:59Z"
   },
   "F1|RC Strasbourg Alsace": {
     "recent_form": [
@@ -2427,7 +2490,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/strasbourg/nP6UzIU1/results/",
-    "fetched_at": "2026-08-21T13:29:51Z"
+    "fetched_at": "2026-08-21T14:14:44Z"
   },
   "D1|SC Paderborn 07": {
     "recent_form": [
@@ -2465,6 +2528,8 @@ const TEAM_NEWS = {
         "venue": "A",
         "result": "L",
         "score": "0-2",
+        "xg_for": 0.15,
+        "xg_against": 0.93,
         "possession": 47.0,
         "shots": 5.0,
         "shots_on_target": 1.0,
@@ -2488,7 +2553,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/malaga/25tIqYiJ/results/",
-    "fetched_at": "2026-08-21T13:50:58Z"
+    "fetched_at": "2026-08-21T14:15:17Z"
   },
   "E0|Hull": {
     "recent_form": [
@@ -2516,7 +2581,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/hull-city/S66R0t75/results/",
-    "fetched_at": "2026-08-21T13:52:58Z"
+    "fetched_at": "2026-08-21T14:13:24Z"
   },
   "SP1|RC Deportivo": {
     "recent_form": [
@@ -2526,6 +2591,8 @@ const TEAM_NEWS = {
         "venue": "H",
         "result": "D",
         "score": "1-1",
+        "xg_for": 0.33,
+        "xg_against": 1.23,
         "possession": 39.0,
         "shots": 8.0,
         "shots_on_target": 3.0,
@@ -2538,6 +2605,8 @@ const TEAM_NEWS = {
         "venue": "H",
         "result": "L",
         "score": "0-1",
+        "xg_for": 0.35,
+        "xg_against": 1.09,
         "possession": 44.0,
         "shots": 10.0,
         "shots_on_target": 3.0,
@@ -2554,7 +2623,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/dep-a-coruna/Q51ZzMS6/results/",
-    "fetched_at": "2026-08-21T13:53:17Z"
+    "fetched_at": "2026-08-21T14:15:42Z"
   },
   "T1|Çorum": {
     "recent_form": [
@@ -2564,6 +2633,8 @@ const TEAM_NEWS = {
         "venue": "A",
         "result": "D",
         "score": "2-2",
+        "xg_for": 0.61,
+        "xg_against": 2.9,
         "possession": 35.0,
         "shots": 8.0,
         "shots_on_target": 3.0,
@@ -2576,6 +2647,8 @@ const TEAM_NEWS = {
         "venue": "A",
         "result": "W",
         "score": "2-0",
+        "xg_for": 1.42,
+        "xg_against": 1.25,
         "possession": 41.0,
         "shots": 11.0,
         "shots_on_target": 4.0,
@@ -2588,6 +2661,8 @@ const TEAM_NEWS = {
         "venue": "H",
         "result": "W",
         "score": "2-0",
+        "xg_for": 2.22,
+        "xg_against": 0.14,
         "possession": 69.0,
         "shots": 32.0,
         "shots_on_target": 7.0,
@@ -2597,10 +2672,10 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/corum-fk/0vne21BK/results/",
-    "fetched_at": "2026-08-21T13:53:26Z"
+    "fetched_at": "2026-08-21T14:15:57Z"
   }
 };
-const BUILD_TIME = "2026-08-21T16:00:12.003906+02:00";
+const BUILD_TIME = "2026-08-21T16:20:53.503746+02:00";
 
 let LEAGUES, FIXTURES, ENGINE;
 
@@ -2993,7 +3068,10 @@ function renderPanel(f, holder){
     data = cache[key];
     if(!data){
       try{
-        data = ENGINE.analyze(div, home, away);
+        data = ENGINE.analyze(div, home, away, {
+          home: TEAM_NEWS[div+'|'+home]?.recent_form,
+          away: TEAM_NEWS[div+'|'+away]?.recent_form,
+        });
         cache[key] = data;
       }catch(e){
         holder.innerHTML = `<div class="panel"><div class="error">Something went wrong computing this: ${e.message}</div>${contextHtml}</div>`;
@@ -3072,7 +3150,7 @@ function renderPanel(f, holder){
         Ranked by model-derived historical probability, not market value.
         ${hasOdds ? "Market Prob. is the live price with the overround removed via Shin's method (corrects for the favourite-longshot bias documented in the project instructions, rather than just flagging it); Edge is model minus market, in percentage points — not a recommendation. ¼-Kelly is a raw output of the Kelly criterion formula (quarter-strength) using the model's probability and the live odds — a bankroll-math calculation, not a stake suggestion or betting advice. It inherits every uncertainty already listed here (fixed rho, variance approximations, sample size), and Kelly itself is known to be highly sensitive to probability-estimation error, so a nonzero number here is not an endorsement to wager anything." : ''}
         ${graded ? 'Result column grades the prediction as it stood before the match — frozen at the time it was logged, not recomputed afterward. "—" means this market couldn\'t be graded from the recorded result (e.g. no corner/card count available).' : ''}
-        ${data.dc_rho_note} Never treat these as guarantees; sample sizes and variance still apply.
+        ${data.dc_rho_note} ${data.form_blend_note || ''} Never treat these as guarantees; sample sizes and variance still apply.
       </div>
     </div>
   `;

@@ -422,33 +422,70 @@ consistent with what's actually shown.
 
 Baseline frequencies (home/away split, weighted by season recency, decay=0.78)
 → matchup adjustment (attack strength vs specific opponent's defensive
-allowance, not raw output) → Poisson with Dixon-Coles low-score correction
-for goals (fixed rho=-0.10, **not fitted to this dataset** — flagged in the
-UI every time) → negative binomial for corners/cards (division-level
-variance/mean ratio applied to match-specific means, since per-team samples
-are too small to estimate variance reliably) → confidence graded by sample
-size (Low <20, Medium <60, High ≥60).
+allowance, not raw output) → **recent-form blend** (see below) → Poisson
+with Dixon-Coles low-score correction for goals (fixed rho=-0.10, **not
+fitted to this dataset** — flagged in the UI every time) → negative
+binomial for corners/cards (division-level variance/mean ratio applied to
+match-specific means, since per-team samples are too small to estimate
+variance reliably) → confidence graded by sample size (Low <20, Medium <60,
+High ≥60).
+
+**Recent-form blend (added 2026-08-21).** `blendRecentForm`/
+`recentScoringRate` in `engine.js` (mirrored exactly in
+`engine_reference.py` as `_blend_recent_form`/`_recent_scoring_rate`) nudge
+each team's lambda using their last 3 real matches from
+`data/team_news.json`'s `recent_form` (kept fresh by `fetch_team_stats.py`,
+see "Team news / context"), preferring real xG per match over the actual
+goal count when available. This is deliberately a *nudge*, not a
+replacement for the historical baseline: recent form is capped at a flat
+"2 games' worth" of trust (`RECENT_FORM_MAX_TRUST`) no matter how hot or
+cold the streak looks, while the historical weight is `n_used` **uncapped**
+— so a well-established team (100+ historical matches) barely moves
+(~2%), while a thin-history team (10-15 matches) gets proportionally more
+say from recent form (~15-20%), which is the right direction since thin
+history is itself less trustworthy. Only blends each side's own *attacking*
+output — there's no separate recent-defense modeling, that's a real scope
+boundary, not an oversight; don't let a future request to "also weight
+recent defense" get implemented as a quiet tweak, it changes the shape of
+the adjustment. Optional and fully backward compatible: `Engine.analyze()`'s
+4th `recentForm` parameter can be omitted entirely (existing call sites
+that don't pass it are untouched), and any side missing `recent_form` data
+just skips blending for that side — never fabricated, never estimated.
+`ENGINE.analyze()` calls in `index_template.html` pass
+`TEAM_NEWS[div+'|'+team]?.recent_form` for both sides. Frozen
+`predictions_log.json` snapshots logged before this existed simply have no
+`form_blend_note` and render exactly as before — if the manual result-
+logging workflow captures a *new* snapshot, pass `recentForm` there too for
+consistency with what's live.
 
 `engine.js` and the Python reference implementation it was ported from
 (`engine_reference.py`, included in this folder) were cross-validated to
 produce identical output on the same inputs — if you touch the model, it's
-worth re-running both on a few known fixtures and diffing the output.
-Newcastle vs Liverpool in E0 is a decent sanity-check case: home win
-favored, high goals/corners over probabilities, ~114 matches of history
-each side.
+worth re-running both on a few known fixtures and diffing the output,
+**with and without a `recentForm`/`recent_form` argument**, since that's
+now part of what needs to stay in sync. Newcastle vs Liverpool in E0 is a
+decent sanity-check case with no recent-form data (home win favored, high
+goals/corners over probabilities, ~114 matches of history each side);
+Marseille vs Strasbourg in F1 is a good case *with* real recent-form data
+cached, if you want to check the blend path specifically.
 
 ## What's deliberately NOT built yet
 
-- **No automatic/bulk live odds.** Odds only exist for fixtures someone
-  explicitly asked Claude to fetch (see "Live odds" above) — there's no
-  scheduled refresh and no coverage guarantee across the 2,670 fixtures.
-  Markets are still ranked by the model's own historical probability, not
-  market value, even when a live price is shown alongside.
-- **No backend, on purpose.** Keep it that way unless there's a real reason
-  to add one. Live odds fetching deliberately stayed backend-free by using
-  Claude's browser tool as the fetch mechanism per-match, on request,
-  writing to `data/live_odds.json` — rather than standing up a scraper
-  service or local companion server that polls continuously.
+- **No full-coverage live odds.** `fetch_odds.py` automates 1X2 for
+  fixtures in the next 5 days *if* at least one team is in
+  `data/flashscore_team_ids.json` — there's still no coverage guarantee
+  across all 2,670 fixtures, and Over/Under/corners/BTTS odds still require
+  the manual Superbet workflow (see "Live odds"). Markets are still ranked
+  by the model's own historical probability, not market value, even when a
+  live price is shown alongside.
+- **Not backend-free anymore, by deliberate choice, as of 2026-08-21.**
+  `fetch_team_stats.py` and `fetch_odds.py` are scheduled local processes
+  (Windows Task Scheduler) — this project no longer avoids standing
+  automation on principle. What's still true: no *server* backend for the
+  app itself (`statpitch.html` still just opens as a file or gets served
+  statically), and no cloud-hosted scraping. See "Live odds" and "Team
+  news / context" for the full history of why this changed and what's
+  still manual.
 - **Belgium and Poland excluded** from fixtures (user's explicit choice).
   Poland's `master.csv` schema is narrower anyway (no shots/corners/cards —
   see `DATA_README.md`), so it wouldn't get full market coverage even if

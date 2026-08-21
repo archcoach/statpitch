@@ -595,7 +595,10 @@ function renderPanel(f, holder){
     data = cache[key];
     if(!data){
       try{
-        data = ENGINE.analyze(div, home, away);
+        data = ENGINE.analyze(div, home, away, {
+          home: TEAM_NEWS[div+'|'+home]?.recent_form,
+          away: TEAM_NEWS[div+'|'+away]?.recent_form,
+        });
         cache[key] = data;
       }catch(e){
         holder.innerHTML = `<div class="panel"><div class="error">Something went wrong computing this: ${e.message}</div>${contextHtml}</div>`;
@@ -674,7 +677,7 @@ function renderPanel(f, holder){
         Ranked by model-derived historical probability, not market value.
         ${hasOdds ? "Market Prob. is the live price with the overround removed via Shin's method (corrects for the favourite-longshot bias documented in the project instructions, rather than just flagging it); Edge is model minus market, in percentage points — not a recommendation. ¼-Kelly is a raw output of the Kelly criterion formula (quarter-strength) using the model's probability and the live odds — a bankroll-math calculation, not a stake suggestion or betting advice. It inherits every uncertainty already listed here (fixed rho, variance approximations, sample size), and Kelly itself is known to be highly sensitive to probability-estimation error, so a nonzero number here is not an endorsement to wager anything." : ''}
         ${graded ? 'Result column grades the prediction as it stood before the match — frozen at the time it was logged, not recomputed afterward. "—" means this market couldn\'t be graded from the recorded result (e.g. no corner/card count available).' : ''}
-        ${data.dc_rho_note} Never treat these as guarantees; sample sizes and variance still apply.
+        ${data.dc_rho_note} ${data.form_blend_note || ''} Never treat these as guarantees; sample sizes and variance still apply.
       </div>
     </div>
   `;

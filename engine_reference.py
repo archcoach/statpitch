@@ -116,7 +116,7 @@ class Engine:
         rows = [r for r in self.by_div.get(div, []) if r['away'] == team]
         return _weighted_splits(rows, side='away')
 
-    def analyze(self, div, home_fixture_name, away_fixture_name):
+    def analyze(self, div, home_fixture_name, away_fixture_name, recent_form=None):
         if div not in self.league_stats:
             return {'error': f'No historical data available for division {div}.'}
 
@@ -158,6 +158,27 @@ class Engine:
         home_defense = home_h['goals_against'] / league['avg_home_goals'] if league['avg_home_goals'] else 1.0
         lambda_away = league['avg_away_goals'] * away_attack * home_defense
 
+        # --- Recent-form blend (see _blend_recent_form for the weighting
+        # rationale -- mirrors engine.js exactly, both engines must agree) ---
+        form_blend_note = None
+        if recent_form:
+            notes = []
+            home_blend = _blend_recent_form(lambda_home, recent_form.get('home'), n_used)
+            if home_blend['n'] is not None:
+                lambda_home = home_blend['lambda']
+                notes.append(f"{home_fixture_name} ({home_blend['recent_weight']:.1f}-game weight from last {home_blend['n']})")
+            away_blend = _blend_recent_form(lambda_away, recent_form.get('away'), n_used)
+            if away_blend['n'] is not None:
+                lambda_away = away_blend['lambda']
+                notes.append(f"{away_fixture_name} ({away_blend['recent_weight']:.1f}-game weight from last {away_blend['n']})")
+            if notes:
+                form_blend_note = (
+                    f"Recent-form blend applied for {' and '.join(notes)} against n={n_used} historical — "
+                    f"prefers real xG per match over goals when available, nudges each team's own attacking "
+                    f"output only (no separate recent-defense modeling), weighted so it can never overwhelm "
+                    f"the historical number. A heuristic recency adjustment, not a fitted or validated parameter."
+                )
+
         # clip to sane range to avoid runaway extrapolation on thin samples
         lambda_home = min(max(lambda_home, 0.15), 4.5)
         lambda_away = min(max(lambda_away, 0.15), 4.5)
@@ -198,8 +219,47 @@ class Engine:
             'n_used': n_used,
             'confidence': confidence,
             'dc_rho_note': f"Dixon-Coles low-score correction applied with fixed rho={DC_RHO} (literature-typical, not fitted to this dataset).",
+            'form_blend_note': form_blend_note,
             'markets': markets,
         }
+
+
+# ---- Recent-form blend (fresh signal layered onto multi-season history) ----
+# Mirrors engine.js's blendRecentForm/recentScoringRate exactly -- both
+# engines must produce the same lambda for the same inputs. See engine.js
+# for the full weighting rationale: RECENT_FORM_MAX_TRUST caps recent form's
+# influence at a flat "2 games' worth" of trust regardless of historical
+# sample size; historical weight (n_used) is deliberately NOT capped, so a
+# well-established team gets a barely-there nudge while a thin-history team
+# gets proportionally more say from recent form.
+RECENT_FORM_MAX_TRUST = 2
+
+
+def _recent_scoring_rate(recent_form):
+    if not recent_form:
+        return None
+    vals = []
+    for m in recent_form:
+        if m.get('xg_for') is not None:
+            vals.append(m['xg_for'])
+            continue
+        score = m.get('score') or ''
+        parts = score.split('-')
+        if len(parts) == 2:
+            try:
+                vals.append(float(parts[0]))  # score is "team-opponent"
+            except ValueError:
+                pass
+    return {'rate': _mean(vals), 'n': len(vals)} if vals else None
+
+
+def _blend_recent_form(base_lambda, recent_form, historical_n):
+    recent = _recent_scoring_rate(recent_form)
+    if not recent:
+        return {'lambda': base_lambda, 'n': None}
+    recent_weight = min(recent['n'], 3) * (RECENT_FORM_MAX_TRUST / 3)
+    lam = (base_lambda * historical_n + recent['rate'] * recent_weight) / (historical_n + recent_weight)
+    return {'lambda': lam, 'recent_weight': recent_weight, 'n': recent['n']}
 
 
 def _mean(vals):

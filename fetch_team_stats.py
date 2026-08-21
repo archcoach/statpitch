@@ -241,6 +241,9 @@ def fetch_match_stats(page, match_href):
             by_label[r['label']] = r
 
     result = {}
+    if 'Expected goals (xG)' in by_label:
+        result['home_xg'] = parse_num(by_label['Expected goals (xG)']['home'])
+        result['away_xg'] = parse_num(by_label['Expected goals (xG)']['away'])
     if 'Ball possession' in by_label:
         result['home_possession'] = parse_num(by_label['Ball possession']['home'])
         result['away_possession'] = parse_num(by_label['Ball possession']['away'])
@@ -272,6 +275,8 @@ def build_form_entry(page, match, team_name):
     }
     if stats:
         is_home = match['venue'] == 'H'
+        entry['xg_for'] = stats.get('home_xg' if is_home else 'away_xg')
+        entry['xg_against'] = stats.get('away_xg' if is_home else 'home_xg')
         entry['possession'] = stats.get('home_possession' if is_home else 'away_possession')
         entry['shots'] = stats.get('home_shots' if is_home else 'away_shots')
         entry['shots_on_target'] = stats.get('home_shots_on_target' if is_home else 'away_shots_on_target')

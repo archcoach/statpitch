@@ -83,7 +83,7 @@ class Engine {
     }));
   }
 
-  analyze(div, homeFixtureName, awayFixtureName){
+  analyze(div, homeFixtureName, awayFixtureName, recentForm){
     const league = this.leagueStats[div];
     if(!league) return { error: `No historical data available for division ${div}.` };
 
@@ -108,6 +108,28 @@ class Engine {
     const awayAttack = league.avgAwayGoals ? awayA.goalsFor / league.avgAwayGoals : 1;
     const homeDefense = league.avgHomeGoals ? homeH.goalsAgainst / league.avgHomeGoals : 1;
     let lambdaAway = league.avgAwayGoals * awayAttack * homeDefense;
+
+    // Recent-form blend (fresh signal on top of multi-season history) — see
+    // blendRecentForm below for the weighting rationale. Optional and fully
+    // backward compatible: omit recentForm (or lack data for a side) and
+    // that side's lambda is untouched, exactly as before this existed.
+    let formBlendNote = null;
+    if(recentForm){
+      const homeBlend = blendRecentForm(lambdaHome, recentForm.home, nUsed);
+      const awayBlend = blendRecentForm(lambdaAway, recentForm.away, nUsed);
+      const notes = [];
+      if(homeBlend.n != null){
+        lambdaHome = homeBlend.lambda;
+        notes.push(`${homeFixtureName} (${homeBlend.recentWeight.toFixed(1)}-game weight from last ${homeBlend.n})`);
+      }
+      if(awayBlend.n != null){
+        lambdaAway = awayBlend.lambda;
+        notes.push(`${awayFixtureName} (${awayBlend.recentWeight.toFixed(1)}-game weight from last ${awayBlend.n})`);
+      }
+      if(notes.length){
+        formBlendNote = `Recent-form blend applied for ${notes.join(' and ')} against n=${nUsed} historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.`;
+      }
+    }
 
     lambdaHome = clip(lambdaHome, 0.15, 4.5);
     lambdaAway = clip(lambdaAway, 0.15, 4.5);
@@ -135,10 +157,43 @@ class Engine {
       n_home_matches: nHome, n_away_matches: nAway, n_used: nUsed,
       confidence,
       dc_rho_note: `Dixon-Coles low-score correction applied with fixed rho=${DC_RHO} (literature-typical, not fitted to this dataset).`,
+      form_blend_note: formBlendNote,
       markets,
       h2h: this.headToHead(div, homeFixtureName, awayFixtureName),
     };
   }
+}
+
+// ---- Recent-form blend (fresh signal layered onto multi-season history) ----
+// See analyze() for how these are used. RECENT_FORM_MAX_TRUST caps recent
+// form's influence at a flat "2 games' worth" of trust regardless of how
+// much historical data exists, so a hot/cold 3-game streak can nudge the
+// number but never overwhelm it. Historical weight (nUsed) is deliberately
+// NOT capped: a well-established team (100+ historical matches) gets a
+// barely-there nudge (~2%), while a thin-history team (10-15 matches, the
+// same teams already graded Low/Medium confidence) gets proportionally more
+// say from recent form (~15-20%) -- which is the right direction, since
+// thin history is itself less trustworthy. This is a disclosed heuristic,
+// not a fitted/validated parameter, same honesty bar as DC_RHO.
+const RECENT_FORM_MAX_TRUST = 2;
+
+function recentScoringRate(recentForm){
+  if(!recentForm || !recentForm.length) return null;
+  const vals = [];
+  for(const m of recentForm){
+    if(m.xg_for != null){ vals.push(m.xg_for); continue; }
+    const parts = (m.score||'').split('-').map(Number);
+    if(parts.length===2 && !parts.some(isNaN)) vals.push(parts[0]); // score is "team-opponent"
+  }
+  return vals.length ? { rate: mean(vals), n: vals.length } : null;
+}
+
+function blendRecentForm(baseLambda, recentForm, historicalN){
+  const recent = recentScoringRate(recentForm);
+  if(!recent) return { lambda: baseLambda, n: null };
+  const recentWeight = Math.min(recent.n, 3) * (RECENT_FORM_MAX_TRUST/3);
+  const lambda = (baseLambda*historicalN + recent.rate*recentWeight) / (historicalN + recentWeight);
+  return { lambda, recentWeight, n: recent.n };
 }
 
 function mean(a){ return a.length ? a.reduce((s,v)=>s+v,0)/a.length : 0; }
