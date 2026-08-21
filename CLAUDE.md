@@ -113,45 +113,59 @@ from before.
 
 ## Live odds
 
-**Two coexisting paths now (as of 2026-08-21), same split as Team news
-below: 1X2 is automated, everything else is still manual on request.**
-
 **Automated — `fetch_odds.py`**, scheduled (Windows Task Scheduler, daily,
 independent of Claude Code). For fixtures in the next 5 days, it finds each
 match on Flashscore (via a known team's fixtures list in
 `data/flashscore_team_ids.json` — see "Team news / context" for how that
-cache works and why it's hand-maintained, not self-resolving) and reads its
-`/odds/` comparison page, which itself aggregates STS, Fortuna, Superbet,
-Betclic, and several more bookmakers in one table. It writes the **best
-price per outcome across all of them** into `data/live_odds.json`'s `1x2`
-field (`source` records how many bookmakers that was, e.g. "Flashscore (best
-of 7 bookmakers)" — never disguises one quote as a consensus), and rebuilds.
-Only `1x2` — it does not touch `goals_ou`/`corners_ou`/`btts` if a manual
-fetch already put those there, but it **does** overwrite `1x2` on every
-run, so a manually-set 1X2 price gets replaced by the next scheduled fetch.
-That's intentional (the whole point is staying current), not a bug to
-"fix" by making it more conservative.
+cache works and why it's hand-maintained, not self-resolving) and fetches
+**1X2, Over/Under (1.5/2.5/3.5 — the lines `engine.js`'s `GOAL_LINES`
+actually uses), and Both Teams to Score**, each from Flashscore's own
+odds-comparison page, which aggregates STS, Fortuna, Superbet, Betclic, and
+several more bookmakers in one table per market. It writes the **best price
+per outcome across all of them** into `data/live_odds.json` (`source`
+records how many bookmakers that was, e.g. "Flashscore (best of 7
+bookmakers)" — never disguises one quote as a consensus), and rebuilds.
+`1x2`/`goals_ou`/`btts` all get overwritten on every run — that's
+intentional (the whole point is staying current), not a bug to "fix" by
+making it more conservative.
 
-**Why Flashscore odds specifically, given the history below:** this project
+**Each market has its own direct URL** (`/odds/`, `/odds/over-under/`,
+`/odds/both-teams-to-score/`) instead of needing to click an in-page
+category tab. This is the detail that unlocked automating Over/Under and
+BTTS (`fetch_over_under_odds`/`fetch_btts_odds` in `fetch_odds.py`,
+2026-08-21) after an earlier attempt gave up on it — clicking those tabs
+was never made to trigger reliably via a stable selector, but navigating
+straight to the market's own URL sidesteps the tab entirely. If a future
+market needs adding, look for its direct URL slug the same way (open the
+tab manually once, read the URL it lands on) rather than re-attempting
+tab-click automation.
+
+**Why Flashscore odds at all, given the history below:** this project
 tried Flashscore for odds once already and dropped it for Superbet because
 odds loaded behind a stalled WebSocket feed that an automated browser
-couldn't rely on. That finding does not automatically generalize to every
-Flashscore page — tested headless Playwright against the *odds-comparison*
-page specifically (distinct from the live in-play odds that caused the
-original problem) three times in a row with zero failures before shipping
-this. If it starts failing, check whether Flashscore changed the
-`.oddsCell__odds` / `.ui-table__row` structure this reads, before assuming
-the whole approach is broken again.
+couldn't rely on. That finding does not generalize to every Flashscore
+page — tested headless Playwright against the *odds-comparison* pages
+specifically (distinct from the live in-play odds that caused the original
+problem), repeatedly, with zero failures before shipping this. If it
+starts failing, check whether Flashscore changed the `.oddsCell__odds` /
+`.ui-table__row` structure these read, before assuming the whole approach
+is broken again.
 
-**Still manual — everything beyond 1X2 (Over/Under, corners, BTTS), plus
-Superbet as a fallback source.** Automating Flashscore's Over/Under and BTTS
-sub-tabs wasn't nailed down during development (the tab switch didn't
-reliably trigger via a stable selector) — left for later rather than
-shipped flaky. Superbet also similarly failed for its deeper markets during
-this same session for an unrelated reason: its markets lazy-mount via
-`IntersectionObserver` and didn't render in a non-visible/non-composited
-browser context. Both gaps mean the manual Superbet workflow below is still
-the way to get goals/corners/BTTS odds for now.
+**Corners and cards odds are NOT fetched, and structurally can't be from
+this source.** Confirmed by direct URL: `/odds/corners/` doesn't resolve
+to a page at all — Flashscore's odds-comparison tool has no corners or
+cards category, for any match, not just an availability gap for specific
+fixtures. This was checked directly (2026-08-21) before concluding it,
+rather than assumed. Superbet's own site does sometimes price these
+markets directly, but automating Superbet has still not been made to work
+in this environment — re-tested the same session this finding was made:
+its markets lazy-mount and simply don't render, headless or interactive,
+regardless of scroll position, wait time, or which category tab is
+active. If corners/cards odds matter enough to chase further, the honest
+options are (a) the manual Superbet workflow below, accepting it's
+manual, or (b) finding a third odds-comparison source that lists these
+markets and testing *that* site's automatability from scratch — don't
+assume either Flashscore or Superbet will suddenly start working.
 
 Workflow to refresh a match's odds manually:
 

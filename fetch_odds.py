@@ -14,16 +14,26 @@ two teams is in that cache, since finding the exact match link (with its
 opaque `mid` parameter) means browsing to a known team's fixtures list and
 matching the row by opponent + date.
 
-Only the 1x2 market is fetched. Flashscore's odds page also has Over/Under,
-BTTS, Double Chance etc. as sub-tabs, but reliably automating the tab switch
-wasn't nailed down during development -- left for a follow-up rather than
-shipping something flaky. Existing goals_ou/corners_ou/btts entries (from
-manual Superbet fetches) are preserved, not overwritten.
+Fetches 1X2, Over/Under (only the lines engine.js's GOAL_LINES actually
+uses: 1.5/2.5/3.5), and Both Teams to Score. Each market has its own direct
+URL (`/odds/`, `/odds/over-under/`, `/odds/both-teams-to-score/`) rather
+than needing to click a tab -- clicking the in-page category tabs was never
+made reliable, but navigating straight to a market's own URL sidesteps
+that entirely and has proven solid in testing.
 
-"Best odds" convention: for each outcome (home/draw/away), this takes the
-*highest* price across every bookmaker Flashscore lists for that match --
-standard odds-comparison practice. source records how many bookmakers that
-was, so a single quote is never disguised as a consensus.
+Corners/cards odds are NOT fetched, and can't be from this source: unlike
+Over/Under and BTTS, Flashscore's odds-comparison tool has no corners or
+cards category at all (confirmed via direct URL -- `/odds/corners/`
+doesn't resolve to a page). This is a gap in what the market offers
+through this comparison tool, not a scraping failure -- Superbet's own
+site sometimes has corners/cards priced directly, but automating Superbet
+has not been made to work in this environment (its markets lazy-mount and
+don't render reliably here, headless or interactive) -- see CLAUDE.md.
+
+"Best odds" convention: for each outcome, this takes the *highest* price
+across every bookmaker Flashscore lists for that match -- standard odds-
+comparison practice. source records how many bookmakers that was, so a
+single quote is never disguised as a consensus.
 
 Usage: python3 fetch_odds.py
 """
@@ -44,6 +54,7 @@ FIXTURE_WINDOW_DAYS = 5   # a bit wider than team-stats' 3 days -- odds sometime
                           # post a few days further out, though most don't
 REQUEST_DELAY_S = 2
 ODDS_WAIT_S = 15
+GOAL_LINES = ['1.5', '2.5', '3.5']  # mirrors engine.js's GOAL_LINES -- keep in sync
 
 
 def log(msg):
@@ -169,6 +180,85 @@ def fetch_1x2_odds(page, match_href):
     return {'home': home, 'draw': draw, 'away': away, 'n_bookmakers': len(valid)}
 
 
+def _wait_for_odds_tables(page):
+    for _ in range(int(ODDS_WAIT_S / 0.5)):
+        if page.evaluate("document.querySelectorAll('.oddsCell__odds').length > 0"):
+            return True
+        time.sleep(0.5)
+    return False
+
+
+def fetch_over_under_odds(page, match_href):
+    """Returns {line: {over, under, n_bookmakers}} for whichever of
+    GOAL_LINES Flashscore has priced -- never all three guaranteed, some
+    lines (usually the more extreme ones) can be missing for a given match."""
+    url = match_href.replace('/?mid=', '/odds/over-under/?mid=')
+    page.goto(url, wait_until="domcontentloaded", timeout=20000)
+    dismiss_cookie_banner(page)
+    if not _wait_for_odds_tables(page):
+        return {}
+
+    tables = page.evaluate("""
+        () => Array.from(document.querySelectorAll('.oddsCell__odds')).map(table => {
+            const rows = Array.from(table.querySelectorAll('.ui-table__row'));
+            if (!rows.length) return null;
+            const totalEl = rows[0].querySelector('[class*="wclOddsCell"]');
+            const total = totalEl ? totalEl.textContent.trim() : null;
+            const oddsPerRow = rows.map(r => {
+                const cells = r.querySelectorAll('.oddsCell__odd');
+                return { over: cells[0] ? cells[0].textContent.trim() : null,
+                         under: cells[1] ? cells[1].textContent.trim() : null };
+            });
+            return { total, oddsPerRow };
+        }).filter(Boolean)
+    """)
+
+    result = {}
+    for t in tables:
+        if t['total'] not in GOAL_LINES:
+            continue
+        overs, unders = [], []
+        for r in t['oddsPerRow']:
+            try:
+                if r['over']:
+                    overs.append(float(r['over']))
+                if r['under']:
+                    unders.append(float(r['under']))
+            except ValueError:
+                continue
+        if overs and unders:
+            result[t['total']] = {'over': max(overs), 'under': max(unders), 'n_bookmakers': len(t['oddsPerRow'])}
+    return result
+
+
+def fetch_btts_odds(page, match_href):
+    url = match_href.replace('/?mid=', '/odds/both-teams-to-score/?mid=')
+    page.goto(url, wait_until="domcontentloaded", timeout=20000)
+    dismiss_cookie_banner(page)
+    if not _wait_for_odds_tables(page):
+        return None
+
+    rows = page.evaluate("""
+        () => Array.from(document.querySelectorAll('.oddsCell__odds .ui-table__row')).map(r => {
+            const cells = r.querySelectorAll('.oddsCell__odd');
+            return { yes: cells[0] ? cells[0].textContent.trim() : null,
+                     no: cells[1] ? cells[1].textContent.trim() : null };
+        })
+    """)
+    yes_vals, no_vals = [], []
+    for r in rows:
+        try:
+            if r['yes']:
+                yes_vals.append(float(r['yes']))
+            if r['no']:
+                no_vals.append(float(r['no']))
+        except ValueError:
+            continue
+    if not yes_vals or not no_vals:
+        return None
+    return {'yes': max(yes_vals), 'no': max(no_vals), 'n_bookmakers': len(rows)}
+
+
 def main():
     id_cache = load_json('data/flashscore_team_ids.json', {})
     live_odds = load_json('data/live_odds.json', {})
@@ -214,10 +304,26 @@ def main():
                 entry['source'] = f"Flashscore (best of {odds['n_bookmakers']} bookmakers)"
                 entry['source_url'] = href.replace('/?mid=', '/odds/?mid=')
                 entry['fetched_at'] = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-                # goals_ou / corners_ou / btts from any earlier manual fetch are left as-is
+
+                summary = f"1X2 {odds['home']}/{odds['draw']}/{odds['away']}"
+                time.sleep(REQUEST_DELAY_S)
+                ou = fetch_over_under_odds(page, href)
+                if ou:
+                    entry['goals_ou'] = {line: {'over': v['over'], 'under': v['under']} for line, v in ou.items()}
+                    summary += f", O/U lines {list(ou.keys())}"
+
+                time.sleep(REQUEST_DELAY_S)
+                btts = fetch_btts_odds(page, href)
+                if btts:
+                    entry['btts'] = {'yes': btts['yes'], 'no': btts['no']}
+                    summary += f", BTTS {btts['yes']}/{btts['no']}"
+
+                # corners_ou stays whatever an earlier manual Superbet fetch put there
+                # (if anything) -- Flashscore's comparison tool has no corners category
+                # at all, see module docstring.
                 live_odds[key] = entry
                 updated.append(key)
-                log(f"OK {key}: {odds['home']}/{odds['draw']}/{odds['away']} (best of {odds['n_bookmakers']})")
+                log(f"OK {key}: {summary} (best of {odds['n_bookmakers']} bookmakers)")
             except Exception as e:
                 log(f"FAIL {key}: {type(e).__name__}: {e}")
                 skipped.append(key)
