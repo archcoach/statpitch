@@ -18,7 +18,7 @@
   .mono{font-family:'IBM Plex Mono',monospace;}
   #app{max-width:860px;margin:0 auto;padding:20px 16px 64px;}
 
-  header.top{display:flex;flex-direction:column;gap:2px;padding-bottom:18px;border-bottom:1px solid var(--border);margin-bottom:16px;}
+  header.top{display:flex;flex-direction:column;gap:6px;padding-bottom:24px;border-bottom:1px solid var(--border);margin-bottom:24px;}
   .wordmark-row{display:flex;align-items:center;justify-content:space-between;gap:10px;}
   .wordmark{font-size:20px;font-weight:700;letter-spacing:0.04em;display:flex;align-items:baseline;gap:10px;}
   .wordmark .dot{color:var(--accent);}
@@ -56,9 +56,9 @@
 
   .stats-line{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-faint);}
 
-  .day-group{margin-top:22px;scroll-margin-top:8px;}
-  .day-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
-    color:var(--text-faint);padding:8px 0;display:flex;align-items:center;gap:8px;
+  .day-group{margin-top:28px;scroll-margin-top:8px;}
+  .day-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--text-faint);padding:10px 0;display:flex;align-items:center;gap:8px;
     position:sticky;top:0;background:var(--bg);z-index:2;}
   .day-label .relative{color:var(--flag);}
   .day-label::after{content:'';flex:1;height:1px;background:var(--border);}
@@ -69,14 +69,15 @@
     background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px 10px;cursor:pointer;white-space:nowrap;}
   .date-nav .dn-chip:hover{color:var(--text);border-color:var(--accent);}
 
-  .match{margin-bottom:6px;}
-  .row{display:flex;align-items:center;gap:12px;background:var(--surface);
+  .match{margin-bottom:8px;}
+  .row{display:flex;align-items:center;gap:14px;background:var(--surface);
     border:1px solid var(--border);border-left:3px solid var(--row-color, var(--border));
-    border-radius:6px;padding:11px 12px;cursor:pointer;transition:background .12s;}
+    border-radius:8px;padding:14px 16px;cursor:pointer;transition:background .12s, border-color .12s;}
   .row:hover{background:var(--surface-2);}
   .row:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+  .row.selected{background:var(--surface-2);border-top-color:var(--accent);border-right-color:var(--accent);border-bottom-color:var(--accent);}
   .row .time{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--text-dim);width:44px;flex:0 0 auto;}
-  .row .teams{flex:1;font-size:14px;font-weight:500;min-width:0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+  .row .teams{flex:1;font-size:14.5px;font-weight:500;min-width:0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
   .row .teams .vs{color:var(--text-faint);font-weight:400;font-size:12px;}
   .row .div-badge{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-faint);flex:0 0 auto;}
   .row .badges{display:flex;gap:3px;flex:0 0 auto;}
@@ -90,9 +91,9 @@
   .row .seen-mark{width:6px;height:6px;border-radius:50%;background:var(--flag);flex:0 0 auto;}
   .row .seen-mark.hidden{visibility:hidden;}
 
-  .panel{background:var(--surface-2);border:1px solid var(--border);border-top:none;border-radius:0 0 6px 6px;
-    padding:14px 14px 16px;margin-top:-6px;margin-bottom:6px;font-size:13px;}
-  .panel .meta-line{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-faint);margin-bottom:10px;display:flex;gap:14px;flex-wrap:wrap;}
+  .panel{background:var(--surface-2);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;
+    padding:20px 20px 22px;margin-top:-6px;margin-bottom:6px;font-size:13.5px;}
+  .panel .meta-line{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-faint);margin-bottom:14px;display:flex;gap:14px;flex-wrap:wrap;}
   .panel .conf{padding:1px 7px;border-radius:10px;font-weight:600;}
   .conf.High{background:rgba(107,203,119,.15);color:var(--good);}
   .conf.Medium{background:rgba(255,180,84,.15);color:var(--flag);}
@@ -108,7 +109,7 @@
   table.markets td.group-header{background:var(--surface);color:var(--text-faint);font-family:'IBM Plex Mono',monospace;
     font-size:10px;text-transform:uppercase;letter-spacing:0.05em;padding:5px 8px;white-space:nowrap;}
 
-  .team-context{display:flex;gap:10px;margin-bottom:4px;flex-wrap:wrap;}
+  .team-context{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
   .team-form-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));gap:8px;}
   .team-form-grid .team-card{flex:none;}
   .team-card{flex:1 1 220px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 12px;min-width:0;}
@@ -131,36 +132,56 @@
   .tc-empty{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-faint);}
   .tc-caption{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-faint);margin:6px 0 12px;}
 
-  .h2h{margin-bottom:12px;}
+  .h2h{margin-bottom:16px;}
   .h2h-title{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-faint);margin-bottom:6px;}
   .h2h-list{list-style:none;margin:0;padding:0;font-size:12px;}
   .h2h-list li{padding:4px 0;border-top:1px solid var(--border);color:var(--text-dim);}
   .h2h-list li:first-child{border-top:none;}
   .h2h-season{font-family:'IBM Plex Mono',monospace;color:var(--text-faint);margin-right:6px;}
 
-  .top-pick{background:var(--surface);border:1px solid var(--accent);border-radius:8px;padding:10px 12px;
-    margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .top-pick{background:var(--surface);border:1px solid var(--accent);border-radius:10px;padding:16px 18px;
+    margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
   .top-pick .tp-label{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-faint);}
-  .top-pick .tp-main{font-size:15px;font-weight:600;}
+  .top-pick .tp-main{font-size:16px;font-weight:600;}
   .top-pick .tp-right{text-align:right;}
-  .top-pick .tp-prob{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:700;color:var(--accent);}
+  .top-pick .tp-prob{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:700;color:var(--accent);}
   .top-pick .tp-edge{font-family:'IBM Plex Mono',monospace;font-size:11px;}
 
+  .table-caption{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-bottom:6px;}
   .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
   table.markets{width:100%;min-width:460px;border-collapse:collapse;}
   table.markets th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;
     letter-spacing:0.05em;color:var(--text-faint);padding:6px 8px;border-bottom:1px solid var(--border);white-space:nowrap;}
-  table.markets td{padding:7px 8px;border-bottom:1px solid var(--border);font-size:12.5px;white-space:nowrap;}
+  table.markets td{padding:9px 10px;border-bottom:1px solid var(--border);font-size:12.5px;white-space:nowrap;}
+  table.markets tbody tr:hover{background:var(--surface);}
+  table.markets tr.spotlight-row, table.markets tr.spotlight-row:hover{background:rgba(76,141,255,.08);}
   table.markets tr:last-child td{border-bottom:none;}
   table.markets td.market{color:var(--text-dim);}
   table.markets td.sel{font-weight:600;}
   table.markets td.prob{font-family:'IBM Plex Mono',monospace;text-align:right;}
+  table.markets td.prob.edge{font-weight:600;}
   table.markets td.prob.edge.pos{color:var(--good);}
   table.markets td.prob.edge.neg{color:var(--text-dim);}
-  table.markets td.prob.kelly{color:var(--text-faint);}
+  table.markets td.prob.kelly{color:var(--text-faint);font-weight:400;}
+  .cat-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text-faint);letter-spacing:0.05em;
+    border:1px solid var(--border);border-radius:3px;padding:1px 4px;margin-right:6px;white-space:nowrap;}
   .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-top:10px;line-height:1.5;}
 
   .empty{padding:48px 12px;text-align:center;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
+
+  .board-detail{display:none;}
+
+  @media (min-width:980px){
+    #app{max-width:1400px;padding:24px 24px 64px;}
+    .wordmark{font-size:26px;}
+    .board.is-fixtures{display:grid;grid-template-columns:minmax(380px,460px) minmax(520px,1fr);gap:20px;align-items:start;}
+    .board.is-fixtures .board-detail{display:block;position:sticky;top:20px;max-height:calc(100vh - 40px);overflow-y:auto;
+      background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:18px 20px;}
+    .board.is-fixtures .board-detail .panel{border:none;border-radius:0;padding:0;margin-top:0;background:transparent;}
+    .board.is-fixtures .detail-empty{padding:64px 16px;text-align:center;color:var(--text-faint);
+      font-family:'IBM Plex Mono',monospace;font-size:12px;}
+    .board.is-fixtures .detail-empty.hidden{display:none;}
+  }
 
   @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
 </style>
@@ -185,7 +206,13 @@
   <div class="stats-line" id="statsLine"></div>
   <div class="date-nav" id="dateNav"></div>
 
-  <div id="list"></div>
+  <div class="board" id="board">
+    <div id="list"></div>
+    <aside class="board-detail" id="detailPane">
+      <div class="detail-empty" id="detailEmpty">Select a fixture on the left to see its analysis.</div>
+      <div id="detailHolder"></div>
+    </aside>
+  </div>
 </div>
 
 <script>
@@ -218,7 +245,21 @@ let seen = JSON.parse(localStorage.getItem('statpitch-seen') || '{}');
 let expandedKey = null;
 const cache = {};
 
+// Desktop gets a persistent two-pane layout (fixture list + sticky detail
+// pane) instead of the mobile inline-accordion; see .board.is-fixtures in
+// CSS. A MediaQueryList listener (not ad-hoc innerWidth checks scattered
+// through render calls) keeps a live resize across the breakpoint from
+// leaving orphaned DOM in either pane.
+const wideMQ = window.matchMedia('(min-width: 980px)');
+let isWide = wideMQ.matches;
+wideMQ.addEventListener('change', (e) => {
+  isWide = e.matches;
+  renderList();
+  renderDetailPane(isWide && expandedKey ? findFixtureByKey(expandedKey) : null);
+});
+
 function matchKey(f){ return f[0]+'|'+f[1]+'|'+f[4]+'|'+f[5]; }
+function findFixtureByKey(key){ return FIXTURES.find(f => matchKey(f) === key); }
 
 function todayISO(){
   const d = new Date();
@@ -259,6 +300,7 @@ function renderViewScope(){
   el.appendChild(fixturesBtn);
   el.appendChild(formBtn);
   document.getElementById('dateScope').style.display = view==='fixtures' ? 'flex' : 'none';
+  document.getElementById('board').classList.toggle('is-fixtures', view === 'fixtures');
 }
 
 function allFixtureTeams(){
@@ -468,12 +510,13 @@ function makeMatchBlock(f){
   const [div, iso, label, time, home, away] = f;
   const lg = LEAGUES[div];
   const key = matchKey(f);
+  const isSelected = expandedKey === key;
 
   const container = document.createElement('div');
   container.className = 'match';
 
   const row = document.createElement('div');
-  row.className = 'row' + (expandedKey===key ? ' expanded' : '');
+  row.className = 'row' + (isSelected ? (isWide ? ' selected' : ' expanded') : '');
   row.style.setProperty('--row-color', lg.color);
   row.tabIndex = 0;
   const isSeen = !!seen[key];
@@ -487,28 +530,48 @@ function makeMatchBlock(f){
   `;
   container.appendChild(row);
 
-  const panelHolder = document.createElement('div');
-  container.appendChild(panelHolder);
+  // On wide viewports the panel renders into the persistent right-hand
+  // detail pane instead of inline here — see renderDetailPane().
+  let panelHolder = null;
+  if(!isWide){
+    panelHolder = document.createElement('div');
+    container.appendChild(panelHolder);
+  }
 
   row.onclick = () => toggleMatch(f, panelHolder);
   row.onkeydown = (e) => { if(e.key==='Enter'||e.key===' ') row.onclick(); };
 
-  if(expandedKey === key) renderPanel(f, panelHolder);
+  if(!isWide && isSelected) renderPanel(f, panelHolder);
 
   return container;
 }
 
 function toggleMatch(f, panelHolder){
   const key = matchKey(f);
+  seen[key] = { ts: Date.now() };
+  localStorage.setItem('statpitch-seen', JSON.stringify(seen));
+
+  if(isWide){
+    expandedKey = (expandedKey === key) ? null : key;
+    renderList();
+    renderDetailPane(expandedKey ? f : null);
+    return;
+  }
   if(expandedKey === key){
     expandedKey = null;
     renderList();
     return;
   }
   expandedKey = key;
-  seen[key] = { ts: Date.now() };
-  localStorage.setItem('statpitch-seen', JSON.stringify(seen));
   renderList();
+}
+
+function renderDetailPane(f){
+  const empty = document.getElementById('detailEmpty');
+  const holder = document.getElementById('detailHolder');
+  if(!f){ empty.classList.remove('hidden'); holder.innerHTML = ''; return; }
+  empty.classList.add('hidden');
+  renderPanel(f, holder);
 }
 
 function timeAgo(iso){
@@ -637,10 +700,24 @@ function marketGroup(market){
   return 'Other';
 }
 
-function marketRowHtml(m, hasOdds, graded){
+// Display-only helper: picks what to headline in the top-pick callout and,
+// when live odds exist, what the full table sorts by. Never touches
+// engine.js's markets array or its probability sort (line ~151) — this only
+// decides what renderPanel highlights. Deliberately never reads
+// quarter_kelly: Kelly must never enter the spotlight (see CLAUDE.md).
+function pickSpotlight(top, hasOdds){
+  if(hasOdds){
+    const withOdds = top.filter(m => m.market_prob != null);
+    if(withOdds.length) return withOdds.reduce((best,m) => m.edge > best.edge ? m : best, withOdds[0]);
+  }
+  return top[0]; // fallback when there's no live odds: highest historical probability, as before
+}
+
+function marketRowHtml(m, hasOdds, graded, isSpotlight){
+  const catTag = hasOdds ? `<span class="cat-tag">${marketGroup(m.market).split(' ')[0].toUpperCase()}</span>` : '';
   return `
-    <tr>
-      <td class="market">${m.market}</td>
+    <tr class="${isSpotlight ? 'spotlight-row' : ''}">
+      <td class="market">${catTag}${m.market}</td>
       <td class="sel">${m.selection}</td>
       <td class="prob">${(m.probability*100).toFixed(1)}%</td>
       ${hasOdds ? `
@@ -707,21 +784,36 @@ function renderPanel(f, holder){
 
   const hasOdds = top.some(m => m.market_prob != null);
   const isPast = iso < todayISO();
+  const spotlight = pickSpotlight(top, hasOdds);
 
-  const buckets = {};
-  for(const g of MARKET_GROUP_ORDER) buckets[g] = [];
-  for(const m of top) buckets[marketGroup(m.market)].push(m);
   const colspan = 3 + (hasOdds ? 4 : 0) + (graded ? 1 : 0);
-  const rowsHtml = MARKET_GROUP_ORDER
-    .filter(g => buckets[g].length)
-    .map(g => `<tr><td colspan="${colspan}" class="group-header">${g}</td></tr>` + buckets[g].map(m => marketRowHtml(m, hasOdds, graded)).join(''))
-    .join('');
+  let rowsHtml;
+  if(hasOdds){
+    // Sort by edge (model minus market) when a live price exists — the
+    // whole point of this view is to surface value, not just whatever the
+    // model itself considers most probable. Rows with no market price for
+    // that selection sink to the bottom rather than interrupting the sort.
+    const sorted = top.slice().sort((a,b) => {
+      const ae = a.market_prob != null ? a.edge : -Infinity;
+      const be = b.market_prob != null ? b.edge : -Infinity;
+      return be - ae;
+    });
+    rowsHtml = sorted.map(m => marketRowHtml(m, hasOdds, graded, m === spotlight)).join('');
+  } else {
+    const buckets = {};
+    for(const g of MARKET_GROUP_ORDER) buckets[g] = [];
+    for(const m of top) buckets[marketGroup(m.market)].push(m);
+    rowsHtml = MARKET_GROUP_ORDER
+      .filter(g => buckets[g].length)
+      .map(g => `<tr><td colspan="${colspan}" class="group-header">${g}</td></tr>` + buckets[g].map(m => marketRowHtml(m, hasOdds, graded, m === spotlight)).join(''))
+      .join('');
+  }
 
-  const topPick = top[0];
+  const topPick = spotlight;
   const topPickHtml = topPick ? `
     <div class="top-pick">
       <div>
-        <div class="tp-label">Highest-probability market</div>
+        <div class="tp-label">${hasOdds && topPick.market_prob != null ? 'Best value vs market' : 'Highest-probability market'}</div>
         <div class="tp-main">${topPick.market} — ${topPick.selection}</div>
       </div>
       <div class="tp-right">
@@ -755,6 +847,7 @@ function renderPanel(f, holder){
       ${h2hHtml(data.h2h)}
       ${topPickHtml}
       <div class="odds-status">${oddsStatusHtml}</div>
+      <div class="table-caption">${hasOdds ? 'Sorted by edge vs. market, highest first.' : 'Sorted by historical probability, highest first.'}</div>
       <div class="table-scroll">
         <table class="markets">
           <thead><tr>
@@ -766,7 +859,7 @@ function renderPanel(f, holder){
         </table>
       </div>
       <div class="disclaimer">
-        Ranked by model-derived historical probability, not market value.
+        ${hasOdds ? 'Ranked by edge — model probability minus the live market-implied probability — highest first, not by raw historical probability.' : 'Ranked by model-derived historical probability, not market value.'}
         ${hasOdds ? "Market Prob. is the live price with the overround removed via Shin's method (corrects for the favourite-longshot bias documented in the project instructions, rather than just flagging it); Edge is model minus market, in percentage points — not a recommendation. ¼-Kelly is a raw output of the Kelly criterion formula (quarter-strength) using the model's probability and the live odds — a bankroll-math calculation, not a stake suggestion or betting advice. It inherits every uncertainty already listed here (fixed rho, variance approximations, sample size), and Kelly itself is known to be highly sensitive to probability-estimation error, so a nonzero number here is not an endorsement to wager anything." : ''}
         ${graded ? 'Result column grades the prediction as it stood before the match — frozen at the time it was logged, not recomputed afterward. "—" means this market couldn\'t be graded from the recorded result (e.g. no corner/card count available).' : ''}
         ${data.dc_rho_note} ${data.form_blend_note || ''} Never treat these as guarantees; sample sizes and variance still apply.

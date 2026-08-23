@@ -570,3 +570,36 @@ cached, if you want to check the blend path specifically.
   wayfinding, not decoration; keep it if you touch the UI.
 - No "lock/guarantee" language anywhere in copy (see honesty rules above).
 - Plain language, no filler. Numbers get their sample size next to them.
+- **Two-pane desktop layout (added 2026-08-23).** At `min-width:980px` the
+  Fixtures view becomes a CSS grid: fixture list in a left column, a
+  persistent sticky detail pane (`#detailPane`/`.board-detail`) on the
+  right, driven by a `matchMedia('(min-width: 980px)')` listener
+  (`isWide` in `index_template.html`) rather than ad-hoc `innerWidth`
+  checks, so a live resize across the breakpoint never leaves orphaned
+  DOM. Below 980px the layout is unchanged from before — the match panel
+  still renders inline under the clicked row, one at a time
+  (`expandedKey`). The **Team Form** browser stays single-column/full-width
+  at every viewport on purpose: it's a flat multi-team grid with no
+  "select one, compare in detail" relationship, so master-detail doesn't
+  apply there — it already benefits from the wider `#app` for free since
+  `.team-form-grid` auto-fills more cards per row. `renderPanel(f, holder)`
+  itself didn't need to change for this — it was already holder-agnostic.
+- **Best-value spotlight and edge-sorted table (added 2026-08-23).** The
+  match panel's "top pick" callout and the markets table used to be
+  ordered purely by the model's own historical probability — even once
+  live odds were attached, a market with a small edge but high raw
+  probability could outrank a market with a large edge sitting under a
+  different category header. `pickSpotlight()` in `index_template.html`
+  now headlines the highest-**edge** market when live odds exist (falling
+  back to highest-probability when they don't, exactly as before), and the
+  full table sorts by edge descending in that case too (with a small inline
+  category tag replacing the old full-width group-header rows). This is
+  purely a display-side change in `index_template.html` — `engine.js`'s
+  `markets.sort()` (still probability-descending), `attachLiveOdds()`, and
+  `gradeSnapshot()` are untouched, so frozen/graded panels flow through the
+  same logic unchanged. The quarter-Kelly column is deliberately untouched
+  by this: `pickSpotlight()` never reads `quarter_kelly`, Kelly still never
+  appears in the spotlight, and its column is now one shade dimmer than
+  Edge specifically to keep that gap visible now that Edge is foregrounded
+  — don't let a future "make Kelly match Edge's styling" request erode
+  this without re-reading the Kelly section above first.
