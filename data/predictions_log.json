@@ -1,834 +1,5236 @@
 {
-  "N1|2026-08-16|Ajax|sc Heerenveen": {
-    "lambda_home": 3.34,
-    "lambda_away": 0.61,
-    "n_used": 102,
-    "n_home_matches": 102,
-    "n_away_matches": 102,
-    "confidence": "High",
+  "N1|2026-08-07|SC Cambuur|Excelsior Rotterdam": {
+    "confidence": "Medium",
     "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 8,
+        "away": "Excelsior",
+        "ay": 0,
+        "ftag": 4,
+        "fthg": 0,
+        "hc": 5,
+        "home": "Cambuur",
+        "hy": 0,
+        "season": "2026/27"
+      },
+      {
+        "ac": 2,
+        "away": "Excelsior",
+        "ay": 2,
+        "ftag": 2,
+        "fthg": 0,
+        "hc": 10,
+        "home": "Cambuur",
+        "hy": 1,
+        "season": "2022/23"
+      },
+      {
+        "ac": 8,
+        "away": "Cambuur",
+        "ay": 0,
+        "ftag": 1,
+        "fthg": 4,
+        "hc": 4,
+        "home": "Excelsior",
+        "hy": 1,
+        "season": "2022/23"
+      }
+    ],
+    "lambda_away": 1.62,
+    "lambda_home": 1.85,
+    "logged_at": "2026-08-21T17:25:40.412Z",
     "markets": [
       {
-        "market": "Double Chance",
-        "selection": "Home or Draw",
-        "probability": 0.9667515953187539,
-        "n": 102,
-        "market_prob": 0.8351840759342026,
-        "edge": 0.13156751938455125
-      },
-      {
         "market": "Total Goals O/U 1.5",
-        "selection": "Over 1.5",
-        "probability": 0.9081820825186477,
-        "n": 102,
-        "market_odds": 1.12,
-        "market_prob": 0.8469945355191256,
-        "overround": 1.054147465437788,
-        "edge": 0.06118754699952211
-      },
-      {
-        "market": "Home Win (1X2)",
-        "selection": "Home",
-        "probability": 0.8743175099732124,
-        "n": 102,
-        "market_odds": 1.46,
-        "market_prob": 0.6434594295719486,
-        "overround": 1.0644517359936043,
-        "edge": 0.23085808040126388
+        "n": 35,
+        "probability": 0.8704000465606163,
+        "selection": "Over 1.5"
       },
       {
         "market": "Cards (Yellow) O/U 4.5",
-        "selection": "Under 4.5",
-        "probability": 0.8684166444824961,
-        "n": 102
+        "n": 35,
+        "probability": 0.844134927289212,
+        "selection": "Under 4.5"
       },
       {
-        "market": "Corners O/U 8.5",
-        "selection": "Over 8.5",
-        "probability": 0.7682720451612132,
-        "n": 102,
-        "market_odds": 1.37,
-        "market_prob": 0.6730310262529833,
-        "overround": 1.0845369363772843,
-        "edge": 0.09524101890822989
-      },
-      {
-        "market": "Total Goals O/U 2.5",
-        "selection": "Over 2.5",
-        "probability": 0.753123239319484,
-        "n": 102,
-        "market_odds": 1.41,
-        "market_prob": 0.6705607476635514,
-        "overround": 1.0576519139051572,
-        "edge": 0.08256249165593255
-      },
-      {
-        "market": "Cards (Yellow) O/U 3.5",
-        "selection": "Under 3.5",
-        "probability": 0.7394546072325546,
-        "n": 102
-      },
-      {
-        "market": "Corners O/U 9.5",
-        "selection": "Over 9.5",
-        "probability": 0.6675756145560665,
-        "n": 102,
-        "market_odds": 1.59,
-        "market_prob": 0.5804749340369394,
-        "overround": 1.0834762721555173,
-        "edge": 0.08710068051912712
+        "market": "Corners O/U 11.5",
+        "n": 35,
+        "probability": 0.8383982364970167,
+        "selection": "Under 11.5"
       },
       {
         "market": "Corners O/U 10.5",
-        "selection": "Over 10.5",
-        "probability": 0.557538651906163,
-        "n": 102,
-        "market_odds": 1.9,
-        "market_prob": 0.4836956521739131,
-        "overround": 1.0881135422826729,
-        "edge": 0.07384299973224995
+        "n": 35,
+        "probability": 0.7580919326006272,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 35,
+        "probability": 0.7046404177430194,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 35,
+        "probability": 0.6856520859125529,
+        "selection": "Yes"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 35,
+        "probability": 0.6738493561057687,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 35,
+        "probability": 0.6666962254404178,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 35,
+        "probability": 0.656007436907598,
+        "selection": "Under 9.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 35,
+        "probability": 0.5744333710661045,
+        "selection": "Away or Draw"
+      }
+    ],
+    "n_away_matches": 52,
+    "n_home_matches": 35,
+    "n_used": 35,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-08|AZ|ADO Den Haag": {
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 7,
+        "away": "Den Haag",
+        "ay": 1,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 9,
+        "home": "AZ Alkmaar",
+        "hy": 0,
+        "season": "2026/27"
+      },
+      {
+        "ac": 8,
+        "away": "AZ Alkmaar",
+        "ay": 1,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 3,
+        "home": "Den Haag",
+        "hy": 2,
+        "season": "2020/21"
+      },
+      {
+        "ac": 0,
+        "away": "Den Haag",
+        "ay": 0,
+        "ftag": 1,
+        "fthg": 2,
+        "hc": 17,
+        "home": "AZ Alkmaar",
+        "hy": 0,
+        "season": "2020/21"
+      }
+    ],
+    "lambda_away": 0.38,
+    "lambda_home": 3.45,
+    "logged_at": "2026-08-21T17:25:40.414Z",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "n": 18,
+        "probability": 0.9847246370547811,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Home Win (1X2)",
+        "n": 18,
+        "probability": 0.9168212658207309,
+        "selection": "Home"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 18,
+        "probability": 0.897153388899457,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 18,
+        "probability": 0.8383596954336772,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 18,
+        "probability": 0.7336309131234664,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 18,
+        "probability": 0.7193242358017998,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 18,
+        "probability": 0.6965645949397146,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 18,
+        "probability": 0.6878851747075879,
+        "selection": "No"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 18,
+        "probability": 0.6187065141369411,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 18,
+        "probability": 0.6169528139906364,
+        "selection": "Under 10.5"
+      }
+    ],
+    "n_away_matches": 18,
+    "n_home_matches": 103,
+    "n_used": 18,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-08|Go Ahead Eagles|Willem II": {
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 2,
+        "away": "Willem II",
+        "ay": 1,
+        "ftag": 1,
+        "fthg": 4,
+        "hc": 6,
+        "home": "Go Ahead Eagles",
+        "hy": 2,
+        "season": "2026/27"
+      },
+      {
+        "ac": 3,
+        "away": "Go Ahead Eagles",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 4,
+        "home": "Willem II",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 1,
+        "away": "Willem II",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 11,
+        "home": "Go Ahead Eagles",
+        "hy": 1,
+        "season": "2024/25"
+      },
+      {
+        "ac": 4,
+        "away": "Go Ahead Eagles",
+        "ay": 1,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 9,
+        "home": "Willem II",
+        "hy": 1,
+        "season": "2021/22"
+      },
+      {
+        "ac": 9,
+        "away": "Willem II",
+        "ay": 0,
+        "ftag": 0,
+        "fthg": 4,
+        "hc": 4,
+        "home": "Go Ahead Eagles",
+        "hy": 0,
+        "season": "2021/22"
+      }
+    ],
+    "lambda_away": 0.69,
+    "lambda_home": 2.75,
+    "logged_at": "2026-08-21T17:25:40.413Z",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "n": 52,
+        "probability": 0.9378502980657125,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 52,
+        "probability": 0.8636800276570662,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 52,
+        "probability": 0.8583380178062551,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Home Win (1X2)",
+        "n": 52,
+        "probability": 0.7966824807650786,
+        "selection": "Home"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 52,
+        "probability": 0.7478332745539871,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 52,
+        "probability": 0.7249191165589501,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 52,
+        "probability": 0.6676347313924926,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 52,
+        "probability": 0.649290669400764,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 52,
+        "probability": 0.5863937204758829,
+        "selection": "Over 8.5"
       },
       {
         "market": "Total Goals O/U 3.5",
-        "selection": "Over 3.5",
-        "probability": 0.5540174409021099,
-        "n": 102,
-        "market_odds": 2.02,
-        "market_prob": 0.4684210526315789,
-        "overround": 1.0568472577594838,
-        "edge": 0.08559638827053101
+        "n": 52,
+        "probability": 0.5503181154685658,
+        "selection": "Under 3.5"
       }
     ],
-    "source": "Superbet",
-    "source_url": "https://superbet.pl/kursy/pilka-nozna/ajax-amsterdam-vs-heerenveen-13573163",
-    "logged_at": "2026-08-16T21:14:13.829Z"
+    "n_away_matches": 52,
+    "n_home_matches": 86,
+    "n_used": 52,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-08|N.E.C. Nijmegen|Telstar": {
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 3,
+        "away": "Telstar",
+        "ay": 2,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 13,
+        "home": "Nijmegen",
+        "hy": 2,
+        "season": "2026/27"
+      },
+      {
+        "ac": 7,
+        "away": "Nijmegen",
+        "ay": 2,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 5,
+        "home": "Telstar",
+        "hy": 0,
+        "season": "2025/26"
+      },
+      {
+        "ac": 0,
+        "away": "Telstar",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 9,
+        "home": "Nijmegen",
+        "hy": 3,
+        "season": "2025/26"
+      }
+    ],
+    "lambda_away": 0.96,
+    "lambda_home": 2.21,
+    "logged_at": "2026-08-21T17:25:40.412Z",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "n": 18,
+        "probability": 0.856636805247126,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 18,
+        "probability": 0.8514085749706714,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 18,
+        "probability": 0.834424726235679,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 18,
+        "probability": 0.7149490311055808,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 18,
+        "probability": 0.6943588476815895,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Home Win (1X2)",
+        "n": 18,
+        "probability": 0.6474782238913858,
+        "selection": "Home"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 18,
+        "probability": 0.6451038313378992,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 18,
+        "probability": 0.6148057200060751,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 18,
+        "probability": 0.6082383929774914,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 18,
+        "probability": 0.5892732423630301,
+        "selection": "Under 10.5"
+      }
+    ],
+    "n_away_matches": 18,
+    "n_home_matches": 86,
+    "n_used": 18,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-08|PSV|Fortuna Sittard": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 0,
+        "away": "For Sittard",
+        "ay": 1,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 9,
+        "home": "PSV Eindhoven",
+        "hy": 1,
+        "season": "2026/27"
+      },
+      {
+        "ac": 4,
+        "away": "For Sittard",
+        "ay": 4,
+        "ftag": 2,
+        "fthg": 5,
+        "hc": 7,
+        "home": "PSV Eindhoven",
+        "hy": 0,
+        "season": "2025/26"
+      },
+      {
+        "ac": 14,
+        "away": "PSV Eindhoven",
+        "ay": 1,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 4,
+        "home": "For Sittard",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 6,
+        "away": "PSV Eindhoven",
+        "ay": 1,
+        "ftag": 3,
+        "fthg": 1,
+        "hc": 5,
+        "home": "For Sittard",
+        "hy": 3,
+        "season": "2024/25"
+      },
+      {
+        "ac": 3,
+        "away": "For Sittard",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 4,
+        "hc": 5,
+        "home": "PSV Eindhoven",
+        "hy": 0,
+        "season": "2024/25"
+      }
+    ],
+    "lambda_away": 0.68,
+    "lambda_home": 4.44,
+    "logged_at": "2026-08-21T17:25:40.414Z",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "n": 103,
+        "probability": 0.9830142613612327,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 103,
+        "probability": 0.9638113356690954,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Home Win (1X2)",
+        "n": 103,
+        "probability": 0.9346864674450336,
+        "selection": "Home"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 103,
+        "probability": 0.8804684951174908,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 103,
+        "probability": 0.8357167150606465,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 103,
+        "probability": 0.7683861302355064,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 103,
+        "probability": 0.741462596957939,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 103,
+        "probability": 0.6928998894307921,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 103,
+        "probability": 0.6676515568960284,
+        "selection": "Over 9.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 103,
+        "probability": 0.5575545781689222,
+        "selection": "Over 10.5"
+      }
+    ],
+    "n_away_matches": 103,
+    "n_home_matches": 103,
+    "n_used": 103,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-09|FC Groningen|FC Utrecht": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 1,
+        "away": "Utrecht",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 2,
+        "hc": 5,
+        "home": "Groningen",
+        "hy": 0,
+        "season": "2026/27"
+      },
+      {
+        "ac": 4,
+        "away": "Groningen",
+        "ay": 4,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 3,
+        "home": "Utrecht",
+        "hy": 0,
+        "season": "2025/26"
+      },
+      {
+        "ac": 8,
+        "away": "Utrecht",
+        "ay": 1,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 2,
+        "home": "Groningen",
+        "hy": 0,
+        "season": "2025/26"
+      },
+      {
+        "ac": 5,
+        "away": "Utrecht",
+        "ay": 4,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 4,
+        "home": "Groningen",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 3,
+        "away": "Groningen",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 3,
+        "hc": 2,
+        "home": "Utrecht",
+        "hy": 1,
+        "season": "2024/25"
+      }
+    ],
+    "lambda_away": 1.03,
+    "lambda_home": 1.58,
+    "logged_at": "2026-08-21T17:25:40.416Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 86,
+        "probability": 0.7995016931473634,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 86,
+        "probability": 0.7652164368993758,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 86,
+        "probability": 0.7456280913563273,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 86,
+        "probability": 0.7348495337661494,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 86,
+        "probability": 0.6913554051064403,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 86,
+        "probability": 0.6465649029864111,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 86,
+        "probability": 0.6444837368144041,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 86,
+        "probability": 0.5779112743375208,
+        "selection": "Over 9.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 86,
+        "probability": 0.5612839100888312,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 86,
+        "probability": 0.5378082941773231,
+        "selection": "Under 10.5"
+      }
+    ],
+    "n_away_matches": 103,
+    "n_home_matches": 86,
+    "n_used": 86,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-09|PEC Zwolle|Ajax": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 10,
+        "away": "Ajax",
+        "ay": 2,
+        "ftag": 2,
+        "fthg": 0,
+        "hc": 2,
+        "home": "Zwolle",
+        "hy": 2,
+        "season": "2026/27"
+      },
+      {
+        "ac": 1,
+        "away": "Zwolle",
+        "ay": 1,
+        "ftag": 1,
+        "fthg": 3,
+        "hc": 7,
+        "home": "Ajax",
+        "hy": 2,
+        "season": "2025/26"
+      },
+      {
+        "ac": 3,
+        "away": "Ajax",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 0,
+        "hc": 12,
+        "home": "Zwolle",
+        "hy": 3,
+        "season": "2025/26"
+      },
+      {
+        "ac": 0,
+        "away": "Zwolle",
+        "ay": 1,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 7,
+        "home": "Ajax",
+        "hy": 3,
+        "season": "2024/25"
+      },
+      {
+        "ac": 3,
+        "away": "Ajax",
+        "ay": 0,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 3,
+        "home": "Zwolle",
+        "hy": 1,
+        "season": "2024/25"
+      }
+    ],
+    "lambda_away": 1.55,
+    "lambda_home": 1.12,
+    "logged_at": "2026-08-21T17:25:40.416Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 86,
+        "probability": 0.774728744413162,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 86,
+        "probability": 0.7573251682728818,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 86,
+        "probability": 0.7378515948853623,
+        "selection": "Away or Draw"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 86,
+        "probability": 0.7213595970301603,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 86,
+        "probability": 0.6704266378111136,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 86,
+        "probability": 0.6689221233701809,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 86,
+        "probability": 0.6130838025504187,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 86,
+        "probability": 0.5926814411054354,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 86,
+        "probability": 0.5632618923169213,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 86,
+        "probability": 0.5528939316239727,
+        "selection": "Over 9.5"
+      }
+    ],
+    "n_away_matches": 103,
+    "n_home_matches": 86,
+    "n_used": 86,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-09|Sparta Rotterdam|Feyenoord": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 10,
+        "away": "Feyenoord",
+        "ay": 1,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 5,
+        "home": "Sparta Rotterdam",
+        "hy": 3,
+        "season": "2026/27"
+      },
+      {
+        "ac": 9,
+        "away": "Feyenoord",
+        "ay": 2,
+        "ftag": 4,
+        "fthg": 0,
+        "hc": 1,
+        "home": "Sparta Rotterdam",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 0,
+        "away": "Sparta Rotterdam",
+        "ay": 3,
+        "ftag": 4,
+        "fthg": 3,
+        "hc": 9,
+        "home": "Feyenoord",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 11,
+        "away": "Feyenoord",
+        "ay": 5,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 6,
+        "home": "Sparta Rotterdam",
+        "hy": 3,
+        "season": "2024/25"
+      },
+      {
+        "ac": 2,
+        "away": "Sparta Rotterdam",
+        "ay": 0,
+        "ftag": 0,
+        "fthg": 3,
+        "hc": 6,
+        "home": "Feyenoord",
+        "hy": 0,
+        "season": "2024/25"
+      }
+    ],
+    "lambda_away": 1.74,
+    "lambda_home": 1.1,
+    "logged_at": "2026-08-21T17:25:40.415Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 103,
+        "probability": 0.8199831364140614,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 103,
+        "probability": 0.7870577384567328,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 103,
+        "probability": 0.7721031034795114,
+        "selection": "Away or Draw"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 103,
+        "probability": 0.7578337952293064,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 103,
+        "probability": 0.6827353922154621,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 103,
+        "probability": 0.6714684092172427,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 103,
+        "probability": 0.6549812262098997,
+        "selection": "Over 9.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 103,
+        "probability": 0.5671814360488336,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 103,
+        "probability": 0.5611553823318637,
+        "selection": "Yes"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 103,
+        "probability": 0.543688284925941,
+        "selection": "Over 10.5"
+      }
+    ],
+    "n_away_matches": 103,
+    "n_home_matches": 103,
+    "n_used": 103,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-09|sc Heerenveen|FC Twente": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 8,
+        "away": "Twente",
+        "ay": 1,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 4,
+        "home": "Heerenveen",
+        "hy": 2,
+        "season": "2026/27"
+      },
+      {
+        "ac": 4,
+        "away": "Twente",
+        "ay": 3,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 7,
+        "home": "Heerenveen",
+        "hy": 3,
+        "season": "2025/26"
+      },
+      {
+        "ac": 0,
+        "away": "Heerenveen",
+        "ay": 3,
+        "ftag": 0,
+        "fthg": 5,
+        "hc": 7,
+        "home": "Twente",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 3,
+        "away": "Heerenveen",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 6,
+        "home": "Twente",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 2,
+        "away": "Twente",
+        "ay": 3,
+        "ftag": 3,
+        "fthg": 3,
+        "hc": 9,
+        "home": "Heerenveen",
+        "hy": 1,
+        "season": "2024/25"
+      }
+    ],
+    "lambda_away": 1.25,
+    "lambda_home": 1.63,
+    "logged_at": "2026-08-21T17:25:40.416Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 103,
+        "probability": 0.8245410432600564,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 103,
+        "probability": 0.792551082865724,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 103,
+        "probability": 0.740889598537422,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 103,
+        "probability": 0.7178187379392844,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 103,
+        "probability": 0.6776111292754838,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 103,
+        "probability": 0.6756457813542815,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 103,
+        "probability": 0.634897322959857,
+        "selection": "Over 9.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 103,
+        "probability": 0.5887700158429283,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 103,
+        "probability": 0.5839853405666086,
+        "selection": "Yes"
+      },
+      {
+        "market": "Double Chance",
+        "n": 103,
+        "probability": 0.5492731061113747,
+        "selection": "Away or Draw"
+      }
+    ],
+    "n_away_matches": 103,
+    "n_home_matches": 103,
+    "n_used": 103,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-14|Telstar|Sparta Rotterdam": {
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 7,
+        "away": "Telstar",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 6,
+        "home": "Sparta Rotterdam",
+        "hy": 3,
+        "season": "2025/26"
+      },
+      {
+        "ac": 5,
+        "away": "Sparta Rotterdam",
+        "ay": 0,
+        "ftag": 1,
+        "fthg": 4,
+        "hc": 6,
+        "home": "Telstar",
+        "hy": 2,
+        "season": "2025/26"
+      }
+    ],
+    "lambda_away": 1.18,
+    "lambda_home": 1.98,
+    "logged_at": "2026-08-21T17:25:40.417Z",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 17,
+        "probability": 0.8334426096302859,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 17,
+        "probability": 0.8154400798288282,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 17,
+        "probability": 0.7869981428246122,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 17,
+        "probability": 0.7373820524019106,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 17,
+        "probability": 0.6653970355992591,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 17,
+        "probability": 0.6373417598747086,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 17,
+        "probability": 0.611707677990568,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 17,
+        "probability": 0.6114576350858385,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 17,
+        "probability": 0.6066090094106774,
+        "selection": "Yes"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 17,
+        "probability": 0.5985260931561001,
+        "selection": "Over 8.5"
+      }
+    ],
+    "n_away_matches": 102,
+    "n_home_matches": 17,
+    "n_used": 17,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-15|Excelsior Rotterdam|PSV": {
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 2,
+        "away": "PSV Eindhoven",
+        "ay": 0,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 3,
+        "home": "Excelsior",
+        "hy": 0,
+        "season": "2025/26"
+      },
+      {
+        "ac": 4,
+        "away": "Excelsior",
+        "ay": 1,
+        "ftag": 1,
+        "fthg": 5,
+        "hc": 6,
+        "home": "PSV Eindhoven",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 2,
+        "away": "Excelsior",
+        "ay": 0,
+        "ftag": 1,
+        "fthg": 3,
+        "hc": 12,
+        "home": "PSV Eindhoven",
+        "hy": 0,
+        "season": "2023/24"
+      },
+      {
+        "ac": 12,
+        "away": "PSV Eindhoven",
+        "ay": 0,
+        "ftag": 2,
+        "fthg": 0,
+        "hc": 1,
+        "home": "Excelsior",
+        "hy": 1,
+        "season": "2023/24"
+      },
+      {
+        "ac": 9,
+        "away": "PSV Eindhoven",
+        "ay": 1,
+        "ftag": 6,
+        "fthg": 1,
+        "hc": 3,
+        "home": "Excelsior",
+        "hy": 0,
+        "season": "2022/23"
+      }
+    ],
+    "lambda_away": 2.17,
+    "lambda_home": 1.12,
+    "logged_at": "2026-08-21T17:25:40.418Z",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 51,
+        "probability": 0.8483704018964764,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 51,
+        "probability": 0.8356149842711813,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 51,
+        "probability": 0.8220213560580727,
+        "selection": "Away or Draw"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 51,
+        "probability": 0.7414673243997473,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 51,
+        "probability": 0.6927592148601751,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 51,
+        "probability": 0.6370574230344168,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 51,
+        "probability": 0.6355769305397267,
+        "selection": "Over 9.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 51,
+        "probability": 0.6046987095019901,
+        "selection": "Yes"
+      },
+      {
+        "market": "Away Win (1X2)",
+        "n": 51,
+        "probability": 0.60339643510481,
+        "selection": "Away"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 51,
+        "probability": 0.5880503161664896,
+        "selection": "Under 11.5"
+      }
+    ],
+    "n_away_matches": 102,
+    "n_home_matches": 51,
+    "n_used": 51,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-15|FC Utrecht|AZ": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 2,
+        "away": "Utrecht",
+        "ay": 1,
+        "ftag": 1,
+        "fthg": 4,
+        "hc": 8,
+        "home": "AZ Alkmaar",
+        "hy": 0,
+        "season": "2025/26"
+      },
+      {
+        "ac": 4,
+        "away": "AZ Alkmaar",
+        "ay": 3,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 5,
+        "home": "Utrecht",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 1,
+        "away": "Utrecht",
+        "ay": 2,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 8,
+        "home": "AZ Alkmaar",
+        "hy": 1,
+        "season": "2024/25"
+      },
+      {
+        "ac": 6,
+        "away": "AZ Alkmaar",
+        "ay": 3,
+        "ftag": 0,
+        "fthg": 0,
+        "hc": 4,
+        "home": "Utrecht",
+        "hy": 0,
+        "season": "2024/25"
+      },
+      {
+        "ac": 5,
+        "away": "AZ Alkmaar",
+        "ay": 1,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 7,
+        "home": "Utrecht",
+        "hy": 0,
+        "season": "2023/24"
+      }
+    ],
+    "lambda_away": 1.03,
+    "lambda_home": 1.55,
+    "logged_at": "2026-08-21T17:25:40.417Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 102,
+        "probability": 0.7908788732717791,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 102,
+        "probability": 0.7884338364122618,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 102,
+        "probability": 0.7588471958186499,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 102,
+        "probability": 0.7409990081662962,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 102,
+        "probability": 0.7401826506182081,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 102,
+        "probability": 0.6920838561364206,
+        "selection": "Over 9.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 102,
+        "probability": 0.6334078025285526,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 102,
+        "probability": 0.5846893992109929,
+        "selection": "Over 10.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 102,
+        "probability": 0.5725136152008676,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 102,
+        "probability": 0.5254761157298835,
+        "selection": "Under 11.5"
+      }
+    ],
+    "n_away_matches": 102,
+    "n_home_matches": 102,
+    "n_used": 102,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-15|Fortuna Sittard|SC Cambuur": {
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 5,
+        "away": "Cambuur",
+        "ay": 1,
+        "ftag": 4,
+        "fthg": 1,
+        "hc": 6,
+        "home": "For Sittard",
+        "hy": 3,
+        "season": "2022/23"
+      },
+      {
+        "ac": 4,
+        "away": "For Sittard",
+        "ay": 4,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 6,
+        "home": "Cambuur",
+        "hy": 2,
+        "season": "2022/23"
+      },
+      {
+        "ac": 3,
+        "away": "Cambuur",
+        "ay": 1,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 6,
+        "home": "For Sittard",
+        "hy": 3,
+        "season": "2021/22"
+      },
+      {
+        "ac": 5,
+        "away": "For Sittard",
+        "ay": 3,
+        "ftag": 1,
+        "fthg": 2,
+        "hc": 6,
+        "home": "Cambuur",
+        "hy": 0,
+        "season": "2021/22"
+      }
+    ],
+    "lambda_away": 0.93,
+    "lambda_home": 2.12,
+    "logged_at": "2026-08-21T17:25:40.418Z",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "n": 34,
+        "probability": 0.8546981833924672,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 34,
+        "probability": 0.8227172637761008,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 34,
+        "probability": 0.8173348104203721,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 34,
+        "probability": 0.7432167472581928,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 34,
+        "probability": 0.7384968322580278,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Home Win (1X2)",
+        "n": 34,
+        "probability": 0.6378281022061838,
+        "selection": "Home"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 34,
+        "probability": 0.636464604834015,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 34,
+        "probability": 0.6333937152070293,
+        "selection": "Under 9.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 34,
+        "probability": 0.629143215219726,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 34,
+        "probability": 0.5875692482663769,
+        "selection": "Over 2.5"
+      }
+    ],
+    "n_away_matches": 34,
+    "n_home_matches": 102,
+    "n_used": 34,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "N1|2026-08-15|Willem II|N.E.C. Nijmegen": {
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 4,
+        "away": "Nijmegen",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 4,
+        "hc": 5,
+        "home": "Willem II",
+        "hy": 0,
+        "season": "2024/25"
+      },
+      {
+        "ac": 2,
+        "away": "Willem II",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 4,
+        "home": "Nijmegen",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 1,
+        "away": "Willem II",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 0,
+        "hc": 10,
+        "home": "Nijmegen",
+        "hy": 1,
+        "season": "2021/22"
+      },
+      {
+        "ac": 2,
+        "away": "Nijmegen",
+        "ay": 0,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 4,
+        "home": "Willem II",
+        "hy": 0,
+        "season": "2021/22"
+      }
+    ],
+    "lambda_away": 1.38,
+    "lambda_home": 1.25,
+    "logged_at": "2026-08-21T17:25:40.417Z",
+    "markets": [
+      {
+        "market": "Corners O/U 11.5",
+        "n": 51,
+        "probability": 0.8006335496780866,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 51,
+        "probability": 0.7662077735377788,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 51,
+        "probability": 0.7498114142474643,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 51,
+        "probability": 0.7306133419573979,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 51,
+        "probability": 0.7114798373340778,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 51,
+        "probability": 0.6727286822312304,
+        "selection": "Away or Draw"
+      },
+      {
+        "market": "Double Chance",
+        "n": 51,
+        "probability": 0.6140198102210824,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 51,
+        "probability": 0.602899108842101,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 51,
+        "probability": 0.6028784765901211,
+        "selection": "Under 9.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 51,
+        "probability": 0.6025704981610607,
+        "selection": "Under 3.5"
+      }
+    ],
+    "n_away_matches": 85,
+    "n_home_matches": 51,
+    "n_used": 51,
+    "source": "Flashscore",
+    "source_url": null
   },
   "N1|2026-08-16|ADO Den Haag|FC Groningen": {
-    "lambda_home": 1.43,
-    "lambda_away": 1.38,
-    "n_used": 17,
-    "n_home_matches": 17,
-    "n_away_matches": 85,
     "confidence": "Low",
     "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "lambda_away": 1.38,
+    "lambda_home": 1.43,
+    "logged_at": "2026-08-16T21:25:00.000Z",
     "markets": [
       {
         "market": "Corners O/U 11.5",
-        "selection": "Under 11.5",
+        "n": 17,
         "probability": 0.8316383368183228,
-        "n": 17
+        "selection": "Under 11.5"
       },
       {
         "market": "Total Goals O/U 1.5",
-        "selection": "Over 1.5",
+        "n": 17,
         "probability": 0.7822272706122558,
-        "n": 17
+        "selection": "Over 1.5"
       },
       {
         "market": "Corners O/U 10.5",
-        "selection": "Under 10.5",
+        "n": 17,
         "probability": 0.7496426500145194,
-        "n": 17
+        "selection": "Under 10.5"
       },
       {
         "market": "Cards (Yellow) O/U 4.5",
-        "selection": "Under 4.5",
+        "n": 17,
         "probability": 0.691806448491761,
-        "n": 17
+        "selection": "Under 4.5"
       },
       {
         "market": "Total Goals O/U 3.5",
-        "selection": "Under 3.5",
+        "n": 17,
         "probability": 0.690091146896039,
-        "n": 17
+        "selection": "Under 3.5"
       },
       {
         "market": "Cards (Yellow) O/U 2.5",
-        "selection": "Over 2.5",
+        "n": 17,
         "probability": 0.6823135939329374,
-        "n": 17
+        "selection": "Over 2.5"
       },
       {
         "market": "Double Chance",
-        "selection": "Home or Draw",
+        "n": 17,
         "probability": 0.6492634109088459,
-        "n": 17
+        "selection": "Home or Draw"
       },
       {
         "market": "Corners O/U 9.5",
-        "selection": "Under 9.5",
+        "n": 17,
         "probability": 0.6462537042836536,
-        "n": 17
+        "selection": "Under 9.5"
       },
       {
         "market": "Double Chance",
-        "selection": "Away or Draw",
+        "n": 17,
         "probability": 0.6268000552609432,
-        "n": 17
+        "selection": "Away or Draw"
       },
       {
         "market": "Both Teams to Score",
-        "selection": "Yes",
+        "n": 17,
         "probability": 0.5809040886829258,
-        "n": 17
+        "selection": "Yes"
       }
     ],
-    "logged_at": "2026-08-16T21:25:00.000Z"
+    "n_away_matches": 85,
+    "n_home_matches": 17,
+    "n_used": 17
+  },
+  "N1|2026-08-16|Ajax|sc Heerenveen": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "lambda_away": 0.61,
+    "lambda_home": 3.34,
+    "logged_at": "2026-08-16T21:14:13.829Z",
+    "markets": [
+      {
+        "edge": 0.13156751938455125,
+        "market": "Double Chance",
+        "market_prob": 0.8351840759342026,
+        "n": 102,
+        "probability": 0.9667515953187539,
+        "selection": "Home or Draw"
+      },
+      {
+        "edge": 0.06118754699952211,
+        "market": "Total Goals O/U 1.5",
+        "market_odds": 1.12,
+        "market_prob": 0.8469945355191256,
+        "n": 102,
+        "overround": 1.054147465437788,
+        "probability": 0.9081820825186477,
+        "selection": "Over 1.5"
+      },
+      {
+        "edge": 0.23085808040126388,
+        "market": "Home Win (1X2)",
+        "market_odds": 1.46,
+        "market_prob": 0.6434594295719486,
+        "n": 102,
+        "overround": 1.0644517359936043,
+        "probability": 0.8743175099732124,
+        "selection": "Home"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 102,
+        "probability": 0.8684166444824961,
+        "selection": "Under 4.5"
+      },
+      {
+        "edge": 0.09524101890822989,
+        "market": "Corners O/U 8.5",
+        "market_odds": 1.37,
+        "market_prob": 0.6730310262529833,
+        "n": 102,
+        "overround": 1.0845369363772843,
+        "probability": 0.7682720451612132,
+        "selection": "Over 8.5"
+      },
+      {
+        "edge": 0.08256249165593255,
+        "market": "Total Goals O/U 2.5",
+        "market_odds": 1.41,
+        "market_prob": 0.6705607476635514,
+        "n": 102,
+        "overround": 1.0576519139051572,
+        "probability": 0.753123239319484,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 102,
+        "probability": 0.7394546072325546,
+        "selection": "Under 3.5"
+      },
+      {
+        "edge": 0.08710068051912712,
+        "market": "Corners O/U 9.5",
+        "market_odds": 1.59,
+        "market_prob": 0.5804749340369394,
+        "n": 102,
+        "overround": 1.0834762721555173,
+        "probability": 0.6675756145560665,
+        "selection": "Over 9.5"
+      },
+      {
+        "edge": 0.07384299973224995,
+        "market": "Corners O/U 10.5",
+        "market_odds": 1.9,
+        "market_prob": 0.4836956521739131,
+        "n": 102,
+        "overround": 1.0881135422826729,
+        "probability": 0.557538651906163,
+        "selection": "Over 10.5"
+      },
+      {
+        "edge": 0.08559638827053101,
+        "market": "Total Goals O/U 3.5",
+        "market_odds": 2.02,
+        "market_prob": 0.4684210526315789,
+        "n": 102,
+        "overround": 1.0568472577594838,
+        "probability": 0.5540174409021099,
+        "selection": "Over 3.5"
+      }
+    ],
+    "n_away_matches": 102,
+    "n_home_matches": 102,
+    "n_used": 102,
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/ajax-amsterdam-vs-heerenveen-13573163"
   },
   "N1|2026-08-16|FC Twente|PEC Zwolle": {
-    "lambda_home": 3.36,
-    "lambda_away": 0.74,
-    "n_used": 85,
-    "n_home_matches": 102,
-    "n_away_matches": 85,
     "confidence": "High",
     "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "lambda_away": 0.74,
+    "lambda_home": 3.36,
+    "logged_at": "2026-08-16T21:25:00.000Z",
     "markets": [
       {
         "market": "Double Chance",
-        "selection": "Home or Draw",
+        "n": 85,
         "probability": 0.9564799981115449,
-        "n": 85
+        "selection": "Home or Draw"
       },
       {
         "market": "Total Goals O/U 1.5",
-        "selection": "Over 1.5",
+        "n": 85,
         "probability": 0.9189174777834019,
-        "n": 85
+        "selection": "Over 1.5"
       },
       {
         "market": "Home Win (1X2)",
-        "selection": "Home",
+        "n": 85,
         "probability": 0.8558549000526086,
-        "n": 85
+        "selection": "Home"
       },
       {
         "market": "Cards (Yellow) O/U 4.5",
-        "selection": "Under 4.5",
+        "n": 85,
         "probability": 0.835963674296988,
-        "n": 85
+        "selection": "Under 4.5"
       },
       {
         "market": "Corners O/U 11.5",
-        "selection": "Under 11.5",
+        "n": 85,
         "probability": 0.7802165266081225,
-        "n": 85
+        "selection": "Under 11.5"
       },
       {
         "market": "Total Goals O/U 2.5",
-        "selection": "Over 2.5",
+        "n": 85,
         "probability": 0.7743317810914846,
-        "n": 85
+        "selection": "Over 2.5"
       },
       {
         "market": "Cards (Yellow) O/U 3.5",
-        "selection": "Under 3.5",
+        "n": 85,
         "probability": 0.6929366512861231,
-        "n": 85
+        "selection": "Under 3.5"
       },
       {
         "market": "Corners O/U 10.5",
-        "selection": "Under 10.5",
+        "n": 85,
         "probability": 0.687097816504379,
-        "n": 85
+        "selection": "Under 10.5"
       },
       {
         "market": "Total Goals O/U 3.5",
-        "selection": "Over 3.5",
+        "n": 85,
         "probability": 0.5824417889025595,
-        "n": 85
+        "selection": "Over 3.5"
       },
       {
         "market": "Corners O/U 9.5",
-        "selection": "Under 9.5",
+        "n": 85,
         "probability": 0.5760052922095978,
-        "n": 85
+        "selection": "Under 9.5"
       }
     ],
-    "logged_at": "2026-08-16T21:25:00.000Z"
+    "n_away_matches": 85,
+    "n_home_matches": 102,
+    "n_used": 85
   },
   "N1|2026-08-16|Feyenoord|Go Ahead Eagles": {
-    "lambda_home": 2.99,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
     "lambda_away": 0.64,
-    "n_used": 85,
-    "n_home_matches": 102,
-    "n_away_matches": 85,
-    "confidence": "High",
-    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "lambda_home": 2.99,
+    "logged_at": "2026-08-16T21:25:00.000Z",
     "markets": [
       {
         "market": "Double Chance",
-        "selection": "Home or Draw",
+        "n": 85,
         "probability": 0.9537623918395461,
-        "n": 85
+        "selection": "Home or Draw"
       },
       {
         "market": "Total Goals O/U 1.5",
-        "selection": "Over 1.5",
+        "n": 85,
         "probability": 0.8812059806446144,
-        "n": 85
+        "selection": "Over 1.5"
       },
       {
         "market": "Home Win (1X2)",
-        "selection": "Home",
+        "n": 85,
         "probability": 0.8357211763664808,
-        "n": 85
+        "selection": "Home"
       },
       {
         "market": "Cards (Yellow) O/U 4.5",
-        "selection": "Under 4.5",
+        "n": 85,
         "probability": 0.8311496908073694,
-        "n": 85
+        "selection": "Under 4.5"
       },
       {
         "market": "Corners O/U 8.5",
-        "selection": "Over 8.5",
+        "n": 85,
         "probability": 0.8253858505063838,
-        "n": 85
+        "selection": "Over 8.5"
       },
       {
         "market": "Corners O/U 9.5",
-        "selection": "Over 9.5",
+        "n": 85,
         "probability": 0.738491175227445,
-        "n": 85
+        "selection": "Over 9.5"
       },
       {
         "market": "Total Goals O/U 2.5",
-        "selection": "Over 2.5",
+        "n": 85,
         "probability": 0.700214912320081,
-        "n": 85
+        "selection": "Over 2.5"
       },
       {
         "market": "Cards (Yellow) O/U 3.5",
-        "selection": "Under 3.5",
+        "n": 85,
         "probability": 0.6863063936021274,
-        "n": 85
+        "selection": "Under 3.5"
       },
       {
         "market": "Corners O/U 10.5",
-        "selection": "Over 10.5",
+        "n": 85,
         "probability": 0.6377894957013037,
-        "n": 85
+        "selection": "Over 10.5"
       },
       {
         "market": "Both Teams to Score",
-        "selection": "No",
+        "n": 85,
         "probability": 0.5474964919253673,
-        "n": 85
+        "selection": "No"
       }
     ],
-    "logged_at": "2026-08-16T21:25:00.000Z"
-  },
-  "P1|2026-08-16|CD Nacional|Estoril Praia": {
-    "lambda_home": 2.01,
-    "lambda_away": 1.33,
-    "n_used": 51,
-    "n_home_matches": 51,
     "n_away_matches": 85,
-    "confidence": "Medium",
-    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
-    "markets": [
-      {
-        "market": "Cards (Yellow) O/U 2.5",
-        "selection": "Over 2.5",
-        "probability": 0.8662796029434313,
-        "n": 51
-      },
-      {
-        "market": "Total Goals O/U 1.5",
-        "selection": "Over 1.5",
-        "probability": 0.8550688919136582,
-        "n": 51,
-        "market_odds": 1.29,
-        "market_prob": 0.7361963190184049,
-        "overround": 1.0529715762273901,
-        "edge": 0.11887257289525333
-      },
-      {
-        "market": "Corners O/U 11.5",
-        "selection": "Under 11.5",
-        "probability": 0.771579907902951,
-        "n": 51,
-        "market_odds": 1.5,
-        "market_prob": 0.6124031007751938,
-        "overround": 1.0886075949367089,
-        "edge": 0.15917680712775717
-      },
-      {
-        "market": "Double Chance",
-        "selection": "Home or Draw",
-        "probability": 0.7573261092799399,
-        "n": 51,
-        "market_prob": 0.6234593262119967,
-        "edge": 0.1338667830679432
-      },
-      {
-        "market": "Cards (Yellow) O/U 3.5",
-        "selection": "Over 3.5",
-        "probability": 0.7323625813240283,
-        "n": 51
-      },
-      {
-        "market": "Corners O/U 10.5",
-        "selection": "Under 10.5",
-        "probability": 0.679049384044153,
-        "n": 51,
-        "market_odds": 1.77,
-        "market_prob": 0.5203252032520325,
-        "overround": 1.0858050847457628,
-        "edge": 0.15872418079212058
-      },
-      {
-        "market": "Total Goals O/U 2.5",
-        "selection": "Over 2.5",
-        "probability": 0.6474676278450733,
-        "n": 51,
-        "market_odds": 1.92,
-        "market_prob": 0.49340369393139843,
-        "overround": 1.0555926916221035,
-        "edge": 0.15406393391367484
-      },
-      {
-        "market": "Both Teams to Score",
-        "selection": "Yes",
-        "probability": 0.6457299272372535,
-        "n": 51,
-        "market_odds": 1.69,
-        "market_prob": 0.5564304461942258,
-        "overround": 1.0634140895389081,
-        "edge": 0.08929948104302776
-      },
-      {
-        "market": "Total Goals O/U 3.5",
-        "selection": "Under 3.5",
-        "probability": 0.572761027923394,
-        "n": 51,
-        "market_odds": 1.34,
-        "market_prob": 0.7048458149779735,
-        "overround": 1.0587686567164178,
-        "edge": -0.1320847870545795
-      },
-      {
-        "market": "Cards (Yellow) O/U 4.5",
-        "selection": "Over 4.5",
-        "probability": 0.5711520856815226,
-        "n": 51
-      }
-    ],
-    "source": "Superbet",
-    "source_url": "https://superbet.pl/kursy/pilka-nozna/cd-nacional-vs-estoril-praia-13881196",
-    "logged_at": "2026-08-16T21:24:42.592Z"
+    "n_home_matches": 102,
+    "n_used": 85
   },
-  "P1|2026-08-16|FC Arouca|Moreirense FC": {
-    "lambda_home": 1.63,
-    "lambda_away": 0.96,
-    "n_used": 85,
-    "n_home_matches": 85,
-    "n_away_matches": 85,
+  "P1|2026-08-07|Estoril Praia|FC Famalicão": {
     "confidence": "High",
     "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 6,
+        "away": "Famalicao",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 7,
+        "home": "Estoril",
+        "hy": 1,
+        "season": "2026/27"
+      },
+      {
+        "ac": 9,
+        "away": "Estoril",
+        "ay": 1,
+        "ftag": 0,
+        "fthg": 4,
+        "hc": 4,
+        "home": "Famalicao",
+        "hy": 3,
+        "season": "2025/26"
+      },
+      {
+        "ac": 4,
+        "away": "Famalicao",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 9,
+        "home": "Estoril",
+        "hy": 0,
+        "season": "2025/26"
+      },
+      {
+        "ac": 7,
+        "away": "Famalicao",
+        "ay": 4,
+        "ftag": 1,
+        "fthg": 2,
+        "hc": 5,
+        "home": "Estoril",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 8,
+        "away": "Estoril",
+        "ay": 4,
+        "ftag": 0,
+        "fthg": 3,
+        "hc": 3,
+        "home": "Famalicao",
+        "hy": 3,
+        "season": "2024/25"
+      }
+    ],
+    "lambda_away": 1.02,
+    "lambda_home": 1.65,
+    "logged_at": "2026-08-21T17:25:40.418Z",
     "markets": [
       {
         "market": "Cards (Yellow) O/U 2.5",
-        "selection": "Over 2.5",
-        "probability": 0.882779937819557,
-        "n": 85
-      },
-      {
-        "market": "Corners O/U 11.5",
-        "selection": "Under 11.5",
-        "probability": 0.8643361413223447,
-        "n": 85,
-        "market_odds": 1.29,
-        "market_prob": 0.7126948775055678,
-        "overround": 1.0876937984496124,
-        "edge": 0.1516412638167769
-      },
-      {
-        "market": "Corners O/U 10.5",
-        "selection": "Under 10.5",
-        "probability": 0.7932121837232518,
-        "n": 85,
-        "market_odds": 1.46,
-        "market_prob": 0.6313131313131313,
-        "overround": 1.084931506849315,
-        "edge": 0.16189905241012048
+        "n": 86,
+        "probability": 0.8777770108043612,
+        "selection": "Over 2.5"
       },
       {
         "market": "Double Chance",
-        "selection": "Home or Draw",
-        "probability": 0.7894711355271613,
-        "n": 85,
-        "market_prob": 0.754457050243112,
-        "edge": 0.03501408528404926
+        "n": 86,
+        "probability": 0.7775309784601661,
+        "selection": "Home or Draw"
       },
       {
-        "market": "Cards (Yellow) O/U 3.5",
-        "selection": "Over 3.5",
-        "probability": 0.7588882569616899,
-        "n": 85
+        "market": "Corners O/U 11.5",
+        "n": 86,
+        "probability": 0.7737277924559071,
+        "selection": "Under 11.5"
       },
       {
         "market": "Total Goals O/U 1.5",
-        "selection": "Over 1.5",
-        "probability": 0.7435073235211264,
-        "n": 85,
-        "market_odds": 1.37,
-        "market_prob": 0.6935123042505593,
-        "overround": 1.0525076524605603,
-        "edge": 0.04999501927056704
+        "n": 86,
+        "probability": 0.757051355290867,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 86,
+        "probability": 0.750677524462544,
+        "selection": "Over 3.5"
       },
       {
         "market": "Total Goals O/U 3.5",
-        "selection": "Under 3.5",
-        "probability": 0.7369621712008614,
-        "n": 85,
-        "market_odds": 1.26,
-        "market_prob": 0.7534246575342466,
-        "overround": 1.0533910533910533,
-        "edge": -0.016462486333385207
+        "n": 86,
+        "probability": 0.7212620135919207,
+        "selection": "Under 3.5"
       },
       {
-        "market": "Corners O/U 9.5",
-        "selection": "Under 9.5",
-        "probability": 0.6999107100661658,
-        "n": 85,
-        "market_odds": 1.72,
-        "market_prob": 0.5338753387533877,
-        "overround": 1.0890095620351787,
-        "edge": 0.16603537131277812
+        "market": "Corners O/U 10.5",
+        "n": 86,
+        "probability": 0.6815252220928636,
+        "selection": "Under 10.5"
       },
       {
         "market": "Cards (Yellow) O/U 4.5",
-        "selection": "Over 4.5",
-        "probability": 0.6042150968281922,
-        "n": 85
-      },
-      {
-        "market": "Corners O/U 8.5",
-        "selection": "Under 8.5",
-        "probability": 0.5863262602174137,
-        "n": 85,
-        "market_odds": 2.12,
-        "market_prob": 0.43466666666666665,
-        "overround": 1.0851950457228845,
-        "edge": 0.1516595935507471
-      }
-    ],
-    "source": "Superbet",
-    "source_url": "https://superbet.pl/kursy/pilka-nozna/arouca-vs-moreirense-13881192",
-    "logged_at": "2026-08-16T21:24:42.592Z"
-  },
-  "SP1|2026-08-16|RCD Espanyol de Barcelona|Levante UD": {
-    "lambda_home": 1.99,
-    "lambda_away": 0.95,
-    "n_used": 57,
-    "n_home_matches": 76,
-    "n_away_matches": 57,
-    "confidence": "Medium",
-    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
-    "markets": [
-      {
-        "market": "Double Chance",
-        "selection": "Home or Draw",
-        "probability": 0.8370328505325508,
-        "n": 57,
-        "market_prob": 0.7384330660086366,
-        "edge": 0.09859978452391427
-      },
-      {
-        "market": "Corners O/U 11.5",
-        "selection": "Under 11.5",
-        "probability": 0.8247324645129955,
-        "n": 57,
-        "market_odds": 1.39,
-        "market_prob": 0.669833729216152,
-        "overround": 1.074034389509669,
-        "edge": 0.1548987352968435
-      },
-      {
-        "market": "Total Goals O/U 1.5",
-        "selection": "Over 1.5",
-        "probability": 0.8019324511898538,
-        "n": 57,
-        "market_odds": 1.37,
-        "market_prob": 0.6900452488687784,
-        "overround": 1.0577958597582864,
-        "edge": 0.11188720232107541
-      },
-      {
-        "market": "Cards (Yellow) O/U 2.5",
-        "selection": "Over 2.5",
-        "probability": 0.8018728572847822,
-        "n": 57
-      },
-      {
-        "market": "Corners O/U 10.5",
-        "selection": "Under 10.5",
-        "probability": 0.740290907618752,
-        "n": 57,
-        "market_odds": 1.6,
-        "market_prob": 0.5811518324607331,
-        "overround": 1.0754504504504503,
-        "edge": 0.15913907515801895
-      },
-      {
-        "market": "Total Goals O/U 3.5",
-        "selection": "Under 3.5",
-        "probability": 0.6604135572713488,
-        "n": 57,
-        "market_odds": 1.25,
-        "market_prob": 0.7572815533980582,
-        "overround": 1.0564102564102564,
-        "edge": -0.09686799612670949
-      },
-      {
-        "market": "Cards (Yellow) O/U 3.5",
-        "selection": "Over 3.5",
-        "probability": 0.6395679173085027,
-        "n": 57
+        "n": 86,
+        "probability": 0.5937746657367204,
+        "selection": "Over 4.5"
       },
       {
         "market": "Corners O/U 9.5",
-        "selection": "Under 9.5",
-        "probability": 0.6346357248304799,
-        "n": 57,
-        "market_odds": 1.92,
-        "market_prob": 0.48387096774193555,
-        "overround": 1.0763888888888888,
-        "edge": 0.15076475708854437
+        "n": 86,
+        "probability": 0.5722106050644915,
+        "selection": "Under 9.5"
       },
       {
-        "market": "Home Win (1X2)",
-        "selection": "Home",
-        "probability": 0.6059776932060487,
-        "n": 57,
-        "market_odds": 2.12,
-        "market_prob": 0.4441702652683528,
-        "overround": 1.061975890985325,
-        "edge": 0.16180742793769587
+        "market": "Corners O/U 8.5",
+        "n": 86,
+        "probability": 0.5478137067423474,
+        "selection": "Over 8.5"
+      }
+    ],
+    "n_away_matches": 103,
+    "n_home_matches": 86,
+    "n_used": 86,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "P1|2026-08-08|Estrela Amadora|Sporting CP": {
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 4,
+        "away": "Sp Lisbon",
+        "ay": 2,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 5,
+        "home": "Estrela",
+        "hy": 2,
+        "season": "2026/27"
+      },
+      {
+        "ac": 1,
+        "away": "Estrela",
+        "ay": 0,
+        "ftag": 0,
+        "fthg": 4,
+        "hc": 5,
+        "home": "Sp Lisbon",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 13,
+        "away": "Sp Lisbon",
+        "ay": 1,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 4,
+        "home": "Estrela",
+        "hy": 3,
+        "season": "2025/26"
+      },
+      {
+        "ac": 2,
+        "away": "Estrela",
+        "ay": 0,
+        "ftag": 1,
+        "fthg": 5,
+        "hc": 12,
+        "home": "Sp Lisbon",
+        "hy": 0,
+        "season": "2024/25"
+      },
+      {
+        "ac": 2,
+        "away": "Sp Lisbon",
+        "ay": 1,
+        "ftag": 3,
+        "fthg": 0,
+        "hc": 3,
+        "home": "Estrela",
+        "hy": 7,
+        "season": "2024/25"
+      }
+    ],
+    "lambda_away": 2.3,
+    "lambda_home": 0.93,
+    "logged_at": "2026-08-21T17:25:40.419Z",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "n": 52,
+        "probability": 0.8699951809913301,
+        "selection": "Away or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 52,
+        "probability": 0.8607286530703993,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 52,
+        "probability": 0.8410423812950601,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 52,
+        "probability": 0.7235842029504296,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 52,
+        "probability": 0.6851022769415946,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Away Win (1X2)",
+        "n": 52,
+        "probability": 0.6704927304572834,
+        "selection": "Away"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 52,
+        "probability": 0.6470734382771085,
+        "selection": "Under 11.5"
       },
       {
         "market": "Total Goals O/U 2.5",
-        "selection": "Over 2.5",
-        "probability": 0.5635521296618838,
-        "n": 57,
-        "market_odds": 2.17,
-        "market_prob": 0.4363636363636364,
-        "overround": 1.0560675883256527,
-        "edge": 0.12718849329824744
+        "n": 52,
+        "probability": 0.626058873123573,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 52,
+        "probability": 0.596253696917988,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 52,
+        "probability": 0.5730713921114895,
+        "selection": "Over 9.5"
       }
     ],
-    "source": "Superbet",
-    "source_url": "https://superbet.pl/kursy/pilka-nozna/espanyol-vs-levante-13846970",
-    "logged_at": "2026-08-16T21:24:42.592Z"
+    "n_away_matches": 103,
+    "n_home_matches": 52,
+    "n_used": 52,
+    "source": "Flashscore",
+    "source_url": null
   },
-  "T1|2026-08-16|Istanbul Basaksehir|Kocaelispor": {
-    "lambda_home": 2.05,
-    "lambda_away": 0.44,
-    "n_used": 17,
-    "n_home_matches": 111,
-    "n_away_matches": 17,
+  "P1|2026-08-08|Marítimo M.|Casa Pia AC": {
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 6,
+        "away": "Casa Pia",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 2,
+        "home": "Maritimo",
+        "hy": 2,
+        "season": "2026/27"
+      },
+      {
+        "ac": 3,
+        "away": "Casa Pia",
+        "ay": 4,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 10,
+        "home": "Maritimo",
+        "hy": 2,
+        "season": "2022/23"
+      },
+      {
+        "ac": 10,
+        "away": "Maritimo",
+        "ay": 0,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 5,
+        "home": "Casa Pia",
+        "hy": 2,
+        "season": "2022/23"
+      }
+    ],
+    "lambda_away": 0.77,
+    "lambda_home": 1.44,
+    "logged_at": "2026-08-21T17:25:40.419Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 52,
+        "probability": 0.8937538071361214,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 52,
+        "probability": 0.8181674139248581,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 52,
+        "probability": 0.8115693635362144,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 52,
+        "probability": 0.8038450512883057,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 52,
+        "probability": 0.7770416495136514,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 52,
+        "probability": 0.7174311197059683,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 52,
+        "probability": 0.6590800001218678,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 52,
+        "probability": 0.6274727677490513,
+        "selection": "Over 4.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 52,
+        "probability": 0.6210901774969098,
+        "selection": "Under 2.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 52,
+        "probability": 0.6118600925697214,
+        "selection": "Under 9.5"
+      }
+    ],
+    "n_away_matches": 69,
+    "n_home_matches": 52,
+    "n_used": 52,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "P1|2026-08-08|Vitória SC|FC Arouca": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 2,
+        "away": "Arouca",
+        "ay": 5,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 5,
+        "home": "Guimaraes",
+        "hy": 2,
+        "season": "2026/27"
+      },
+      {
+        "ac": 2,
+        "away": "Arouca",
+        "ay": 4,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 2,
+        "home": "Guimaraes",
+        "hy": 4,
+        "season": "2025/26"
+      },
+      {
+        "ac": 6,
+        "away": "Guimaraes",
+        "ay": 4,
+        "ftag": 2,
+        "fthg": 3,
+        "hc": 1,
+        "home": "Arouca",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 5,
+        "away": "Guimaraes",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 6,
+        "home": "Arouca",
+        "hy": 7,
+        "season": "2024/25"
+      },
+      {
+        "ac": 5,
+        "away": "Arouca",
+        "ay": 3,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 9,
+        "home": "Guimaraes",
+        "hy": 1,
+        "season": "2024/25"
+      }
+    ],
+    "lambda_away": 0.87,
+    "lambda_home": 2.12,
+    "logged_at": "2026-08-21T17:25:40.419Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 86,
+        "probability": 0.8703554812561538,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 86,
+        "probability": 0.8656271264089147,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 86,
+        "probability": 0.8086610848456076,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 86,
+        "probability": 0.7387586231058442,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 86,
+        "probability": 0.6961596139755487,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Home Win (1X2)",
+        "n": 86,
+        "probability": 0.6510604943051573,
+        "selection": "Home"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 86,
+        "probability": 0.6495707396815881,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 86,
+        "probability": 0.6369753222024674,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 86,
+        "probability": 0.5934636393244153,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 86,
+        "probability": 0.5789364059927004,
+        "selection": "Over 4.5"
+      }
+    ],
+    "n_away_matches": 86,
+    "n_home_matches": 103,
+    "n_used": 86,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "P1|2026-08-09|FC Porto|FC Alverca": {
     "confidence": "Low",
     "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 9,
+        "away": "Alverca",
+        "ay": 4,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 7,
+        "home": "Porto",
+        "hy": 0,
+        "season": "2026/27"
+      },
+      {
+        "ac": 1,
+        "away": "Porto",
+        "ay": 1,
+        "ftag": 3,
+        "fthg": 0,
+        "hc": 4,
+        "home": "Alverca",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 4,
+        "away": "Alverca",
+        "ay": 4,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 5,
+        "home": "Porto",
+        "hy": 1,
+        "season": "2025/26"
+      }
+    ],
+    "lambda_away": 0.38,
+    "lambda_home": 3.31,
+    "logged_at": "2026-08-21T17:25:40.419Z",
     "markets": [
       {
         "market": "Double Chance",
-        "selection": "Home or Draw",
-        "probability": 0.939652797398031,
-        "n": 17,
-        "market_prob": 0.8090152323045825,
-        "edge": 0.13063756509344848
-      },
-      {
-        "market": "Corners O/U 11.5",
-        "selection": "Under 11.5",
-        "probability": 0.8356449729260754,
-        "n": 17,
-        "market_odds": 1.25,
-        "market_prob": 0.7368421052631579,
-        "overround": 1.0857142857142859,
-        "edge": 0.09880286766291757
-      },
-      {
-        "market": "Cards (Yellow) O/U 2.5",
-        "selection": "Over 2.5",
-        "probability": 0.8077958852704361,
-        "n": 17
-      },
-      {
-        "market": "Total Goals O/U 3.5",
-        "selection": "Under 3.5",
-        "probability": 0.7594478366286768,
-        "n": 17,
-        "market_odds": 1.3,
-        "market_prob": 0.7291666666666667,
-        "overround": 1.0549450549450547,
-        "edge": 0.030281169962010024
-      },
-      {
-        "market": "Corners O/U 10.5",
-        "selection": "Under 10.5",
-        "probability": 0.7532674437835305,
-        "n": 17,
-        "market_odds": 1.4,
-        "market_prob": 0.656019656019656,
-        "overround": 1.088817549491707,
-        "edge": 0.09724778776387455
+        "n": 18,
+        "probability": 0.9833497869087082,
+        "selection": "Home or Draw"
       },
       {
         "market": "Home Win (1X2)",
-        "selection": "Home",
-        "probability": 0.7486253989842527,
-        "n": 17,
-        "market_odds": 1.69,
-        "market_prob": 0.5480923806643642,
-        "overround": 1.0795916841867406,
-        "edge": 0.20053301831988857
+        "n": 18,
+        "probability": 0.9090630979379747,
+        "selection": "Home"
       },
       {
         "market": "Total Goals O/U 1.5",
-        "selection": "Over 1.5",
-        "probability": 0.7184962030801665,
-        "n": 17,
-        "market_odds": 1.33,
-        "market_prob": 0.712742980561555,
-        "overround": 1.0549100022784232,
-        "edge": 0.005753222518611434
+        "n": 18,
+        "probability": 0.8848384353864317,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 18,
+        "probability": 0.8273180859859255,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 18,
+        "probability": 0.7446713484242793,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 18,
+        "probability": 0.7101724145982226,
+        "selection": "Over 2.5"
       },
       {
         "market": "Both Teams to Score",
-        "selection": "No",
-        "probability": 0.6823971443136478,
-        "n": 17,
-        "market_odds": 1.8,
-        "market_prob": 0.5225464190981433,
-        "overround": 1.063169768753525,
-        "edge": 0.15985072521550459
-      },
-      {
-        "market": "Corners O/U 9.5",
-        "selection": "Under 9.5",
-        "probability": 0.648816388893821,
-        "n": 17,
-        "market_odds": 1.63,
-        "market_prob": 0.5653333333333334,
-        "overround": 1.0851950457228845,
-        "edge": 0.08348305556048763
+        "n": 18,
+        "probability": 0.6945598325181017,
+        "selection": "No"
       },
       {
         "market": "Cards (Yellow) O/U 3.5",
-        "selection": "Over 3.5",
-        "probability": 0.6486767975094524,
-        "n": 17
+        "n": 18,
+        "probability": 0.673179816315999,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 18,
+        "probability": 0.6413614839460532,
+        "selection": "Over 9.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 18,
+        "probability": 0.577635503429334,
+        "selection": "Under 11.5"
       }
     ],
-    "source": "Superbet",
-    "source_url": "https://superbet.pl/kursy/pilka-nozna/basaksehir-vs-kocaelispor-13985485",
-    "logged_at": "2026-08-16T21:30:19.594Z"
+    "n_away_matches": 18,
+    "n_home_matches": 103,
+    "n_used": 18,
+    "source": "Flashscore",
+    "source_url": null
   },
-  "T1|2026-08-16|Besiktas|Eyüpspor": {
-    "lambda_home": 2.21,
-    "lambda_away": 0.63,
-    "n_used": 35,
-    "n_home_matches": 111,
-    "n_away_matches": 35,
+  "P1|2026-08-09|Gil Vicente FC|Rio Ave FC": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 2,
+        "away": "Rio Ave",
+        "ay": 3,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 5,
+        "home": "Gil Vicente",
+        "hy": 1,
+        "season": "2026/27"
+      },
+      {
+        "ac": 1,
+        "away": "Rio Ave",
+        "ay": 5,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 10,
+        "home": "Gil Vicente",
+        "hy": 3,
+        "season": "2025/26"
+      },
+      {
+        "ac": 7,
+        "away": "Gil Vicente",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 0,
+        "hc": 9,
+        "home": "Rio Ave",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 4,
+        "away": "Rio Ave",
+        "ay": 3,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 4,
+        "home": "Gil Vicente",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 7,
+        "away": "Gil Vicente",
+        "ay": 0,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 6,
+        "home": "Rio Ave",
+        "hy": 1,
+        "season": "2024/25"
+      }
+    ],
+    "lambda_away": 0.65,
+    "lambda_home": 1.78,
+    "logged_at": "2026-08-21T17:25:40.419Z",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "n": 86,
+        "probability": 0.879931214280294,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 86,
+        "probability": 0.8327547743821195,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 86,
+        "probability": 0.8000439922086586,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 86,
+        "probability": 0.7722815693345135,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 86,
+        "probability": 0.7128397507373048,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 86,
+        "probability": 0.708408960294327,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 86,
+        "probability": 0.68115955290977,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Home Win (1X2)",
+        "n": 86,
+        "probability": 0.6363624147802822,
+        "selection": "Home"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 86,
+        "probability": 0.6067223071092666,
+        "selection": "Under 9.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 86,
+        "probability": 0.5926079638978605,
+        "selection": "No"
+      }
+    ],
+    "n_away_matches": 86,
+    "n_home_matches": 103,
+    "n_used": 86,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "P1|2026-08-09|Moreirense FC|SC Braga": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 2,
+        "away": "Sp Braga",
+        "ay": 2,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 4,
+        "home": "Moreirense",
+        "hy": 4,
+        "season": "2026/27"
+      },
+      {
+        "ac": 3,
+        "away": "Moreirense",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 2,
+        "hc": 5,
+        "home": "Sp Braga",
+        "hy": 3,
+        "season": "2025/26"
+      },
+      {
+        "ac": 9,
+        "away": "Sp Braga",
+        "ay": 3,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 4,
+        "home": "Moreirense",
+        "hy": 0,
+        "season": "2025/26"
+      },
+      {
+        "ac": 1,
+        "away": "Moreirense",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 3,
+        "hc": 6,
+        "home": "Sp Braga",
+        "hy": 0,
+        "season": "2024/25"
+      },
+      {
+        "ac": 9,
+        "away": "Sp Braga",
+        "ay": 1,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 1,
+        "home": "Moreirense",
+        "hy": 2,
+        "season": "2024/25"
+      }
+    ],
+    "lambda_away": 1.48,
+    "lambda_home": 1.19,
+    "logged_at": "2026-08-21T17:25:40.420Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 86,
+        "probability": 0.8330310712874529,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 86,
+        "probability": 0.7713875376559304,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 86,
+        "probability": 0.7592485285621025,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 86,
+        "probability": 0.7192484423000789,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 86,
+        "probability": 0.7067124156147682,
+        "selection": "Away or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 86,
+        "probability": 0.6815672830690567,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 86,
+        "probability": 0.6787788385950739,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 86,
+        "probability": 0.5740057834821937,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 86,
+        "probability": 0.5692264581379232,
+        "selection": "Under 9.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 86,
+        "probability": 0.5509604084869044,
+        "selection": "Yes"
+      }
+    ],
+    "n_away_matches": 103,
+    "n_home_matches": 86,
+    "n_used": 86,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "P1|2026-08-09|SL Benfica|Académico": {
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 2,
+        "away": "Academico Viseu",
+        "ay": 4,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 10,
+        "home": "Benfica",
+        "hy": 2,
+        "season": "2026/27"
+      }
+    ],
+    "lambda_away": 1.01,
+    "lambda_home": 4.39,
+    "logged_at": "2026-08-21T17:25:40.420Z",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 1,
+        "probability": 0.9722404517030748,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 1,
+        "probability": 0.9640908191454065,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 1,
+        "probability": 0.9098318353558431,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 1,
+        "probability": 0.9021302584911898,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Home Win (1X2)",
+        "n": 1,
+        "probability": 0.8963617828963855,
+        "selection": "Home"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 1,
+        "probability": 0.8046548024342332,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 1,
+        "probability": 0.779534868072199,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 1,
+        "probability": 0.7258530520813984,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 1,
+        "probability": 0.6641622972545396,
+        "selection": "Over 4.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 1,
+        "probability": 0.6305736736064766,
+        "selection": "Yes"
+      }
+    ],
+    "n_away_matches": 1,
+    "n_home_matches": 103,
+    "n_used": 1,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "P1|2026-08-10|Santa Clara|CD Nacional": {
     "confidence": "Medium",
     "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 4,
+        "away": "Nacional",
+        "ay": 2,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 4,
+        "home": "Santa Clara",
+        "hy": 2,
+        "season": "2026/27"
+      },
+      {
+        "ac": 8,
+        "away": "Santa Clara",
+        "ay": 4,
+        "ftag": 3,
+        "fthg": 3,
+        "hc": 2,
+        "home": "Nacional",
+        "hy": 4,
+        "season": "2025/26"
+      },
+      {
+        "ac": 6,
+        "away": "Nacional",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 4,
+        "home": "Santa Clara",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 6,
+        "away": "Santa Clara",
+        "ay": 7,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 2,
+        "home": "Nacional",
+        "hy": 4,
+        "season": "2024/25"
+      },
+      {
+        "ac": 4,
+        "away": "Nacional",
+        "ay": 3,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 3,
+        "home": "Santa Clara",
+        "hy": 3,
+        "season": "2024/25"
+      }
+    ],
+    "lambda_away": 0.57,
+    "lambda_home": 1.36,
+    "logged_at": "2026-08-21T17:25:40.420Z",
     "markets": [
       {
-        "market": "Double Chance",
-        "selection": "Home or Draw",
-        "probability": 0.9166165428167187,
-        "n": 35,
-        "market_prob": 0.8561499831149165,
-        "edge": 0.06046655970180215
-      },
-      {
         "market": "Cards (Yellow) O/U 2.5",
-        "selection": "Over 2.5",
-        "probability": 0.8384491103744002,
-        "n": 35
-      },
-      {
-        "market": "Corners O/U 11.5",
-        "selection": "Under 11.5",
-        "probability": 0.7848293741424763,
-        "n": 35,
-        "market_odds": 1.42,
-        "market_prob": 0.6485148514851486,
-        "overround": 1.085904741425653,
-        "edge": 0.13631452265732769
-      },
-      {
-        "market": "Total Goals O/U 1.5",
-        "selection": "Over 1.5",
-        "probability": 0.7842877514383411,
-        "n": 35,
-        "market_odds": 1.17,
-        "market_prob": 0.8072487644151565,
-        "overround": 1.058782487353916,
-        "edge": -0.02296101297681541
-      },
-      {
-        "market": "Home Win (1X2)",
-        "selection": "Home",
-        "probability": 0.7272944690030755,
-        "n": 35,
-        "market_odds": 1.39,
-        "market_prob": 0.6623310129960673,
-        "overround": 1.0862007762211285,
-        "edge": 0.06496345600700815
-      },
-      {
-        "market": "Cards (Yellow) O/U 3.5",
-        "selection": "Over 3.5",
-        "probability": 0.6928434250831098,
-        "n": 35
-      },
-      {
-        "market": "Corners O/U 10.5",
-        "selection": "Under 10.5",
-        "probability": 0.6910942557512849,
-        "n": 35,
-        "market_odds": 1.65,
-        "market_prob": 0.56,
-        "overround": 1.0822510822510822,
-        "edge": 0.13109425575128486
+        "n": 52,
+        "probability": 0.9017331534813757,
+        "selection": "Over 2.5"
       },
       {
         "market": "Total Goals O/U 3.5",
-        "selection": "Under 3.5",
-        "probability": 0.6825442514316612,
-        "n": 35,
-        "market_odds": 1.57,
-        "market_prob": 0.6015228426395939,
-        "overround": 1.058883603429278,
-        "edge": 0.08102140879206732
+        "n": 52,
+        "probability": 0.8691094628118852,
+        "selection": "Under 3.5"
       },
       {
-        "market": "Corners O/U 9.5",
-        "selection": "Under 9.5",
-        "probability": 0.578750428450871,
-        "n": 35,
-        "market_odds": 2,
-        "market_prob": 0.46091644204851756,
-        "overround": 1.0847953216374269,
-        "edge": 0.11783398640235343
+        "market": "Double Chance",
+        "n": 52,
+        "probability": 0.8562788983511993,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 52,
+        "probability": 0.8185095515697253,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 52,
+        "probability": 0.7906005243565893,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 52,
+        "probability": 0.735316900497065,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 52,
+        "probability": 0.6949556874461732,
+        "selection": "Under 2.5"
       },
       {
         "market": "Both Teams to Score",
-        "selection": "No",
-        "probability": 0.5744519638168529,
-        "n": 35,
-        "market_odds": 2,
-        "market_prob": 0.4708994708994709,
-        "overround": 1.0617977528089888,
-        "edge": 0.10355249291738206
+        "n": 52,
+        "probability": 0.6659442072756898,
+        "selection": "No"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 52,
+        "probability": 0.6453013322659505,
+        "selection": "Over 4.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 52,
+        "probability": 0.6320732202239824,
+        "selection": "Under 9.5"
       }
     ],
+    "n_away_matches": 52,
+    "n_home_matches": 86,
+    "n_used": 52,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "P1|2026-08-15|FC Alverca|Estrela Amadora": {
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 2,
+        "away": "Alverca",
+        "ay": 5,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 6,
+        "home": "Estrela",
+        "hy": 4,
+        "season": "2025/26"
+      },
+      {
+        "ac": 2,
+        "away": "Estrela",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 9,
+        "home": "Alverca",
+        "hy": 1,
+        "season": "2025/26"
+      }
+    ],
+    "lambda_away": 0.65,
+    "lambda_home": 1.51,
+    "logged_at": "2026-08-21T17:25:40.420Z",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "n": 17,
+        "probability": 0.8516996038540814,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 17,
+        "probability": 0.8353021635597111,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 17,
+        "probability": 0.8282282123679113,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 17,
+        "probability": 0.791291640271286,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 17,
+        "probability": 0.7561534015469797,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 17,
+        "probability": 0.6560375432478462,
+        "selection": "Under 9.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 17,
+        "probability": 0.6455402235031548,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 17,
+        "probability": 0.6349288614416609,
+        "selection": "Under 2.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 17,
+        "probability": 0.6222455535483481,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 17,
+        "probability": 0.6173366329786499,
+        "selection": "No"
+      }
+    ],
+    "n_away_matches": 51,
+    "n_home_matches": 17,
+    "n_used": 17,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "P1|2026-08-15|Rio Ave FC|FC Porto": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 10,
+        "away": "Porto",
+        "ay": 1,
+        "ftag": 3,
+        "fthg": 0,
+        "hc": 2,
+        "home": "Rio Ave",
+        "hy": 2,
+        "season": "2025/26"
+      },
+      {
+        "ac": 1,
+        "away": "Rio Ave",
+        "ay": 3,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 10,
+        "home": "Porto",
+        "hy": 2,
+        "season": "2025/26"
+      },
+      {
+        "ac": 3,
+        "away": "Rio Ave",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 9,
+        "home": "Porto",
+        "hy": 0,
+        "season": "2024/25"
+      },
+      {
+        "ac": 5,
+        "away": "Porto",
+        "ay": 3,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 3,
+        "home": "Rio Ave",
+        "hy": 1,
+        "season": "2024/25"
+      },
+      {
+        "ac": 7,
+        "away": "Porto",
+        "ay": 3,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 1,
+        "home": "Rio Ave",
+        "hy": 4,
+        "season": "2023/24"
+      }
+    ],
+    "lambda_away": 1.64,
+    "lambda_home": 0.82,
+    "logged_at": "2026-08-21T17:25:40.420Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 85,
+        "probability": 0.8733059061385816,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 85,
+        "probability": 0.8257569031916998,
+        "selection": "Away or Draw"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 85,
+        "probability": 0.7651927595770853,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 85,
+        "probability": 0.7434733101439766,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 85,
+        "probability": 0.7167799142405205,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 85,
+        "probability": 0.689481795113504,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 85,
+        "probability": 0.6423163873149916,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 85,
+        "probability": 0.5847774101232783,
+        "selection": "Over 4.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 85,
+        "probability": 0.5779744544156936,
+        "selection": "Over 9.5"
+      },
+      {
+        "market": "Away Win (1X2)",
+        "n": 85,
+        "probability": 0.5580906860126821,
+        "selection": "Away"
+      }
+    ],
+    "n_away_matches": 102,
+    "n_home_matches": 85,
+    "n_used": 85,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "P1|2026-08-16|CD Nacional|Estoril Praia": {
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "lambda_away": 1.33,
+    "lambda_home": 2.01,
+    "logged_at": "2026-08-16T21:24:42.592Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 51,
+        "probability": 0.8662796029434313,
+        "selection": "Over 2.5"
+      },
+      {
+        "edge": 0.11887257289525333,
+        "market": "Total Goals O/U 1.5",
+        "market_odds": 1.29,
+        "market_prob": 0.7361963190184049,
+        "n": 51,
+        "overround": 1.0529715762273901,
+        "probability": 0.8550688919136582,
+        "selection": "Over 1.5"
+      },
+      {
+        "edge": 0.15917680712775717,
+        "market": "Corners O/U 11.5",
+        "market_odds": 1.5,
+        "market_prob": 0.6124031007751938,
+        "n": 51,
+        "overround": 1.0886075949367089,
+        "probability": 0.771579907902951,
+        "selection": "Under 11.5"
+      },
+      {
+        "edge": 0.1338667830679432,
+        "market": "Double Chance",
+        "market_prob": 0.6234593262119967,
+        "n": 51,
+        "probability": 0.7573261092799399,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 51,
+        "probability": 0.7323625813240283,
+        "selection": "Over 3.5"
+      },
+      {
+        "edge": 0.15872418079212058,
+        "market": "Corners O/U 10.5",
+        "market_odds": 1.77,
+        "market_prob": 0.5203252032520325,
+        "n": 51,
+        "overround": 1.0858050847457628,
+        "probability": 0.679049384044153,
+        "selection": "Under 10.5"
+      },
+      {
+        "edge": 0.15406393391367484,
+        "market": "Total Goals O/U 2.5",
+        "market_odds": 1.92,
+        "market_prob": 0.49340369393139843,
+        "n": 51,
+        "overround": 1.0555926916221035,
+        "probability": 0.6474676278450733,
+        "selection": "Over 2.5"
+      },
+      {
+        "edge": 0.08929948104302776,
+        "market": "Both Teams to Score",
+        "market_odds": 1.69,
+        "market_prob": 0.5564304461942258,
+        "n": 51,
+        "overround": 1.0634140895389081,
+        "probability": 0.6457299272372535,
+        "selection": "Yes"
+      },
+      {
+        "edge": -0.1320847870545795,
+        "market": "Total Goals O/U 3.5",
+        "market_odds": 1.34,
+        "market_prob": 0.7048458149779735,
+        "n": 51,
+        "overround": 1.0587686567164178,
+        "probability": 0.572761027923394,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 51,
+        "probability": 0.5711520856815226,
+        "selection": "Over 4.5"
+      }
+    ],
+    "n_away_matches": 85,
+    "n_home_matches": 51,
+    "n_used": 51,
     "source": "Superbet",
-    "source_url": "https://superbet.pl/kursy/pilka-nozna/besiktas-vs-eyupspor-13985468",
-    "logged_at": "2026-08-16T21:24:42.593Z"
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/cd-nacional-vs-estoril-praia-13881196"
+  },
+  "P1|2026-08-16|FC Arouca|Moreirense FC": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "lambda_away": 0.96,
+    "lambda_home": 1.63,
+    "logged_at": "2026-08-16T21:24:42.592Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 85,
+        "probability": 0.882779937819557,
+        "selection": "Over 2.5"
+      },
+      {
+        "edge": 0.1516412638167769,
+        "market": "Corners O/U 11.5",
+        "market_odds": 1.29,
+        "market_prob": 0.7126948775055678,
+        "n": 85,
+        "overround": 1.0876937984496124,
+        "probability": 0.8643361413223447,
+        "selection": "Under 11.5"
+      },
+      {
+        "edge": 0.16189905241012048,
+        "market": "Corners O/U 10.5",
+        "market_odds": 1.46,
+        "market_prob": 0.6313131313131313,
+        "n": 85,
+        "overround": 1.084931506849315,
+        "probability": 0.7932121837232518,
+        "selection": "Under 10.5"
+      },
+      {
+        "edge": 0.03501408528404926,
+        "market": "Double Chance",
+        "market_prob": 0.754457050243112,
+        "n": 85,
+        "probability": 0.7894711355271613,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 85,
+        "probability": 0.7588882569616899,
+        "selection": "Over 3.5"
+      },
+      {
+        "edge": 0.04999501927056704,
+        "market": "Total Goals O/U 1.5",
+        "market_odds": 1.37,
+        "market_prob": 0.6935123042505593,
+        "n": 85,
+        "overround": 1.0525076524605603,
+        "probability": 0.7435073235211264,
+        "selection": "Over 1.5"
+      },
+      {
+        "edge": -0.016462486333385207,
+        "market": "Total Goals O/U 3.5",
+        "market_odds": 1.26,
+        "market_prob": 0.7534246575342466,
+        "n": 85,
+        "overround": 1.0533910533910533,
+        "probability": 0.7369621712008614,
+        "selection": "Under 3.5"
+      },
+      {
+        "edge": 0.16603537131277812,
+        "market": "Corners O/U 9.5",
+        "market_odds": 1.72,
+        "market_prob": 0.5338753387533877,
+        "n": 85,
+        "overround": 1.0890095620351787,
+        "probability": 0.6999107100661658,
+        "selection": "Under 9.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 85,
+        "probability": 0.6042150968281922,
+        "selection": "Over 4.5"
+      },
+      {
+        "edge": 0.1516595935507471,
+        "market": "Corners O/U 8.5",
+        "market_odds": 2.12,
+        "market_prob": 0.43466666666666665,
+        "n": 85,
+        "overround": 1.0851950457228845,
+        "probability": 0.5863262602174137,
+        "selection": "Under 8.5"
+      }
+    ],
+    "n_away_matches": 85,
+    "n_home_matches": 85,
+    "n_used": 85,
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/arouca-vs-moreirense-13881192"
+  },
+  "P1|2026-08-16|FC Famalicão|Marítimo M.": {
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 6,
+        "away": "Famalicao",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 0,
+        "hc": 7,
+        "home": "Maritimo",
+        "hy": 2,
+        "season": "2022/23"
+      },
+      {
+        "ac": 4,
+        "away": "Maritimo",
+        "ay": 3,
+        "ftag": 2,
+        "fthg": 3,
+        "hc": 9,
+        "home": "Famalicao",
+        "hy": 3,
+        "season": "2022/23"
+      },
+      {
+        "ac": 5,
+        "away": "Maritimo",
+        "ay": 3,
+        "ftag": 0,
+        "fthg": 0,
+        "hc": 7,
+        "home": "Famalicao",
+        "hy": 3,
+        "season": "2021/22"
+      },
+      {
+        "ac": 6,
+        "away": "Famalicao",
+        "ay": 3,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 5,
+        "home": "Maritimo",
+        "hy": 3,
+        "season": "2021/22"
+      },
+      {
+        "ac": 2,
+        "away": "Maritimo",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 2,
+        "hc": 4,
+        "home": "Famalicao",
+        "hy": 3,
+        "season": "2020/21"
+      }
+    ],
+    "lambda_away": 0.6,
+    "lambda_home": 2.12,
+    "logged_at": "2026-08-21T17:25:40.422Z",
+    "markets": [
+      {
+        "edge": 0.10967780133089755,
+        "market": "Double Chance",
+        "market_prob": 0.8059140656244501,
+        "n": 51,
+        "probability": 0.9155918669553477,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 51,
+        "probability": 0.9147139508787898,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 51,
+        "probability": 0.8132793529156108,
+        "selection": "Over 3.5"
+      },
+      {
+        "edge": 0.05712838784549579,
+        "market": "Total Goals O/U 1.5",
+        "market_odds": 1.36,
+        "market_prob": 0.7063567362429631,
+        "n": 51,
+        "overround": 1.0578747628083491,
+        "probability": 0.7634851240884589,
+        "quarter_kelly": 0.02662483941687791,
+        "selection": "Over 1.5"
+      },
+      {
+        "edge": 0.17385955407404463,
+        "market": "Home Win (1X2)",
+        "market_odds": 1.76,
+        "market_prob": 0.5440405805589664,
+        "n": 51,
+        "overround": 1.0626379164736972,
+        "probability": 0.7179001346330111,
+        "quarter_kelly": 0.0866790253138485,
+        "selection": "Home"
+      },
+      {
+        "edge": -0.05558448409475991,
+        "market": "Total Goals O/U 3.5",
+        "market_odds": 1.26,
+        "market_prob": 0.7652464494571065,
+        "n": 51,
+        "overround": 1.0568086883876358,
+        "probability": 0.7096619653623466,
+        "quarter_kelly": 0,
+        "selection": "Under 3.5"
+      },
+      {
+        "edge": -0.018705708244288743,
+        "market": "Corners O/U 11.5",
+        "market_odds": 1.33,
+        "market_prob": 0.7092731829574698,
+        "n": 51,
+        "overround": 1.0852130325814535,
+        "probability": 0.690567474713181,
+        "quarter_kelly": 0,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 51,
+        "probability": 0.6759379685218572,
+        "selection": "Over 4.5"
+      },
+      {
+        "edge": 0.049499093514669856,
+        "market": "Corners O/U 8.5",
+        "market_odds": 1.57,
+        "market_prob": 0.5932461123544039,
+        "n": 51,
+        "overround": 1.087393125609686,
+        "probability": 0.6427452058690738,
+        "quarter_kelly": 0.003995602287037699,
+        "selection": "Over 8.5"
+      },
+      {
+        "edge": 0.05910271240760423,
+        "market": "Both Teams to Score",
+        "market_odds": 1.76,
+        "market_prob": 0.5340909090904452,
+        "n": 51,
+        "overround": 1.0681818181818183,
+        "probability": 0.5931936214980494,
+        "quarter_kelly": 0.014480517709397038,
+        "selection": "No"
+      }
+    ],
+    "n_away_matches": 51,
+    "n_home_matches": 102,
+    "n_used": 51,
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/famalicao-vs-maritimo-13881195"
+  },
+  "P1|2026-08-17|Casa Pia AC|SL Benfica": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 2,
+        "away": "Casa Pia",
+        "ay": 2,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 6,
+        "home": "Benfica",
+        "hy": 3,
+        "season": "2025/26"
+      },
+      {
+        "ac": 12,
+        "away": "Benfica",
+        "ay": 0,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 3,
+        "home": "Casa Pia",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 2,
+        "away": "Casa Pia",
+        "ay": 1,
+        "ftag": 0,
+        "fthg": 3,
+        "hc": 12,
+        "home": "Benfica",
+        "hy": 0,
+        "season": "2024/25"
+      },
+      {
+        "ac": 9,
+        "away": "Benfica",
+        "ay": 0,
+        "ftag": 1,
+        "fthg": 3,
+        "hc": 2,
+        "home": "Casa Pia",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 2,
+        "away": "Casa Pia",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 10,
+        "home": "Benfica",
+        "hy": 1,
+        "season": "2023/24"
+      }
+    ],
+    "lambda_away": 1.67,
+    "lambda_home": 0.72,
+    "logged_at": "2026-08-21T17:25:40.422Z",
+    "markets": [
+      {
+        "edge": -0.0823908074224694,
+        "market": "Double Chance",
+        "market_prob": 0.9344999045115024,
+        "n": 68,
+        "probability": 0.852109097089033,
+        "selection": "Away or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 68,
+        "probability": 0.8354211202916073,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 68,
+        "probability": 0.7817136347113433,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 68,
+        "probability": 0.7501791671431906,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 68,
+        "probability": 0.6994943015313326,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 68,
+        "probability": 0.6851032471806189,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 68,
+        "probability": 0.6478585284184422,
+        "selection": "Over 9.5"
+      },
+      {
+        "edge": -0.21296351692193716,
+        "market": "Away Win (1X2)",
+        "market_odds": 1.2,
+        "market_prob": 0.8027444805745051,
+        "n": 68,
+        "overround": 1.0681818181818183,
+        "probability": 0.5897809636525679,
+        "quarter_kelly": 0,
+        "selection": "Away"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 68,
+        "probability": 0.5734331339345372,
+        "selection": "Under 2.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 68,
+        "probability": 0.5726846002560646,
+        "selection": "No"
+      }
+    ],
+    "n_away_matches": 102,
+    "n_home_matches": 68,
+    "n_used": 68,
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/casa-pia-vs-benfica-13881194"
+  },
+  "SP1|2026-08-15|Deportivo Alavés|Getafe CF": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 7,
+        "away": "Alaves",
+        "ay": 3,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 2,
+        "home": "Getafe",
+        "hy": 2,
+        "season": "2025/26"
+      },
+      {
+        "ac": 3,
+        "away": "Getafe",
+        "ay": 5,
+        "ftag": 2,
+        "fthg": 0,
+        "hc": 6,
+        "home": "Alaves",
+        "hy": 2,
+        "season": "2025/26"
+      },
+      {
+        "ac": 2,
+        "away": "Alaves",
+        "ay": 6,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 2,
+        "home": "Getafe",
+        "hy": 3,
+        "season": "2024/25"
+      },
+      {
+        "ac": 3,
+        "away": "Getafe",
+        "ay": 6,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 8,
+        "home": "Alaves",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 5,
+        "away": "Alaves",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 4,
+        "home": "Getafe",
+        "hy": 1,
+        "season": "2023/24"
+      }
+    ],
+    "lambda_away": 0.64,
+    "lambda_home": 1.24,
+    "logged_at": "2026-08-21T17:25:40.422Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 95,
+        "probability": 0.9060662889046037,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 95,
+        "probability": 0.8777727240625116,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 95,
+        "probability": 0.8216937778424971,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 95,
+        "probability": 0.7998159473206898,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 95,
+        "probability": 0.7730957119987772,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 95,
+        "probability": 0.7085871709929975,
+        "selection": "Under 2.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 95,
+        "probability": 0.6781145773298702,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 95,
+        "probability": 0.6599195689894898,
+        "selection": "Over 4.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 95,
+        "probability": 0.6523445561384812,
+        "selection": "No"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 95,
+        "probability": 0.5731871670284191,
+        "selection": "Over 1.5"
+      }
+    ],
+    "n_away_matches": 114,
+    "n_home_matches": 95,
+    "n_used": 95,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "SP1|2026-08-15|Sevilla FC|Rayo Vallecano": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 4,
+        "away": "Sevilla",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 12,
+        "home": "Vallecano",
+        "hy": 3,
+        "season": "2025/26"
+      },
+      {
+        "ac": 2,
+        "away": "Vallecano",
+        "ay": 3,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 6,
+        "home": "Sevilla",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 3,
+        "away": "Vallecano",
+        "ay": 5,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 8,
+        "home": "Sevilla",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 6,
+        "away": "Sevilla",
+        "ay": 0,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 6,
+        "home": "Vallecano",
+        "hy": 1,
+        "season": "2024/25"
+      },
+      {
+        "ac": 2,
+        "away": "Vallecano",
+        "ay": 2,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 12,
+        "home": "Sevilla",
+        "hy": 5,
+        "season": "2023/24"
+      }
+    ],
+    "lambda_away": 0.66,
+    "lambda_home": 1.53,
+    "logged_at": "2026-08-21T17:25:40.422Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 95,
+        "probability": 0.9081520251250846,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 95,
+        "probability": 0.8519765256119651,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 95,
+        "probability": 0.8211825419682701,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 95,
+        "probability": 0.8034232816146827,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 95,
+        "probability": 0.7340081964593919,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 95,
+        "probability": 0.6647690583108999,
+        "selection": "Over 4.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 95,
+        "probability": 0.6544621874361766,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 95,
+        "probability": 0.6329595659875487,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 95,
+        "probability": 0.6251983875201597,
+        "selection": "Under 2.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 95,
+        "probability": 0.6103986096487972,
+        "selection": "No"
+      }
+    ],
+    "n_away_matches": 95,
+    "n_home_matches": 114,
+    "n_used": 95,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "SP1|2026-08-16|RCD Espanyol de Barcelona|Levante UD": {
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "lambda_away": 0.95,
+    "lambda_home": 1.99,
+    "logged_at": "2026-08-16T21:24:42.592Z",
+    "markets": [
+      {
+        "edge": 0.09859978452391427,
+        "market": "Double Chance",
+        "market_prob": 0.7384330660086366,
+        "n": 57,
+        "probability": 0.8370328505325508,
+        "selection": "Home or Draw"
+      },
+      {
+        "edge": 0.1548987352968435,
+        "market": "Corners O/U 11.5",
+        "market_odds": 1.39,
+        "market_prob": 0.669833729216152,
+        "n": 57,
+        "overround": 1.074034389509669,
+        "probability": 0.8247324645129955,
+        "selection": "Under 11.5"
+      },
+      {
+        "edge": 0.11188720232107541,
+        "market": "Total Goals O/U 1.5",
+        "market_odds": 1.37,
+        "market_prob": 0.6900452488687784,
+        "n": 57,
+        "overround": 1.0577958597582864,
+        "probability": 0.8019324511898538,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 57,
+        "probability": 0.8018728572847822,
+        "selection": "Over 2.5"
+      },
+      {
+        "edge": 0.15913907515801895,
+        "market": "Corners O/U 10.5",
+        "market_odds": 1.6,
+        "market_prob": 0.5811518324607331,
+        "n": 57,
+        "overround": 1.0754504504504503,
+        "probability": 0.740290907618752,
+        "selection": "Under 10.5"
+      },
+      {
+        "edge": -0.09686799612670949,
+        "market": "Total Goals O/U 3.5",
+        "market_odds": 1.25,
+        "market_prob": 0.7572815533980582,
+        "n": 57,
+        "overround": 1.0564102564102564,
+        "probability": 0.6604135572713488,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 57,
+        "probability": 0.6395679173085027,
+        "selection": "Over 3.5"
+      },
+      {
+        "edge": 0.15076475708854437,
+        "market": "Corners O/U 9.5",
+        "market_odds": 1.92,
+        "market_prob": 0.48387096774193555,
+        "n": 57,
+        "overround": 1.0763888888888888,
+        "probability": 0.6346357248304799,
+        "selection": "Under 9.5"
+      },
+      {
+        "edge": 0.16180742793769587,
+        "market": "Home Win (1X2)",
+        "market_odds": 2.12,
+        "market_prob": 0.4441702652683528,
+        "n": 57,
+        "overround": 1.061975890985325,
+        "probability": 0.6059776932060487,
+        "selection": "Home"
+      },
+      {
+        "edge": 0.12718849329824744,
+        "market": "Total Goals O/U 2.5",
+        "market_odds": 2.17,
+        "market_prob": 0.4363636363636364,
+        "n": 57,
+        "overround": 1.0560675883256527,
+        "probability": 0.5635521296618838,
+        "selection": "Over 2.5"
+      }
+    ],
+    "n_away_matches": 57,
+    "n_home_matches": 76,
+    "n_used": 57,
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/espanyol-vs-levante-13846970"
+  },
+  "SP1|2026-08-20|Rayo Vallecano|Deportivo Alavés": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 5,
+        "away": "Alaves",
+        "ay": 3,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 7,
+        "home": "Vallecano",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 5,
+        "away": "Vallecano",
+        "ay": 3,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 10,
+        "home": "Alaves",
+        "hy": 3,
+        "season": "2025/26"
+      },
+      {
+        "ac": 2,
+        "away": "Alaves",
+        "ay": 4,
+        "ftag": 0,
+        "fthg": 1,
+        "hc": 6,
+        "home": "Vallecano",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 5,
+        "away": "Vallecano",
+        "ay": 5,
+        "ftag": 2,
+        "fthg": 0,
+        "hc": 8,
+        "home": "Alaves",
+        "hy": 3,
+        "season": "2024/25"
+      },
+      {
+        "ac": 3,
+        "away": "Alaves",
+        "ay": 3,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 5,
+        "home": "Vallecano",
+        "hy": 2,
+        "season": "2023/24"
+      }
+    ],
+    "lambda_away": 0.73,
+    "lambda_home": 1.86,
+    "logged_at": "2026-08-21T17:25:40.423Z",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "n": 95,
+        "probability": 0.8701488087167609,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 95,
+        "probability": 0.8369454676333015,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 95,
+        "probability": 0.7397741549613955,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 95,
+        "probability": 0.7394610925937796,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 95,
+        "probability": 0.7058166466457821,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 95,
+        "probability": 0.6897737912803752,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 95,
+        "probability": 0.6347801312933041,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Home Win (1X2)",
+        "n": 95,
+        "probability": 0.6323108462056729,
+        "selection": "Home"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 95,
+        "probability": 0.6013523195541406,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 95,
+        "probability": 0.5535573757166594,
+        "selection": "No"
+      }
+    ],
+    "n_away_matches": 95,
+    "n_home_matches": 95,
+    "n_used": 95,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "T1|2026-08-15|Gaziantep|Alanyaspor": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 4,
+        "away": "Gaziantep",
+        "ay": 0,
+        "ftag": 0,
+        "fthg": 0,
+        "hc": 4,
+        "home": "Alanyaspor",
+        "hy": 3,
+        "season": "2025/26"
+      },
+      {
+        "ac": 2,
+        "away": "Alanyaspor",
+        "ay": 3,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 2,
+        "home": "Gaziantep",
+        "hy": 2,
+        "season": "2025/26"
+      },
+      {
+        "ac": 1,
+        "away": "Gaziantep",
+        "ay": 3,
+        "ftag": 0,
+        "fthg": 3,
+        "hc": 6,
+        "home": "Alanyaspor",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 0,
+        "away": "Alanyaspor",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 2,
+        "home": "Gaziantep",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 1,
+        "away": "Gaziantep",
+        "ay": 1,
+        "ftag": 3,
+        "fthg": 0,
+        "hc": 8,
+        "home": "Alanyaspor",
+        "hy": 3,
+        "season": "2023/24"
+      }
+    ],
+    "lambda_away": 0.93,
+    "lambda_home": 1.66,
+    "logged_at": "2026-08-21T17:25:40.423Z",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 111,
+        "probability": 0.8190902221914991,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 111,
+        "probability": 0.8027048463424395,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 111,
+        "probability": 0.7679108947442719,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 111,
+        "probability": 0.742330289223665,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 111,
+        "probability": 0.7380956267237426,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 111,
+        "probability": 0.6710407932513861,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 111,
+        "probability": 0.6646904686436994,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 111,
+        "probability": 0.5669602438769953,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 111,
+        "probability": 0.5568728604469623,
+        "selection": "Under 9.5"
+      },
+      {
+        "market": "Home Win (1X2)",
+        "n": 111,
+        "probability": 0.5361099390324774,
+        "selection": "Home"
+      }
+    ],
+    "n_away_matches": 111,
+    "n_home_matches": 111,
+    "n_used": 111,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "T1|2026-08-15|Gençlerbirligi|Fenerbahçe": {
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 3,
+        "away": "Fenerbahce",
+        "ay": 0,
+        "ftag": 3,
+        "fthg": 1,
+        "hc": 3,
+        "home": "Genclerbirligi",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 9,
+        "away": "Genclerbirligi",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 3,
+        "hc": 7,
+        "home": "Fenerbahce",
+        "hy": 2,
+        "season": "2025/26"
+      },
+      {
+        "ac": 3,
+        "away": "Fenerbahce",
+        "ay": 1,
+        "ftag": 5,
+        "fthg": 1,
+        "hc": 5,
+        "home": "Genclerbirligi",
+        "hy": 3,
+        "season": "2020/21"
+      },
+      {
+        "ac": 1,
+        "away": "Genclerbirligi",
+        "ay": 5,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 6,
+        "home": "Fenerbahce",
+        "hy": 1,
+        "season": "2020/21"
+      }
+    ],
+    "lambda_away": 2.12,
+    "lambda_home": 1.09,
+    "logged_at": "2026-08-21T17:25:40.423Z",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 37,
+        "probability": 0.8391301112871652,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 37,
+        "probability": 0.8221212706455238,
+        "selection": "Away or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 37,
+        "probability": 0.8097623003482861,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 37,
+        "probability": 0.6843374787655858,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 37,
+        "probability": 0.6586144289356146,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 37,
+        "probability": 0.6514742043830061,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "n": 37,
+        "probability": 0.6216503227502987,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 37,
+        "probability": 0.6009310432439859,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Away Win (1X2)",
+        "n": 37,
+        "probability": 0.599719795635931,
+        "selection": "Away"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 37,
+        "probability": 0.5932252387466687,
+        "selection": "Yes"
+      }
+    ],
+    "n_away_matches": 111,
+    "n_home_matches": 37,
+    "n_used": 37,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "T1|2026-08-15|Kasimpasa|Trabzonspor": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 4,
+        "away": "Trabzonspor",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 0,
+        "hc": 6,
+        "home": "Kasimpasa",
+        "hy": 2,
+        "season": "2025/26"
+      },
+      {
+        "ac": 3,
+        "away": "Kasimpasa",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 2,
+        "hc": 3,
+        "home": "Trabzonspor",
+        "hy": 2,
+        "season": "2025/26"
+      },
+      {
+        "ac": 1,
+        "away": "Kasimpasa",
+        "ay": 4,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 8,
+        "home": "Trabzonspor",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 1,
+        "away": "Trabzonspor",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 12,
+        "home": "Kasimpasa",
+        "hy": 5,
+        "season": "2024/25"
+      },
+      {
+        "ac": 3,
+        "away": "Trabzonspor",
+        "ay": 3,
+        "ftag": 5,
+        "fthg": 1,
+        "hc": 9,
+        "home": "Kasimpasa",
+        "hy": 3,
+        "season": "2023/24"
+      }
+    ],
+    "lambda_away": 1.46,
+    "lambda_home": 1.57,
+    "logged_at": "2026-08-21T17:25:40.423Z",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 111,
+        "probability": 0.816916367367686,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 111,
+        "probability": 0.7402365584480619,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 111,
+        "probability": 0.7275760442608683,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 111,
+        "probability": 0.6545071613870226,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 111,
+        "probability": 0.6396646458549335,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 111,
+        "probability": 0.6246684924918545,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Both Teams to Score",
+        "n": 111,
+        "probability": 0.6198275860923357,
+        "selection": "Yes"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 111,
+        "probability": 0.6157310089456067,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 111,
+        "probability": 0.6142396262423211,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Double Chance",
+        "n": 111,
+        "probability": 0.6087256567607757,
+        "selection": "Away or Draw"
+      }
+    ],
+    "n_away_matches": 111,
+    "n_home_matches": 111,
+    "n_used": 111,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "T1|2026-08-15|Konyaspor|Çaykur Rizespor": {
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 2,
+        "away": "Rizespor",
+        "ay": 3,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 4,
+        "home": "Konyaspor",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 2,
+        "away": "Konyaspor",
+        "ay": 2,
+        "ftag": 2,
+        "fthg": 3,
+        "hc": 1,
+        "home": "Rizespor",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 4,
+        "away": "Konyaspor",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 1,
+        "hc": 8,
+        "home": "Rizespor",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 5,
+        "away": "Rizespor",
+        "ay": 2,
+        "ftag": 1,
+        "fthg": 2,
+        "hc": 5,
+        "home": "Konyaspor",
+        "hy": 2,
+        "season": "2024/25"
+      },
+      {
+        "ac": 4,
+        "away": "Rizespor",
+        "ay": 1,
+        "ftag": 2,
+        "fthg": 1,
+        "hc": 2,
+        "home": "Konyaspor",
+        "hy": 2,
+        "season": "2023/24"
+      }
+    ],
+    "lambda_away": 0.77,
+    "lambda_home": 2.06,
+    "logged_at": "2026-08-21T17:25:40.423Z",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "n": 93,
+        "probability": 0.8798909039254351,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 93,
+        "probability": 0.8343430295249123,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 93,
+        "probability": 0.7845827463983197,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 93,
+        "probability": 0.7628414291651433,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 93,
+        "probability": 0.6867870265878796,
+        "selection": "Over 3.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 93,
+        "probability": 0.6836981909715915,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 93,
+        "probability": 0.6651166741690469,
+        "selection": "Under 10.5"
+      },
+      {
+        "market": "Home Win (1X2)",
+        "n": 93,
+        "probability": 0.6644219556148447,
+        "selection": "Home"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 93,
+        "probability": 0.573202074049137,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "n": 93,
+        "probability": 0.5505023584704645,
+        "selection": "Under 9.5"
+      }
+    ],
+    "n_away_matches": 93,
+    "n_home_matches": 111,
+    "n_used": 93,
+    "source": "Flashscore",
+    "source_url": null
+  },
+  "T1|2026-08-16|Besiktas|Eyüpspor": {
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "lambda_away": 0.63,
+    "lambda_home": 2.21,
+    "logged_at": "2026-08-16T21:24:42.593Z",
+    "markets": [
+      {
+        "edge": 0.06046655970180215,
+        "market": "Double Chance",
+        "market_prob": 0.8561499831149165,
+        "n": 35,
+        "probability": 0.9166165428167187,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 35,
+        "probability": 0.8384491103744002,
+        "selection": "Over 2.5"
+      },
+      {
+        "edge": 0.13631452265732769,
+        "market": "Corners O/U 11.5",
+        "market_odds": 1.42,
+        "market_prob": 0.6485148514851486,
+        "n": 35,
+        "overround": 1.085904741425653,
+        "probability": 0.7848293741424763,
+        "selection": "Under 11.5"
+      },
+      {
+        "edge": -0.02296101297681541,
+        "market": "Total Goals O/U 1.5",
+        "market_odds": 1.17,
+        "market_prob": 0.8072487644151565,
+        "n": 35,
+        "overround": 1.058782487353916,
+        "probability": 0.7842877514383411,
+        "selection": "Over 1.5"
+      },
+      {
+        "edge": 0.06496345600700815,
+        "market": "Home Win (1X2)",
+        "market_odds": 1.39,
+        "market_prob": 0.6623310129960673,
+        "n": 35,
+        "overround": 1.0862007762211285,
+        "probability": 0.7272944690030755,
+        "selection": "Home"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 35,
+        "probability": 0.6928434250831098,
+        "selection": "Over 3.5"
+      },
+      {
+        "edge": 0.13109425575128486,
+        "market": "Corners O/U 10.5",
+        "market_odds": 1.65,
+        "market_prob": 0.56,
+        "n": 35,
+        "overround": 1.0822510822510822,
+        "probability": 0.6910942557512849,
+        "selection": "Under 10.5"
+      },
+      {
+        "edge": 0.08102140879206732,
+        "market": "Total Goals O/U 3.5",
+        "market_odds": 1.57,
+        "market_prob": 0.6015228426395939,
+        "n": 35,
+        "overround": 1.058883603429278,
+        "probability": 0.6825442514316612,
+        "selection": "Under 3.5"
+      },
+      {
+        "edge": 0.11783398640235343,
+        "market": "Corners O/U 9.5",
+        "market_odds": 2,
+        "market_prob": 0.46091644204851756,
+        "n": 35,
+        "overround": 1.0847953216374269,
+        "probability": 0.578750428450871,
+        "selection": "Under 9.5"
+      },
+      {
+        "edge": 0.10355249291738206,
+        "market": "Both Teams to Score",
+        "market_odds": 2,
+        "market_prob": 0.4708994708994709,
+        "n": 35,
+        "overround": 1.0617977528089888,
+        "probability": 0.5744519638168529,
+        "selection": "No"
+      }
+    ],
+    "n_away_matches": 35,
+    "n_home_matches": 111,
+    "n_used": 35,
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/besiktas-vs-eyupspor-13985468"
+  },
+  "T1|2026-08-16|Istanbul Basaksehir|Kocaelispor": {
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "lambda_away": 0.44,
+    "lambda_home": 2.05,
+    "logged_at": "2026-08-16T21:30:19.594Z",
+    "markets": [
+      {
+        "edge": 0.13063756509344848,
+        "market": "Double Chance",
+        "market_prob": 0.8090152323045825,
+        "n": 17,
+        "probability": 0.939652797398031,
+        "selection": "Home or Draw"
+      },
+      {
+        "edge": 0.09880286766291757,
+        "market": "Corners O/U 11.5",
+        "market_odds": 1.25,
+        "market_prob": 0.7368421052631579,
+        "n": 17,
+        "overround": 1.0857142857142859,
+        "probability": 0.8356449729260754,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 17,
+        "probability": 0.8077958852704361,
+        "selection": "Over 2.5"
+      },
+      {
+        "edge": 0.030281169962010024,
+        "market": "Total Goals O/U 3.5",
+        "market_odds": 1.3,
+        "market_prob": 0.7291666666666667,
+        "n": 17,
+        "overround": 1.0549450549450547,
+        "probability": 0.7594478366286768,
+        "selection": "Under 3.5"
+      },
+      {
+        "edge": 0.09724778776387455,
+        "market": "Corners O/U 10.5",
+        "market_odds": 1.4,
+        "market_prob": 0.656019656019656,
+        "n": 17,
+        "overround": 1.088817549491707,
+        "probability": 0.7532674437835305,
+        "selection": "Under 10.5"
+      },
+      {
+        "edge": 0.20053301831988857,
+        "market": "Home Win (1X2)",
+        "market_odds": 1.69,
+        "market_prob": 0.5480923806643642,
+        "n": 17,
+        "overround": 1.0795916841867406,
+        "probability": 0.7486253989842527,
+        "selection": "Home"
+      },
+      {
+        "edge": 0.005753222518611434,
+        "market": "Total Goals O/U 1.5",
+        "market_odds": 1.33,
+        "market_prob": 0.712742980561555,
+        "n": 17,
+        "overround": 1.0549100022784232,
+        "probability": 0.7184962030801665,
+        "selection": "Over 1.5"
+      },
+      {
+        "edge": 0.15985072521550459,
+        "market": "Both Teams to Score",
+        "market_odds": 1.8,
+        "market_prob": 0.5225464190981433,
+        "n": 17,
+        "overround": 1.063169768753525,
+        "probability": 0.6823971443136478,
+        "selection": "No"
+      },
+      {
+        "edge": 0.08348305556048763,
+        "market": "Corners O/U 9.5",
+        "market_odds": 1.63,
+        "market_prob": 0.5653333333333334,
+        "n": 17,
+        "overround": 1.0851950457228845,
+        "probability": 0.648816388893821,
+        "selection": "Under 9.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 17,
+        "probability": 0.6486767975094524,
+        "selection": "Over 3.5"
+      }
+    ],
+    "n_away_matches": 17,
+    "n_home_matches": 111,
+    "n_used": 17,
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/basaksehir-vs-kocaelispor-13985485"
+  },
+  "T1|2026-08-17|Samsunspor|Göztepe": {
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": null,
+    "h2h": [
+      {
+        "ac": 3,
+        "away": "Samsunspor",
+        "ay": 2,
+        "ftag": 0,
+        "fthg": 2,
+        "hc": 4,
+        "home": "Goztep",
+        "hy": 1,
+        "season": "2025/26"
+      },
+      {
+        "ac": 4,
+        "away": "Goztep",
+        "ay": 3,
+        "ftag": 0,
+        "fthg": 3,
+        "hc": 0,
+        "home": "Samsunspor",
+        "hy": 3,
+        "season": "2025/26"
+      },
+      {
+        "ac": 3,
+        "away": "Goztep",
+        "ay": 2,
+        "ftag": 3,
+        "fthg": 4,
+        "hc": 6,
+        "home": "Samsunspor",
+        "hy": 0,
+        "season": "2024/25"
+      },
+      {
+        "ac": 2,
+        "away": "Samsunspor",
+        "ay": 1,
+        "ftag": 2,
+        "fthg": 2,
+        "hc": 1,
+        "home": "Goztep",
+        "hy": 4,
+        "season": "2024/25"
+      }
+    ],
+    "lambda_away": 0.76,
+    "lambda_home": 1.92,
+    "logged_at": "2026-08-21T17:25:40.424Z",
+    "markets": [
+      {
+        "edge": 0.17110786072182171,
+        "market": "Double Chance",
+        "market_prob": 0.6984636910870143,
+        "n": 54,
+        "probability": 0.869571551808836,
+        "selection": "Home or Draw"
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "n": 54,
+        "probability": 0.7581476040353226,
+        "selection": "Over 2.5"
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "n": 54,
+        "probability": 0.7579812157078814,
+        "selection": "Over 1.5"
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "n": 54,
+        "probability": 0.7495778509791954,
+        "selection": "Under 11.5"
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "n": 54,
+        "probability": 0.7182166326552217,
+        "selection": "Under 3.5"
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "n": 54,
+        "probability": 0.649750543987685,
+        "selection": "Under 10.5"
+      },
+      {
+        "edge": 0.22614986073596022,
+        "market": "Home Win (1X2)",
+        "market_odds": 2.27,
+        "market_prob": 0.4119847371024852,
+        "n": 54,
+        "overround": 1.0808974868202499,
+        "probability": 0.6381345978384454,
+        "quarter_kelly": 0.08830030257741557,
+        "selection": "Home"
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "n": 54,
+        "probability": 0.592829421209118,
+        "selection": "Under 4.5"
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "n": 54,
+        "probability": 0.5891099971513281,
+        "selection": "Over 8.5"
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "n": 54,
+        "probability": 0.581995821876474,
+        "selection": "Over 3.5"
+      }
+    ],
+    "n_away_matches": 74,
+    "n_home_matches": 54,
+    "n_used": 54,
+    "source": "Superbet",
+    "source_url": "https://superbet.pl/kursy/pilka-nozna/samsunspor-vs-goztepe-13985473"
   }
 }
