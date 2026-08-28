@@ -59,20 +59,27 @@ from before.
 ## Data files
 
 - **`data/master.csv`** — full historical dataset, 2020/21–2026/27 (partial),
-  10 leagues originally, ~20k matches, ~28 columns (goals, shots, corners,
-  cards, closing odds). This is the source of truth. Read `DATA_README.md`
-  for the full schema and known gaps before changing anything data-related.
+  10 leagues originally, ~20k matches, ~32 columns (goals, shots, shots on
+  target, fouls, corners, cards, closing odds, possession). This is the
+  source of truth. Read `DATA_README.md` for the full schema and known gaps
+  before changing anything data-related. `HPos`/`APos` (added 2026-08-28)
+  are current-season-only — no historical possession data exists anywhere,
+  see `DATA_README.md` gap #7.
 - **`data/trimmed_matches.json`** — a stripped-down version of `master.csv`,
   fetched by `statpitch.html` when served over http(s) (embedded inline as a
   fallback otherwise — see "Fetch-with-fallback" above): just
-  `[season, div, home, away, fthg, ftag, hc, ac, hy, ay, hxg, axg]` per
-  match, as a compact array-of-arrays (no keys, to save space). `hxg`/`axg`
-  (expected goals) are `null` for every row today — no xG source is wired
-  into `master.csv` yet, see `weightedSplits()` in `engine.js` for the
-  fallback-to-actual-goals logic already built for whenever that changes.
-  This is what `engine.js`'s `Engine` class consumes at runtime. If you add
-  a new stat to the model (e.g. shots on target), you need to add a column
-  here too and update the trim step in the build script.
+  `[season, div, home, away, fthg, ftag, hc, ac, hy, ay, hxg, axg, hs, as,
+  hst, ast, hf, af, hpos, apos]` per match (20 fields), as a compact
+  array-of-arrays (no keys, to save space). `hxg`/`axg` (real expected
+  goals) are `null` for essentially every row — no real xG source is wired
+  into `master.csv`; `weightedSplits()` in `engine.js` blends in a shots-
+  on-target-based pseudo-xG proxy instead when real xG is missing (see "The
+  model" below). This is what `engine.js`'s `Engine` class consumes at
+  runtime — its constructor asserts each row's length against
+  `EXPECTED_ROW_LEN` (currently 20) and throws a clear error if `build.py`'s
+  `build_trimmed_matches_json()` and the constructor's field list have
+  drifted out of sync. If you add a new stat to the model, append a new
+  field at the end of both (never interleave), and bump `EXPECTED_ROW_LEN`.
 - **`data/fixtures.csv`** — 2026/27 fixture list, 8 leagues (2,670 fixtures).
   Belgium and Poland were deliberately excluded (user's call, not a data
   limitation) — don't re-add them without asking.
@@ -411,7 +418,8 @@ honesty pattern already used for missing live odds and missing results.
 
 ## Result grading (did the pick hit?)
 
-Two more data files, same manual-refresh pattern as live odds:
+**Partially automated as of 2026-08-28 — see "Automated result backfill"
+below.** Two more data files:
 
 - **`data/results.json`** — final match stats, keyed by `matchKey()`
   (`div|iso-date|fixture-home-name|fixture-away-name`). Holds `fthg`,
@@ -467,6 +475,63 @@ rebuild, reloading is a visible, obvious action rather than a silent
 expectation. Its tooltip says as much; don't change it to imply live
 fetching.
 
+### Automated result backfill — `fetch_results.py`
+
+**Scheduled (Windows Task Scheduler, `StatPitch-FetchResults`, daily
+06:30 — 15 minutes after `StatPitch-FetchOdds`), independent of Claude
+Code, same pattern as `fetch_team_stats.py`/`fetch_odds.py`.** This closes
+a real gap that existed until 2026-08-28: 117 matches had already been
+played across the 8 active leagues but only 50 had been fed into the
+model — Premier League, Serie A, and Ligue 1 had **zero** current-season
+rows in `master.csv` at all. Manual grading (the workflow above) still
+exists and still matters — it's how a match gets the *richer* live-odds/
+edge/Kelly-bearing snapshot described in "Live Odds" — but for the base
+task of "make sure every played match's result feeds the model," that's
+now automatic.
+
+Each run: finds fixtures with `iso_date < today` and no `results.json`
+entry yet, resolves each via `flashscore_team_ids.json` (home team's
+cached ID first, falling back to away), searches that team's **entire**
+Flashscore results list (not just the last 3 — a backfill target can be
+weeks old) for the matching date+opponent, fetches final score plus
+corners/cards, and produces one of four outcomes per match:
+- **Full grade** — both teams resolve in `team_map.json` and the model
+  doesn't error: `results.json` + `predictions_log.json` + a `master.csv`
+  row, same as manual grading.
+- **Raw score only** — a `team_map.json` null on either side (newly
+  promoted, no history) or the engine errors: `results.json` entry only,
+  same precedent as manually-graded null-mapped teams (e.g. RC Deportivo,
+  Málaga CF, Çorum FK from the first backfill).
+- **Skip, no Flashscore ID cached**: nothing written, retried for free
+  once the ID cache is filled in.
+- **Skip, no matching Flashscore row** (postponed, or not listed yet):
+  nothing written, retried automatically the next day.
+
+**Ordering guarantee, extended to a whole batch.** The script loads
+`engine_reference.Engine()` **once**, from `master.csv` as it stands
+before the run touches anything, and reuses that one static instance for
+every snapshot in the run — `master.csv` itself is only appended to at
+the very end, after every match's snapshot has already been captured.
+This is the same "never let a result leak into its own prediction" rule
+as above, just holding across dozens of matches in one run instead of one
+match done by hand.
+
+**Two deliberate gaps versus a manually-logged snapshot, both because
+`engine_reference.py` only mirrors `engine.js`'s probability model, not
+its `attachLiveOdds()` layer (already noted under Live Odds):**
+1. No `h2h` in the snapshot — harmless, `h2hHtml()` already renders
+   nothing for a missing key.
+2. No live-odds/devig/edge/quarter-Kelly enrichment — an automated
+   snapshot always renders as `hasOdds === false`, even if
+   `live_odds.json` happens to have a price for that match. If a specific
+   match deserves the fuller treatment (e.g. it's a top pick worth
+   showing edge on), ask Claude Code to re-log it manually the old way;
+   the automated pass won't do that for you.
+
+`data/flashscore_team_ids.json`'s full 150/150 team coverage (see "Team
+news / context") is what makes this backfill low-risk — there's
+essentially no team-ID gap for it to hit.
+
 ## Today & Tomorrow view
 
 The fixture board defaults to a "Today & Tomorrow" scope (a segmented
@@ -480,12 +545,13 @@ consistent with what's actually shown.
 
 ## The model (see `STATPITCH_INSTRUCTIONS.md` for the full spec)
 
-Baseline frequencies (home/away split, weighted by season recency, decay=0.78)
-→ matchup adjustment (attack strength vs specific opponent's defensive
-allowance, not raw output) → **recent-form blend** (see below) → Poisson
-with Dixon-Coles low-score correction for goals (fixed rho=-0.10, **not
-fitted to this dataset** — flagged in the UI every time) → negative
-binomial for corners/cards (division-level variance/mean ratio applied to
+Baseline frequencies (home/away split, weighted by season recency, decay=0.78,
+**shot-quality-blended** — see below) → matchup adjustment (attack strength
+vs specific opponent's defensive allowance, not raw output) →
+**recent-form blend** (see below) → Poisson with Dixon-Coles low-score
+correction for goals (fixed rho=-0.10, **not fitted to this dataset** —
+flagged in the UI every time) → negative binomial for corners/cards/shots/
+shots-on-target/fouls (division-level variance/mean ratio applied to
 match-specific means, since per-team samples are too small to estimate
 variance reliably) → confidence graded by sample size (Low <20, Medium <60,
 High ≥60).
@@ -517,6 +583,61 @@ just skips blending for that side — never fabricated, never estimated.
 `form_blend_note` and render exactly as before — if the manual result-
 logging workflow captures a *new* snapshot, pass `recentForm` there too for
 consistency with what's live.
+
+**Shot-quality blend and three new markets (added 2026-08-28).** Real xG
+is essentially absent from `master.csv` (see `DATA_README.md` gap #1), so
+`goalOrXg()` in `engine.js` (mirrored as `_goal_or_xg` in
+`engine_reference.py`) now blends in a shots-on-target-based pseudo-xG
+proxy instead of falling straight back to raw goals: `pseudoXg = SOT ×
+sotGoalRate` (a pooled, division-level goals-per-shot-on-target
+conversion rate computed once in `_computeLeagueStats`, ~0.31-0.34 across
+all 8 leagues — literature-typical, not fitted to this dataset, same
+evidentiary bar as `DC_RHO`), blended at a fixed `QUALITY_BLEND_WEIGHT =
+0.25` (**a blend, deliberately not a hard fallback** — since SOT is
+populated on the same rows FTHG already is, a hard "prefer xG, else use
+SOT" chain would end up using the proxy for ~87-92% of *all* historical
+matches, not just rare one-sided-but-lost cases; the blend keeps actual
+goals the dominant signal everywhere while still giving a real, bounded
+nudge toward underlying shot quality). This directly addresses "a team can
+dominate the underlying play and still lose" — a team getting shots on
+target without converting shows a higher pseudo-xG than actual goals,
+nudging their attacking baseline up, and vice versa for a team riding
+above its shot quality. Disclosed via `quality_correction_note` whenever
+it actually affected at least one side, same transparency bar as
+`dc_rho_note`/`form_blend_note`. **If a future request asks to make this
+more aggressive (a hard fallback instead of a blend, or a higher blend
+weight), that's a real, consequential decision the user explicitly chose
+"conservative" on once already — don't quietly increase it.**
+
+Three new predicted markets reuse the exact same negative-binomial
+machinery corners/cards already use, with no changes to `negbinMarkets()`/
+`_negbin_markets()` itself: **Shots** (`SHOT_LINES = [22.5, 24.5, 26.5,
+28.5]`), **Shots on Target** (`SOT_LINES = [7.5, 8.5, 9.5, 10.5]`), and
+**Fouls** (`FOUL_LINES = [20.5, 22.5, 24.5, 26.5, 28.5]`) — line values
+grounded in real division-level 2024/25+2025/26 averages, not guessed.
+Each is gated on `variance > mean` exactly like corners/cards, so a
+division can legitimately skip a market (e.g. shots-on-target variance is
+already close to/under the mean in a couple of divisions) — expected,
+self-selecting, not a bug to force past. `gradeMarket()` grades Shots/SOT
+from `result.hs+result.as`/`result.hst+result.ast`; Fouls grades from
+`result.hf+result.af`, populated by `fetch_results.py` going forward (see
+"Automated result backfill").
+
+**Ball possession is display-only, deliberately** — no O/U market (a
+bounded ~50/50 share stat doesn't fit an unbounded-count negbin market the
+way shots/corners do) and no role in the quality blend above (no
+established causal link strong enough to justify folding it in without
+becoming an unjustified ad-hoc addition). `teamPossession()` in
+`index_template.html` computes a team's own weighted-average possession
+straight from `FIXTURES`+`RESULTS` (fixture-list names, no `team_map`
+translation, no `ENGINE` call needed) — this is why it works identically
+in the Team Form browser and the match panel's Team Context cards, both
+of which call the same `teamCardHtml()`. Shown as "Possession (season):
+X% (n=Y, confidence)" — expect "Low" confidence for most teams for a long
+time, since `HPos`/`APos` only exist current-season-only; that's honest,
+not a bug. (`Engine.analyze()`'s own `possession` return field, computed
+inside `weightedSplits`, is separate infrastructure kept for a possible
+future matchup-specific use — nothing in the UI reads it today.)
 
 `engine.js` and the Python reference implementation it was ported from
 (`engine_reference.py`, included in this folder) were cross-validated to
@@ -550,6 +671,13 @@ cached, if you want to check the blend path specifically.
   Poland's `master.csv` schema is narrower anyway (no shots/corners/cards —
   see `DATA_README.md`), so it wouldn't get full market coverage even if
   re-added.
+- **`fetch_results.py` has no separate coverage counter.** Its backfill
+  coverage depends entirely on `data/flashscore_team_ids.json` staying
+  current as `fixtures.csv` gets regenerated each season/window — unlike
+  `fetch_team_stats.py`, which surfaces its coverage live via the "Team
+  Form (X/150)" button label, `fetch_results.py`'s skip-no-id count is
+  only visible in its own log output. Check that log periodically rather
+  than assuming full coverage holds forever.
 
 ## Honesty rules baked into the model (don't relax these)
 
@@ -560,6 +688,10 @@ cached, if you want to check the blend path specifically.
 - The Dixon-Coles rho and the division-level variance/mean assumption for
   corners/cards are real modeling choices with real uncertainty — the UI
   discloses both; don't strip that disclosure for a cleaner-looking UI.
+- The shots-on-target-based pseudo-xG conversion rate (goals-per-SOT,
+  ~0.31-0.34 by division, see "The model") and its `QUALITY_BLEND_WEIGHT
+  = 0.25` blend strength are a real modeling choice with real uncertainty
+  — disclosed via `quality_correction_note`, same as the other two.
 
 ## Style / conventions used so far
 
@@ -603,3 +735,36 @@ cached, if you want to check the blend path specifically.
   Edge specifically to keep that gap visible now that Edge is foregrounded
   — don't let a future "make Kelly match Edge's styling" request erode
   this without re-reading the Kelly section above first.
+- **Season standings and per-team track record (added 2026-08-28).**
+  `computeStandings()`/`standingsTableHtml()` in `index_template.html`
+  render a graded-matches-only P/W/D/L/GF/GA/GD/Pts table per league,
+  inside the Team Form browser (above each league's `.team-form-grid`),
+  reusing `table.markets` styling via a `.standings-table` modifier rather
+  than a new ruleset — GD coloring reuses the existing `.prob.edge.pos`/
+  `.neg` classes already established for the markets table's Edge column.
+  `teamTrackRecord()` adds a per-team line to `teamCardHtml()` (so it
+  shows in both the Team Form browser and the match panel's Team Context
+  cards, same reuse pattern as `recent_form`): "Model picks for X this
+  season: H/T correct (P%)", reusing `gradeSnapshot()` — no new grading
+  logic. **This phrasing was deliberate, not incidental**: it reads as
+  this model's own historical hit rate for matches involving that team,
+  never the team's own win rate (shown separately via the W/D/L form
+  chips) and never a forward-looking probability or betting
+  recommendation — same honesty bar as the Kelly section above. If a
+  future request asks to make this "more predictive" or attach it to a
+  specific upcoming match, treat that the same as a request to add "lock"
+  or "guaranteed" language: flag the conflict before implementing it.
+- **Underlying-stats markets and shot-quality blend (added 2026-08-28).**
+  Shots, Shots on Target, and Fouls became predicted O/U markets (same
+  negbin machinery as corners/cards), `MARKET_GROUP_ORDER` gained `'Shots'`
+  (catching both Shots and Shots on Target) and `'Fouls'` categories, and
+  the goals model's `goalOrXg()` now blends in a shots-on-target-based
+  pseudo-xG proxy at a conservative, fixed weight when real xG is missing
+  — see "The model" for the full mechanism and why a blend rather than a
+  hard fallback. Possession got new `HPos`/`APos` columns, current-season-
+  only, shown as a plain display stat via `teamPossession()` — never a
+  market, never a model input, same reasoning documented there. This
+  required `data/master.csv`'s on-disk header to be hand-edited (`,HPos,
+  APos` appended) since `fetch_results.py` only ever appends rows, never
+  rewrites the header — if a future stat needs a new column, remember this
+  step, it's easy to miss.

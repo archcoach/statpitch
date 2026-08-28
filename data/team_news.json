@@ -2,6 +2,20 @@
   "E0|Arsenal": {
     "recent_form": [
       {
+        "date": "2026-08-21",
+        "opponent": "Coventry",
+        "venue": "H",
+        "result": "W",
+        "score": "3-0",
+        "xg_for": 1.88,
+        "xg_against": 0.2,
+        "possession": 64.0,
+        "shots": 20.0,
+        "shots_on_target": 6.0,
+        "passes": 616,
+        "pass_accuracy": 92.0
+      },
+      {
         "date": "2026-08-16",
         "opponent": "Manchester City",
         "venue": "H",
@@ -28,56 +42,70 @@
         "shots_on_target": 7.0,
         "passes": 489,
         "pass_accuracy": 90.0
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Betis (Esp)",
-        "venue": "H",
-        "result": "L",
-        "score": "1-3",
-        "xg_for": 1.99,
-        "xg_against": 1.6,
-        "possession": 56.0,
-        "shots": 9.0,
-        "shots_on_target": 2.0,
-        "passes": 593,
-        "pass_accuracy": 92.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/arsenal/hA1Zm19f/results/",
-    "fetched_at": "2026-08-21T14:49:20Z"
+    "fetched_at": "2026-08-28T10:40:33Z"
   },
   "E0|Coventry": {
     "recent_form": [
+      {
+        "date": "2026-08-25",
+        "opponent": "Plymouth",
+        "venue": "A",
+        "result": "W",
+        "score": "4-2",
+        "xg_for": 2.87,
+        "xg_against": 1.55,
+        "possession": 66.0,
+        "shots": 12.0,
+        "shots_on_target": 5.0,
+        "passes": 525,
+        "pass_accuracy": 84.0
+      },
+      {
+        "date": "2026-08-21",
+        "opponent": "Arsenal",
+        "venue": "A",
+        "result": "L",
+        "score": "0-3",
+        "xg_for": 0.2,
+        "xg_against": 1.88,
+        "possession": 36.0,
+        "shots": 4.0,
+        "shots_on_target": 1.0,
+        "passes": 347,
+        "pass_accuracy": 78.0
+      },
       {
         "date": "2026-08-14",
         "opponent": "Monaco (Fra)",
         "venue": "H",
         "result": "W",
         "score": "2-0"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Espanyol (Esp)",
-        "venue": "H",
-        "result": "W",
-        "score": "3-1"
-      },
-      {
-        "date": "2026-07-18",
-        "opponent": "Northampton (Eng)",
-        "venue": "A",
-        "result": "D",
-        "score": "0-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/coventry/GOvB22xg/results/",
-    "fetched_at": "2026-08-21T14:52:23Z"
+    "fetched_at": "2026-08-28T10:42:42Z"
   },
   "F1|Olympique de Marseille": {
     "recent_form": [
+      {
+        "date": "2026-08-21",
+        "opponent": "Strasbourg",
+        "venue": "H",
+        "result": "W",
+        "score": "4-0",
+        "xg_for": 1.86,
+        "xg_against": 0.19,
+        "possession": 67.0,
+        "shots": 14.0,
+        "shots_on_target": 8.0,
+        "passes": 687,
+        "pass_accuracy": 91.0
+      },
       {
         "date": "2026-08-14",
         "opponent": "Atl. Madrid (Esp)",
@@ -98,27 +126,27 @@
         "venue": "H",
         "result": "W",
         "score": "3-1"
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Al-Shahaniya (Qat)",
-        "venue": "H",
-        "result": "W",
-        "score": "3-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/marseille/SblU3Hee/results/",
-    "fetched_at": "2026-08-21T15:06:44Z"
+    "fetched_at": "2026-08-28T10:53:01Z"
   },
   "F1|RC Strasbourg Alsace": {
     "recent_form": [
       {
-        "date": "2026-08-08",
-        "opponent": "Freiburg (Ger)",
+        "date": "2026-08-21",
+        "opponent": "Marseille",
         "venue": "A",
         "result": "L",
-        "score": "0-2"
+        "score": "0-4",
+        "xg_for": 0.19,
+        "xg_against": 1.86,
+        "possession": 33.0,
+        "shots": 5.0,
+        "shots_on_target": 2.0,
+        "passes": 337,
+        "pass_accuracy": 85.0
       },
       {
         "date": "2026-08-08",
@@ -128,19 +156,33 @@
         "score": "0-2"
       },
       {
-        "date": "2026-08-04",
-        "opponent": "Elversberg (Ger)",
-        "venue": "H",
+        "date": "2026-08-08",
+        "opponent": "Freiburg (Ger)",
+        "venue": "A",
         "result": "L",
-        "score": "2-5"
+        "score": "0-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/strasbourg/nP6UzIU1/results/",
-    "fetched_at": "2026-08-21T15:08:55Z"
+    "fetched_at": "2026-08-28T10:54:49Z"
   },
   "D1|SC Paderborn 07": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Phonix Lubeck",
+        "venue": "A",
+        "result": "W",
+        "score": "4-2",
+        "xg_for": 2.72,
+        "xg_against": 1.21,
+        "possession": 63.0,
+        "shots": 24.0,
+        "shots_on_target": 10.0,
+        "passes": 536,
+        "pass_accuracy": 86.0
+      },
       {
         "date": "2026-08-08",
         "opponent": "Werder Bremen (Ger)",
@@ -154,21 +196,28 @@
         "venue": "A",
         "result": "W",
         "score": "2-0"
-      },
-      {
-        "date": "2026-07-17",
-        "opponent": "Okayama (Jpn)",
-        "venue": "H",
-        "result": "W",
-        "score": "3-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/paderborn/G2Op923t/results/",
-    "fetched_at": "2026-08-21T13:50:20Z"
+    "fetched_at": "2026-08-28T10:38:00Z"
   },
   "SP1|Málaga CF": {
     "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Dep. A Coruna",
+        "venue": "H",
+        "result": "D",
+        "score": "1-1",
+        "xg_for": 1.95,
+        "xg_against": 1.12,
+        "possession": 55.0,
+        "shots": 13.0,
+        "shots_on_target": 2.0,
+        "passes": 528,
+        "pass_accuracy": 90.0
+      },
       {
         "date": "2026-08-19",
         "opponent": "Atl. Madrid",
@@ -189,21 +238,28 @@
         "venue": "H",
         "result": "D",
         "score": "2-2"
-      },
-      {
-        "date": "2026-08-07",
-        "opponent": "Ceuta (Esp)",
-        "venue": "A",
-        "result": "L",
-        "score": "1-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/malaga/25tIqYiJ/results/",
-    "fetched_at": "2026-08-23T10:12:47Z"
+    "fetched_at": "2026-08-28T11:17:25Z"
   },
   "E0|Hull": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Manchester Utd",
+        "venue": "H",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 1.01,
+        "xg_against": 1.83,
+        "possession": 28.0,
+        "shots": 8.0,
+        "shots_on_target": 4.0,
+        "passes": 257,
+        "pass_accuracy": 70.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Nice (Fra)",
@@ -217,21 +273,28 @@
         "venue": "A",
         "result": "L",
         "score": "0-2"
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Kasimpasa (Tur)",
-        "venue": "A",
-        "result": "D",
-        "score": "1-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/hull-city/S66R0t75/results/",
-    "fetched_at": "2026-08-21T14:54:53Z"
+    "fetched_at": "2026-08-28T10:44:18Z"
   },
   "SP1|RC Deportivo": {
     "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Malaga",
+        "venue": "A",
+        "result": "D",
+        "score": "1-1",
+        "xg_for": 1.12,
+        "xg_against": 1.95,
+        "possession": 45.0,
+        "shots": 6.0,
+        "shots_on_target": 4.0,
+        "passes": 433,
+        "pass_accuracy": 89.0
+      },
       {
         "date": "2026-08-17",
         "opponent": "Elche",
@@ -259,18 +322,11 @@
         "shots_on_target": 3.0,
         "passes": 485,
         "pass_accuracy": 88.0
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Genoa (Ita)",
-        "venue": "A",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/dep-a-coruna/Q51ZzMS6/results/",
-    "fetched_at": "2026-08-23T10:13:46Z"
+    "fetched_at": "2026-08-28T11:18:05Z"
   },
   "T1|Çorum": {
     "recent_form": [
@@ -319,10 +375,24 @@
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/corum-fk/0vne21BK/results/",
-    "fetched_at": "2026-08-23T10:23:03Z"
+    "fetched_at": "2026-08-28T11:27:12Z"
   },
   "E0|Aston Villa": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Brighton",
+        "venue": "A",
+        "result": "L",
+        "score": "0-4",
+        "xg_for": 0.28,
+        "xg_against": 3.77,
+        "possession": 27.0,
+        "shots": 6.0,
+        "shots_on_target": 0.0,
+        "passes": 237,
+        "pass_accuracy": 76.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "B. Monchengladbach (Ger)",
@@ -343,28 +413,28 @@
         "shots_on_target": 4.0,
         "passes": 368,
         "pass_accuracy": 78.0
-      },
-      {
-        "date": "2026-08-07",
-        "opponent": "Bayern Munich (Ger)",
-        "venue": "A",
-        "result": "L",
-        "score": "1-2",
-        "xg_for": 0.28,
-        "xg_against": 1.12,
-        "possession": 44.0,
-        "shots": 8.0,
-        "shots_on_target": 3.0,
-        "passes": 404,
-        "pass_accuracy": 83.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/aston-villa/W00wmLO0/results/",
-    "fetched_at": "2026-08-23T09:51:18Z"
+    "fetched_at": "2026-08-28T10:40:58Z"
   },
   "E0|Bournemouth": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Manchester City",
+        "venue": "A",
+        "result": "L",
+        "score": "1-2",
+        "xg_for": 0.63,
+        "xg_against": 2.36,
+        "possession": 34.0,
+        "shots": 5.0,
+        "shots_on_target": 4.0,
+        "passes": 344,
+        "pass_accuracy": 78.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Mainz (Ger)",
@@ -378,21 +448,42 @@
         "venue": "A",
         "result": "D",
         "score": "2-2"
-      },
-      {
-        "date": "2026-08-04",
-        "opponent": "Genoa (Ita)",
-        "venue": "H",
-        "result": "W",
-        "score": "10-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/bournemouth/OtpNdwrc/results/",
-    "fetched_at": "2026-08-23T09:52:03Z"
+    "fetched_at": "2026-08-28T10:41:33Z"
   },
   "E0|Brentford": {
     "recent_form": [
+      {
+        "date": "2026-08-25",
+        "opponent": "Birmingham",
+        "venue": "A",
+        "result": "W",
+        "score": "6-1",
+        "xg_for": 1.98,
+        "xg_against": 0.4,
+        "possession": 69.0,
+        "shots": 18.0,
+        "shots_on_target": 8.0,
+        "passes": 520,
+        "pass_accuracy": 84.0
+      },
+      {
+        "date": "2026-08-22",
+        "opponent": "Tottenham",
+        "venue": "H",
+        "result": "W",
+        "score": "3-0",
+        "xg_for": 3.88,
+        "xg_against": 0.57,
+        "possession": 41.0,
+        "shots": 26.0,
+        "shots_on_target": 8.0,
+        "passes": 357,
+        "pass_accuracy": 83.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Eintracht Frankfurt (Ger)",
@@ -406,35 +497,42 @@
         "shots_on_target": 9.0,
         "passes": 386,
         "pass_accuracy": 82.0
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Rennes (Fra)",
-        "venue": "A",
-        "result": "W",
-        "score": "4-2"
-      },
-      {
-        "date": "2026-05-24",
-        "opponent": "Liverpool",
-        "venue": "A",
-        "result": "D",
-        "score": "1-1",
-        "xg_for": 1.57,
-        "xg_against": 3.04,
-        "possession": 40.0,
-        "shots": 11.0,
-        "shots_on_target": 2.0,
-        "passes": 333,
-        "pass_accuracy": 79.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/brentford/xYe7DwID/results/",
-    "fetched_at": "2026-08-21T14:50:58Z"
+    "fetched_at": "2026-08-28T10:41:48Z"
   },
   "E0|Brighton": {
     "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Tromso (Nor)",
+        "venue": "H",
+        "result": "W",
+        "score": "4-0",
+        "xg_for": 2.75,
+        "xg_against": 0.27,
+        "possession": 78.0,
+        "shots": 21.0,
+        "shots_on_target": 8.0,
+        "passes": 759,
+        "pass_accuracy": 90.0
+      },
+      {
+        "date": "2026-08-23",
+        "opponent": "Aston Villa",
+        "venue": "H",
+        "result": "W",
+        "score": "4-0",
+        "xg_for": 3.77,
+        "xg_against": 0.28,
+        "possession": 73.0,
+        "shots": 21.0,
+        "shots_on_target": 6.0,
+        "passes": 640,
+        "pass_accuracy": 93.0
+      },
       {
         "date": "2026-08-20",
         "opponent": "Tromso (Nor)",
@@ -448,35 +546,42 @@
         "shots_on_target": 6.0,
         "passes": 641,
         "pass_accuracy": 89.0
-      },
-      {
-        "date": "2026-08-15",
-        "opponent": "Bologna (Ita)",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "AS Roma (Ita)",
-        "venue": "H",
-        "result": "W",
-        "score": "3-0",
-        "xg_for": 1.3,
-        "xg_against": 0.69,
-        "possession": 60.0,
-        "shots": 12.0,
-        "shots_on_target": 6.0,
-        "passes": 567,
-        "pass_accuracy": 86.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/brighton/2XrRecc3/results/",
-    "fetched_at": "2026-08-23T09:52:27Z"
+    "fetched_at": "2026-08-28T10:42:02Z"
   },
   "E0|Chelsea": {
     "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Luton",
+        "venue": "H",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 2.41,
+        "xg_against": 0.42,
+        "possession": 66.0,
+        "shots": 26.0,
+        "shots_on_target": 7.0,
+        "passes": 696,
+        "pass_accuracy": 92.0
+      },
+      {
+        "date": "2026-08-24",
+        "opponent": "Fulham",
+        "venue": "A",
+        "result": "W",
+        "score": "3-2",
+        "xg_for": 2.24,
+        "xg_against": 1.33,
+        "possession": 38.0,
+        "shots": 18.0,
+        "shots_on_target": 6.0,
+        "passes": 394,
+        "pass_accuracy": 82.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Real Sociedad (Esp)",
@@ -490,42 +595,28 @@
         "shots_on_target": 5.0,
         "passes": 538,
         "pass_accuracy": 91.0
-      },
-      {
-        "date": "2026-08-09",
-        "opponent": "Johor DT (Mys)",
-        "venue": "A",
-        "result": "D",
-        "score": "3-3",
-        "xg_for": 2.45,
-        "xg_against": 1.56,
-        "possession": 60.0,
-        "shots": 17.0,
-        "shots_on_target": 5.0,
-        "passes": 442,
-        "pass_accuracy": 88.0
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "AC Milan (Ita)",
-        "venue": "H",
-        "result": "W",
-        "score": "3-0",
-        "xg_for": 2.18,
-        "xg_against": 0.29,
-        "possession": 50.0,
-        "shots": 18.0,
-        "shots_on_target": 8.0,
-        "passes": 484,
-        "pass_accuracy": 90.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/chelsea/4fGZN2oK/results/",
-    "fetched_at": "2026-08-23T09:52:45Z"
+    "fetched_at": "2026-08-28T10:42:18Z"
   },
   "E0|Crystal Palace": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Everton",
+        "venue": "A",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 1.96,
+        "xg_against": 1.12,
+        "possession": 58.0,
+        "shots": 11.0,
+        "shots_on_target": 4.0,
+        "passes": 581,
+        "pass_accuracy": 87.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Freiburg (Ger)",
@@ -553,147 +644,196 @@
         "shots_on_target": 4.0,
         "passes": 328,
         "pass_accuracy": 80.0
-      },
-      {
-        "date": "2026-07-31",
-        "opponent": "Al-Ula",
-        "venue": "H",
-        "result": "W",
-        "score": "3-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/crystal-palace/AovF1Mia/results/",
-    "fetched_at": "2026-08-21T14:52:50Z"
+    "fetched_at": "2026-08-28T10:42:56Z"
   },
   "E0|Everton": {
     "recent_form": [
+      {
+        "date": "2026-08-26",
+        "opponent": "Preston",
+        "venue": "A",
+        "result": "W",
+        "score": "4-0",
+        "xg_for": 3.94,
+        "xg_against": 0.35,
+        "possession": 68.0,
+        "shots": 29.0,
+        "shots_on_target": 10.0,
+        "passes": 657,
+        "pass_accuracy": 93.0
+      },
+      {
+        "date": "2026-08-22",
+        "opponent": "Crystal Palace",
+        "venue": "H",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 1.12,
+        "xg_against": 1.96,
+        "possession": 42.0,
+        "shots": 16.0,
+        "shots_on_target": 5.0,
+        "passes": 417,
+        "pass_accuracy": 82.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Lille (Fra)",
         "venue": "H",
         "result": "D",
         "score": "1-1"
-      },
-      {
-        "date": "2026-08-12",
-        "opponent": "Newcastle (Eng)",
-        "venue": "A",
-        "result": "W",
-        "score": "3-1"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Stuttgart (Ger)",
-        "venue": "A",
-        "result": "L",
-        "score": "1-3"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/everton/KluSTr9s/results/",
-    "fetched_at": "2026-08-21T14:53:34Z"
+    "fetched_at": "2026-08-28T10:43:19Z"
   },
   "E0|Fulham": {
     "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "AFC Wimbledon",
+        "venue": "H",
+        "result": "W",
+        "score": "3-0",
+        "xg_for": 2.89,
+        "xg_against": 0.15,
+        "possession": 79.0,
+        "shots": 29.0,
+        "shots_on_target": 8.0,
+        "passes": 741,
+        "pass_accuracy": 91.0
+      },
+      {
+        "date": "2026-08-24",
+        "opponent": "Chelsea",
+        "venue": "H",
+        "result": "L",
+        "score": "2-3",
+        "xg_for": 1.33,
+        "xg_against": 2.24,
+        "possession": 62.0,
+        "shots": 14.0,
+        "shots_on_target": 6.0,
+        "passes": 639,
+        "pass_accuracy": 87.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Stuttgart (Ger)",
         "venue": "H",
         "result": "W",
         "score": "1-0"
-      },
-      {
-        "date": "2026-08-12",
-        "opponent": "Malaga (Esp)",
-        "venue": "A",
-        "result": "D",
-        "score": "2-2"
-      },
-      {
-        "date": "2026-08-07",
-        "opponent": "Crystal Palace (Eng)",
-        "venue": "H",
-        "result": "L",
-        "score": "1-2",
-        "xg_for": null,
-        "xg_against": null,
-        "possession": 67.0,
-        "shots": 16.0,
-        "shots_on_target": 5.0,
-        "passes": 682,
-        "pass_accuracy": 90.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/fulham/69ZiU2Om/results/",
-    "fetched_at": "2026-08-23T09:53:19Z"
+    "fetched_at": "2026-08-28T10:43:44Z"
   },
   "E0|Ipswich": {
     "recent_form": [
+      {
+        "date": "2026-08-25",
+        "opponent": "Leicester",
+        "venue": "H",
+        "result": "W",
+        "score": "3-1",
+        "xg_for": 1.37,
+        "xg_against": 1.88,
+        "possession": 43.0,
+        "shots": 15.0,
+        "shots_on_target": 9.0,
+        "passes": 366,
+        "pass_accuracy": 82.0
+      },
+      {
+        "date": "2026-08-22",
+        "opponent": "Sunderland",
+        "venue": "H",
+        "result": "W",
+        "score": "2-1",
+        "xg_for": 1.8,
+        "xg_against": 0.66,
+        "possession": 38.0,
+        "shots": 10.0,
+        "shots_on_target": 3.0,
+        "passes": 333,
+        "pass_accuracy": 79.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Union Berlin (Ger)",
         "venue": "A",
         "result": "W",
         "score": "4-2"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Rayo Vallecano (Esp)",
-        "venue": "H",
-        "result": "W",
-        "score": "3-0"
-      },
-      {
-        "date": "2026-08-04",
-        "opponent": "Le Havre (Fra)",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/ipswich/thqhB2MB/results/",
-    "fetched_at": "2026-08-21T14:55:38Z"
+    "fetched_at": "2026-08-28T10:44:42Z"
   },
   "E0|Leeds": {
     "recent_form": [
+      {
+        "date": "2026-08-25",
+        "opponent": "Nottingham",
+        "venue": "A",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 2.25,
+        "xg_against": 0.86,
+        "possession": 50.0,
+        "shots": 13.0,
+        "shots_on_target": 5.0,
+        "passes": 450,
+        "pass_accuracy": 82.0
+      },
+      {
+        "date": "2026-08-22",
+        "opponent": "Nottingham",
+        "venue": "A",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 0.47,
+        "xg_against": 0.66,
+        "possession": 44.0,
+        "shots": 11.0,
+        "shots_on_target": 3.0,
+        "passes": 326,
+        "pass_accuracy": 71.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Augsburg (Ger)",
         "venue": "H",
         "result": "W",
         "score": "4-0"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "RB Leipzig (Ger)",
-        "venue": "H",
-        "result": "W",
-        "score": "2-0"
-      },
-      {
-        "date": "2026-08-02",
-        "opponent": "Liverpool",
-        "venue": "A",
-        "result": "W",
-        "score": "4-2",
-        "xg_for": 2.22,
-        "xg_against": 1.14,
-        "possession": 43.0,
-        "shots": 15.0,
-        "shots_on_target": 7.0,
-        "passes": 377,
-        "pass_accuracy": 80.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/leeds/tUxUbLR2/results/",
-    "fetched_at": "2026-08-21T14:56:13Z"
+    "fetched_at": "2026-08-28T10:45:07Z"
   },
   "E0|Liverpool": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Newcastle",
+        "venue": "A",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 2.98,
+        "xg_against": 1.57,
+        "possession": 61.0,
+        "shots": 27.0,
+        "shots_on_target": 7.0,
+        "passes": 445,
+        "pass_accuracy": 84.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Como (Ita)",
@@ -714,28 +854,28 @@
         "venue": "H",
         "result": "D",
         "score": "0-0"
-      },
-      {
-        "date": "2026-08-09",
-        "opponent": "Monaco (Fra)",
-        "venue": "H",
-        "result": "L",
-        "score": "2-3",
-        "xg_for": 1.33,
-        "xg_against": 2.2,
-        "possession": 52.0,
-        "shots": 15.0,
-        "shots_on_target": 6.0,
-        "passes": 500,
-        "pass_accuracy": 86.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/liverpool/lId4TMwf/results/",
-    "fetched_at": "2026-08-23T09:53:43Z"
+    "fetched_at": "2026-08-28T10:45:33Z"
   },
   "E0|Man City": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Bournemouth",
+        "venue": "H",
+        "result": "W",
+        "score": "2-1",
+        "xg_for": 2.36,
+        "xg_against": 0.63,
+        "possession": 66.0,
+        "shots": 13.0,
+        "shots_on_target": 6.0,
+        "passes": 658,
+        "pass_accuracy": 89.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Arsenal",
@@ -763,28 +903,28 @@
         "shots_on_target": 9.0,
         "passes": 514,
         "pass_accuracy": 92.0
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "K-League Stars (Kor)",
-        "venue": "A",
-        "result": "W",
-        "score": "3-1",
-        "xg_for": null,
-        "xg_against": null,
-        "possession": 52.0,
-        "shots": 22.0,
-        "shots_on_target": 13.0,
-        "passes": 512,
-        "pass_accuracy": 92.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/manchester-city/Wtn9Stg0/results/",
-    "fetched_at": "2026-08-23T09:53:57Z"
+    "fetched_at": "2026-08-28T10:45:47Z"
   },
   "E0|Man Utd": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Hull",
+        "venue": "A",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 1.83,
+        "xg_against": 1.01,
+        "possession": 72.0,
+        "shots": 21.0,
+        "shots_on_target": 5.0,
+        "passes": 669,
+        "pass_accuracy": 88.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "AC Milan (Ita)",
@@ -812,84 +952,126 @@
         "shots_on_target": 7.0,
         "passes": 419,
         "pass_accuracy": 86.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Atl. Madrid (Esp)",
-        "venue": "H",
-        "result": "W",
-        "score": "2-1",
-        "xg_for": 1.82,
-        "xg_against": 0.63,
-        "possession": 53.0,
-        "shots": 13.0,
-        "shots_on_target": 5.0,
-        "passes": 507,
-        "pass_accuracy": 88.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/manchester-united/ppjDR086/results/",
-    "fetched_at": "2026-08-21T14:57:08Z"
+    "fetched_at": "2026-08-28T10:46:02Z"
   },
   "E0|Newcastle": {
     "recent_form": [
+      {
+        "date": "2026-08-26",
+        "opponent": "West Brom",
+        "venue": "H",
+        "result": "W",
+        "score": "3-2",
+        "xg_for": 2.84,
+        "xg_against": 1.48,
+        "possession": 57.0,
+        "shots": 16.0,
+        "shots_on_target": 7.0,
+        "passes": 518,
+        "pass_accuracy": 89.0
+      },
+      {
+        "date": "2026-08-23",
+        "opponent": "Liverpool",
+        "venue": "H",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 1.57,
+        "xg_against": 2.98,
+        "possession": 39.0,
+        "shots": 13.0,
+        "shots_on_target": 4.0,
+        "passes": 296,
+        "pass_accuracy": 76.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Bayer Leverkusen (Ger)",
         "venue": "H",
         "result": "L",
         "score": "1-2"
-      },
-      {
-        "date": "2026-08-12",
-        "opponent": "Everton (Eng)",
-        "venue": "H",
-        "result": "L",
-        "score": "1-3"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Valencia (Esp)",
-        "venue": "A",
-        "result": "W",
-        "score": "2-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/newcastle-utd/p6ahwuwJ/results/",
-    "fetched_at": "2026-08-23T09:54:41Z"
+    "fetched_at": "2026-08-28T10:46:26Z"
   },
   "E0|Nott'm Forest": {
     "recent_form": [
+      {
+        "date": "2026-08-25",
+        "opponent": "Leeds",
+        "venue": "H",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 0.86,
+        "xg_against": 2.25,
+        "possession": 50.0,
+        "shots": 8.0,
+        "shots_on_target": 3.0,
+        "passes": 453,
+        "pass_accuracy": 76.0
+      },
+      {
+        "date": "2026-08-22",
+        "opponent": "Leeds",
+        "venue": "H",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 0.66,
+        "xg_against": 0.47,
+        "possession": 56.0,
+        "shots": 12.0,
+        "shots_on_target": 2.0,
+        "passes": 411,
+        "pass_accuracy": 78.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Brest (Fra)",
         "venue": "H",
         "result": "W",
         "score": "2-0"
-      },
-      {
-        "date": "2026-08-12",
-        "opponent": "Bayer Leverkusen (Ger)",
-        "venue": "H",
-        "result": "W",
-        "score": "2-1"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Barcelona (Esp)",
-        "venue": "A",
-        "result": "L",
-        "score": "0-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/nottingham/UsushcZr/results/",
-    "fetched_at": "2026-08-21T14:58:43Z"
+    "fetched_at": "2026-08-28T10:46:49Z"
   },
   "E0|Spurs": {
     "recent_form": [
+      {
+        "date": "2026-08-26",
+        "opponent": "Charlton",
+        "venue": "H",
+        "result": "W",
+        "score": "5-1",
+        "xg_for": 1.09,
+        "xg_against": 0.35,
+        "possession": 73.0,
+        "shots": 20.0,
+        "shots_on_target": 11.0,
+        "passes": 618,
+        "pass_accuracy": 90.0
+      },
+      {
+        "date": "2026-08-22",
+        "opponent": "Brentford",
+        "venue": "A",
+        "result": "L",
+        "score": "0-3",
+        "xg_for": 0.57,
+        "xg_against": 3.88,
+        "possession": 59.0,
+        "shots": 9.0,
+        "shots_on_target": 4.0,
+        "passes": 530,
+        "pass_accuracy": 87.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Hoffenheim (Ger)",
@@ -903,42 +1085,28 @@
         "shots_on_target": 3.0,
         "passes": 634,
         "pass_accuracy": 88.0
-      },
-      {
-        "date": "2026-08-15",
-        "opponent": "Hoffenheim (Ger)",
-        "venue": "H",
-        "result": "W",
-        "score": "3-0",
-        "xg_for": 1.02,
-        "xg_against": 0.53,
-        "possession": 53.0,
-        "shots": 10.0,
-        "shots_on_target": 5.0,
-        "passes": 519,
-        "pass_accuracy": 90.0
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Getafe (Esp)",
-        "venue": "H",
-        "result": "D",
-        "score": "1-1",
-        "xg_for": 1.08,
-        "xg_against": 0.45,
-        "possession": 66.0,
-        "shots": 13.0,
-        "shots_on_target": 6.0,
-        "passes": 438,
-        "pass_accuracy": 92.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/tottenham/UDg08Ohm/results/",
-    "fetched_at": "2026-08-21T14:58:58Z"
+    "fetched_at": "2026-08-28T10:47:02Z"
   },
   "E0|Sunderland": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Ipswich",
+        "venue": "A",
+        "result": "L",
+        "score": "1-2",
+        "xg_for": 0.66,
+        "xg_against": 1.8,
+        "possession": 62.0,
+        "shots": 11.0,
+        "shots_on_target": 4.0,
+        "passes": 557,
+        "pass_accuracy": 88.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Rennes (Fra)",
@@ -952,21 +1120,28 @@
         "venue": "A",
         "result": "W",
         "score": "2-0"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Lens (Fra)",
-        "venue": "A",
-        "result": "L",
-        "score": "1-4"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/sunderland/WSzc94ws/results/",
-    "fetched_at": "2026-08-21T14:59:41Z"
+    "fetched_at": "2026-08-28T10:47:36Z"
   },
   "F1|AJ Auxerre": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Lens",
+        "venue": "A",
+        "result": "L",
+        "score": "2-5",
+        "xg_for": 1.85,
+        "xg_against": 4.42,
+        "possession": 47.0,
+        "shots": 10.0,
+        "shots_on_target": 4.0,
+        "passes": 416,
+        "pass_accuracy": 81.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Werder Bremen (Ger)",
@@ -980,21 +1155,42 @@
         "venue": "H",
         "result": "D",
         "score": "1-1"
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Sochaux (Fra)",
-        "venue": "A",
-        "result": "D",
-        "score": "1-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/auxerre/MTLr36WA/results/",
-    "fetched_at": "2026-08-21T15:00:28Z"
+    "fetched_at": "2026-08-28T10:48:11Z"
   },
   "F1|AS Monaco": {
     "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Gornik Zabrze (Pol)",
+        "venue": "H",
+        "result": "W",
+        "score": "4-1",
+        "xg_for": 1.67,
+        "xg_against": 1.26,
+        "possession": 67.0,
+        "shots": 15.0,
+        "shots_on_target": 6.0,
+        "passes": 720,
+        "pass_accuracy": 91.0
+      },
+      {
+        "date": "2026-08-23",
+        "opponent": "Le Havre",
+        "venue": "A",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 1.59,
+        "xg_against": 0.64,
+        "possession": 50.0,
+        "shots": 15.0,
+        "shots_on_target": 7.0,
+        "passes": 434,
+        "pass_accuracy": 81.0
+      },
       {
         "date": "2026-08-20",
         "opponent": "Gornik Zabrze (Pol)",
@@ -1008,35 +1204,28 @@
         "shots_on_target": 6.0,
         "passes": 388,
         "pass_accuracy": 85.0
-      },
-      {
-        "date": "2026-08-14",
-        "opponent": "Coventry (Eng)",
-        "venue": "A",
-        "result": "L",
-        "score": "0-2"
-      },
-      {
-        "date": "2026-08-09",
-        "opponent": "Liverpool (Eng)",
-        "venue": "A",
-        "result": "W",
-        "score": "3-2",
-        "xg_for": 2.2,
-        "xg_against": 1.33,
-        "possession": 48.0,
-        "shots": 14.0,
-        "shots_on_target": 8.0,
-        "passes": 469,
-        "pass_accuracy": 85.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/monaco/2PIvr8o4/results/",
-    "fetched_at": "2026-08-23T09:55:05Z"
+    "fetched_at": "2026-08-28T10:48:28Z"
   },
   "F1|Angers SCO": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Lille",
+        "venue": "H",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 1.99,
+        "xg_against": 1.24,
+        "possession": 57.0,
+        "shots": 20.0,
+        "shots_on_target": 2.0,
+        "passes": 473,
+        "pass_accuracy": 85.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Paris FC (Fra)",
@@ -1050,21 +1239,28 @@
         "venue": "H",
         "result": "W",
         "score": "2-1"
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Le Mans (Fra)",
-        "venue": "H",
-        "result": "L",
-        "score": "2-3"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/angers/SAlF91iL/results/",
-    "fetched_at": "2026-08-23T09:55:48Z"
+    "fetched_at": "2026-08-28T10:49:02Z"
   },
   "F1|Estac Troyes": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Paris FC",
+        "venue": "H",
+        "result": "D",
+        "score": "0-0",
+        "xg_for": 0.41,
+        "xg_against": 1.8,
+        "possession": 42.0,
+        "shots": 9.0,
+        "shots_on_target": 2.0,
+        "passes": 458,
+        "pass_accuracy": 84.0
+      },
       {
         "date": "2026-08-14",
         "opponent": "Panetolikos (Gre)",
@@ -1078,21 +1274,28 @@
         "venue": "A",
         "result": "D",
         "score": "1-1"
-      },
-      {
-        "date": "2026-07-31",
-        "opponent": "GOAL FC (Fra)",
-        "venue": "H",
-        "result": "W",
-        "score": "5-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/troyes/fsfAHubD/results/",
-    "fetched_at": "2026-08-21T15:02:21Z"
+    "fetched_at": "2026-08-28T10:49:36Z"
   },
   "F1|FC Lorient": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Nice",
+        "venue": "A",
+        "result": "D",
+        "score": "0-0",
+        "xg_for": 1.27,
+        "xg_against": 1.05,
+        "possession": 40.0,
+        "shots": 10.0,
+        "shots_on_target": 2.0,
+        "passes": 418,
+        "pass_accuracy": 84.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Elversberg (Ger)",
@@ -1106,21 +1309,28 @@
         "venue": "A",
         "result": "L",
         "score": "1-2"
-      },
-      {
-        "date": "2026-08-04",
-        "opponent": "UNFP (Fra)",
-        "venue": "H",
-        "result": "W",
-        "score": "5-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/lorient/jgNAYRGi/results/",
-    "fetched_at": "2026-08-21T15:03:06Z"
+    "fetched_at": "2026-08-28T10:50:12Z"
   },
   "F1|Havre Athletic Club": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Monaco",
+        "venue": "H",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 0.64,
+        "xg_against": 1.59,
+        "possession": 50.0,
+        "shots": 14.0,
+        "shots_on_target": 4.0,
+        "passes": 411,
+        "pass_accuracy": 80.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Le Mans (Fra)",
@@ -1134,21 +1344,28 @@
         "venue": "A",
         "result": "L",
         "score": "2-3"
-      },
-      {
-        "date": "2026-08-04",
-        "opponent": "Ipswich (Eng)",
-        "venue": "A",
-        "result": "L",
-        "score": "0-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/le-havre/CIEe04GT/results/",
-    "fetched_at": "2026-08-23T09:56:32Z"
+    "fetched_at": "2026-08-28T10:50:46Z"
   },
   "F1|LOSC Lille": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Angers",
+        "venue": "A",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 1.24,
+        "xg_against": 1.99,
+        "possession": 43.0,
+        "shots": 11.0,
+        "shots_on_target": 8.0,
+        "passes": 384,
+        "pass_accuracy": 82.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Everton (Eng)",
@@ -1162,21 +1379,28 @@
         "venue": "A",
         "result": "D",
         "score": "2-2"
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Leuven (Bel)",
-        "venue": "A",
-        "result": "W",
-        "score": "6-3"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/lille/pfDZL71o/results/",
-    "fetched_at": "2026-08-23T09:57:16Z"
+    "fetched_at": "2026-08-28T10:51:19Z"
   },
   "F1|Le Mans FC": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Brest",
+        "venue": "H",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 0.67,
+        "xg_against": 2.73,
+        "possession": 50.0,
+        "shots": 8.0,
+        "shots_on_target": 5.0,
+        "passes": 416,
+        "pass_accuracy": 77.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Le Havre (Fra)",
@@ -1190,21 +1414,28 @@
         "venue": "A",
         "result": "D",
         "score": "0-0"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "UNFP (Fra)",
-        "venue": "H",
-        "result": "D",
-        "score": "1-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/le-mans/ER0NeOOp/results/",
-    "fetched_at": "2026-08-21T15:05:18Z"
+    "fetched_at": "2026-08-28T10:51:53Z"
   },
   "F1|OGC Nice": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Lorient",
+        "venue": "H",
+        "result": "D",
+        "score": "0-0",
+        "xg_for": 1.05,
+        "xg_against": 1.27,
+        "possession": 60.0,
+        "shots": 14.0,
+        "shots_on_target": 1.0,
+        "passes": 630,
+        "pass_accuracy": 88.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Hull (Eng)",
@@ -1225,21 +1456,42 @@
         "shots_on_target": 2.0,
         "passes": 510,
         "pass_accuracy": 91.0
-      },
-      {
-        "date": "2026-07-25",
-        "opponent": "Marseille (Fra)",
-        "venue": "A",
-        "result": "W",
-        "score": "3-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/nice/YagoQJpq/results/",
-    "fetched_at": "2026-08-21T15:05:53Z"
+    "fetched_at": "2026-08-28T10:52:19Z"
   },
   "F1|Olympique Lyonnais": {
     "recent_form": [
+      {
+        "date": "2026-08-26",
+        "opponent": "Fenerbahce (Tur)",
+        "venue": "H",
+        "result": "L",
+        "score": "1-2",
+        "xg_for": 1.45,
+        "xg_against": 1.58,
+        "possession": 59.0,
+        "shots": 17.0,
+        "shots_on_target": 6.0,
+        "passes": 450,
+        "pass_accuracy": 88.0
+      },
+      {
+        "date": "2026-08-22",
+        "opponent": "Toulouse",
+        "venue": "A",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 0.7,
+        "xg_against": 2.76,
+        "possession": 52.0,
+        "shots": 11.0,
+        "shots_on_target": 3.0,
+        "passes": 479,
+        "pass_accuracy": 87.0
+      },
       {
         "date": "2026-08-18",
         "opponent": "Fenerbahce (Tur)",
@@ -1253,42 +1505,28 @@
         "shots_on_target": 5.0,
         "passes": 432,
         "pass_accuracy": 86.0
-      },
-      {
-        "date": "2026-08-11",
-        "opponent": "Sparta Prague (Cze)",
-        "venue": "H",
-        "result": "W",
-        "score": "3-0",
-        "xg_for": 2.86,
-        "xg_against": 0.61,
-        "possession": 56.0,
-        "shots": 19.0,
-        "shots_on_target": 11.0,
-        "passes": 509,
-        "pass_accuracy": 86.0
-      },
-      {
-        "date": "2026-08-04",
-        "opponent": "Sparta Prague (Cze)",
-        "venue": "A",
-        "result": "L",
-        "score": "1-2",
-        "xg_for": 1.27,
-        "xg_against": 1.29,
-        "possession": 48.0,
-        "shots": 11.0,
-        "shots_on_target": 4.0,
-        "passes": 404,
-        "pass_accuracy": 82.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/lyon/2akflumR/results/",
-    "fetched_at": "2026-08-21T15:06:09Z"
+    "fetched_at": "2026-08-28T10:52:37Z"
   },
   "F1|Paris FC": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Troyes",
+        "venue": "A",
+        "result": "D",
+        "score": "0-0",
+        "xg_for": 1.8,
+        "xg_against": 0.41,
+        "possession": 58.0,
+        "shots": 10.0,
+        "shots_on_target": 1.0,
+        "passes": 681,
+        "pass_accuracy": 89.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Angers (Fra)",
@@ -1302,21 +1540,28 @@
         "venue": "A",
         "result": "L",
         "score": "0-4"
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Stuttgart (Ger)",
-        "venue": "A",
-        "result": "D",
-        "score": "2-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/paris-fc/0OEHEprs/results/",
-    "fetched_at": "2026-08-21T15:07:33Z"
+    "fetched_at": "2026-08-28T10:53:36Z"
   },
   "F1|RC Lens": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Auxerre",
+        "venue": "H",
+        "result": "W",
+        "score": "5-2",
+        "xg_for": 4.42,
+        "xg_against": 1.85,
+        "possession": 53.0,
+        "shots": 12.0,
+        "shots_on_target": 9.0,
+        "passes": 470,
+        "pass_accuracy": 88.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "PSG",
@@ -1337,21 +1582,28 @@
         "venue": "H",
         "result": "L",
         "score": "0-2"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Sunderland (Eng)",
-        "venue": "H",
-        "result": "W",
-        "score": "4-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/lens/IBmris38/results/",
-    "fetched_at": "2026-08-21T15:08:11Z"
+    "fetched_at": "2026-08-28T10:54:14Z"
   },
   "F1|Stade Brestois 29": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Le Mans",
+        "venue": "A",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 2.73,
+        "xg_against": 0.67,
+        "possession": 50.0,
+        "shots": 26.0,
+        "shots_on_target": 7.0,
+        "passes": 399,
+        "pass_accuracy": 78.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Nottingham (Eng)",
@@ -1365,21 +1617,28 @@
         "venue": "H",
         "result": "D",
         "score": "2-2"
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Stade Briochin (Fra)",
-        "venue": "A",
-        "result": "W",
-        "score": "2-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/brest/Cr4VGaUl/results/",
-    "fetched_at": "2026-08-21T15:09:41Z"
+    "fetched_at": "2026-08-28T10:55:22Z"
   },
   "F1|Stade Rennais FC": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "PSG",
+        "venue": "H",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 0.87,
+        "xg_against": 2.17,
+        "possession": 31.0,
+        "shots": 9.0,
+        "shots_on_target": 3.0,
+        "passes": 326,
+        "pass_accuracy": 77.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Sunderland (Eng)",
@@ -1393,21 +1652,28 @@
         "venue": "H",
         "result": "L",
         "score": "2-4"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Brentford U21 (Eng)",
-        "venue": "H",
-        "result": "L",
-        "score": "1-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/rennes/d2nnj1IE/results/",
-    "fetched_at": "2026-08-23T09:58:14Z"
+    "fetched_at": "2026-08-28T10:55:57Z"
   },
   "F1|Toulouse FC": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Lyon",
+        "venue": "H",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 2.76,
+        "xg_against": 0.7,
+        "possession": 48.0,
+        "shots": 17.0,
+        "shots_on_target": 2.0,
+        "passes": 435,
+        "pass_accuracy": 85.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Hamburger SV (Ger)",
@@ -1421,21 +1687,42 @@
         "venue": "A",
         "result": "L",
         "score": "0-3"
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Al Ain (Uae)",
-        "venue": "A",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/toulouse/MLmY2yB1/results/",
-    "fetched_at": "2026-08-21T15:11:11Z"
+    "fetched_at": "2026-08-28T10:56:31Z"
   },
   "I1|Atalanta": {
     "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Hapoel Tel Aviv (Isr)",
+        "venue": "A",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 0.97,
+        "xg_against": 0.71,
+        "possession": 50.0,
+        "shots": 14.0,
+        "shots_on_target": 4.0,
+        "passes": 482,
+        "pass_accuracy": 88.0
+      },
+      {
+        "date": "2026-08-23",
+        "opponent": "Sassuolo",
+        "venue": "H",
+        "result": "W",
+        "score": "2-1",
+        "xg_for": 0.89,
+        "xg_against": 2.71,
+        "possession": 56.0,
+        "shots": 14.0,
+        "shots_on_target": 7.0,
+        "passes": 596,
+        "pass_accuracy": 91.0
+      },
       {
         "date": "2026-08-20",
         "opponent": "Hapoel Tel Aviv (Isr)",
@@ -1449,28 +1736,28 @@
         "shots_on_target": 5.0,
         "passes": 707,
         "pass_accuracy": 92.0
-      },
-      {
-        "date": "2026-08-14",
-        "opponent": "Ath Bilbao (Esp)",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Schalke (Ger)",
-        "venue": "A",
-        "result": "W",
-        "score": "3-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/atalanta/8C9JjMXu/results/",
-    "fetched_at": "2026-08-23T09:58:48Z"
+    "fetched_at": "2026-08-28T10:56:46Z"
   },
   "I1|Bologna": {
     "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Lazio",
+        "venue": "H",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 1.78,
+        "xg_against": 0.63,
+        "possession": 59.0,
+        "shots": 14.0,
+        "shots_on_target": 5.0,
+        "passes": 447,
+        "pass_accuracy": 90.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Brighton (Eng)",
@@ -1484,21 +1771,28 @@
         "venue": "H",
         "result": "L",
         "score": "1-4"
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Cambuur (Ned)",
-        "venue": "H",
-        "result": "W",
-        "score": "3-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/bologna/0M9xNN8N/results/",
-    "fetched_at": "2026-08-23T09:59:33Z"
+    "fetched_at": "2026-08-28T10:57:23Z"
   },
   "I1|Cagliari": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Parma",
+        "venue": "A",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 0.94,
+        "xg_against": 0.75,
+        "possession": 53.0,
+        "shots": 14.0,
+        "shots_on_target": 5.0,
+        "passes": 497,
+        "pass_accuracy": 90.0
+      },
       {
         "date": "2026-08-14",
         "opponent": "Arezzo",
@@ -1519,21 +1813,28 @@
         "venue": "A",
         "result": "D",
         "score": "2-2"
-      },
-      {
-        "date": "2026-07-28",
-        "opponent": "Modena (Ita)",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/cagliari/SCGVmKHb/results/",
-    "fetched_at": "2026-08-21T15:13:06Z"
+    "fetched_at": "2026-08-28T10:57:48Z"
   },
   "I1|Como": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Udinese",
+        "venue": "A",
+        "result": "D",
+        "score": "1-1",
+        "xg_for": 1.51,
+        "xg_against": 2.14,
+        "possession": 59.0,
+        "shots": 20.0,
+        "shots_on_target": 6.0,
+        "passes": 583,
+        "pass_accuracy": 88.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Liverpool (Eng)",
@@ -1554,21 +1855,28 @@
         "venue": "A",
         "result": "D",
         "score": "0-0"
-      },
-      {
-        "date": "2026-07-31",
-        "opponent": "Famalicao",
-        "venue": "A",
-        "result": "W",
-        "score": "3-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/como/ttyLthOA/results/",
-    "fetched_at": "2026-08-21T15:13:42Z"
+    "fetched_at": "2026-08-28T10:58:14Z"
   },
   "I1|Fiorentina": {
     "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "AS Roma",
+        "venue": "A",
+        "result": "L",
+        "score": "0-4",
+        "xg_for": 0.35,
+        "xg_against": 3.07,
+        "possession": 39.0,
+        "shots": 9.0,
+        "shots_on_target": 4.0,
+        "passes": 343,
+        "pass_accuracy": 83.0
+      },
       {
         "date": "2026-08-14",
         "opponent": "Benevento",
@@ -1589,28 +1897,28 @@
         "venue": "H",
         "result": "D",
         "score": "1-1"
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Real Madrid (Esp)",
-        "venue": "A",
-        "result": "D",
-        "score": "2-2",
-        "xg_for": 0.95,
-        "xg_against": 0.75,
-        "possession": 41.0,
-        "shots": 10.0,
-        "shots_on_target": 3.0,
-        "passes": 389,
-        "pass_accuracy": 88.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/fiorentina/Q3A3IbXH/results/",
-    "fetched_at": "2026-08-23T09:59:58Z"
+    "fetched_at": "2026-08-28T10:58:39Z"
   },
   "I1|Frosinone": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Juventus",
+        "venue": "H",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 0.41,
+        "xg_against": 2.18,
+        "possession": 37.0,
+        "shots": 11.0,
+        "shots_on_target": 2.0,
+        "passes": 272,
+        "pass_accuracy": 69.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Juve Stabia",
@@ -1631,21 +1939,28 @@
         "venue": "H",
         "result": "L",
         "score": "1-2"
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Benevento (Ita)",
-        "venue": "H",
-        "result": "D",
-        "score": "2-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/frosinone/pfo9H1Wp/results/",
-    "fetched_at": "2026-08-23T10:00:32Z"
+    "fetched_at": "2026-08-28T10:59:03Z"
   },
   "I1|Genoa": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Napoli",
+        "venue": "H",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 0.67,
+        "xg_against": 0.77,
+        "possession": 46.0,
+        "shots": 11.0,
+        "shots_on_target": 2.0,
+        "passes": 431,
+        "pass_accuracy": 88.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Ascoli",
@@ -1666,21 +1981,28 @@
         "venue": "H",
         "result": "L",
         "score": "0-1"
-      },
-      {
-        "date": "2026-08-04",
-        "opponent": "Bournemouth (Eng)",
-        "venue": "A",
-        "result": "L",
-        "score": "1-10"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/genoa/d0PJxeie/results/",
-    "fetched_at": "2026-08-21T15:15:18Z"
+    "fetched_at": "2026-08-28T10:59:28Z"
   },
   "I1|Internazionale": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Monza",
+        "venue": "H",
+        "result": "W",
+        "score": "4-1",
+        "xg_for": 1.05,
+        "xg_against": 1.23,
+        "possession": 70.0,
+        "shots": 13.0,
+        "shots_on_target": 5.0,
+        "passes": 709,
+        "pass_accuracy": 89.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Betis (Esp)",
@@ -1708,28 +2030,28 @@
         "shots_on_target": 4.0,
         "passes": 412,
         "pass_accuracy": 88.0
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "AC Milan (Ita)",
-        "venue": "A",
-        "result": "D",
-        "score": "1-1",
-        "xg_for": 2.34,
-        "xg_against": 1.39,
-        "possession": 56.0,
-        "shots": 15.0,
-        "shots_on_target": 6.0,
-        "passes": 595,
-        "pass_accuracy": 89.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/inter/Iw7eKK25/results/",
-    "fetched_at": "2026-08-21T15:15:34Z"
+    "fetched_at": "2026-08-28T10:59:44Z"
   },
   "I1|Juventus": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Frosinone",
+        "venue": "A",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 2.18,
+        "xg_against": 0.41,
+        "possession": 63.0,
+        "shots": 20.0,
+        "shots_on_target": 5.0,
+        "passes": 478,
+        "pass_accuracy": 85.0
+      },
       {
         "date": "2026-08-11",
         "opponent": "Palermo (Ita)",
@@ -1757,28 +2079,28 @@
         "shots_on_target": 3.0,
         "passes": 585,
         "pass_accuracy": 88.0
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Chelsea (Eng)",
-        "venue": "A",
-        "result": "W",
-        "score": "1-0",
-        "xg_for": 0.64,
-        "xg_against": 0.61,
-        "possession": 43.0,
-        "shots": 9.0,
-        "shots_on_target": 2.0,
-        "passes": 430,
-        "pass_accuracy": 85.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/juventus/C06aJvIB/results/",
-    "fetched_at": "2026-08-23T10:00:47Z"
+    "fetched_at": "2026-08-28T10:59:58Z"
   },
   "I1|Lazio": {
     "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Bologna",
+        "venue": "A",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 0.63,
+        "xg_against": 1.78,
+        "possession": 41.0,
+        "shots": 10.0,
+        "shots_on_target": 3.0,
+        "passes": 315,
+        "pass_accuracy": 84.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Mantova",
@@ -1799,21 +2121,28 @@
         "venue": "A",
         "result": "W",
         "score": "2-1"
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Ostiamare (Ita)",
-        "venue": "H",
-        "result": "W",
-        "score": "4-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/lazio/URcSl02h/results/",
-    "fetched_at": "2026-08-23T10:01:20Z"
+    "fetched_at": "2026-08-28T11:00:22Z"
   },
   "I1|Lecce": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Venezia",
+        "venue": "A",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 2.7,
+        "xg_against": 2.05,
+        "possession": 29.0,
+        "shots": 12.0,
+        "shots_on_target": 5.0,
+        "passes": 260,
+        "pass_accuracy": 73.0
+      },
       {
         "date": "2026-08-17",
         "opponent": "Palermo",
@@ -1834,21 +2163,28 @@
         "venue": "H",
         "result": "W",
         "score": "1-0"
-      },
-      {
-        "date": "2026-07-29",
-        "opponent": "NK Bistrica (Slo)",
-        "venue": "H",
-        "result": "W",
-        "score": "5-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/lecce/G8lYsMgU/results/",
-    "fetched_at": "2026-08-23T10:01:54Z"
+    "fetched_at": "2026-08-28T11:00:46Z"
   },
   "I1|Milan": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Torino",
+        "venue": "A",
+        "result": "W",
+        "score": "2-1",
+        "xg_for": 2.15,
+        "xg_against": 1.29,
+        "possession": 59.0,
+        "shots": 19.0,
+        "shots_on_target": 4.0,
+        "passes": 547,
+        "pass_accuracy": 88.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Manchester Utd (Eng)",
@@ -1876,28 +2212,28 @@
         "shots_on_target": 0.0,
         "passes": 499,
         "pass_accuracy": 87.0
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Inter (Ita)",
-        "venue": "H",
-        "result": "D",
-        "score": "1-1",
-        "xg_for": 1.39,
-        "xg_against": 2.34,
-        "possession": 44.0,
-        "shots": 7.0,
-        "shots_on_target": 3.0,
-        "passes": 471,
-        "pass_accuracy": 86.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/ac-milan/8Sa8HInO/results/",
-    "fetched_at": "2026-08-23T10:02:08Z"
+    "fetched_at": "2026-08-28T11:01:04Z"
   },
   "I1|Monza": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Inter",
+        "venue": "A",
+        "result": "L",
+        "score": "1-4",
+        "xg_for": 1.23,
+        "xg_against": 1.05,
+        "possession": 30.0,
+        "shots": 7.0,
+        "shots_on_target": 3.0,
+        "passes": 292,
+        "pass_accuracy": 79.0
+      },
       {
         "date": "2026-08-14",
         "opponent": "Avellino",
@@ -1918,21 +2254,28 @@
         "venue": "H",
         "result": "D",
         "score": "3-3"
-      },
-      {
-        "date": "2026-08-04",
-        "opponent": "AC Milan U23 (Ita)",
-        "venue": "H",
-        "result": "W",
-        "score": "4-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/monza/4YSMlwj7/results/",
-    "fetched_at": "2026-08-21T15:17:50Z"
+    "fetched_at": "2026-08-28T11:01:27Z"
   },
   "I1|Napoli": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Genoa",
+        "venue": "A",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 0.77,
+        "xg_against": 0.67,
+        "possession": 54.0,
+        "shots": 13.0,
+        "shots_on_target": 4.0,
+        "passes": 507,
+        "pass_accuracy": 89.0
+      },
       {
         "date": "2026-08-12",
         "opponent": "Aris (Gre)",
@@ -1946,21 +2289,28 @@
         "venue": "H",
         "result": "D",
         "score": "1-1"
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Osasuna (Esp)",
-        "venue": "H",
-        "result": "W",
-        "score": "2-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/napoli/69Dxbc61/results/",
-    "fetched_at": "2026-08-21T15:18:35Z"
+    "fetched_at": "2026-08-28T11:02:01Z"
   },
   "I1|Parma": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Cagliari",
+        "venue": "H",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 0.75,
+        "xg_against": 0.94,
+        "possession": 47.0,
+        "shots": 13.0,
+        "shots_on_target": 2.0,
+        "passes": 443,
+        "pass_accuracy": 84.0
+      },
       {
         "date": "2026-08-14",
         "opponent": "Catania",
@@ -1981,21 +2331,28 @@
         "venue": "H",
         "result": "L",
         "score": "0-2"
-      },
-      {
-        "date": "2026-08-02",
-        "opponent": "Iraklis 1908 (Gre)",
-        "venue": "H",
-        "result": "D",
-        "score": "1-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/parma/6DxlaxHN/results/",
-    "fetched_at": "2026-08-21T15:19:10Z"
+    "fetched_at": "2026-08-28T11:02:29Z"
   },
   "I1|Roma": {
     "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Fiorentina",
+        "venue": "H",
+        "result": "W",
+        "score": "4-0",
+        "xg_for": 3.07,
+        "xg_against": 0.35,
+        "possession": 61.0,
+        "shots": 17.0,
+        "shots_on_target": 8.0,
+        "passes": 539,
+        "pass_accuracy": 89.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Dortmund (Ger)",
@@ -2023,28 +2380,28 @@
         "shots_on_target": 0.0,
         "passes": 369,
         "pass_accuracy": 79.0
-      },
-      {
-        "date": "2026-08-04",
-        "opponent": "Newport (Wal)",
-        "venue": "A",
-        "result": "W",
-        "score": "4-1",
-        "xg_for": 1.58,
-        "xg_against": 1.05,
-        "possession": 64.0,
-        "shots": 11.0,
-        "shots_on_target": 4.0,
-        "passes": 474,
-        "pass_accuracy": 82.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/as-roma/zVqqL0ma/results/",
-    "fetched_at": "2026-08-23T10:02:22Z"
+    "fetched_at": "2026-08-28T11:02:43Z"
   },
   "I1|Sassuolo": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Atalanta",
+        "venue": "A",
+        "result": "L",
+        "score": "1-2",
+        "xg_for": 2.71,
+        "xg_against": 0.89,
+        "possession": 44.0,
+        "shots": 22.0,
+        "shots_on_target": 8.0,
+        "passes": 466,
+        "pass_accuracy": 91.0
+      },
       {
         "date": "2026-08-17",
         "opponent": "Cesena",
@@ -2065,21 +2422,28 @@
         "venue": "A",
         "result": "L",
         "score": "2-3"
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Celta Vigo (Esp)",
-        "venue": "H",
-        "result": "L",
-        "score": "1-4"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/sassuolo/QDdvI0zl/results/",
-    "fetched_at": "2026-08-23T10:02:56Z"
+    "fetched_at": "2026-08-28T11:03:06Z"
   },
   "I1|Torino": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "AC Milan",
+        "venue": "H",
+        "result": "L",
+        "score": "1-2",
+        "xg_for": 1.29,
+        "xg_against": 2.15,
+        "possession": 41.0,
+        "shots": 8.0,
+        "shots_on_target": 1.0,
+        "passes": 384,
+        "pass_accuracy": 82.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Carrarese",
@@ -2100,21 +2464,28 @@
         "venue": "H",
         "result": "W",
         "score": "3-1"
-      },
-      {
-        "date": "2026-08-02",
-        "opponent": "Burnley (Eng)",
-        "venue": "A",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/torino/MZFZnvX4/results/",
-    "fetched_at": "2026-08-23T10:03:30Z"
+    "fetched_at": "2026-08-28T11:03:32Z"
   },
   "I1|Udinese": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Como",
+        "venue": "H",
+        "result": "D",
+        "score": "1-1",
+        "xg_for": 2.14,
+        "xg_against": 1.51,
+        "possession": 41.0,
+        "shots": 17.0,
+        "shots_on_target": 3.0,
+        "passes": 403,
+        "pass_accuracy": 79.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Padova",
@@ -2135,21 +2506,28 @@
         "venue": "H",
         "result": "W",
         "score": "1-0"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Nottingham (Eng)",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/udinese/rXw8YKDE/results/",
-    "fetched_at": "2026-08-21T15:21:14Z"
+    "fetched_at": "2026-08-28T11:03:56Z"
   },
   "I1|Venezia": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Lecce",
+        "venue": "H",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 2.05,
+        "xg_against": 2.7,
+        "possession": 71.0,
+        "shots": 19.0,
+        "shots_on_target": 7.0,
+        "passes": 632,
+        "pass_accuracy": 87.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Modena",
@@ -2170,21 +2548,28 @@
         "venue": "A",
         "result": "D",
         "score": "2-2"
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "St Etienne (Fra)",
-        "venue": "A",
-        "result": "L",
-        "score": "3-4"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/venezia/MkPmVv50/results/",
-    "fetched_at": "2026-08-23T10:04:03Z"
+    "fetched_at": "2026-08-28T11:04:20Z"
   },
   "N1|ADO Den Haag": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "G.A. Eagles",
+        "venue": "A",
+        "result": "L",
+        "score": "1-3",
+        "xg_for": 0.84,
+        "xg_against": 0.85,
+        "possession": 53.0,
+        "shots": 16.0,
+        "shots_on_target": 3.0,
+        "passes": 495,
+        "pass_accuracy": 83.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Groningen",
@@ -2212,21 +2597,28 @@
         "shots_on_target": 0.0,
         "passes": 405,
         "pass_accuracy": 79.0
-      },
-      {
-        "date": "2026-07-31",
-        "opponent": "Asteras Tripolis (Gre)",
-        "venue": "H",
-        "result": "D",
-        "score": "0-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/den-haag/lAgLCkT3/results/",
-    "fetched_at": "2026-08-23T10:04:27Z"
+    "fetched_at": "2026-08-28T11:04:34Z"
   },
   "N1|AZ": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Sittard",
+        "venue": "A",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 4.53,
+        "xg_against": 0.4,
+        "possession": 73.0,
+        "shots": 26.0,
+        "shots_on_target": 11.0,
+        "passes": 644,
+        "pass_accuracy": 90.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Utrecht",
@@ -2254,25 +2646,11 @@
         "shots_on_target": 4.0,
         "passes": 470,
         "pass_accuracy": 83.0
-      },
-      {
-        "date": "2026-08-02",
-        "opponent": "PSV",
-        "venue": "A",
-        "result": "W",
-        "score": "4-0",
-        "xg_for": 4.05,
-        "xg_against": 1.16,
-        "possession": 65.0,
-        "shots": 22.0,
-        "shots_on_target": 9.0,
-        "passes": 613,
-        "pass_accuracy": 90.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/az-alkmaar/2RxOow1i/results/",
-    "fetched_at": "2026-08-21T15:22:31Z"
+    "fetched_at": "2026-08-28T11:04:48Z"
   },
   "N1|Excelsior Rotterdam": {
     "recent_form": [
@@ -2314,10 +2692,24 @@
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/excelsior/nNlLsRUr/results/",
-    "fetched_at": "2026-08-21T15:22:56Z"
+    "fetched_at": "2026-08-28T11:05:28Z"
   },
   "N1|FC Groningen": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "PSV",
+        "venue": "A",
+        "result": "L",
+        "score": "1-5",
+        "xg_for": 1.09,
+        "xg_against": 4.4,
+        "possession": 38.0,
+        "shots": 7.0,
+        "shots_on_target": 4.0,
+        "passes": 354,
+        "pass_accuracy": 81.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Den Haag",
@@ -2345,21 +2737,28 @@
         "shots_on_target": 5.0,
         "passes": 446,
         "pass_accuracy": 82.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Valladolid (Esp)",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/groningen/MBUGcjb9/results/",
-    "fetched_at": "2026-08-23T10:04:51Z"
+    "fetched_at": "2026-08-28T11:05:42Z"
   },
   "N1|FC Utrecht": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Sparta Rotterdam",
+        "venue": "A",
+        "result": "D",
+        "score": "3-3",
+        "xg_for": 1.93,
+        "xg_against": 1.73,
+        "possession": 44.0,
+        "shots": 16.0,
+        "shots_on_target": 4.0,
+        "passes": 382,
+        "pass_accuracy": 79.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "AZ Alkmaar",
@@ -2387,21 +2786,28 @@
         "shots_on_target": 7.0,
         "passes": 305,
         "pass_accuracy": 73.0
-      },
-      {
-        "date": "2026-08-02",
-        "opponent": "Sevilla (Esp)",
-        "venue": "H",
-        "result": "L",
-        "score": "0-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/utrecht/p6QXMgOj/results/",
-    "fetched_at": "2026-08-21T15:23:46Z"
+    "fetched_at": "2026-08-28T11:06:10Z"
   },
   "N1|Feyenoord": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Cambuur",
+        "venue": "A",
+        "result": "W",
+        "score": "5-2",
+        "xg_for": 2.61,
+        "xg_against": 0.97,
+        "possession": 55.0,
+        "shots": 14.0,
+        "shots_on_target": 7.0,
+        "passes": 479,
+        "pass_accuracy": 86.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "G.A. Eagles",
@@ -2429,28 +2835,28 @@
         "shots_on_target": 6.0,
         "passes": 509,
         "pass_accuracy": 89.0
-      },
-      {
-        "date": "2026-08-02",
-        "opponent": "Atalanta (Ita)",
-        "venue": "H",
-        "result": "W",
-        "score": "2-1",
-        "xg_for": 1.71,
-        "xg_against": 1.32,
-        "possession": 61.0,
-        "shots": 14.0,
-        "shots_on_target": 3.0,
-        "passes": 683,
-        "pass_accuracy": 92.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/feyenoord/8zjySeoN/results/",
-    "fetched_at": "2026-08-23T10:05:05Z"
+    "fetched_at": "2026-08-28T11:06:26Z"
   },
   "N1|Fortuna Sittard": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "AZ Alkmaar",
+        "venue": "H",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 0.4,
+        "xg_against": 4.53,
+        "possession": 27.0,
+        "shots": 4.0,
+        "shots_on_target": 2.0,
+        "passes": 249,
+        "pass_accuracy": 69.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Cambuur",
@@ -2478,21 +2884,28 @@
         "shots_on_target": 6.0,
         "passes": 251,
         "pass_accuracy": 66.0
-      },
-      {
-        "date": "2026-07-31",
-        "opponent": "APOEL (Cyp)",
-        "venue": "H",
-        "result": "W",
-        "score": "2-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/sittard/YH8HX5iP/results/",
-    "fetched_at": "2026-08-21T15:24:29Z"
+    "fetched_at": "2026-08-28T11:06:41Z"
   },
   "N1|N.E.C. Nijmegen": {
     "recent_form": [
+      {
+        "date": "2026-08-25",
+        "opponent": "Bodo/Glimt (Nor)",
+        "venue": "A",
+        "result": "L",
+        "score": "0-3",
+        "xg_for": 0.12,
+        "xg_against": 2.27,
+        "possession": 20.0,
+        "shots": 3.0,
+        "shots_on_target": 2.0,
+        "passes": 186,
+        "pass_accuracy": 63.0
+      },
       {
         "date": "2026-08-19",
         "opponent": "Bodo/Glimt (Nor)",
@@ -2520,28 +2933,28 @@
         "shots_on_target": 10.0,
         "passes": 593,
         "pass_accuracy": 84.0
-      },
-      {
-        "date": "2026-08-11",
-        "opponent": "Olympiacos Piraeus (Gre)",
-        "venue": "H",
-        "result": "W",
-        "score": "2-1",
-        "xg_for": 1.91,
-        "xg_against": 1.08,
-        "possession": 54.0,
-        "shots": 17.0,
-        "shots_on_target": 7.0,
-        "passes": 601,
-        "pass_accuracy": 76.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/nijmegen/nRluRF0T/results/",
-    "fetched_at": "2026-08-21T15:24:50Z"
+    "fetched_at": "2026-08-28T11:07:10Z"
   },
   "N1|PEC Zwolle": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Heerenveen",
+        "venue": "A",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 1.55,
+        "xg_against": 0.95,
+        "possession": 36.0,
+        "shots": 20.0,
+        "shots_on_target": 7.0,
+        "passes": 340,
+        "pass_accuracy": 78.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Twente",
@@ -2569,21 +2982,28 @@
         "shots_on_target": 2.0,
         "passes": 236,
         "pass_accuracy": 74.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Hannover (Ger)",
-        "venue": "A",
-        "result": "L",
-        "score": "0-3"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/zwolle/r1L5w2EB/results/",
-    "fetched_at": "2026-08-21T15:25:15Z"
+    "fetched_at": "2026-08-28T11:07:25Z"
   },
   "N1|PSV": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Groningen",
+        "venue": "H",
+        "result": "W",
+        "score": "5-1",
+        "xg_for": 4.4,
+        "xg_against": 1.09,
+        "possession": 62.0,
+        "shots": 24.0,
+        "shots_on_target": 12.0,
+        "passes": 563,
+        "pass_accuracy": 92.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Excelsior",
@@ -2611,28 +3031,28 @@
         "shots_on_target": 6.0,
         "passes": 758,
         "pass_accuracy": 88.0
-      },
-      {
-        "date": "2026-08-02",
-        "opponent": "AZ Alkmaar",
-        "venue": "H",
-        "result": "L",
-        "score": "0-4",
-        "xg_for": 1.16,
-        "xg_against": 4.05,
-        "possession": 35.0,
-        "shots": 15.0,
-        "shots_on_target": 6.0,
-        "passes": 323,
-        "pass_accuracy": 80.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/psv/M9UEHJWi/results/",
-    "fetched_at": "2026-08-23T10:05:44Z"
+    "fetched_at": "2026-08-28T11:07:38Z"
   },
   "N1|SC Cambuur": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Feyenoord",
+        "venue": "H",
+        "result": "L",
+        "score": "2-5",
+        "xg_for": 0.97,
+        "xg_against": 2.61,
+        "possession": 45.0,
+        "shots": 10.0,
+        "shots_on_target": 4.0,
+        "passes": 395,
+        "pass_accuracy": 84.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Sittard",
@@ -2660,21 +3080,28 @@
         "shots_on_target": 2.0,
         "passes": 380,
         "pass_accuracy": 83.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Bologna (Ita)",
-        "venue": "A",
-        "result": "L",
-        "score": "1-3"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/cambuur/QRyYgO7J/results/",
-    "fetched_at": "2026-08-23T10:06:10Z"
+    "fetched_at": "2026-08-28T11:07:52Z"
   },
   "N1|Sparta Rotterdam": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Utrecht",
+        "venue": "H",
+        "result": "D",
+        "score": "3-3",
+        "xg_for": 1.73,
+        "xg_against": 1.93,
+        "possession": 56.0,
+        "shots": 14.0,
+        "shots_on_target": 5.0,
+        "passes": 485,
+        "pass_accuracy": 86.0
+      },
       {
         "date": "2026-08-14",
         "opponent": "Telstar",
@@ -2702,21 +3129,28 @@
         "shots_on_target": 0.0,
         "passes": 334,
         "pass_accuracy": 77.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Duisburg (Ger)",
-        "venue": "H",
-        "result": "D",
-        "score": "0-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/sparta-rotterdam/KK4FaFV3/results/",
-    "fetched_at": "2026-08-21T15:26:19Z"
+    "fetched_at": "2026-08-28T11:08:07Z"
   },
   "N1|sc Heerenveen": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Zwolle",
+        "venue": "H",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 0.95,
+        "xg_against": 1.55,
+        "possession": 64.0,
+        "shots": 18.0,
+        "shots_on_target": 5.0,
+        "passes": 616,
+        "pass_accuracy": 85.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Ajax",
@@ -2744,21 +3178,28 @@
         "shots_on_target": 4.0,
         "passes": 471,
         "pass_accuracy": 83.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Volos (Gre)",
-        "venue": "H",
-        "result": "W",
-        "score": "3-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/heerenveen/EDjXSyWG/results/",
-    "fetched_at": "2026-08-21T15:26:44Z"
+    "fetched_at": "2026-08-28T11:09:10Z"
   },
   "P1|Académico": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Maritimo",
+        "venue": "A",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 1.73,
+        "xg_against": 1.31,
+        "possession": 47.0,
+        "shots": 12.0,
+        "shots_on_target": 6.0,
+        "passes": 332,
+        "pass_accuracy": 78.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Santa Clara",
@@ -2786,21 +3227,28 @@
         "shots_on_target": 4.0,
         "passes": 314,
         "pass_accuracy": 82.0
-      },
-      {
-        "date": "2026-08-02",
-        "opponent": "Chaves (Por)",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/academico-viseu/GrRgeTHo/results/",
-    "fetched_at": "2026-08-21T15:27:09Z"
+    "fetched_at": "2026-08-28T11:09:25Z"
   },
   "P1|CD Nacional": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Vitoria Guimaraes",
+        "venue": "A",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 0.43,
+        "xg_against": 2.85,
+        "possession": 52.0,
+        "shots": 7.0,
+        "shots_on_target": 0.0,
+        "passes": 423,
+        "pass_accuracy": 78.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Estoril",
@@ -2828,21 +3276,28 @@
         "shots_on_target": 4.0,
         "passes": 373,
         "pass_accuracy": 79.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Maritimo (Por)",
-        "venue": "A",
-        "result": "L",
-        "score": "0-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/nacional/4ETLrR7n/results/",
-    "fetched_at": "2026-08-23T10:06:34Z"
+    "fetched_at": "2026-08-28T11:09:40Z"
   },
   "P1|Casa Pia AC": {
     "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Gil Vicente",
+        "venue": "A",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 0.9,
+        "xg_against": 1.76,
+        "possession": 44.0,
+        "shots": 13.0,
+        "shots_on_target": 2.0,
+        "passes": 391,
+        "pass_accuracy": 84.0
+      },
       {
         "date": "2026-08-17",
         "opponent": "Benfica",
@@ -2870,21 +3325,28 @@
         "shots_on_target": 4.0,
         "passes": 470,
         "pass_accuracy": 89.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Leixoes (Por)",
-        "venue": "A",
-        "result": "L",
-        "score": "2-6"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/casa-pia/QFHt9Zgs/results/",
-    "fetched_at": "2026-08-23T10:06:58Z"
+    "fetched_at": "2026-08-28T11:09:55Z"
   },
   "P1|Estoril Praia": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Rio Ave",
+        "venue": "H",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 0.88,
+        "xg_against": 0.73,
+        "possession": 55.0,
+        "shots": 18.0,
+        "shots_on_target": 6.0,
+        "passes": 431,
+        "pass_accuracy": 82.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Nacional",
@@ -2912,21 +3374,28 @@
         "shots_on_target": 3.0,
         "passes": 429,
         "pass_accuracy": 84.0
-      },
-      {
-        "date": "2026-07-31",
-        "opponent": "Os Belenenses (Por)",
-        "venue": "A",
-        "result": "D",
-        "score": "1-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/estoril/htoKuYZl/results/",
-    "fetched_at": "2026-08-21T15:28:26Z"
+    "fetched_at": "2026-08-28T11:10:09Z"
   },
   "P1|FC Alverca": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Sporting CP",
+        "venue": "A",
+        "result": "L",
+        "score": "1-3",
+        "xg_for": 0.5,
+        "xg_against": 2.32,
+        "possession": 41.0,
+        "shots": 10.0,
+        "shots_on_target": 3.0,
+        "passes": 414,
+        "pass_accuracy": 83.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Estrela",
@@ -2954,21 +3423,28 @@
         "shots_on_target": 5.0,
         "passes": 339,
         "pass_accuracy": 79.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Sporting CP B (Por)",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/alverca/roaMksQg/results/",
-    "fetched_at": "2026-08-21T15:28:51Z"
+    "fetched_at": "2026-08-28T11:10:39Z"
   },
   "P1|FC Arouca": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "FC Porto",
+        "venue": "A",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 0.54,
+        "xg_against": 2.99,
+        "possession": 47.0,
+        "shots": 4.0,
+        "shots_on_target": 1.0,
+        "passes": 415,
+        "pass_accuracy": 87.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Moreirense",
@@ -2996,21 +3472,28 @@
         "shots_on_target": 2.0,
         "passes": 380,
         "pass_accuracy": 78.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Lusitania FC (Por)",
-        "venue": "A",
-        "result": "W",
-        "score": "2-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/arouca/fJqfm7CG/results/",
-    "fetched_at": "2026-08-23T10:07:23Z"
+    "fetched_at": "2026-08-28T11:10:53Z"
   },
   "P1|FC Famalicão": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Santa Clara",
+        "venue": "A",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 1.15,
+        "xg_against": 1.45,
+        "possession": 68.0,
+        "shots": 9.0,
+        "shots_on_target": 3.0,
+        "passes": 571,
+        "pass_accuracy": 87.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Maritimo",
@@ -3038,21 +3521,28 @@
         "shots_on_target": 3.0,
         "passes": 433,
         "pass_accuracy": 84.0
-      },
-      {
-        "date": "2026-07-31",
-        "opponent": "Como",
-        "venue": "H",
-        "result": "L",
-        "score": "2-3"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/famalicao/ABBgitC3/results/",
-    "fetched_at": "2026-08-23T10:07:47Z"
+    "fetched_at": "2026-08-28T11:11:07Z"
   },
   "P1|FC Porto": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Arouca",
+        "venue": "H",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 2.99,
+        "xg_against": 0.54,
+        "possession": 53.0,
+        "shots": 23.0,
+        "shots_on_target": 10.0,
+        "passes": 463,
+        "pass_accuracy": 85.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Rio Ave",
@@ -3080,28 +3570,28 @@
         "shots_on_target": 3.0,
         "passes": 397,
         "pass_accuracy": 87.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Torreense",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0",
-        "xg_for": 1.63,
-        "xg_against": 1.12,
-        "possession": 56.0,
-        "shots": 12.0,
-        "shots_on_target": 4.0,
-        "passes": 469,
-        "pass_accuracy": 86.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/fc-porto/S2NmScGp/results/",
-    "fetched_at": "2026-08-23T10:08:01Z"
+    "fetched_at": "2026-08-28T11:11:22Z"
   },
   "P1|Gil Vicente FC": {
     "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Casa Pia",
+        "venue": "H",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 1.76,
+        "xg_against": 0.9,
+        "possession": 56.0,
+        "shots": 8.0,
+        "shots_on_target": 4.0,
+        "passes": 516,
+        "pass_accuracy": 88.0
+      },
       {
         "date": "2026-08-09",
         "opponent": "Rio Ave",
@@ -3122,21 +3612,28 @@
         "venue": "A",
         "result": "W",
         "score": "2-0"
-      },
-      {
-        "date": "2026-07-25",
-        "opponent": "Moreirense (Por)",
-        "venue": "H",
-        "result": "D",
-        "score": "2-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/gil-vicente/CS0fFFd8/results/",
-    "fetched_at": "2026-08-23T10:08:36Z"
+    "fetched_at": "2026-08-28T11:11:47Z"
   },
   "P1|Marítimo M.": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Academico Viseu",
+        "venue": "H",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 1.31,
+        "xg_against": 1.73,
+        "possession": 53.0,
+        "shots": 10.0,
+        "shots_on_target": 4.0,
+        "passes": 369,
+        "pass_accuracy": 80.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Famalicao",
@@ -3164,21 +3661,28 @@
         "shots_on_target": 4.0,
         "passes": 305,
         "pass_accuracy": 78.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Nacional (Por)",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/maritimo/noguvetP/results/",
-    "fetched_at": "2026-08-21T15:30:55Z"
+    "fetched_at": "2026-08-28T11:12:00Z"
   },
   "P1|Rio Ave FC": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Estoril",
+        "venue": "A",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 0.73,
+        "xg_against": 0.88,
+        "possession": 45.0,
+        "shots": 3.0,
+        "shots_on_target": 3.0,
+        "passes": 355,
+        "pass_accuracy": 77.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "FC Porto",
@@ -3206,21 +3710,28 @@
         "shots_on_target": 2.0,
         "passes": 285,
         "pass_accuracy": 79.0
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Tondela (Por)",
-        "venue": "H",
-        "result": "W",
-        "score": "3-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/rio-ave/jPzXLi4l/results/",
-    "fetched_at": "2026-08-21T15:31:18Z"
+    "fetched_at": "2026-08-28T11:12:37Z"
   },
   "P1|Santa Clara": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Famalicao",
+        "venue": "H",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 1.45,
+        "xg_against": 1.15,
+        "possession": 32.0,
+        "shots": 12.0,
+        "shots_on_target": 2.0,
+        "passes": 267,
+        "pass_accuracy": 74.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Academico Viseu",
@@ -3248,21 +3759,28 @@
         "shots_on_target": 7.0,
         "passes": 389,
         "pass_accuracy": 82.0
-      },
-      {
-        "date": "2026-07-25",
-        "opponent": "Arouca (Por)",
-        "venue": "H",
-        "result": "W",
-        "score": "3-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/santa-clara/YmQyLBJf/results/",
-    "fetched_at": "2026-08-23T10:09:02Z"
+    "fetched_at": "2026-08-28T11:13:20Z"
   },
   "P1|Sporting CP": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Alverca",
+        "venue": "H",
+        "result": "W",
+        "score": "3-1",
+        "xg_for": 2.32,
+        "xg_against": 0.5,
+        "possession": 59.0,
+        "shots": 15.0,
+        "shots_on_target": 7.0,
+        "passes": 610,
+        "pass_accuracy": 89.0
+      },
       {
         "date": "2026-08-14",
         "opponent": "Vitoria Guimaraes",
@@ -3290,77 +3808,112 @@
         "shots_on_target": 8.0,
         "passes": 446,
         "pass_accuracy": 88.0
-      },
-      {
-        "date": "2026-07-31",
-        "opponent": "Nottingham (Eng)",
-        "venue": "H",
-        "result": "W",
-        "score": "4-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/sporting-cp/tljXuHBC/results/",
-    "fetched_at": "2026-08-21T15:32:10Z"
+    "fetched_at": "2026-08-28T11:13:34Z"
   },
   "SP1|CA Osasuna": {
     "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Celta Vigo",
+        "venue": "A",
+        "result": "W",
+        "score": "2-1",
+        "xg_for": 2.61,
+        "xg_against": 0.13,
+        "possession": 48.0,
+        "shots": 13.0,
+        "shots_on_target": 5.0,
+        "passes": 515,
+        "pass_accuracy": 88.0
+      },
+      {
+        "date": "2026-08-24",
+        "opponent": "Levante",
+        "venue": "H",
+        "result": "D",
+        "score": "0-0",
+        "xg_for": 0.7,
+        "xg_against": 1.28,
+        "possession": 46.0,
+        "shots": 12.0,
+        "shots_on_target": 7.0,
+        "passes": 343,
+        "pass_accuracy": 79.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Arenas Getxo (Esp)",
         "venue": "A",
         "result": "D",
         "score": "1-1"
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Al Ain (Uae)",
-        "venue": "H",
-        "result": "L",
-        "score": "0-2"
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Napoli (Ita)",
-        "venue": "A",
-        "result": "L",
-        "score": "1-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/osasuna/ETdxjU8a/results/",
-    "fetched_at": "2026-08-23T10:10:25Z"
+    "fetched_at": "2026-08-28T11:14:52Z"
   },
   "SP1|Celta": {
     "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Osasuna",
+        "venue": "H",
+        "result": "L",
+        "score": "1-2",
+        "xg_for": 0.13,
+        "xg_against": 2.61,
+        "possession": 52.0,
+        "shots": 4.0,
+        "shots_on_target": 2.0,
+        "passes": 557,
+        "pass_accuracy": 87.0
+      },
+      {
+        "date": "2026-08-22",
+        "opponent": "Valencia",
+        "venue": "A",
+        "result": "D",
+        "score": "0-0",
+        "xg_for": 0.62,
+        "xg_against": 0.7,
+        "possession": 55.0,
+        "shots": 7.0,
+        "shots_on_target": 3.0,
+        "passes": 615,
+        "pass_accuracy": 90.0
+      },
       {
         "date": "2026-08-08",
         "opponent": "Napoli (Ita)",
         "venue": "A",
         "result": "D",
         "score": "1-1"
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Sassuolo (Ita)",
-        "venue": "A",
-        "result": "W",
-        "score": "4-1"
-      },
-      {
-        "date": "2026-07-29",
-        "opponent": "Academico Viseu (Por)",
-        "venue": "H",
-        "result": "D",
-        "score": "2-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/celta-vigo/8pvUZFhf/results/",
-    "fetched_at": "2026-08-21T15:33:54Z"
+    "fetched_at": "2026-08-28T11:15:16Z"
   },
   "SP1|Elche CF": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Barcelona",
+        "venue": "H",
+        "result": "L",
+        "score": "0-5",
+        "xg_for": 0.7,
+        "xg_against": 4.38,
+        "possession": 46.0,
+        "shots": 7.0,
+        "shots_on_target": 2.0,
+        "passes": 436,
+        "pass_accuracy": 80.0
+      },
       {
         "date": "2026-08-17",
         "opponent": "Dep. A Coruna",
@@ -3381,21 +3934,42 @@
         "venue": "H",
         "result": "W",
         "score": "3-0"
-      },
-      {
-        "date": "2026-07-31",
-        "opponent": "Cordoba (Esp)",
-        "venue": "H",
-        "result": "D",
-        "score": "2-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/elche/4jl02tPF/results/",
-    "fetched_at": "2026-08-23T10:10:58Z"
+    "fetched_at": "2026-08-28T11:16:05Z"
   },
   "SP1|FC Barcelona": {
     "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Ath Bilbao",
+        "venue": "H",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 4.23,
+        "xg_against": 0.25,
+        "possession": 70.0,
+        "shots": 22.0,
+        "shots_on_target": 10.0,
+        "passes": 621,
+        "pass_accuracy": 90.0
+      },
+      {
+        "date": "2026-08-23",
+        "opponent": "Elche",
+        "venue": "A",
+        "result": "W",
+        "score": "5-0",
+        "xg_for": 4.38,
+        "xg_against": 0.7,
+        "possession": 54.0,
+        "shots": 11.0,
+        "shots_on_target": 7.0,
+        "passes": 533,
+        "pass_accuracy": 87.0
+      },
       {
         "date": "2026-08-19",
         "opponent": "Al Ahly (Egy)",
@@ -3409,35 +3983,42 @@
         "shots_on_target": 7.0,
         "passes": 667,
         "pass_accuracy": 91.0
-      },
-      {
-        "date": "2026-08-16",
-        "opponent": "Basel (Sui)",
-        "venue": "A",
-        "result": "W",
-        "score": "5-2",
-        "xg_for": 4.33,
-        "xg_against": 1.0,
-        "possession": 71.0,
-        "shots": 25.0,
-        "shots_on_target": 6.0,
-        "passes": 695,
-        "pass_accuracy": 92.0
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Udinese (Ita)",
-        "venue": "A",
-        "result": "L",
-        "score": "0-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/barcelona/SKbpVP5K/results/",
-    "fetched_at": "2026-08-23T10:11:22Z"
+    "fetched_at": "2026-08-28T11:16:19Z"
   },
   "SP1|Getafe CF": {
     "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Partizan (Srb)",
+        "venue": "A",
+        "result": "L",
+        "score": "1-2",
+        "xg_for": 0.56,
+        "xg_against": 1.47,
+        "possession": 40.0,
+        "shots": 9.0,
+        "shots_on_target": 4.0,
+        "passes": 298,
+        "pass_accuracy": 70.0
+      },
+      {
+        "date": "2026-08-23",
+        "opponent": "Racing Santander",
+        "venue": "H",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 1.24,
+        "xg_against": 1.3,
+        "possession": 43.0,
+        "shots": 12.0,
+        "shots_on_target": 1.0,
+        "passes": 332,
+        "pass_accuracy": 74.0
+      },
       {
         "date": "2026-08-20",
         "opponent": "Partizan (Srb)",
@@ -3451,42 +4032,28 @@
         "shots_on_target": 5.0,
         "passes": 493,
         "pass_accuracy": 86.0
-      },
-      {
-        "date": "2026-08-15",
-        "opponent": "Alaves",
-        "venue": "A",
-        "result": "L",
-        "score": "0-3",
-        "xg_for": 0.24,
-        "xg_against": 1.93,
-        "possession": 48.0,
-        "shots": 6.0,
-        "shots_on_target": 2.0,
-        "passes": 339,
-        "pass_accuracy": 79.0
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Tottenham (Eng)",
-        "venue": "A",
-        "result": "D",
-        "score": "1-1",
-        "xg_for": 0.45,
-        "xg_against": 1.08,
-        "possession": 34.0,
-        "shots": 5.0,
-        "shots_on_target": 1.0,
-        "passes": 227,
-        "pass_accuracy": 83.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/getafe/dboeiWOt/results/",
-    "fetched_at": "2026-08-23T10:11:36Z"
+    "fetched_at": "2026-08-28T11:16:34Z"
   },
   "SP1|Levante UD": {
     "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Osasuna",
+        "venue": "A",
+        "result": "D",
+        "score": "0-0",
+        "xg_for": 1.28,
+        "xg_against": 0.7,
+        "possession": 54.0,
+        "shots": 11.0,
+        "shots_on_target": 1.0,
+        "passes": 410,
+        "pass_accuracy": 82.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Espanyol",
@@ -3507,21 +4074,28 @@
         "venue": "A",
         "result": "W",
         "score": "3-1"
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Villarreal (Esp)",
-        "venue": "A",
-        "result": "L",
-        "score": "0-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/levante/G8FL0ShI/results/",
-    "fetched_at": "2026-08-23T10:12:11Z"
+    "fetched_at": "2026-08-28T11:17:00Z"
   },
   "SP1|R. Racing Club": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Getafe",
+        "venue": "A",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 1.3,
+        "xg_against": 1.24,
+        "possession": 57.0,
+        "shots": 6.0,
+        "shots_on_target": 3.0,
+        "passes": 467,
+        "pass_accuracy": 81.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Villarreal",
@@ -3542,21 +4116,28 @@
         "venue": "H",
         "result": "W",
         "score": "4-1"
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Wolves (Eng)",
-        "venue": "A",
-        "result": "L",
-        "score": "0-3"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/racing-santander/nVpEwOrl/results/",
-    "fetched_at": "2026-08-23T10:13:22Z"
+    "fetched_at": "2026-08-28T11:17:50Z"
   },
   "SP1|RCD Espanyol de Barcelona": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Real Madrid",
+        "venue": "H",
+        "result": "L",
+        "score": "1-2",
+        "xg_for": 1.05,
+        "xg_against": 2.7,
+        "possession": 37.0,
+        "shots": 8.0,
+        "shots_on_target": 3.0,
+        "passes": 326,
+        "pass_accuracy": 84.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Levante",
@@ -3577,21 +4158,28 @@
         "venue": "A",
         "result": "L",
         "score": "1-3"
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Middlesbrough (Eng)",
-        "venue": "A",
-        "result": "D",
-        "score": "3-3"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/espanyol/QFfPdh1J/results/",
-    "fetched_at": "2026-08-21T15:37:57Z"
+    "fetched_at": "2026-08-28T11:18:30Z"
   },
   "SP1|Real Betis": {
     "recent_form": [
+      {
+        "date": "2026-08-25",
+        "opponent": "Valencia",
+        "venue": "A",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 0.71,
+        "xg_against": 1.12,
+        "possession": 58.0,
+        "shots": 15.0,
+        "shots_on_target": 3.0,
+        "passes": 540,
+        "pass_accuracy": 88.0
+      },
       {
         "date": "2026-08-21",
         "opponent": "Real Sociedad",
@@ -3619,21 +4207,28 @@
         "shots_on_target": 2.0,
         "passes": 463,
         "pass_accuracy": 84.0
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Bournemouth (Eng)",
-        "venue": "H",
-        "result": "D",
-        "score": "2-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/betis/vJbTeCGP/results/",
-    "fetched_at": "2026-08-23T10:14:14Z"
+    "fetched_at": "2026-08-28T11:19:09Z"
   },
   "SP1|Real Madrid": {
     "recent_form": [
+      {
+        "date": "2026-08-26",
+        "opponent": "Real Sociedad",
+        "venue": "H",
+        "result": "W",
+        "score": "4-1",
+        "xg_for": 3.18,
+        "xg_against": 0.66,
+        "possession": 51.0,
+        "shots": 20.0,
+        "shots_on_target": 11.0,
+        "passes": 582,
+        "pass_accuracy": 91.0
+      },
       {
         "date": "2026-08-22",
         "opponent": "Espanyol",
@@ -3661,28 +4256,28 @@
         "shots_on_target": 7.0,
         "passes": 587,
         "pass_accuracy": 89.0
-      },
-      {
-        "date": "2026-08-12",
-        "opponent": "Dep. A Coruna (Esp)",
-        "venue": "A",
-        "result": "W",
-        "score": "1-0",
-        "xg_for": 1.09,
-        "xg_against": 0.35,
-        "possession": 56.0,
-        "shots": 13.0,
-        "shots_on_target": 4.0,
-        "passes": 617,
-        "pass_accuracy": 89.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/real-madrid/W8mj7MDD/results/",
-    "fetched_at": "2026-08-23T10:14:28Z"
+    "fetched_at": "2026-08-28T11:19:24Z"
   },
   "SP1|Real Sociedad": {
     "recent_form": [
+      {
+        "date": "2026-08-26",
+        "opponent": "Real Madrid",
+        "venue": "A",
+        "result": "L",
+        "score": "1-4",
+        "xg_for": 0.66,
+        "xg_against": 3.18,
+        "possession": 49.0,
+        "shots": 10.0,
+        "shots_on_target": 3.0,
+        "passes": 553,
+        "pass_accuracy": 90.0
+      },
       {
         "date": "2026-08-21",
         "opponent": "Betis",
@@ -3710,21 +4305,28 @@
         "shots_on_target": 4.0,
         "passes": 371,
         "pass_accuracy": 88.0
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "FC Koln (Ger)",
-        "venue": "A",
-        "result": "L",
-        "score": "1-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/real-sociedad/jNvak2f3/results/",
-    "fetched_at": "2026-08-23T10:14:52Z"
+    "fetched_at": "2026-08-28T11:19:41Z"
   },
   "SP1|Sevilla FC": {
     "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Ath Bilbao",
+        "venue": "A",
+        "result": "W",
+        "score": "3-1",
+        "xg_for": 1.26,
+        "xg_against": 1.37,
+        "possession": 35.0,
+        "shots": 7.0,
+        "shots_on_target": 4.0,
+        "passes": 284,
+        "pass_accuracy": 74.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Rayo Vallecano",
@@ -3745,33 +4347,40 @@
         "venue": "A",
         "result": "L",
         "score": "1-2"
-      },
-      {
-        "date": "2026-08-02",
-        "opponent": "Utrecht (Ned)",
-        "venue": "A",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/sevilla/h8oAv4Ts/results/",
-    "fetched_at": "2026-08-21T15:39:45Z"
+    "fetched_at": "2026-08-28T11:20:06Z"
   },
   "SP1|Valencia CF": {
     "recent_form": [
+      {
+        "date": "2026-08-25",
+        "opponent": "Betis",
+        "venue": "H",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 1.12,
+        "xg_against": 0.71,
+        "possession": 42.0,
+        "shots": 16.0,
+        "shots_on_target": 3.0,
+        "passes": 372,
+        "pass_accuracy": 78.0
+      },
       {
         "date": "2026-08-22",
         "opponent": "Celta Vigo",
         "venue": "H",
         "result": "D",
         "score": "0-0",
-        "xg_for": 0.58,
-        "xg_against": 0.66,
-        "possession": 44.0,
+        "xg_for": 0.7,
+        "xg_against": 0.62,
+        "possession": 45.0,
         "shots": 8.0,
         "shots_on_target": 2.0,
-        "passes": 486,
+        "passes": 488,
         "pass_accuracy": 88.0
       },
       {
@@ -3780,21 +4389,28 @@
         "venue": "A",
         "result": "W",
         "score": "2-0"
-      },
-      {
-        "date": "2026-08-12",
-        "opponent": "Teruel (Esp)",
-        "venue": "H",
-        "result": "L",
-        "score": "0-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/valencia/CQeaytrD/results/",
-    "fetched_at": "2026-08-23T10:15:26Z"
+    "fetched_at": "2026-08-28T11:20:30Z"
   },
   "SP1|Villarreal CF": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Atl. Madrid",
+        "venue": "A",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 3.6,
+        "xg_against": 0.78,
+        "possession": 48.0,
+        "shots": 13.0,
+        "shots_on_target": 6.0,
+        "passes": 498,
+        "pass_accuracy": 88.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Racing Santander",
@@ -3822,21 +4438,28 @@
         "shots_on_target": 11.0,
         "passes": 439,
         "pass_accuracy": 90.0
-      },
-      {
-        "date": "2026-08-05",
-        "opponent": "Levante (Esp)",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/villarreal/lUatW5jE/results/",
-    "fetched_at": "2026-08-23T10:15:50Z"
+    "fetched_at": "2026-08-28T11:20:44Z"
   },
   "T1|Alanyaspor": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Besiktas",
+        "venue": "H",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 0.54,
+        "xg_against": 0.74,
+        "possession": 35.0,
+        "shots": 9.0,
+        "shots_on_target": 3.0,
+        "passes": 295,
+        "pass_accuracy": 73.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Gaziantep",
@@ -3857,21 +4480,28 @@
         "venue": "H",
         "result": "D",
         "score": "0-0"
-      },
-      {
-        "date": "2026-07-16",
-        "opponent": "Tikves (Mkd)",
-        "venue": "H",
-        "result": "D",
-        "score": "2-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/alanyaspor/IcN8oPcJ/results/",
-    "fetched_at": "2026-08-23T10:16:24Z"
+    "fetched_at": "2026-08-28T11:21:09Z"
   },
   "T1|Amedspor": {
     "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Kocaelispor",
+        "venue": "A",
+        "result": "L",
+        "score": "0-2",
+        "xg_for": 0.59,
+        "xg_against": 1.3,
+        "possession": 56.0,
+        "shots": 12.0,
+        "shots_on_target": 1.0,
+        "passes": 468,
+        "pass_accuracy": 84.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Erzurumspor",
@@ -3892,28 +4522,42 @@
         "venue": "H",
         "result": "W",
         "score": "2-0"
-      },
-      {
-        "date": "2026-05-02",
-        "opponent": "Igdir FK",
-        "venue": "A",
-        "result": "D",
-        "score": "3-3",
-        "xg_for": 1.25,
-        "xg_against": 1.42,
-        "possession": 50.0,
-        "shots": 9.0,
-        "shots_on_target": 4.0,
-        "passes": 300,
-        "pass_accuracy": 75.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/amedspor/EHdgkFvm/results/",
-    "fetched_at": "2026-08-23T10:16:52Z"
+    "fetched_at": "2026-08-28T11:21:38Z"
   },
   "T1|Besiktas": {
     "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Kauno Zalgiris (Ltu)",
+        "venue": "A",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 0.48,
+        "xg_against": 0.68,
+        "possession": 71.0,
+        "shots": 12.0,
+        "shots_on_target": 4.0,
+        "passes": 782,
+        "pass_accuracy": 87.0
+      },
+      {
+        "date": "2026-08-23",
+        "opponent": "Alanyaspor",
+        "venue": "A",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 0.74,
+        "xg_against": 0.54,
+        "possession": 65.0,
+        "shots": 14.0,
+        "shots_on_target": 6.0,
+        "passes": 560,
+        "pass_accuracy": 86.0
+      },
       {
         "date": "2026-08-20",
         "opponent": "Kauno Zalgiris (Ltu)",
@@ -3927,39 +4571,11 @@
         "shots_on_target": 6.0,
         "passes": 692,
         "pass_accuracy": 92.0
-      },
-      {
-        "date": "2026-08-16",
-        "opponent": "Eyupspor",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0",
-        "xg_for": 1.29,
-        "xg_against": 0.09,
-        "possession": 66.0,
-        "shots": 19.0,
-        "shots_on_target": 5.0,
-        "passes": 521,
-        "pass_accuracy": 89.0
-      },
-      {
-        "date": "2026-08-13",
-        "opponent": "Hradec Kralove (Cze)",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0",
-        "xg_for": 2.17,
-        "xg_against": 0.74,
-        "possession": 58.0,
-        "shots": 24.0,
-        "shots_on_target": 5.0,
-        "passes": 571,
-        "pass_accuracy": 88.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/besiktas/IDmErJCR/results/",
-    "fetched_at": "2026-08-23T10:17:06Z"
+    "fetched_at": "2026-08-28T11:21:53Z"
   },
   "T1|Erzurumspor": {
     "recent_form": [
@@ -4001,10 +4617,24 @@
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/erzurumspor-fk/xQZ3CpVE/results/",
-    "fetched_at": "2026-08-23T10:17:30Z"
+    "fetched_at": "2026-08-28T11:22:17Z"
   },
   "T1|Eyüpspor": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Gaziantep",
+        "venue": "H",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 0.49,
+        "xg_against": 1.16,
+        "possession": 55.0,
+        "shots": 12.0,
+        "shots_on_target": 1.0,
+        "passes": 437,
+        "pass_accuracy": 85.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Besiktas",
@@ -4025,21 +4655,28 @@
         "venue": "H",
         "result": "W",
         "score": "2-0"
-      },
-      {
-        "date": "2026-07-20",
-        "opponent": "Mardin 1969 (Tur)",
-        "venue": "H",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/eyupspor/276zKCgt/results/",
-    "fetched_at": "2026-08-23T10:18:03Z"
+    "fetched_at": "2026-08-28T11:22:41Z"
   },
   "T1|Fenerbahçe": {
     "recent_form": [
+      {
+        "date": "2026-08-26",
+        "opponent": "Lyon (Fra)",
+        "venue": "A",
+        "result": "W",
+        "score": "2-1",
+        "xg_for": 1.58,
+        "xg_against": 1.45,
+        "possession": 41.0,
+        "shots": 16.0,
+        "shots_on_target": 7.0,
+        "passes": 314,
+        "pass_accuracy": 78.0
+      },
       {
         "date": "2026-08-22",
         "opponent": "Konyaspor",
@@ -4067,25 +4704,11 @@
         "shots_on_target": 5.0,
         "passes": 454,
         "pass_accuracy": 86.0
-      },
-      {
-        "date": "2026-08-15",
-        "opponent": "Genclerbirligi",
-        "venue": "A",
-        "result": "L",
-        "score": "1-2",
-        "xg_for": 2.9,
-        "xg_against": 1.19,
-        "possession": 71.0,
-        "shots": 27.0,
-        "shots_on_target": 11.0,
-        "passes": 678,
-        "pass_accuracy": 90.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/fenerbahce/MsbmracL/results/",
-    "fetched_at": "2026-08-23T10:18:18Z"
+    "fetched_at": "2026-08-28T11:22:57Z"
   },
   "T1|Galatasaray": {
     "recent_form": [
@@ -4134,10 +4757,24 @@
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/galatasaray/riaqqurF/results/",
-    "fetched_at": "2026-08-23T10:18:36Z"
+    "fetched_at": "2026-08-28T11:23:14Z"
   },
   "T1|Gaziantep": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Eyupspor",
+        "venue": "A",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 1.16,
+        "xg_against": 0.49,
+        "possession": 45.0,
+        "shots": 9.0,
+        "shots_on_target": 2.0,
+        "passes": 357,
+        "pass_accuracy": 82.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Alanyaspor",
@@ -4158,21 +4795,28 @@
         "venue": "A",
         "result": "W",
         "score": "3-0"
-      },
-      {
-        "date": "2026-07-28",
-        "opponent": "OFK Beograd Mozzart Bet (Srb)",
-        "venue": "A",
-        "result": "W",
-        "score": "2-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/gaziantep/ITkIKZ7q/results/",
-    "fetched_at": "2026-08-23T10:19:12Z"
+    "fetched_at": "2026-08-28T11:23:41Z"
   },
   "T1|Gençlerbirligi": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Goztepe",
+        "venue": "A",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 1.56,
+        "xg_against": 1.92,
+        "possession": 49.0,
+        "shots": 10.0,
+        "shots_on_target": 2.0,
+        "passes": 362,
+        "pass_accuracy": 74.0
+      },
       {
         "date": "2026-08-15",
         "opponent": "Fenerbahce",
@@ -4193,28 +4837,28 @@
         "venue": "A",
         "result": "L",
         "score": "0-3"
-      },
-      {
-        "date": "2026-05-17",
-        "opponent": "Trabzonspor",
-        "venue": "A",
-        "result": "W",
-        "score": "3-0",
-        "xg_for": 2.12,
-        "xg_against": 0.51,
-        "possession": 37.0,
-        "shots": 13.0,
-        "shots_on_target": 6.0,
-        "passes": 313,
-        "pass_accuracy": 81.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/genclerbirligi/GOPqBIRK/results/",
-    "fetched_at": "2026-08-23T10:19:37Z"
+    "fetched_at": "2026-08-28T11:24:05Z"
   },
   "T1|Göztepe": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Genclerbirligi",
+        "venue": "H",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 1.92,
+        "xg_against": 1.56,
+        "possession": 51.0,
+        "shots": 16.0,
+        "shots_on_target": 6.0,
+        "passes": 359,
+        "pass_accuracy": 72.0
+      },
       {
         "date": "2026-08-17",
         "opponent": "Samsunspor",
@@ -4235,21 +4879,28 @@
         "venue": "H",
         "result": "W",
         "score": "2-1"
-      },
-      {
-        "date": "2026-07-26",
-        "opponent": "Rudes (Cro)",
-        "venue": "H",
-        "result": "D",
-        "score": "1-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/goztepe/0MJlDkrA/results/",
-    "fetched_at": "2026-08-23T10:20:11Z"
+    "fetched_at": "2026-08-28T11:24:29Z"
   },
   "T1|Istanbul Basaksehir": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Trabzonspor",
+        "venue": "A",
+        "result": "L",
+        "score": "1-2",
+        "xg_for": 1.95,
+        "xg_against": 2.27,
+        "possession": 48.0,
+        "shots": 12.0,
+        "shots_on_target": 4.0,
+        "passes": 423,
+        "pass_accuracy": 85.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Kocaelispor",
@@ -4277,25 +4928,11 @@
         "shots_on_target": 1.0,
         "passes": 561,
         "pass_accuracy": 89.0
-      },
-      {
-        "date": "2026-07-22",
-        "opponent": "Inter Turku (Fin)",
-        "venue": "H",
-        "result": "D",
-        "score": "1-1",
-        "xg_for": 1.97,
-        "xg_against": 1.18,
-        "possession": 68.0,
-        "shots": 24.0,
-        "shots_on_target": 9.0,
-        "passes": 551,
-        "pass_accuracy": 91.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/basaksehir/YqP5NmC1/results/",
-    "fetched_at": "2026-08-23T10:20:28Z"
+    "fetched_at": "2026-08-28T11:24:47Z"
   },
   "T1|Kasimpasa": {
     "recent_form": [
@@ -4337,10 +4974,24 @@
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/kasimpasa/dOlaIG4l/results/",
-    "fetched_at": "2026-08-23T10:20:52Z"
+    "fetched_at": "2026-08-28T11:25:12Z"
   },
   "T1|Kocaelispor": {
     "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Amedspor",
+        "venue": "H",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 1.3,
+        "xg_against": 0.59,
+        "possession": 44.0,
+        "shots": 11.0,
+        "shots_on_target": 3.0,
+        "passes": 376,
+        "pass_accuracy": 78.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Basaksehir",
@@ -4368,25 +5019,11 @@
         "shots_on_target": 1.0,
         "passes": 419,
         "pass_accuracy": 80.0
-      },
-      {
-        "date": "2026-05-09",
-        "opponent": "Karagumruk",
-        "venue": "H",
-        "result": "L",
-        "score": "0-1",
-        "xg_for": 0.34,
-        "xg_against": 0.31,
-        "possession": 65.0,
-        "shots": 8.0,
-        "shots_on_target": 0.0,
-        "passes": 568,
-        "pass_accuracy": 88.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/kocaelispor/hfvQIzKf/results/",
-    "fetched_at": "2026-08-23T10:21:08Z"
+    "fetched_at": "2026-08-28T11:25:28Z"
   },
   "T1|Konyaspor": {
     "recent_form": [
@@ -4428,7 +5065,7 @@
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/konyaspor/YazuCbCE/results/",
-    "fetched_at": "2026-08-23T10:21:32Z"
+    "fetched_at": "2026-08-28T11:25:53Z"
   },
   "T1|Samsunspor": {
     "recent_form": [
@@ -4470,10 +5107,38 @@
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/samsunspor/pSc6z7bf/results/",
-    "fetched_at": "2026-08-23T10:21:59Z"
+    "fetched_at": "2026-08-28T11:26:18Z"
   },
   "T1|Trabzonspor": {
     "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Ferencvaros (Hun)",
+        "venue": "A",
+        "result": "L",
+        "score": "0-4",
+        "xg_for": 0.45,
+        "xg_against": 3.66,
+        "possession": 32.0,
+        "shots": 6.0,
+        "shots_on_target": 2.0,
+        "passes": 229,
+        "pass_accuracy": 77.0
+      },
+      {
+        "date": "2026-08-23",
+        "opponent": "Basaksehir",
+        "venue": "H",
+        "result": "W",
+        "score": "2-1",
+        "xg_for": 2.27,
+        "xg_against": 1.95,
+        "possession": 52.0,
+        "shots": 19.0,
+        "shots_on_target": 8.0,
+        "passes": 477,
+        "pass_accuracy": 88.0
+      },
       {
         "date": "2026-08-20",
         "opponent": "Ferencvaros (Hun)",
@@ -4487,32 +5152,11 @@
         "shots_on_target": 3.0,
         "passes": 521,
         "pass_accuracy": 90.0
-      },
-      {
-        "date": "2026-08-15",
-        "opponent": "Kasimpasa",
-        "venue": "A",
-        "result": "D",
-        "score": "1-1",
-        "xg_for": 0.86,
-        "xg_against": 1.86,
-        "possession": 60.0,
-        "shots": 13.0,
-        "shots_on_target": 5.0,
-        "passes": 490,
-        "pass_accuracy": 86.0
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Goztepe (Tur)",
-        "venue": "A",
-        "result": "L",
-        "score": "1-2"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/trabzonspor/MmsYDc03/results/",
-    "fetched_at": "2026-08-23T10:22:25Z"
+    "fetched_at": "2026-08-28T11:26:35Z"
   },
   "T1|Çaykur Rizespor": {
     "recent_form": [
@@ -4554,10 +5198,24 @@
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/rizespor/EFRnJdkr/results/",
-    "fetched_at": "2026-08-23T10:22:48Z"
+    "fetched_at": "2026-08-28T11:26:58Z"
   },
   "N1|Go Ahead Eagles": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Den Haag",
+        "venue": "H",
+        "result": "W",
+        "score": "3-1",
+        "xg_for": 0.85,
+        "xg_against": 0.84,
+        "possession": 47.0,
+        "shots": 11.0,
+        "shots_on_target": 5.0,
+        "passes": 428,
+        "pass_accuracy": 80.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Feyenoord",
@@ -4585,21 +5243,28 @@
         "shots_on_target": 10.0,
         "passes": 577,
         "pass_accuracy": 88.0
-      },
-      {
-        "date": "2026-08-02",
-        "opponent": "Luton (Eng)",
-        "venue": "A",
-        "result": "W",
-        "score": "1-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/g-a-eagles/hG8POBb8/results/",
-    "fetched_at": "2026-08-23T10:05:29Z"
+    "fetched_at": "2026-08-28T11:06:55Z"
   },
   "P1|Vitória SC": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Nacional",
+        "venue": "H",
+        "result": "W",
+        "score": "1-0",
+        "xg_for": 2.85,
+        "xg_against": 0.43,
+        "possession": 48.0,
+        "shots": 23.0,
+        "shots_on_target": 5.0,
+        "passes": 382,
+        "pass_accuracy": 81.0
+      },
       {
         "date": "2026-08-14",
         "opponent": "Sporting CP",
@@ -4627,49 +5292,70 @@
         "shots_on_target": 3.0,
         "passes": 495,
         "pass_accuracy": 87.0
-      },
-      {
-        "date": "2026-08-02",
-        "opponent": "Varzim (Por)",
-        "venue": "A",
-        "result": "D",
-        "score": "1-1"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/vitoria-guimaraes/pQYVZyD2/results/",
-    "fetched_at": "2026-08-23T10:09:25Z"
+    "fetched_at": "2026-08-28T11:13:46Z"
   },
   "SP1|Athletic Club": {
     "recent_form": [
       {
-        "date": "2026-08-14",
-        "opponent": "Atalanta (Ita)",
+        "date": "2026-08-27",
+        "opponent": "Barcelona",
         "venue": "A",
         "result": "L",
-        "score": "0-1"
+        "score": "0-2",
+        "xg_for": 0.25,
+        "xg_against": 4.23,
+        "possession": 30.0,
+        "shots": 5.0,
+        "shots_on_target": 0.0,
+        "passes": 252,
+        "pass_accuracy": 73.0
       },
       {
-        "date": "2026-08-09",
-        "opponent": "Marseille (Fra)",
+        "date": "2026-08-22",
+        "opponent": "Sevilla",
+        "venue": "H",
+        "result": "L",
+        "score": "1-3",
+        "xg_for": 1.37,
+        "xg_against": 1.26,
+        "possession": 65.0,
+        "shots": 18.0,
+        "shots_on_target": 8.0,
+        "passes": 519,
+        "pass_accuracy": 81.0
+      },
+      {
+        "date": "2026-08-21",
+        "opponent": "Zaragoza (Esp)",
         "venue": "A",
         "result": "L",
         "score": "1-3"
-      },
-      {
-        "date": "2026-08-01",
-        "opponent": "Burgos CF (Esp)",
-        "venue": "A",
-        "result": "W",
-        "score": "3-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/ath-bilbao/IP5zl0cJ/results/",
-    "fetched_at": "2026-08-21T15:53:43Z"
+    "fetched_at": "2026-08-28T11:14:11Z"
   },
   "SP1|Atlético de Madrid": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Villarreal",
+        "venue": "H",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 0.78,
+        "xg_against": 3.6,
+        "possession": 52.0,
+        "shots": 19.0,
+        "shots_on_target": 4.0,
+        "passes": 520,
+        "pass_accuracy": 88.0
+      },
       {
         "date": "2026-08-19",
         "opponent": "Malaga",
@@ -4697,28 +5383,28 @@
         "shots_on_target": 2.0,
         "passes": 359,
         "pass_accuracy": 83.0
-      },
-      {
-        "date": "2026-08-09",
-        "opponent": "Manchester City (Eng)",
-        "venue": "A",
-        "result": "L",
-        "score": "1-3",
-        "xg_for": 1.35,
-        "xg_against": 3.0,
-        "possession": 47.0,
-        "shots": 13.0,
-        "shots_on_target": 3.0,
-        "passes": 442,
-        "pass_accuracy": 87.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/atl-madrid/jaarqpLQ/results/",
-    "fetched_at": "2026-08-23T10:09:40Z"
+    "fetched_at": "2026-08-28T11:14:28Z"
   },
   "F1|Paris Saint-Germain": {
     "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Rennes",
+        "venue": "A",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 2.17,
+        "xg_against": 0.87,
+        "possession": 69.0,
+        "shots": 19.0,
+        "shots_on_target": 5.0,
+        "passes": 737,
+        "pass_accuracy": 90.0
+      },
       {
         "date": "2026-08-16",
         "opponent": "Lens",
@@ -4746,24 +5432,1102 @@
         "shots_on_target": 6.0,
         "passes": 588,
         "pass_accuracy": 89.0
-      },
-      {
-        "date": "2026-08-08",
-        "opponent": "Manchester Utd (Eng)",
-        "venue": "H",
-        "result": "D",
-        "score": "1-1",
-        "xg_for": 0.68,
-        "xg_against": 1.48,
-        "possession": 59.0,
-        "shots": 6.0,
-        "shots_on_target": 3.0,
-        "passes": 602,
-        "pass_accuracy": 91.0
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/psg/CjhkPw0k/results/",
-    "fetched_at": "2026-08-23T09:57:30Z"
+    "fetched_at": "2026-08-28T10:53:50Z"
+  },
+  "D1|FC Bayern München": {
+    "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Dortmund",
+        "venue": "A",
+        "result": "W",
+        "score": "2-1",
+        "xg_for": 2.37,
+        "xg_against": 1.65,
+        "possession": 61.0,
+        "shots": 21.0,
+        "shots_on_target": 10.0,
+        "passes": 621,
+        "pass_accuracy": 89.0
+      },
+      {
+        "date": "2026-08-18",
+        "opponent": "Heidenheim (Ger)",
+        "venue": "A",
+        "result": "W",
+        "score": "4-2",
+        "xg_for": 2.8,
+        "xg_against": 0.86,
+        "possession": 77.0,
+        "shots": 15.0,
+        "shots_on_target": 7.0,
+        "passes": 827,
+        "pass_accuracy": 92.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "RB Leipzig (Ger)",
+        "venue": "H",
+        "result": "W",
+        "score": "3-1",
+        "xg_for": 1.39,
+        "xg_against": 0.77,
+        "possession": 59.0,
+        "shots": 9.0,
+        "shots_on_target": 4.0,
+        "passes": 556,
+        "pass_accuracy": 91.0
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/bayern-munich/nVp0wiqd/results/",
+    "fetched_at": "2026-08-28T10:36:01Z"
+  },
+  "D1|VfB Stuttgart": {
+    "recent_form": [
+      {
+        "date": "2026-08-21",
+        "opponent": "Hansa Rostock",
+        "venue": "A",
+        "result": "W",
+        "score": "4-0",
+        "xg_for": 2.14,
+        "xg_against": 0.72,
+        "possession": 75.0,
+        "shots": 21.0,
+        "shots_on_target": 8.0,
+        "passes": 770,
+        "pass_accuracy": 90.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Fulham (Eng)",
+        "venue": "A",
+        "result": "L",
+        "score": "0-1"
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "Everton (Eng)",
+        "venue": "H",
+        "result": "W",
+        "score": "3-1"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/vfb-stuttgart/nJQmYp1B/results/",
+    "fetched_at": "2026-08-28T10:40:18Z"
+  },
+  "SP1|Deportivo Alavés": {
+    "recent_form": [
+      {
+        "date": "2026-08-20",
+        "opponent": "Rayo Vallecano",
+        "venue": "A",
+        "result": "D",
+        "score": "1-1",
+        "xg_for": 2.0,
+        "xg_against": 0.42,
+        "possession": 52.0,
+        "shots": 15.0,
+        "shots_on_target": 3.0,
+        "passes": 340,
+        "pass_accuracy": 80.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Getafe",
+        "venue": "H",
+        "result": "W",
+        "score": "3-0",
+        "xg_for": 1.93,
+        "xg_against": 0.24,
+        "possession": 52.0,
+        "shots": 18.0,
+        "shots_on_target": 8.0,
+        "passes": 354,
+        "pass_accuracy": 81.0
+      },
+      {
+        "date": "2026-07-31",
+        "opponent": "Castellon (Esp)",
+        "venue": "H",
+        "result": "W",
+        "score": "3-0"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/alaves/hxt57t2q/results/",
+    "fetched_at": "2026-08-28T11:15:41Z"
+  },
+  "D1|1. FC Köln": {
+    "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Wurzburger Kickers",
+        "venue": "A",
+        "result": "W",
+        "score": "2-1",
+        "xg_for": 1.86,
+        "xg_against": 0.96,
+        "possession": 65.0,
+        "shots": 14.0,
+        "shots_on_target": 6.0,
+        "passes": 571,
+        "pass_accuracy": 88.0
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "Real Sociedad (Esp)",
+        "venue": "H",
+        "result": "W",
+        "score": "2-1"
+      },
+      {
+        "date": "2026-07-31",
+        "opponent": "Hertha Berlin (Ger)",
+        "venue": "H",
+        "result": "D",
+        "score": "2-2"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/1-fc-koln/WG9pOTse/results/",
+    "fetched_at": "2026-08-28T10:32:38Z"
+  },
+  "D1|1. FC Union Berlin": {
+    "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Braunschweig",
+        "venue": "A",
+        "result": "W",
+        "score": "4-2",
+        "xg_for": 2.24,
+        "xg_against": 0.74,
+        "possession": 37.0,
+        "shots": 17.0,
+        "shots_on_target": 10.0,
+        "passes": 272,
+        "pass_accuracy": 73.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Ipswich (Eng)",
+        "venue": "H",
+        "result": "L",
+        "score": "2-4"
+      },
+      {
+        "date": "2026-08-09",
+        "opponent": "Aris (Cyp)",
+        "venue": "H",
+        "result": "W",
+        "score": "3-2"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/union-berlin/pzHW4oaE/results/",
+    "fetched_at": "2026-08-28T10:33:12Z"
+  },
+  "D1|1. FSV Mainz 05": {
+    "recent_form": [
+      {
+        "date": "2026-08-23",
+        "opponent": "Krieschow",
+        "venue": "A",
+        "result": "W",
+        "score": "9-0",
+        "xg_for": 3.8,
+        "xg_against": 0.83,
+        "possession": 71.0,
+        "shots": 30.0,
+        "shots_on_target": 12.0,
+        "passes": 614,
+        "pass_accuracy": 90.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Bournemouth (Eng)",
+        "venue": "H",
+        "result": "W",
+        "score": "2-1"
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "Paris FC (Fra)",
+        "venue": "H",
+        "result": "W",
+        "score": "4-0"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/mainz/EuakNmc1/results/",
+    "fetched_at": "2026-08-28T10:33:46Z"
+  },
+  "D1|Bayer 04 Leverkusen": {
+    "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Wehen",
+        "venue": "A",
+        "result": "W",
+        "score": "4-0",
+        "xg_for": 1.93,
+        "xg_against": 0.23,
+        "possession": 71.0,
+        "shots": 19.0,
+        "shots_on_target": 8.0,
+        "passes": 672,
+        "pass_accuracy": 89.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Newcastle (Eng)",
+        "venue": "A",
+        "result": "W",
+        "score": "2-1"
+      },
+      {
+        "date": "2026-08-12",
+        "opponent": "Nottingham (Eng)",
+        "venue": "A",
+        "result": "L",
+        "score": "1-2"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/bayer-leverkusen/4jcj2zMd/results/",
+    "fetched_at": "2026-08-28T10:34:21Z"
+  },
+  "D1|Borussia Dortmund": {
+    "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Bayern Munich",
+        "venue": "H",
+        "result": "L",
+        "score": "1-2",
+        "xg_for": 1.65,
+        "xg_against": 2.37,
+        "possession": 39.0,
+        "shots": 8.0,
+        "shots_on_target": 3.0,
+        "passes": 377,
+        "pass_accuracy": 79.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "AS Roma (Ita)",
+        "venue": "H",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 2.72,
+        "xg_against": 0.91,
+        "possession": 46.0,
+        "shots": 15.0,
+        "shots_on_target": 9.0,
+        "passes": 418,
+        "pass_accuracy": 87.0
+      },
+      {
+        "date": "2026-08-09",
+        "opponent": "Arsenal",
+        "venue": "A",
+        "result": "W",
+        "score": "3-2",
+        "xg_for": 1.37,
+        "xg_against": 2.07,
+        "possession": 44.0,
+        "shots": 8.0,
+        "shots_on_target": 4.0,
+        "passes": 380,
+        "pass_accuracy": 85.0
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/dortmund/nP1i5US1/results/",
+    "fetched_at": "2026-08-28T10:34:37Z"
+  },
+  "D1|Eintracht Frankfurt": {
+    "recent_form": [
+      {
+        "date": "2026-08-21",
+        "opponent": "SC St.Tonis",
+        "venue": "A",
+        "result": "W",
+        "score": "11-0",
+        "xg_for": 5.59,
+        "xg_against": 0.25,
+        "possession": 75.0,
+        "shots": 29.0,
+        "shots_on_target": 19.0,
+        "passes": 679,
+        "pass_accuracy": 87.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Brentford (Eng)",
+        "venue": "A",
+        "result": "L",
+        "score": "0-7",
+        "xg_for": 0.46,
+        "xg_against": 3.66,
+        "possession": 48.0,
+        "shots": 13.0,
+        "shots_on_target": 5.0,
+        "passes": 353,
+        "pass_accuracy": 82.0
+      },
+      {
+        "date": "2026-08-12",
+        "opponent": "FSV Frankfurt (Ger)",
+        "venue": "A",
+        "result": "W",
+        "score": "5-1"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/eintracht-frankfurt/8vndvXTk/results/",
+    "fetched_at": "2026-08-28T10:35:06Z"
+  },
+  "D1|FC Augsburg": {
+    "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Cottbus",
+        "venue": "A",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 1.65,
+        "xg_against": 1.04,
+        "possession": 40.0,
+        "shots": 20.0,
+        "shots_on_target": 7.0,
+        "passes": 269,
+        "pass_accuracy": 71.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Leeds (Eng)",
+        "venue": "A",
+        "result": "L",
+        "score": "0-4"
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "Sassuolo (Ita)",
+        "venue": "H",
+        "result": "W",
+        "score": "3-2"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/augsburg/fTVNku3I/results/",
+    "fetched_at": "2026-08-28T10:35:44Z"
+  },
+  "D1|FC Schalke 04": {
+    "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Hallescher",
+        "venue": "A",
+        "result": "W",
+        "score": "5-2",
+        "xg_for": 4.19,
+        "xg_against": 0.69,
+        "possession": 74.0,
+        "shots": 26.0,
+        "shots_on_target": 12.0,
+        "passes": 817,
+        "pass_accuracy": 85.0
+      },
+      {
+        "date": "2026-08-16",
+        "opponent": "Real Madrid (Esp)",
+        "venue": "H",
+        "result": "L",
+        "score": "0-3",
+        "xg_for": 1.02,
+        "xg_against": 2.08,
+        "possession": 44.0,
+        "shots": 15.0,
+        "shots_on_target": 4.0,
+        "passes": 462,
+        "pass_accuracy": 81.0
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "Atalanta (Ita)",
+        "venue": "H",
+        "result": "L",
+        "score": "0-3"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/schalke/0Ija0Ej9/results/",
+    "fetched_at": "2026-08-28T10:36:25Z"
+  },
+  "D1|Hamburger SV": {
+    "recent_form": [
+      {
+        "date": "2026-08-24",
+        "opponent": "Verl",
+        "venue": "A",
+        "result": "W",
+        "score": "3-0",
+        "xg_for": 0.98,
+        "xg_against": 0.61,
+        "possession": 43.0,
+        "shots": 10.0,
+        "shots_on_target": 6.0,
+        "passes": 434,
+        "pass_accuracy": 82.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Toulouse (Fra)",
+        "venue": "A",
+        "result": "W",
+        "score": "2-1"
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "Lille (Fra)",
+        "venue": "H",
+        "result": "D",
+        "score": "2-2"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/hamburger/v9k3aY5F/results/",
+    "fetched_at": "2026-08-28T10:37:00Z"
+  },
+  "D1|RB Leipzig": {
+    "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Eintracht Trier",
+        "venue": "A",
+        "result": "W",
+        "score": "6-0",
+        "xg_for": 4.51,
+        "xg_against": 0.62,
+        "possession": 72.0,
+        "shots": 28.0,
+        "shots_on_target": 11.0,
+        "passes": 626,
+        "pass_accuracy": 89.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Bayern Munich (Ger)",
+        "venue": "A",
+        "result": "L",
+        "score": "1-3",
+        "xg_for": 0.77,
+        "xg_against": 1.39,
+        "possession": 41.0,
+        "shots": 10.0,
+        "shots_on_target": 5.0,
+        "passes": 381,
+        "pass_accuracy": 86.0
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "Leeds (Eng)",
+        "venue": "A",
+        "result": "L",
+        "score": "0-2"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/rb-leipzig/KbS1suSm/results/",
+    "fetched_at": "2026-08-28T10:37:23Z"
+  },
+  "D1|SV Elversberg": {
+    "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Duisburg",
+        "venue": "A",
+        "result": "W",
+        "score": "3-1",
+        "xg_for": 1.56,
+        "xg_against": 1.22,
+        "possession": 61.0,
+        "shots": 14.0,
+        "shots_on_target": 6.0,
+        "passes": 531,
+        "pass_accuracy": 83.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Lorient (Fra)",
+        "venue": "H",
+        "result": "W",
+        "score": "4-1"
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "Mallorca (Esp)",
+        "venue": "A",
+        "result": "D",
+        "score": "1-1"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/elversberg/6in2Eknb/results/",
+    "fetched_at": "2026-08-28T10:38:35Z"
+  },
+  "D1|SV Werder Bremen": {
+    "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Luneburger Hansa",
+        "venue": "A",
+        "result": "W",
+        "score": "3-0",
+        "xg_for": 2.76,
+        "xg_against": 0.05,
+        "possession": 72.0,
+        "shots": 24.0,
+        "shots_on_target": 8.0,
+        "passes": 713,
+        "pass_accuracy": 91.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Auxerre (Fra)",
+        "venue": "H",
+        "result": "L",
+        "score": "0-1"
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "Paderborn (Ger)",
+        "venue": "H",
+        "result": "D",
+        "score": "2-2"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/werder-bremen/Ig1f1fy3/results/",
+    "fetched_at": "2026-08-28T10:39:13Z"
+  },
+  "D1|Sport-Club Freiburg": {
+    "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Motherwell (Sco)",
+        "venue": "H",
+        "result": "W",
+        "score": "4-1",
+        "xg_for": 4.07,
+        "xg_against": 0.16,
+        "possession": 70.0,
+        "shots": 29.0,
+        "shots_on_target": 11.0,
+        "passes": 664,
+        "pass_accuracy": 92.0
+      },
+      {
+        "date": "2026-08-23",
+        "opponent": "Dusseldorf",
+        "venue": "A",
+        "result": "W",
+        "score": "5-1",
+        "xg_for": 2.97,
+        "xg_against": 0.85,
+        "possession": 55.0,
+        "shots": 17.0,
+        "shots_on_target": 10.0,
+        "passes": 507,
+        "pass_accuracy": 82.0
+      },
+      {
+        "date": "2026-08-20",
+        "opponent": "Motherwell (Sco)",
+        "venue": "A",
+        "result": "W",
+        "score": "3-1",
+        "xg_for": 2.3,
+        "xg_against": 0.23,
+        "possession": 60.0,
+        "shots": 25.0,
+        "shots_on_target": 10.0,
+        "passes": 568,
+        "pass_accuracy": 89.0
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/freiburg/fiEQZ7C7/results/",
+    "fetched_at": "2026-08-28T10:39:28Z"
+  },
+  "D1|TSG Hoffenheim": {
+    "recent_form": [
+      {
+        "date": "2026-08-22",
+        "opponent": "Aue",
+        "venue": "A",
+        "result": "W",
+        "score": "4-0",
+        "xg_for": 3.36,
+        "xg_against": 0.4,
+        "possession": 65.0,
+        "shots": 28.0,
+        "shots_on_target": 12.0,
+        "passes": 631,
+        "pass_accuracy": 87.0
+      },
+      {
+        "date": "2026-08-16",
+        "opponent": "Tottenham (Eng)",
+        "venue": "A",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 1.37,
+        "xg_against": 0.85,
+        "possession": 39.0,
+        "shots": 11.0,
+        "shots_on_target": 6.0,
+        "passes": 391,
+        "pass_accuracy": 84.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Tottenham (Eng)",
+        "venue": "A",
+        "result": "L",
+        "score": "0-3",
+        "xg_for": 0.53,
+        "xg_against": 1.02,
+        "possession": 47.0,
+        "shots": 10.0,
+        "shots_on_target": 3.0,
+        "passes": 460,
+        "pass_accuracy": 87.0
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/hoffenheim/hQAtP9Sl/results/",
+    "fetched_at": "2026-08-28T10:39:44Z"
+  },
+  "N1|Ajax": {
+    "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Sion (Sui)",
+        "venue": "H",
+        "result": "W",
+        "score": "5-3",
+        "xg_for": 4.63,
+        "xg_against": 0.86,
+        "possession": 55.0,
+        "shots": 26.0,
+        "shots_on_target": 15.0,
+        "passes": 543,
+        "pass_accuracy": 92.0
+      },
+      {
+        "date": "2026-08-20",
+        "opponent": "Sion (Sui)",
+        "venue": "A",
+        "result": "W",
+        "score": "4-2",
+        "xg_for": 3.53,
+        "xg_against": 1.74,
+        "possession": 62.0,
+        "shots": 23.0,
+        "shots_on_target": 8.0,
+        "passes": 634,
+        "pass_accuracy": 90.0
+      },
+      {
+        "date": "2026-08-16",
+        "opponent": "Heerenveen",
+        "venue": "H",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 2.53,
+        "xg_against": 1.53,
+        "possession": 54.0,
+        "shots": 23.0,
+        "shots_on_target": 4.0,
+        "passes": 518,
+        "pass_accuracy": 90.0
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/ajax/8UOvIwnb/results/",
+    "fetched_at": "2026-08-28T11:05:03Z"
+  },
+  "N1|FC Twente": {
+    "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Qarabag (Aze)",
+        "venue": "A",
+        "result": "W",
+        "score": "4-1",
+        "xg_for": 2.65,
+        "xg_against": 0.76,
+        "possession": 61.0,
+        "shots": 29.0,
+        "shots_on_target": 10.0,
+        "passes": 651,
+        "pass_accuracy": 85.0
+      },
+      {
+        "date": "2026-08-20",
+        "opponent": "Qarabag (Aze)",
+        "venue": "H",
+        "result": "L",
+        "score": "0-1",
+        "xg_for": 1.07,
+        "xg_against": 0.51,
+        "possession": 61.0,
+        "shots": 21.0,
+        "shots_on_target": 5.0,
+        "passes": 523,
+        "pass_accuracy": 84.0
+      },
+      {
+        "date": "2026-08-16",
+        "opponent": "Zwolle",
+        "venue": "H",
+        "result": "W",
+        "score": "3-1",
+        "xg_for": 2.61,
+        "xg_against": 0.8,
+        "possession": 68.0,
+        "shots": 27.0,
+        "shots_on_target": 10.0,
+        "passes": 614,
+        "pass_accuracy": 88.0
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/twente/dhOKTHGA/results/",
+    "fetched_at": "2026-08-28T11:05:57Z"
+  },
+  "N1|Telstar": {
+    "recent_form": [
+      {
+        "date": "2026-08-14",
+        "opponent": "Sparta Rotterdam",
+        "venue": "H",
+        "result": "L",
+        "score": "1-3",
+        "xg_for": 1.42,
+        "xg_against": 3.08,
+        "possession": 61.0,
+        "shots": 7.0,
+        "shots_on_target": 1.0,
+        "passes": 509,
+        "pass_accuracy": 83.0
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "Nijmegen",
+        "venue": "A",
+        "result": "W",
+        "score": "2-1",
+        "xg_for": 1.66,
+        "xg_against": 2.15,
+        "possession": 29.0,
+        "shots": 8.0,
+        "shots_on_target": 3.0,
+        "passes": 227,
+        "pass_accuracy": 70.0
+      },
+      {
+        "date": "2026-07-31",
+        "opponent": "Wolfsburg (Ger)",
+        "venue": "A",
+        "result": "L",
+        "score": "1-3"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/telstar/Aw0qTPat/results/",
+    "fetched_at": "2026-08-28T11:08:31Z"
+  },
+  "N1|Willem II": {
+    "recent_form": [
+      {
+        "date": "2026-08-15",
+        "opponent": "Nijmegen",
+        "venue": "H",
+        "result": "L",
+        "score": "1-4",
+        "xg_for": 1.49,
+        "xg_against": 3.54,
+        "possession": 32.0,
+        "shots": 9.0,
+        "shots_on_target": 2.0,
+        "passes": 281,
+        "pass_accuracy": 61.0
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "G.A. Eagles",
+        "venue": "A",
+        "result": "L",
+        "score": "1-4",
+        "xg_for": 1.51,
+        "xg_against": 2.43,
+        "possession": 31.0,
+        "shots": 13.0,
+        "shots_on_target": 1.0,
+        "passes": 258,
+        "pass_accuracy": 76.0
+      },
+      {
+        "date": "2026-08-01",
+        "opponent": "OFI Crete (Gre)",
+        "venue": "H",
+        "result": "W",
+        "score": "2-1"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/willem-ii/6u3qag0G/results/",
+    "fetched_at": "2026-08-28T11:08:55Z"
+  },
+  "P1|Estrela Amadora": {
+    "recent_form": [
+      {
+        "date": "2026-08-15",
+        "opponent": "Alverca",
+        "venue": "A",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 1.36,
+        "xg_against": 1.94,
+        "possession": 54.0,
+        "shots": 10.0,
+        "shots_on_target": 7.0,
+        "passes": 397,
+        "pass_accuracy": 84.0
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "Sporting CP",
+        "venue": "H",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 1.1,
+        "xg_against": 2.63,
+        "possession": 44.0,
+        "shots": 8.0,
+        "shots_on_target": 3.0,
+        "passes": 349,
+        "pass_accuracy": 80.0
+      },
+      {
+        "date": "2026-08-01",
+        "opponent": "Al Nassr (Sau)",
+        "venue": "H",
+        "result": "W",
+        "score": "4-2",
+        "xg_for": 2.53,
+        "xg_against": 0.3,
+        "possession": 47.0,
+        "shots": 22.0,
+        "shots_on_target": 9.0,
+        "passes": 399,
+        "pass_accuracy": 87.0
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/estrela-da-amadora/hrYABE5k/results/",
+    "fetched_at": "2026-08-28T11:10:24Z"
+  },
+  "P1|Moreirense FC": {
+    "recent_form": [
+      {
+        "date": "2026-08-16",
+        "opponent": "Arouca",
+        "venue": "A",
+        "result": "L",
+        "score": "0-4",
+        "xg_for": 0.49,
+        "xg_against": 2.14,
+        "possession": 49.0,
+        "shots": 5.0,
+        "shots_on_target": 1.0,
+        "passes": 483,
+        "pass_accuracy": 84.0
+      },
+      {
+        "date": "2026-08-09",
+        "opponent": "Braga",
+        "venue": "H",
+        "result": "D",
+        "score": "2-2",
+        "xg_for": 0.23,
+        "xg_against": 1.32,
+        "possession": 36.0,
+        "shots": 7.0,
+        "shots_on_target": 3.0,
+        "passes": 340,
+        "pass_accuracy": 75.0
+      },
+      {
+        "date": "2026-08-01",
+        "opponent": "Amarante (Por)",
+        "venue": "H",
+        "result": "W",
+        "score": "2-0"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/moreirense/8d9NGt9H/results/",
+    "fetched_at": "2026-08-28T11:12:24Z"
+  },
+  "P1|SC Braga": {
+    "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Austria Vienna (Aut)",
+        "venue": "A",
+        "result": "D",
+        "score": "0-0",
+        "xg_for": 0.41,
+        "xg_against": 0.45,
+        "possession": 49.0,
+        "shots": 9.0,
+        "shots_on_target": 4.0,
+        "passes": 474,
+        "pass_accuracy": 84.0
+      },
+      {
+        "date": "2026-08-20",
+        "opponent": "Austria Vienna (Aut)",
+        "venue": "H",
+        "result": "W",
+        "score": "2-0",
+        "xg_for": 3.13,
+        "xg_against": 0.38,
+        "possession": 58.0,
+        "shots": 14.0,
+        "shots_on_target": 5.0,
+        "passes": 596,
+        "pass_accuracy": 86.0
+      },
+      {
+        "date": "2026-08-13",
+        "opponent": "Din. Minsk (Blr)",
+        "venue": "A",
+        "result": "D",
+        "score": "0-0",
+        "xg_for": null,
+        "xg_against": null,
+        "possession": 62.0,
+        "shots": 13.0,
+        "shots_on_target": 5.0,
+        "passes": null,
+        "pass_accuracy": null
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/braga/dpUer7ht/results/",
+    "fetched_at": "2026-08-28T11:12:52Z"
+  },
+  "P1|SL Benfica": {
+    "recent_form": [
+      {
+        "date": "2026-08-27",
+        "opponent": "Aarhus (Den)",
+        "venue": "A",
+        "result": "W",
+        "score": "3-1",
+        "xg_for": 1.75,
+        "xg_against": 0.28,
+        "possession": 58.0,
+        "shots": 15.0,
+        "shots_on_target": 8.0,
+        "passes": 604,
+        "pass_accuracy": 88.0
+      },
+      {
+        "date": "2026-08-20",
+        "opponent": "Aarhus (Den)",
+        "venue": "H",
+        "result": "W",
+        "score": "3-1",
+        "xg_for": 4.64,
+        "xg_against": 0.49,
+        "possession": 71.0,
+        "shots": 32.0,
+        "shots_on_target": 13.0,
+        "passes": 669,
+        "pass_accuracy": 91.0
+      },
+      {
+        "date": "2026-08-17",
+        "opponent": "Casa Pia",
+        "venue": "A",
+        "result": "W",
+        "score": "7-0",
+        "xg_for": 2.83,
+        "xg_against": 0.17,
+        "possession": 64.0,
+        "shots": 20.0,
+        "shots_on_target": 8.0,
+        "passes": 620,
+        "pass_accuracy": 90.0
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/benfica/zBkyuyRI/results/",
+    "fetched_at": "2026-08-28T11:13:06Z"
+  },
+  "SP1|Rayo Vallecano": {
+    "recent_form": [
+      {
+        "date": "2026-08-20",
+        "opponent": "Alaves",
+        "venue": "H",
+        "result": "D",
+        "score": "1-1",
+        "xg_for": 0.42,
+        "xg_against": 2.0,
+        "possession": 48.0,
+        "shots": 8.0,
+        "shots_on_target": 3.0,
+        "passes": 323,
+        "pass_accuracy": 79.0
+      },
+      {
+        "date": "2026-08-15",
+        "opponent": "Sevilla",
+        "venue": "A",
+        "result": "L",
+        "score": "1-2",
+        "xg_for": 1.89,
+        "xg_against": 2.19,
+        "possession": 51.0,
+        "shots": 6.0,
+        "shots_on_target": 3.0,
+        "passes": 335,
+        "pass_accuracy": 73.0
+      },
+      {
+        "date": "2026-08-08",
+        "opponent": "Ipswich (Eng)",
+        "venue": "A",
+        "result": "L",
+        "score": "0-3"
+      }
+    ],
+    "form_source": "Flashscore (automated)",
+    "form_source_url": "https://www.flashscore.com/team/rayo-vallecano/8bcjFy6O/results/",
+    "fetched_at": "2026-08-28T11:18:54Z"
   }
 }

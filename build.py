@@ -57,13 +57,17 @@ def build_fixtures_json():
 def build_trimmed_matches_json():
     """Regenerates data/trimmed_matches.json from data/master.csv, then returns it.
     Only the columns engine.js actually needs — keep in sync with Engine's
-    constructor if you add stats to the model.
+    constructor in engine.js if you add stats to the model: same fields,
+    same order, append-only (new stats always added at the end, never
+    interleaved). Engine's constructor asserts row length against
+    EXPECTED_ROW_LEN and throws a clear error if these two drift apart.
 
     HXG/AXG (expected goals) are included but empty for every row today —
-    master.csv has no xG source wired in yet (see DATA_README.md's "no xG
-    anywhere" gap). Engine.weightedSplits() falls back to actual goals
-    (FTHG/FTAG) per-row whenever xG is null, so this is a no-op until xG
-    data actually gets populated for some rows."""
+    master.csv has no real xG source wired in yet (see DATA_README.md's
+    "no xG anywhere" gap). Engine.weightedSplits() blends in a shots-on-
+    target-based pseudo-xG proxy instead when real xG is null but HST/AST
+    is populated (see engine.js's goalOrXg/QUALITY_BLEND_WEIGHT), and
+    falls back to actual goals (FTHG/FTAG) when neither is available."""
     rows = []
     with open(os.path.join(BASE, 'data', 'master.csv'), encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -79,6 +83,8 @@ def build_trimmed_matches_json():
                 row['Season'], row['Div'], row['HomeTeam'], row['AwayTeam'],
                 fv('FTHG'), fv('FTAG'), fv('HC'), fv('AC'), fv('HY'), fv('AY'),
                 fv('HXG'), fv('AXG'),
+                fv('HS'), fv('AS'), fv('HST'), fv('AST'), fv('HF'), fv('AF'),
+                fv('HPos'), fv('APos'),
             ])
     j = json.dumps(rows, separators=(',', ':'))
     with open(os.path.join(BASE, 'data', 'trimmed_matches.json'), 'w', encoding='utf-8') as f:

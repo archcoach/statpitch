@@ -34,6 +34,7 @@ index_template.html      — UI template, filled in by build.py
 build.py                 — regenerates statpitch.html from the pieces above
 fetch_team_stats.py      — scheduled scraper: pulls recent match stats from Flashscore (see CLAUDE.md)
 fetch_odds.py            — scheduled scraper: pulls best-of-N-bookmakers 1X2/O-U/BTTS odds from Flashscore (see CLAUDE.md)
+fetch_results.py         — scheduled scraper: backfills finished-match results into master.csv (see CLAUDE.md)
 data/
   master.csv              — full historical dataset, 2020/21–2026/27
   fixtures.csv            — 2026/27 fixture list, 8 leagues

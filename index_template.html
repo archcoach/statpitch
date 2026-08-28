@@ -122,6 +122,8 @@
   .tc-chip.D{background:rgba(82,92,102,.25);color:var(--text-dim);}
   .tc-chip.L{background:rgba(255,107,107,.18);color:var(--bad);}
   .tc-xg{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-bottom:7px;}
+  .tc-track{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-dim);margin-bottom:7px;}
+  .tc-empty-inline{color:var(--text-faint);}
   .tc-absences{list-style:none;margin:0 0 7px;padding:0;font-size:11.5px;}
   .tc-absences li{padding:4px 0;border-top:1px solid var(--border);color:var(--text-dim);}
   .tc-absences li:first-child{border-top:none;}
@@ -150,6 +152,8 @@
   .table-caption{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-bottom:6px;}
   .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
   table.markets{width:100%;min-width:460px;border-collapse:collapse;}
+  table.markets.standings-table{min-width:520px;margin-bottom:16px;}
+  table.markets.standings-table td.pos{font-family:'IBM Plex Mono',monospace;color:var(--text-faint);text-align:center;width:24px;}
   table.markets th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;
     letter-spacing:0.05em;color:var(--text-faint);padding:6px 8px;border-bottom:1px solid var(--border);white-space:nowrap;}
   table.markets td{padding:9px 10px;border-bottom:1px solid var(--border);font-size:12.5px;white-space:nowrap;}
@@ -453,6 +457,88 @@ function renderList(){
   }
 }
 
+// Season standings, computed client-side from FIXTURES + RESULTS — never
+// estimated: a match with no results.json entry is simply excluded, so a
+// team's "P" count is exactly how many of its matches have been graded so
+// far, not how many were scheduled.
+function computeStandings(div){
+  const today = todayISO();
+  const table = {};
+  const ensure = (name) => (table[name] ||= {p:0,w:0,d:0,l:0,gf:0,ga:0});
+  for(const f of FIXTURES){
+    if(f[0] !== div || f[1] >= today) continue;
+    const r = RESULTS[matchKey(f)];
+    if(!r || r.fthg == null || r.ftag == null) continue;
+    const home = ensure(f[4]), away = ensure(f[5]);
+    home.p++; away.p++;
+    home.gf += r.fthg; home.ga += r.ftag;
+    away.gf += r.ftag; away.ga += r.fthg;
+    if(r.fthg > r.ftag){ home.w++; away.l++; }
+    else if(r.fthg < r.ftag){ away.w++; home.l++; }
+    else { home.d++; away.d++; }
+  }
+  return Object.entries(table)
+    .map(([name, s]) => ({ name, ...s, gd: s.gf - s.ga, pts: s.w*3 + s.d }))
+    .sort((a,b) => b.pts - a.pts || b.gd - a.gd || b.gf - a.gf || a.name.localeCompare(b.name));
+}
+
+// A team's own weighted-average ball possession this season — computed the
+// same way computeStandings is, straight from FIXTURES + RESULTS (fixture-
+// list names, no team_map translation needed), never through the model.
+// Possession has no historical baseline anywhere in this dataset (never
+// published by the original source) and isn't used as a model input (see
+// CLAUDE.md) — this is display-only, current-season-only, and stays a
+// thin, Low-confidence sample for most teams for a while. That's honest,
+// not a bug.
+function teamPossession(div, teamName){
+  const today = todayISO();
+  const vals = [];
+  for(const f of FIXTURES){
+    if(f[0] !== div || f[1] >= today) continue;
+    if(f[4] !== teamName && f[5] !== teamName) continue;
+    const r = RESULTS[matchKey(f)];
+    if(!r) continue;
+    const v = f[4] === teamName ? r.hpos : r.apos;
+    if(v != null) vals.push(v);
+  }
+  if(!vals.length) return null;
+  return { avg: vals.reduce((s,v)=>s+v,0) / vals.length, n: vals.length };
+}
+
+function confidenceLabel(n){
+  return n < 20 ? 'Low' : (n < 60 ? 'Medium' : 'High');
+}
+
+function standingsTableHtml(div){
+  const rows = computeStandings(div);
+  if(!rows.length){
+    return `<div class="table-caption">No graded results yet for ${LEAGUES[div].name} this season.</div>`;
+  }
+  const body = rows.map((r,i) => `
+    <tr>
+      <td class="pos mono">${i+1}</td>
+      <td class="sel">${r.name}</td>
+      <td class="prob mono">${r.p}</td><td class="prob mono">${r.w}</td>
+      <td class="prob mono">${r.d}</td><td class="prob mono">${r.l}</td>
+      <td class="prob mono">${r.gf}</td><td class="prob mono">${r.ga}</td>
+      <td class="prob mono ${r.gd>0?'edge pos':(r.gd<0?'edge neg':'')}">${r.gd>0?'+':''}${r.gd}</td>
+      <td class="prob mono" style="font-weight:700;">${r.pts}</td>
+    </tr>`).join('');
+  return `
+    <div class="table-caption">Season standings — graded matches only.</div>
+    <div class="table-scroll">
+      <table class="markets standings-table">
+        <thead><tr>
+          <th>#</th><th>Team</th><th style="text-align:right">P</th><th style="text-align:right">W</th>
+          <th style="text-align:right">D</th><th style="text-align:right">L</th>
+          <th style="text-align:right">GF</th><th style="text-align:right">GA</th>
+          <th style="text-align:right">GD</th><th style="text-align:right">Pts</th>
+        </tr></thead>
+        <tbody>${body}</tbody>
+      </table>
+    </div>`;
+}
+
 // "Team Form" browser — every team in the fixture list, one by one, same
 // teamCardHtml() rendering the match panel's Team Context block already
 // uses (reused as-is, not reimplemented). This is a browsing view only:
@@ -488,6 +574,7 @@ function renderTeamFormGrid(list, statsLine){
     const groupEl = document.createElement('div');
     groupEl.className = 'day-group';
     groupEl.innerHTML = `<div class="day-label">${LEAGUES[div].name}</div>`;
+    groupEl.insertAdjacentHTML('beforeend', standingsTableHtml(div));
     const grid = document.createElement('div');
     grid.className = 'team-form-grid';
     for(const name of names) grid.insertAdjacentHTML('beforeend', teamCardHtml(div, name));
@@ -589,10 +676,50 @@ function formChip(r){
   return `<span class="tc-chip ${r.result}" title="${title}">${r.result}</span>`;
 }
 
+// Per-team scoped version of renderTrackRecord()'s aggregation — same
+// gradeSnapshot() call, same PREDICTIONS_LOG/RESULTS iteration, filtered to
+// matches where this team is home or away. This is a backward-looking hit
+// rate for THIS MODEL's past picks involving the team — never the team's
+// own results (see formHtml above for that) and never a forward-looking
+// probability or recommendation. Keep the "Model picks... correct" phrasing
+// literal if this is ever touched; see CLAUDE.md.
+function teamTrackRecord(div, teamName){
+  let hits = 0, misses = 0;
+  for(const key in PREDICTIONS_LOG){
+    const [kdiv, , khome, kaway] = key.split('|');
+    if(kdiv !== div || (khome !== teamName && kaway !== teamName)) continue;
+    const result = RESULTS[key];
+    if(!result) continue;
+    const graded = gradeSnapshot(PREDICTIONS_LOG[key].markets, result);
+    for(const m of graded){
+      if(m.grade === true) hits++;
+      else if(m.grade === false) misses++;
+    }
+  }
+  return { hits, misses, total: hits + misses };
+}
+
+function trackRecordHtml(div, teamName){
+  const track = teamTrackRecord(div, teamName);
+  return track.total > 0
+    ? `<div class="tc-track">Model picks for ${teamName} this season: ${track.hits}/${track.total} correct (${(track.hits/track.total*100).toFixed(0)}%)</div>`
+    : `<div class="tc-track tc-empty-inline">no graded model picks for ${teamName} yet</div>`;
+}
+
+// Season possession is a different, newer stat than the "last N" recent-
+// form possession line below (which comes from TEAM_NEWS's last-3-games
+// scrape) — labeled distinctly so the two aren't read as the same number.
+function possessionHtml(div, teamName){
+  const poss = teamPossession(div, teamName);
+  return poss
+    ? `<div class="tc-track">Possession (season): ${poss.avg.toFixed(1)}% (n=${poss.n}, ${confidenceLabel(poss.n)})</div>`
+    : `<div class="tc-track tc-empty-inline">no season possession data for ${teamName} yet</div>`;
+}
+
 function teamCardHtml(div, teamName){
   const entry = TEAM_NEWS[div+'|'+teamName];
   if(!entry){
-    return `<div class="team-card"><div class="tc-name">${teamName}</div><div class="tc-empty">no fresh team news fetched for ${teamName} yet</div></div>`;
+    return `<div class="team-card"><div class="tc-name">${teamName}</div>${trackRecordHtml(div, teamName)}${possessionHtml(div, teamName)}<div class="tc-empty">no fresh team news fetched for ${teamName} yet</div></div>`;
   }
   const form = entry.recent_form || [];
   const formPoints = form.reduce((s,r) => s + (r.result==='W'?3:(r.result==='D'?1:0)), 0);
@@ -625,6 +752,8 @@ function teamCardHtml(div, teamName){
     <div class="team-card">
       <div class="tc-name">${teamName}</div>
       ${formHtml}
+      ${trackRecordHtml(div, teamName)}
+      ${possessionHtml(div, teamName)}
       ${xgHtml}
       ${statLineHtml}
       ${absencesHtml}
@@ -690,13 +819,15 @@ function rawOddsHtml(live){
   `;
 }
 
-const MARKET_GROUP_ORDER = ['1X2 & Double Chance', 'Goals', 'BTTS', 'Corners', 'Cards', 'Other'];
+const MARKET_GROUP_ORDER = ['1X2 & Double Chance', 'Goals', 'BTTS', 'Corners', 'Cards', 'Shots', 'Fouls', 'Other'];
 function marketGroup(market){
   if(market==='Home Win (1X2)' || market==='Draw (1X2)' || market==='Away Win (1X2)' || market==='Double Chance') return '1X2 & Double Chance';
   if(market.startsWith('Total Goals')) return 'Goals';
   if(market==='Both Teams to Score') return 'BTTS';
   if(market.startsWith('Corners')) return 'Corners';
   if(market.startsWith('Cards')) return 'Cards';
+  if(market.startsWith('Shots')) return 'Shots'; // catches both "Shots O/U" and "Shots on Target O/U"
+  if(market.startsWith('Fouls')) return 'Fouls';
   return 'Other';
 }
 
@@ -862,7 +993,7 @@ function renderPanel(f, holder){
         ${hasOdds ? 'Ranked by edge — model probability minus the live market-implied probability — highest first, not by raw historical probability.' : 'Ranked by model-derived historical probability, not market value.'}
         ${hasOdds ? "Market Prob. is the live price with the overround removed via Shin's method (corrects for the favourite-longshot bias documented in the project instructions, rather than just flagging it); Edge is model minus market, in percentage points — not a recommendation. ¼-Kelly is a raw output of the Kelly criterion formula (quarter-strength) using the model's probability and the live odds — a bankroll-math calculation, not a stake suggestion or betting advice. It inherits every uncertainty already listed here (fixed rho, variance approximations, sample size), and Kelly itself is known to be highly sensitive to probability-estimation error, so a nonzero number here is not an endorsement to wager anything." : ''}
         ${graded ? 'Result column grades the prediction as it stood before the match — frozen at the time it was logged, not recomputed afterward. "—" means this market couldn\'t be graded from the recorded result (e.g. no corner/card count available).' : ''}
-        ${data.dc_rho_note} ${data.form_blend_note || ''} Never treat these as guarantees; sample sizes and variance still apply.
+        ${data.dc_rho_note} ${data.form_blend_note || ''} ${data.quality_correction_note || ''} Never treat these as guarantees; sample sizes and variance still apply.
       </div>
     </div>
   `;

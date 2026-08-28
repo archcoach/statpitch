@@ -5232,5 +5232,4163 @@
     "n_used": 54,
     "source": "Superbet",
     "source_url": "https://superbet.pl/kursy/pilka-nozna/samsunspor-vs-goztepe-13985473"
+  },
+  "P1|2026-08-14|Sporting CP|Vitória SC": {
+    "home_hist_name": "Sp Lisbon",
+    "away_hist_name": "Guimaraes",
+    "lambda_home": 3.11,
+    "lambda_away": 0.46,
+    "n_home_matches": 102,
+    "n_away_matches": 102,
+    "n_used": 102,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Sporting CP (2.0-game weight from last 3) and Vitória SC (2.0-game weight from last 3) against n=102 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9739663396550999,
+        "n": 102
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.880387258819063,
+        "n": 102
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8747737724624437,
+        "n": 102
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8408399147299586,
+        "n": 102
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.8117319841940587,
+        "n": 102
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.7229963417549942,
+        "n": 102
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6929074299614797,
+        "n": 102
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6904776277440807,
+        "n": 102
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.6447149616490482,
+        "n": 102
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.6219575365796757,
+        "n": 102
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/sporting-cp-tljXuHBC/vitoria-guimaraes-pQYVZyD2/?mid=hpkd2WE4",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "F1|2026-08-21|Olympique de Marseille|RC Strasbourg Alsace": {
+    "home_hist_name": "Marseille",
+    "away_hist_name": "Strasbourg",
+    "lambda_home": 2.51,
+    "lambda_away": 1.03,
+    "n_home_matches": 108,
+    "n_away_matches": 108,
+    "n_used": 108,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Olympique de Marseille (2.0-game weight from last 3) and RC Strasbourg Alsace (2.0-game weight from last 3) against n=108 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8753374233803602,
+        "n": 108
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8724486638888131,
+        "n": 108
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7628206012614838,
+        "n": 108
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6884888046602177,
+        "n": 108
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6855955577029392,
+        "n": 108
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6665166667860036,
+        "n": 108
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.5971463704967979,
+        "n": 108
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.5687160672982909,
+        "n": 108
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.5535408863705529,
+        "n": 108
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.5292648326378417,
+        "n": 108
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/marseille-SblU3Hee/strasbourg-nP6UzIU1/?mid=6i9H6E5l",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "SP1|2026-08-21|Real Betis|Real Sociedad": {
+    "home_hist_name": "Betis",
+    "away_hist_name": "Sociedad",
+    "lambda_home": 1.84,
+    "lambda_away": 0.81,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Real Betis (2.0-game weight from last 3) and Real Sociedad (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8500823084664145,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7881684943020548,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7519432027588873,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7259920395536948,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.700457549702723,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6400098512588128,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6207011422004194,
+        "n": 114
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6061639943887825,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.5955589710666794,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.5535835848000098,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/betis-vJbTeCGP/real-sociedad-jNvak2f3/?mid=jFuzhjVI",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "E0|2026-08-22|Everton|Crystal Palace": {
+    "home_hist_name": "Everton",
+    "away_hist_name": "Crystal Palace",
+    "lambda_home": 1.42,
+    "lambda_away": 0.97,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Everton (2.0-game weight from last 3) and Crystal Palace (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7812307165147987,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7811131534299691,
+        "n": 114
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.754462870716764,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7288240691740111,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7015762304044533,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6860554194551942,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.6482008192095341,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Under 2.5",
+        "probability": 0.57284370518254,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.5725570166967459,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.5520622391883995,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/crystal-palace-AovF1Mia/everton-KluSTr9s/?mid=rN3wkk4S",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "E0|2026-08-22|Ipswich|Sunderland": {
+    "home_hist_name": "Ipswich",
+    "away_hist_name": "Sunderland",
+    "lambda_home": 0.99,
+    "lambda_away": 1.35,
+    "n_home_matches": 19,
+    "n_away_matches": 19,
+    "n_used": 19,
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Ipswich (2.0-game weight from last 3) and Sunderland (2.0-game weight from last 3) against n=19 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.9109179378976208,
+        "n": 19
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.852761154321188,
+        "n": 19
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7898840391170335,
+        "n": 19
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.770102466889655,
+        "n": 19
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.751983437586679,
+        "n": 19
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.737806240065063,
+        "n": 19
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.6925386171067365,
+        "n": 19
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Under 8.5",
+        "probability": 0.661828148049215,
+        "n": 19
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.6193723155203641,
+        "n": 19
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Under 2.5",
+        "probability": 0.5838126648178233,
+        "n": 19
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/ipswich-thqhB2MB/sunderland-WSzc94ws/?mid=Cxf9qTRk",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "E0|2026-08-22|Nott'm Forest|Leeds": {
+    "home_hist_name": "Nott'm Forest",
+    "away_hist_name": "Leeds",
+    "lambda_home": 1.86,
+    "lambda_away": 0.96,
+    "n_home_matches": 76,
+    "n_away_matches": 76,
+    "n_used": 76,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Nott'm Forest (2.0-game weight from last 3) and Leeds (2.0-game weight from last 3) against n=76 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8213121566574845,
+        "n": 76
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8190789122054396,
+        "n": 76
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.784297736773304,
+        "n": 76
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.7348009285096554,
+        "n": 76
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.7123865027452754,
+        "n": 76
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6857248613030015,
+        "n": 76
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6705884802005402,
+        "n": 76
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.6269307294687876,
+        "n": 76
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.5739828249235576,
+        "n": 76
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.5372074880828683,
+        "n": 76
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/leeds-tUxUbLR2/nottingham-UsushcZr/?mid=pjhHs7d2",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "E0|2026-08-22|Brentford|Spurs": {
+    "home_hist_name": "Brentford",
+    "away_hist_name": "Tottenham",
+    "lambda_home": 2.03,
+    "lambda_away": 1.41,
+    "n_home_matches": 95,
+    "n_away_matches": 114,
+    "n_used": 95,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Brentford (2.0-game weight from last 3) and Spurs (2.0-game weight from last 3) against n=95 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8669797934330823,
+        "n": 95
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.7438073350514743,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7217063276715162,
+        "n": 95
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7031277269728259,
+        "n": 95
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.6778886000373674,
+        "n": 95
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6681963769702501,
+        "n": 95
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.6657134689344594,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6223648623563446,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6174883401028747,
+        "n": 95
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.5493559795301287,
+        "n": 95
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/brentford-xYe7DwID/tottenham-UDg08Ohm/?mid=EPW0kJF8",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "F1|2026-08-22|RC Lens|AJ Auxerre": {
+    "home_hist_name": "Lens",
+    "away_hist_name": "Auxerre",
+    "lambda_home": 2.35,
+    "lambda_away": 0.72,
+    "n_home_matches": 108,
+    "n_away_matches": 53,
+    "n_used": 53,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for RC Lens (2.0-game weight from last 3) and AJ Auxerre (2.0-game weight from last 3) against n=53 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9110851708462526,
+        "n": 53
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8190041373618182,
+        "n": 53
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.7300178844301678,
+        "n": 53
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.6820564495912466,
+        "n": 53
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6578261430469365,
+        "n": 53
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6316856468401298,
+        "n": 53
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.5923352953283993,
+        "n": 53
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.5757291215731604,
+        "n": 53
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.5405800135145113,
+        "n": 53
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5272738742469123,
+        "n": 53
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/auxerre-MTLr36WA/lens-IBmris38/?mid=z9IoCzrR",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "F1|2026-08-22|OGC Nice|FC Lorient": {
+    "home_hist_name": "Nice",
+    "away_hist_name": "Lorient",
+    "lambda_home": 2.04,
+    "lambda_away": 0.8,
+    "n_home_matches": 108,
+    "n_away_matches": 91,
+    "n_used": 91,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for OGC Nice (2.0-game weight from last 3) and FC Lorient (2.0-game weight from last 3) against n=91 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8721227966297737,
+        "n": 91
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7843096309921731,
+        "n": 91
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7455699621744423,
+        "n": 91
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6843324675305777,
+        "n": 91
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6519473320108787,
+        "n": 91
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6465843916282041,
+        "n": 91
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.5893862391779998,
+        "n": 91
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.5387160608251695,
+        "n": 91
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.5323005661212,
+        "n": 91
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5118052746148141,
+        "n": 91
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/lorient-jgNAYRGi/nice-YagoQJpq/?mid=ClCP4hz1",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "F1|2026-08-22|Toulouse FC|Olympique Lyonnais": {
+    "home_hist_name": "Toulouse",
+    "away_hist_name": "Lyon",
+    "lambda_home": 1.41,
+    "lambda_away": 1.38,
+    "n_home_matches": 70,
+    "n_away_matches": 108,
+    "n_used": 70,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Toulouse FC (2.0-game weight from last 3) and Olympique Lyonnais (2.0-game weight from last 3) against n=70 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7790159086779117,
+        "n": 70
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6943713344584366,
+        "n": 70
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.6783340536710417,
+        "n": 70
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6615084704560474,
+        "n": 70
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.645533495300886,
+        "n": 70
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.6317224418813718,
+        "n": 70
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.5774889309913203,
+        "n": 70
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.5716905906525076,
+        "n": 70
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.5446172575235857,
+        "n": 70
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.527942169299802,
+        "n": 70
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/lyon-2akflumR/toulouse-MLmY2yB1/?mid=C82JQZdK",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "F1|2026-08-22|Estac Troyes|Paris FC": {
+    "home_hist_name": "Troyes",
+    "away_hist_name": "Paris FC",
+    "lambda_home": 1.18,
+    "lambda_away": 1.0,
+    "n_home_matches": 38,
+    "n_away_matches": 17,
+    "n_used": 17,
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Estac Troyes (2.0-game weight from last 3) and Paris FC (2.0-game weight from last 3) against n=17 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8665441834723026,
+        "n": 17
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.821669885309698,
+        "n": 17
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.7941353572661835,
+        "n": 17
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.7038944871261648,
+        "n": 17
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.6986517131278777,
+        "n": 17
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.6558761510068021,
+        "n": 17
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Under 2.5",
+        "probability": 0.6258796668425786,
+        "n": 17
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.613464172249003,
+        "n": 17
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Under 8.5",
+        "probability": 0.582290978226043,
+        "n": 17
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.546929938112835,
+        "n": 17
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/paris-fc-0OEHEprs/troyes-fsfAHubD/?mid=rigkLDKs",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "I1|2026-08-22|Internazionale|Monza": {
+    "home_hist_name": "Inter",
+    "away_hist_name": "Monza",
+    "lambda_home": 3.21,
+    "lambda_away": 0.65,
+    "n_home_matches": 114,
+    "n_away_matches": 57,
+    "n_used": 57,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Internazionale (2.0-game weight from last 3) and Monza (2.0-game weight from last 3) against n=57 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9602285566266016,
+        "n": 57
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.9006334860848085,
+        "n": 57
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.8568743347245718,
+        "n": 57
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7375978938635955,
+        "n": 57
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6731296986335968,
+        "n": 57
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.6567673126873679,
+        "n": 57
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.5608362255104427,
+        "n": 57
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.5519238352786798,
+        "n": 57
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5395857383913243,
+        "n": 57
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.5340373934772525,
+        "n": 57
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/inter-Iw7eKK25/monza-4YSMlwj7/?mid=8Mn7Y8Zh",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "I1|2026-08-22|Udinese|Como": {
+    "home_hist_name": "Udinese",
+    "away_hist_name": "Como",
+    "lambda_home": 0.96,
+    "lambda_away": 1.26,
+    "n_home_matches": 114,
+    "n_away_matches": 38,
+    "n_used": 38,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Udinese (2.0-game weight from last 3) and Como (2.0-game weight from last 3) against n=38 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.8152955335498643,
+        "n": 38
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8048182138734125,
+        "n": 38
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.7296230232976213,
+        "n": 38
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.7196118217030507,
+        "n": 38
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.6635622184070691,
+        "n": 38
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Under 2.5",
+        "probability": 0.617203530361376,
+        "n": 38
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.6154400077711716,
+        "n": 38
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.5822339942022063,
+        "n": 38
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5444234799988987,
+        "n": 38
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.5027868269086312,
+        "n": 38
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/como-ttyLthOA/udinese-rXw8YKDE/?mid=QuSvm8ln",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "I1|2026-08-22|Genoa|Napoli": {
+    "home_hist_name": "Genoa",
+    "away_hist_name": "Napoli",
+    "lambda_home": 0.87,
+    "lambda_away": 1.55,
+    "n_home_matches": 95,
+    "n_away_matches": 114,
+    "n_used": 95,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Genoa (2.0-game weight from last 3) and Napoli (2.0-game weight from last 3) against n=95 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.8024252084975487,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7865639642217275,
+        "n": 95
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7751678828603031,
+        "n": 95
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7072283580006582,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6977237083405724,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.5910865315540478,
+        "n": 95
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Under 2.5",
+        "probability": 0.5652661945733134,
+        "n": 95
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5316687419184458,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.5276893448574766,
+        "n": 95
+      },
+      {
+        "market": "Away Win (1X2)",
+        "selection": "Away",
+        "probability": 0.522827155986374,
+        "n": 95
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/genoa-d0PJxeie/napoli-69Dxbc61/?mid=z9lazV4t",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "I1|2026-08-22|Parma|Cagliari": {
+    "home_hist_name": "Parma",
+    "away_hist_name": "Cagliari",
+    "lambda_home": 1.36,
+    "lambda_away": 0.94,
+    "n_home_matches": 57,
+    "n_away_matches": 95,
+    "n_used": 57,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Parma (2.0-game weight from last 3) and Cagliari (2.0-game weight from last 3) against n=57 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8757902313819825,
+        "n": 57
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.8090252319941389,
+        "n": 57
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7987600950119007,
+        "n": 57
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.7523409139299445,
+        "n": 57
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.7201374238468347,
+        "n": 57
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.682642188455129,
+        "n": 57
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Under 8.5",
+        "probability": 0.6100746434870334,
+        "n": 57
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Under 2.5",
+        "probability": 0.5952676403397317,
+        "n": 57
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.5489911420896043,
+        "n": 57
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5332272329260788,
+        "n": 57
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/cagliari-SCGVmKHb/parma-6DxlaxHN/?mid=GnjFWn45",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "N1|2026-08-22|Fortuna Sittard|AZ": {
+    "home_hist_name": "For Sittard",
+    "away_hist_name": "AZ Alkmaar",
+    "lambda_home": 1.3,
+    "lambda_away": 1.51,
+    "n_home_matches": 103,
+    "n_away_matches": 103,
+    "n_used": 103,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Fortuna Sittard (2.0-game weight from last 3) and AZ (2.0-game weight from last 3) against n=103 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7825291870988025,
+        "n": 103
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7330859630774116,
+        "n": 103
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.7062547093206326,
+        "n": 103
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6895974709959732,
+        "n": 103
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.6861769457283786,
+        "n": 103
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6681340115380348,
+        "n": 103
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.6258028645895047,
+        "n": 103
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.598225126304451,
+        "n": 103
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.5880310246662149,
+        "n": 103
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.5784972558348948,
+        "n": 103
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/az-alkmaar-2RxOow1i/sittard-YH8HX5iP/?mid=YFlpKveS",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "N1|2026-08-22|Sparta Rotterdam|FC Utrecht": {
+    "home_hist_name": "Sparta Rotterdam",
+    "away_hist_name": "Utrecht",
+    "lambda_home": 1.46,
+    "lambda_away": 1.26,
+    "n_home_matches": 104,
+    "n_away_matches": 104,
+    "n_used": 104,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Sparta Rotterdam (2.0-game weight from last 3) and FC Utrecht (2.0-game weight from last 3) against n=104 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.7986119865398691,
+        "n": 104
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7659929597621719,
+        "n": 104
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.733237844847245,
+        "n": 104
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7110342054095775,
+        "n": 104
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.6853483600929979,
+        "n": 104
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6431155034359716,
+        "n": 104
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6326881616378051,
+        "n": 104
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6030807283808106,
+        "n": 104
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.5949028158506471,
+        "n": 104
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.5629063736025423,
+        "n": 104
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/sparta-rotterdam-KK4FaFV3/utrecht-p6QXMgOj/?mid=xCwOCdm2",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "N1|2026-08-22|sc Heerenveen|PEC Zwolle": {
+    "home_hist_name": "Heerenveen",
+    "away_hist_name": "Zwolle",
+    "lambda_home": 2.7,
+    "lambda_away": 0.99,
+    "n_home_matches": 104,
+    "n_away_matches": 86,
+    "n_used": 86,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for sc Heerenveen (2.0-game weight from last 3) and PEC Zwolle (2.0-game weight from last 3) against n=86 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8931757324349022,
+        "n": 86
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8891548699787812,
+        "n": 86
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.8143902815319443,
+        "n": 86
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8036713950897186,
+        "n": 86
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.7274218153367722,
+        "n": 86
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.7152091540622848,
+        "n": 86
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7119618133494763,
+        "n": 86
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.663784055051156,
+        "n": 86
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.6071040514976885,
+        "n": 86
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.5924197864797465,
+        "n": 86
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/heerenveen-EDjXSyWG/zwolle-r1L5w2EB/?mid=l0p9z0u9",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "P1|2026-08-22|Marítimo M.|Académico": {
+    "home_hist_name": "Maritimo",
+    "away_hist_name": "Academico Viseu",
+    "lambda_home": 1.54,
+    "lambda_away": 1.19,
+    "n_home_matches": 53,
+    "n_away_matches": 2,
+    "n_used": 2,
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Marítimo M. (2.0-game weight from last 3) and Académico (2.0-game weight from last 3) against n=2 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.9546006881940056,
+        "n": 2
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.9484558643903547,
+        "n": 2
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.9104155758369803,
+        "n": 2
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.8889342126316797,
+        "n": 2
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.8519796703003725,
+        "n": 2
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Over 4.5",
+        "probability": 0.7867655203510685,
+        "n": 2
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7689126141209723,
+        "n": 2
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Under 8.5",
+        "probability": 0.7683482107444626,
+        "n": 2
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.7174405703943505,
+        "n": 2
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7071967567076488,
+        "n": 2
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/academico-viseu-GrRgeTHo/maritimo-noguvetP/?mid=bsWQ0vec",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "P1|2026-08-22|Estoril Praia|Rio Ave FC": {
+    "home_hist_name": "Estoril",
+    "away_hist_name": "Rio Ave",
+    "lambda_home": 1.88,
+    "lambda_away": 0.79,
+    "n_home_matches": 87,
+    "n_away_matches": 87,
+    "n_used": 87,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Estoril Praia (2.0-game weight from last 3) and Rio Ave FC (2.0-game weight from last 3) against n=87 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8662245834385557,
+        "n": 87
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8644219223348761,
+        "n": 87
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8582105367697637,
+        "n": 87
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.7957995743736334,
+        "n": 87
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7571353092534647,
+        "n": 87
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.7291190301882999,
+        "n": 87
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.719572536803937,
+        "n": 87
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.7031928024997891,
+        "n": 87
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6203000654466575,
+        "n": 87
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Under 8.5",
+        "probability": 0.5901446837053507,
+        "n": 87
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/estoril-htoKuYZl/rio-ave-jPzXLi4l/?mid=8zdCblET",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "P1|2026-08-22|Sporting CP|FC Alverca": {
+    "home_hist_name": "Sp Lisbon",
+    "away_hist_name": "Alverca",
+    "lambda_home": 3.73,
+    "lambda_away": 0.5,
+    "n_home_matches": 102,
+    "n_away_matches": 19,
+    "n_used": 19,
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Sporting CP (2.0-game weight from last 3) and FC Alverca (2.0-game weight from last 3) against n=19 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9821643806445612,
+        "n": 19
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.9255444430247073,
+        "n": 19
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.9185610667956471,
+        "n": 19
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8325766131907955,
+        "n": 19
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7907143719852207,
+        "n": 19
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.790139368305202,
+        "n": 19
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.6961851172000875,
+        "n": 19
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6806161182303503,
+        "n": 19
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.613502419040468,
+        "n": 19
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6044765442541793,
+        "n": 19
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/alverca-roaMksQg/sporting-cp-tljXuHBC/?mid=G0RKkEnd",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "SP1|2026-08-22|Athletic Club|Sevilla FC": {
+    "home_hist_name": "Ath Bilbao",
+    "away_hist_name": "Sevilla",
+    "lambda_home": 2.03,
+    "lambda_away": 0.74,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Athletic Club (2.0-game weight from last 3) and Sevilla FC (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.883534936167297,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8130613197545742,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7732406260215631,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7135593724325561,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6986267012399021,
+        "n": 114
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6661149303316524,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6551962667161317,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.6227926374970801,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.6027455134765967,
+        "n": 114
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5363648572397111,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/ath-bilbao-IP5zl0cJ/sevilla-h8oAv4Ts/?mid=pzUKeYVg",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "SP1|2026-08-22|Valencia CF|Celta": {
+    "home_hist_name": "Valencia",
+    "away_hist_name": "Celta",
+    "lambda_home": 1.79,
+    "lambda_away": 0.91,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Valencia CF (2.0-game weight from last 3) and Celta (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8231260183101674,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7916273320237885,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7820050506115901,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7614919870623549,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7151008139105943,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6887670165421953,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6254071889097261,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.577335074495171,
+        "n": 114
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.5709925169612604,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.5485596533939546,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/celta-vigo-8pvUZFhf/valencia-CQeaytrD/?mid=YXsZ9Oj4",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "SP1|2026-08-22|RCD Espanyol de Barcelona|Real Madrid": {
+    "home_hist_name": "Espanol",
+    "away_hist_name": "Real Madrid",
+    "lambda_home": 1.11,
+    "lambda_away": 1.5,
+    "n_home_matches": 77,
+    "n_away_matches": 114,
+    "n_used": 77,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for RCD Espanyol de Barcelona (2.0-game weight from last 3) and Real Madrid (2.0-game weight from last 3) against n=77 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7552982196024264,
+        "n": 77
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7455809932191557,
+        "n": 77
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7352227778316263,
+        "n": 77
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.7313318447105476,
+        "n": 77
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.6737574908602084,
+        "n": 77
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6668405333075714,
+        "n": 77
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.5986606409320707,
+        "n": 77
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.577278582669742,
+        "n": 77
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.5664288807841205,
+        "n": 77
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.5510450759424709,
+        "n": 77
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/espanyol-QFfPdh1J/real-madrid-W8mj7MDD/?mid=l8fgco7b",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "E0|2026-08-23|Brighton|Aston Villa": {
+    "home_hist_name": "Brighton",
+    "away_hist_name": "Aston Villa",
+    "lambda_home": 1.68,
+    "lambda_away": 0.98,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Brighton (2.0-game weight from last 3) and Aston Villa (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.7910013348303915,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7561766933602379,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7481322121339349,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.722874572535716,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7221241210377961,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.6552804414719685,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.6415070883688062,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.5858612218625746,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.5279940411166415,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.5270087519815221,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/aston-villa-W00wmLO0/brighton-2XrRecc3/?mid=Mkz9mcpL",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "E0|2026-08-23|Man City|Bournemouth": {
+    "home_hist_name": "Man City",
+    "away_hist_name": "Bournemouth",
+    "lambda_home": 3.57,
+    "lambda_away": 0.94,
+    "n_home_matches": 114,
+    "n_away_matches": 76,
+    "n_used": 76,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Man City (2.0-game weight from last 3) and Bournemouth (2.0-game weight from last 3) against n=76 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9451630965830287,
+        "n": 76
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.942540336054237,
+        "n": 76
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.8647026673015569,
+        "n": 76
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.8434855444308819,
+        "n": 76
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8258161141192898,
+        "n": 76
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.7885905353107352,
+        "n": 76
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7135106303214704,
+        "n": 76
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.6958035169661128,
+        "n": 76
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.6661679993471656,
+        "n": 76
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6558756952812919,
+        "n": 76
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/bournemouth-OtpNdwrc/manchester-city-Wtn9Stg0/?mid=ILLvry8r",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "E0|2026-08-23|Newcastle|Liverpool": {
+    "home_hist_name": "Newcastle",
+    "away_hist_name": "Liverpool",
+    "lambda_home": 2.06,
+    "lambda_away": 1.54,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Newcastle (2.0-game weight from last 3) and Liverpool (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8824369163004816,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.8622157047261457,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.7852417923746313,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.7362382652079837,
+        "n": 114
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.7201699957824756,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.696218248663085,
+        "n": 114
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.6931785924587939,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.6917100913630873,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6461639721060018,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Over 11.5",
+        "probability": 0.5874966378019124,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/liverpool-lId4TMwf/newcastle-utd-p6ahwuwJ/?mid=4xKntFxe",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "F1|2026-08-23|Angers SCO|LOSC Lille": {
+    "home_hist_name": "Angers",
+    "away_hist_name": "Lille",
+    "lambda_home": 0.95,
+    "lambda_away": 1.39,
+    "n_home_matches": 91,
+    "n_away_matches": 108,
+    "n_used": 91,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Angers SCO (2.0-game weight from last 3) and LOSC Lille (2.0-game weight from last 3) against n=91 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7921138696807526,
+        "n": 91
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7649255688278714,
+        "n": 91
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.7555842422752719,
+        "n": 91
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.6899650348513604,
+        "n": 91
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.668970733768275,
+        "n": 91
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Under 2.5",
+        "probability": 0.5866693811878554,
+        "n": 91
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.5661243046953348,
+        "n": 91
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.5561798120031856,
+        "n": 91
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.5424819624579541,
+        "n": 91
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.527630643315681,
+        "n": 91
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/angers-SAlF91iL/lille-pfDZL71o/?mid=lYTqhFje",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "F1|2026-08-23|Havre Athletic Club|AS Monaco": {
+    "home_hist_name": "Le Havre",
+    "away_hist_name": "Monaco",
+    "lambda_home": 1.23,
+    "lambda_away": 1.65,
+    "n_home_matches": 51,
+    "n_away_matches": 108,
+    "n_used": 51,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Havre Athletic Club (2.0-game weight from last 3) and AS Monaco (2.0-game weight from last 3) against n=51 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7930583043420012,
+        "n": 51
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7422715232514058,
+        "n": 51
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.7267100304072405,
+        "n": 51
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6748644407591378,
+        "n": 51
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6428086978652183,
+        "n": 51
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.593227314512355,
+        "n": 51
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.5824683108083885,
+        "n": 51
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.5486089080157348,
+        "n": 51
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.5388909473302099,
+        "n": 51
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.5283151823955111,
+        "n": 51
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/le-havre-CIEe04GT/monaco-2PIvr8o4/?mid=zkSijgL7",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "F1|2026-08-23|Paris Saint-Germain|Stade Rennais FC": {
+    "home_hist_name": "Paris SG",
+    "away_hist_name": "Rennes",
+    "lambda_home": 3.01,
+    "lambda_away": 0.92,
+    "n_home_matches": 108,
+    "n_away_matches": 108,
+    "n_used": 108,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Paris Saint-Germain (2.0-game weight from last 3) and Stade Rennais FC (2.0-game weight from last 3) against n=108 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9226208091877672,
+        "n": 108
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.9081866566304443,
+        "n": 108
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.7860243338832715,
+        "n": 108
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7792121771455868,
+        "n": 108
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7504028996562162,
+        "n": 108
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.6806913131577819,
+        "n": 108
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.5761734732383769,
+        "n": 108
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.5718666961542611,
+        "n": 108
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.5508750836460845,
+        "n": 108
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.5387557706683185,
+        "n": 108
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/psg-CjhkPw0k/rennes-d2nnj1IE/?mid=p2AX2W4D",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "I1|2026-08-23|Frosinone|Juventus": {
+    "home_hist_name": "Frosinone",
+    "away_hist_name": "Juventus",
+    "lambda_home": 1.3,
+    "lambda_away": 1.67,
+    "n_home_matches": 19,
+    "n_away_matches": 114,
+    "n_used": 19,
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Frosinone (2.0-game weight from last 3) and Juventus (2.0-game weight from last 3) against n=19 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8084267090329076,
+        "n": 19
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7355493582653174,
+        "n": 19
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.7117992081096567,
+        "n": 19
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.65252902925986,
+        "n": 19
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.6316679299650964,
+        "n": 19
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.6028697618343246,
+        "n": 19
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.5858443698908858,
+        "n": 19
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.5715084747548863,
+        "n": 19
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.5500716601281517,
+        "n": 19
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.5217492981137298,
+        "n": 19
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/frosinone-pfo9H1Wp/juventus-C06aJvIB/?mid=nD9kGRJO",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "I1|2026-08-23|Venezia|Lecce": {
+    "home_hist_name": "Venezia",
+    "away_hist_name": "Lecce",
+    "lambda_home": 1.12,
+    "lambda_away": 0.91,
+    "n_home_matches": 38,
+    "n_away_matches": 76,
+    "n_used": 38,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Venezia (2.0-game weight from last 3) and Lecce (2.0-game weight from last 3) against n=38 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8764499218053274,
+        "n": 38
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.8514048935659762,
+        "n": 38
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.80989421175167,
+        "n": 38
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.7212017120957961,
+        "n": 38
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.7202558257857856,
+        "n": 38
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Under 2.5",
+        "probability": 0.6681634897780518,
+        "n": 38
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.6158234370314501,
+        "n": 38
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Under 8.5",
+        "probability": 0.6112751063678744,
+        "n": 38
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.6097326607451601,
+        "n": 38
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.583855871539835,
+        "n": 38
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/lecce-G8lYsMgU/venezia-MkPmVv50/?mid=Y5VnonJb",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "I1|2026-08-23|Atalanta|Sassuolo": {
+    "home_hist_name": "Atalanta",
+    "away_hist_name": "Sassuolo",
+    "lambda_home": 2.54,
+    "lambda_away": 1.03,
+    "n_home_matches": 114,
+    "n_away_matches": 95,
+    "n_used": 95,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Atalanta (2.0-game weight from last 3) and Sassuolo (2.0-game weight from last 3) against n=95 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8786248130781305,
+        "n": 95
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8741196629588415,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7299207280971847,
+        "n": 95
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6924987546080897,
+        "n": 95
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6916627726827147,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.6251244123419974,
+        "n": 95
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.6000073385408385,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.5927077184567492,
+        "n": 95
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.5220923623096002,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.5147812437864245,
+        "n": 95
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/atalanta-8C9JjMXu/sassuolo-QDdvI0zl/?mid=6Z7ZJ9Ka",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "I1|2026-08-23|Torino|Milan": {
+    "home_hist_name": "Torino",
+    "away_hist_name": "Milan",
+    "lambda_home": 1.1,
+    "lambda_away": 1.39,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Torino (2.0-game weight from last 3) and Milan (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.759238064012604,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7526170084384366,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.723774350284272,
+        "n": 114
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.7165430864798865,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6580208659924421,
+        "n": 114
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.575703878664372,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.5706048143327292,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.5480185317154251,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Under 2.5",
+        "probability": 0.5458038532589159,
+        "n": 114
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.513835304773386,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/ac-milan-8Sa8HInO/torino-MZFZnvX4/?mid=dQiVS43U",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "N1|2026-08-23|Go Ahead Eagles|ADO Den Haag": {
+    "home_hist_name": "Go Ahead Eagles",
+    "away_hist_name": "Den Haag",
+    "lambda_home": 2.79,
+    "lambda_away": 0.41,
+    "n_home_matches": 87,
+    "n_away_matches": 19,
+    "n_used": 19,
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Go Ahead Eagles (2.0-game weight from last 3) and ADO Den Haag (2.0-game weight from last 3) against n=19 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9706821151590953,
+        "n": 19
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.8853445489655709,
+        "n": 19
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.858591725422992,
+        "n": 19
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8332872116626804,
+        "n": 19
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7651183286679933,
+        "n": 19
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7062909919675082,
+        "n": 19
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.6793577331456236,
+        "n": 19
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6325388097310407,
+        "n": 19
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6195471236510559,
+        "n": 19
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.603576671563964,
+        "n": 19
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/den-haag-lAgLCkT3/g-a-eagles-hG8POBb8/?mid=MDrHYwAL",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "N1|2026-08-23|PSV|FC Groningen": {
+    "home_hist_name": "PSV Eindhoven",
+    "away_hist_name": "Groningen",
+    "lambda_home": 4.28,
+    "lambda_away": 0.75,
+    "n_home_matches": 104,
+    "n_away_matches": 86,
+    "n_used": 86,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for PSV (2.0-game weight from last 3) and FC Groningen (2.0-game weight from last 3) against n=86 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9770012121856503,
+        "n": 86
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.9615458919443547,
+        "n": 86
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.9191145194288456,
+        "n": 86
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8741177404192679,
+        "n": 86
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.8516737807361141,
+        "n": 86
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.816310393674811,
+        "n": 86
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.7311120581463546,
+        "n": 86
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.7269382818164767,
+        "n": 86
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7151155371849098,
+        "n": 86
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.6243938598312979,
+        "n": 86
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/groningen-MBUGcjb9/psv-M9UEHJWi/?mid=hdZnTHXr",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "N1|2026-08-23|SC Cambuur|Feyenoord": {
+    "home_hist_name": "Cambuur",
+    "away_hist_name": "Feyenoord",
+    "lambda_home": 0.85,
+    "lambda_away": 2.81,
+    "n_home_matches": 36,
+    "n_away_matches": 104,
+    "n_used": 36,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for SC Cambuur (2.0-game weight from last 3) and Feyenoord (2.0-game weight from last 3) against n=36 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.9202962180966849,
+        "n": 36
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8865187807302257,
+        "n": 36
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.8444675045853429,
+        "n": 36
+      },
+      {
+        "market": "Away Win (1X2)",
+        "selection": "Away",
+        "probability": 0.7726791628095073,
+        "n": 36
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7619040987445587,
+        "n": 36
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7080787257694638,
+        "n": 36
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7048947015650908,
+        "n": 36
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.6599012670124219,
+        "n": 36
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.5616852444538127,
+        "n": 36
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.5491084766471666,
+        "n": 36
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/cambuur-QRyYgO7J/feyenoord-8zjySeoN/?mid=0MxeRe2e",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "P1|2026-08-23|Vitória SC|CD Nacional": {
+    "home_hist_name": "Guimaraes",
+    "away_hist_name": "Nacional",
+    "lambda_home": 1.82,
+    "lambda_away": 0.59,
+    "n_home_matches": 104,
+    "n_away_matches": 53,
+    "n_used": 53,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Vitória SC (2.0-game weight from last 3) and CD Nacional (2.0-game weight from last 3) against n=53 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8957828501817499,
+        "n": 53
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.873309467382039,
+        "n": 53
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7758253823331527,
+        "n": 53
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.7432390722612598,
+        "n": 53
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7042661891493723,
+        "n": 53
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.690825634575645,
+        "n": 53
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6612287073285035,
+        "n": 53
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6418930275651713,
+        "n": 53
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.6158780453651025,
+        "n": 53
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.5878233481093356,
+        "n": 53
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/nacional-4ETLrR7n/vitoria-guimaraes-pQYVZyD2/?mid=8fE6DHv3",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "P1|2026-08-23|Santa Clara|FC Famalicão": {
+    "home_hist_name": "Santa Clara",
+    "away_hist_name": "Famalicao",
+    "lambda_home": 1.35,
+    "lambda_away": 0.89,
+    "n_home_matches": 87,
+    "n_away_matches": 104,
+    "n_used": 87,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Santa Clara (2.0-game weight from last 3) and FC Famalicão (2.0-game weight from last 3) against n=87 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8998390136118534,
+        "n": 87
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.812489019569892,
+        "n": 87
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.7871490735465194,
+        "n": 87
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.7657584362301232,
+        "n": 87
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7580105171019814,
+        "n": 87
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.6666125732747342,
+        "n": 87
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6633968031031494,
+        "n": 87
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Over 4.5",
+        "probability": 0.6404576954575256,
+        "n": 87
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Under 2.5",
+        "probability": 0.6134217792894642,
+        "n": 87
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.5667644816254027,
+        "n": 87
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/famalicao-ABBgitC3/santa-clara-YmQyLBJf/?mid=A3OCizIq",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "P1|2026-08-23|FC Porto|FC Arouca": {
+    "home_hist_name": "Porto",
+    "away_hist_name": "Arouca",
+    "lambda_home": 3.02,
+    "lambda_away": 0.48,
+    "n_home_matches": 104,
+    "n_away_matches": 87,
+    "n_used": 87,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for FC Porto (2.0-game weight from last 3) and FC Arouca (2.0-game weight from last 3) against n=87 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9703324779404914,
+        "n": 87
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.8688010736168476,
+        "n": 87
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8673128834997429,
+        "n": 87
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8226591045397869,
+        "n": 87
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6989061914103873,
+        "n": 87
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6767612756249627,
+        "n": 87
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6661166297172528,
+        "n": 87
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.6355944705652009,
+        "n": 87
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.6313086735178707,
+        "n": 87
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.5887881579877625,
+        "n": 87
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/arouca-fJqfm7CG/fc-porto-S2NmScGp/?mid=vLXtcdfM",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "SP1|2026-08-23|Atlético de Madrid|Villarreal CF": {
+    "home_hist_name": "Ath Madrid",
+    "away_hist_name": "Villarreal",
+    "lambda_home": 2.5,
+    "lambda_away": 0.83,
+    "n_home_matches": 114,
+    "n_away_matches": 115,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Atlético de Madrid (2.0-game weight from last 3) and Villarreal CF (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.903180623001345,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8525535903004959,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.819302102784712,
+        "n": 114
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.7290424969132572,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.6804345670200134,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6640816962523536,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6602939552046233,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6466056692876446,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.5738787404810382,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.5736551607811864,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/atl-madrid-jaarqpLQ/villarreal-lUatW5jE/?mid=ImSSgC06",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "SP1|2026-08-23|Elche CF|FC Barcelona": {
+    "home_hist_name": "Elche",
+    "away_hist_name": "Barcelona",
+    "lambda_home": 1.3,
+    "lambda_away": 1.67,
+    "n_home_matches": 76,
+    "n_away_matches": 114,
+    "n_used": 76,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Elche CF (2.0-game weight from last 3) and FC Barcelona (2.0-game weight from last 3) against n=76 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8074747048021892,
+        "n": 76
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7985079667049502,
+        "n": 76
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7141261219573096,
+        "n": 76
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.7139652655696187,
+        "n": 76
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6539515111915066,
+        "n": 76
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6348507096743358,
+        "n": 76
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.6221362477873428,
+        "n": 76
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.6033963938688769,
+        "n": 76
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.6013468664901453,
+        "n": 76
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.5700732645959197,
+        "n": 76
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/barcelona-SKbpVP5K/elche-4jl02tPF/?mid=Gfdoa7xn",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "T1|2026-08-23|Trabzonspor|Istanbul Basaksehir": {
+    "home_hist_name": "Trabzonspor",
+    "away_hist_name": "Buyuksehyr",
+    "lambda_home": 2.0,
+    "lambda_away": 0.96,
+    "n_home_matches": 111,
+    "n_away_matches": 111,
+    "n_used": 111,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Trabzonspor (2.0-game weight from last 3) and Istanbul Basaksehir (2.0-game weight from last 3) against n=111 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8361450304196967,
+        "n": 111
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.804597436847138,
+        "n": 111
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7355945431838102,
+        "n": 111
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.6837099346310805,
+        "n": 111
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6601631781787777,
+        "n": 111
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.656492541088421,
+        "n": 111
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.6215102692069691,
+        "n": 111
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.605735290872257,
+        "n": 111
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.5760801764175794,
+        "n": 111
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.5675405646037078,
+        "n": 111
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/basaksehir-YqP5NmC1/trabzonspor-MmsYDc03/?mid=vJfkRim4",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "T1|2026-08-23|Eyüpspor|Gaziantep": {
+    "home_hist_name": "Eyupspor",
+    "away_hist_name": "Gaziantep",
+    "lambda_home": 2.07,
+    "lambda_away": 0.97,
+    "n_home_matches": 35,
+    "n_away_matches": 111,
+    "n_used": 35,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Eyüpspor (2.0-game weight from last 3) and Gaziantep (2.0-game weight from last 3) against n=35 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8964327441584188,
+        "n": 35
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8418777046986868,
+        "n": 35
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8369548487004661,
+        "n": 35
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.8330251014865031,
+        "n": 35
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8157189162306326,
+        "n": 35
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.7453256970579287,
+        "n": 35
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6906173998589273,
+        "n": 35
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6393567318790186,
+        "n": 35
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Under 8.5",
+        "probability": 0.6334500653541134,
+        "n": 35
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6183219519989851,
+        "n": 35
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/eyupspor-276zKCgt/gaziantep-ITkIKZ7q/?mid=nqbcPVHG",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "T1|2026-08-23|Alanyaspor|Besiktas": {
+    "home_hist_name": "Alanyaspor",
+    "away_hist_name": "Besiktas",
+    "lambda_home": 1.53,
+    "lambda_away": 1.26,
+    "n_home_matches": 111,
+    "n_away_matches": 111,
+    "n_used": 111,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Alanyaspor (2.0-game weight from last 3) and Besiktas (2.0-game weight from last 3) against n=111 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.782316494992341,
+        "n": 111
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7788457316054758,
+        "n": 111
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.6985234739311081,
+        "n": 111
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6944523895999704,
+        "n": 111
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6892981328136962,
+        "n": 111
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.6532169418101219,
+        "n": 111
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6137779192664412,
+        "n": 111
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.5759354935373378,
+        "n": 111
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.574070762759746,
+        "n": 111
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.5728234349925058,
+        "n": 111
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/alanyaspor-IcN8oPcJ/besiktas-IDmErJCR/?mid=ht15N9nT",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "T1|2026-08-23|Göztepe|Gençlerbirligi": {
+    "home_hist_name": "Goztep",
+    "away_hist_name": "Genclerbirligi",
+    "lambda_home": 1.91,
+    "lambda_away": 0.54,
+    "n_home_matches": 74,
+    "n_away_matches": 37,
+    "n_used": 37,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Göztepe (2.0-game weight from last 3) and Gençlerbirligi (2.0-game weight from last 3) against n=37 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9139669844432701,
+        "n": 37
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8294084229093827,
+        "n": 37
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8072824750272389,
+        "n": 37
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7683531739632162,
+        "n": 37
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.7454152913289264,
+        "n": 37
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7110786333211645,
+        "n": 37
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6959269351218783,
+        "n": 37
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6479790241828538,
+        "n": 37
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.6397101369806288,
+        "n": 37
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.637439003284533,
+        "n": 37
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/genclerbirligi-GOPqBIRK/goztepe-0MJlDkrA/?mid=GIvNui2c",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "E0|2026-08-24|Fulham|Chelsea": {
+    "home_hist_name": "Fulham",
+    "away_hist_name": "Chelsea",
+    "lambda_home": 1.5,
+    "lambda_away": 1.35,
+    "n_home_matches": 95,
+    "n_away_matches": 114,
+    "n_used": 95,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Fulham (2.0-game weight from last 3) and Chelsea (2.0-game weight from last 3) against n=95 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.789032167091337,
+        "n": 95
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7671251410205744,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7352529630687985,
+        "n": 95
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.6807881689167657,
+        "n": 95
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.6685436950768114,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.6263066487363511,
+        "n": 95
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.6044213037118253,
+        "n": 95
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.601918729502558,
+        "n": 95
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.5993534649395796,
+        "n": 95
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.5873409198817511,
+        "n": 95
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/chelsea-4fGZN2oK/fulham-69ZiU2Om/?mid=C2Nfvg77",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "I1|2026-08-24|Bologna|Lazio": {
+    "home_hist_name": "Bologna",
+    "away_hist_name": "Lazio",
+    "lambda_home": 1.31,
+    "lambda_away": 0.98,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Bologna (2.0-game weight from last 3) and Lazio (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.8002606352681908,
+        "n": 114
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.734565593386475,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7188324356622905,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.6811003627093565,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6196781953928392,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6095591763536226,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Under 2.5",
+        "probability": 0.5972267155343516,
+        "n": 114
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.5703526930863013,
+        "n": 114
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5298568004965051,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.5076824259430259,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/bologna-0M9xNN8N/lazio-URcSl02h/?mid=vm6sImkC",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "I1|2026-08-24|Roma|Fiorentina": {
+    "home_hist_name": "Roma",
+    "away_hist_name": "Fiorentina",
+    "lambda_home": 2.03,
+    "lambda_away": 0.69,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Roma (2.0-game weight from last 3) and Fiorentina (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8938322698224201,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7633523564230298,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7229117056702175,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7107818111193371,
+        "n": 114
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6795710810422498,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.624249895541116,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6050343963090493,
+        "n": 114
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.559513555292578,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.5124301319081267,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.5101215266614573,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/as-roma-zVqqL0ma/fiorentina-Q3A3IbXH/?mid=OCgNUQYH",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "P1|2026-08-24|Gil Vicente FC|Casa Pia AC": {
+    "home_hist_name": "Gil Vicente",
+    "away_hist_name": "Casa Pia",
+    "lambda_home": 1.8,
+    "lambda_away": 0.69,
+    "n_home_matches": 104,
+    "n_away_matches": 70,
+    "n_used": 70,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Gil Vicente FC (2.0-game weight from last 3) and Casa Pia AC (2.0-game weight from last 3) against n=70 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8717530653172813,
+        "n": 70
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8416559420749103,
+        "n": 70
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7587081646422351,
+        "n": 70
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7505972548527737,
+        "n": 70
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7219825256458781,
+        "n": 70
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6941319535931478,
+        "n": 70
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.6548427960815218,
+        "n": 70
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6282780789836356,
+        "n": 70
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.5757177454542323,
+        "n": 70
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5715804751913791,
+        "n": 70
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/casa-pia-QFHt9Zgs/gil-vicente-CS0fFFd8/?mid=46srgSyi",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "SP1|2026-08-24|CA Osasuna|Levante UD": {
+    "home_hist_name": "Osasuna",
+    "away_hist_name": "Levante",
+    "lambda_home": 2.24,
+    "lambda_away": 0.91,
+    "n_home_matches": 114,
+    "n_away_matches": 58,
+    "n_used": 58,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for CA Osasuna (2.0-game weight from last 3) and Levante UD (2.0-game weight from last 3) against n=58 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.870438326431876,
+        "n": 58
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8551223387538013,
+        "n": 58
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8310467056253632,
+        "n": 58
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7894800835958417,
+        "n": 58
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.7790440382654994,
+        "n": 58
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Under 9.5",
+        "probability": 0.6802384002180919,
+        "n": 58
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.6672126162289348,
+        "n": 58
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6224824722126016,
+        "n": 58
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.61356461196471,
+        "n": 58
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6097655053264855,
+        "n": 58
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/levante-G8FL0ShI/osasuna-ETdxjU8a/?mid=b1nulsUp",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "SP1|2026-08-25|Valencia CF|Real Betis": {
+    "home_hist_name": "Valencia",
+    "away_hist_name": "Betis",
+    "lambda_home": 1.69,
+    "lambda_away": 0.91,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Valencia CF (2.0-game weight from last 3) and Real Betis (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8102744469505845,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.7790911019961613,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7425474274874136,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7377210048054451,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.6822958480109418,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.6584501267740206,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 3.5",
+        "selection": "Over 3.5",
+        "probability": 0.6084781463860873,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.5756763893862965,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.5665035520397098,
+        "n": 114
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.5463302710860692,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/betis-vJbTeCGP/valencia-CQeaytrD/?mid=xAQCcf1s",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "SP1|2026-08-26|Real Madrid|Real Sociedad": {
+    "home_hist_name": "Real Madrid",
+    "away_hist_name": "Sociedad",
+    "lambda_home": 2.65,
+    "lambda_away": 0.61,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Real Madrid (2.0-game weight from last 3) and Real Sociedad (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9432020201906793,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.843593024732918,
+        "n": 114
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.8000689647476178,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.796421333942548,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.730474811076939,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.7016111451932316,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.6337935310947729,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.629815448895931,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.5950281376978253,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.5880817625028288,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/real-madrid-W8mj7MDD/real-sociedad-jNvak2f3/?mid=EXneuDoD",
+    "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "SP1|2026-08-27|FC Barcelona|Athletic Club": {
+    "home_hist_name": "Barcelona",
+    "away_hist_name": "Ath Bilbao",
+    "lambda_home": 2.93,
+    "lambda_away": 0.58,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for FC Barcelona (2.0-game weight from last 3) and Athletic Club (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.958433772655158,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8698330848859128,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.8567799147434764,
+        "n": 114
+      },
+      {
+        "market": "Home Win (1X2)",
+        "selection": "Home",
+        "probability": 0.8418214037177707,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 9.5",
+        "selection": "Over 9.5",
+        "probability": 0.7791069627978763,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.6949725568512205,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 10.5",
+        "selection": "Over 10.5",
+        "probability": 0.6856277303763942,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.680029760858149,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.671978363030145,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Over 11.5",
+        "probability": 0.5822382215627264,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/ath-bilbao-IP5zl0cJ/barcelona-SKbpVP5K/?mid=0Atuqenl",
+    "logged_at": "2026-08-28T11:15:42Z"
   }
 }

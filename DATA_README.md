@@ -24,23 +24,26 @@ Semantic retrieval over a CSV returns arbitrary row snippets and will produce wr
 
 ## Schema (simplified master)
 
-`Season, Div, Date, Time, HomeTeam, AwayTeam, FTHG, FTAG, HTHG, HTAG, Referee, HS, AS, HST, AST, HF, AF, HC, AC, HY, AY, HR, AR, AvgCH, AvgCD, AvgCA, AvgC>2.5, AvgC<2.5`
+`Season, Div, Date, Time, HomeTeam, AwayTeam, FTHG, FTAG, HTHG, HTAG, Referee, HS, AS, HST, AST, HF, AF, HC, AC, HY, AY, HR, AR, AvgCH, AvgCD, AvgCA, AvgC>2.5, AvgC<2.5, HXG, AXG, HPos, APos`
 
 - `Div`: B1 Belgium, D1 Germany, E0 England, F1 France, I1 Italy, N1 Netherlands, P1 Portugal, POL Poland, SP1 Spain, T1 Turkey
 - `FTHG/FTAG` full-time goals, `HTHG/HTAG` half-time goals
 - `HS/AS` shots, `HST/AST` shots on target, `HF/AF` fouls, `HC/AC` corners, `HY/AY` yellows, `HR/AR` reds — home/away
 - `AvgCH/AvgCD/AvgCA`: market-average **closing** 1X2 decimal odds
 - `AvgC>2.5 / AvgC<2.5`: market-average closing Over/Under 2.5 goals
+- `HXG/AXG`: expected goals — empty for essentially every row (see gap #1 below); `engine.js`/`engine_reference.py` blend in a shots-on-target-based proxy when this is null instead of reading raw goals alone, see `CLAUDE.md`.
+- `HPos/APos`: ball possession % — added 2026-08-28, **current-season-only, no historical backfill possible** (see gap #7 below).
 - `Season` is precomputed (cut-off 1 July), so per-season grouping doesn't need date math.
 
 ## Known gaps — read before promising an analysis
 
-1. **No xG anywhere.** football-data.co.uk does not publish it. Any xG-based claim requires pulling FBref or Understat first.
+1. **No real xG anywhere historically.** football-data.co.uk does not publish it. `fetch_results.py` fetches shots-on-target for current-season matches instead and the model blends that into a proxy — see `HXG/AXG` above and `CLAUDE.md`'s "Honesty rules" section. Any claim about *real* xG still requires pulling FBref or Understat first.
 2. **No goal timings.** "Time of first goal", "goals after 75'" etc. cannot be answered from this dataset.
 3. **Referee is England-only** (100% of E0, 0% elsewhere). Referee-average analysis is Premier League only unless referee names are scraped from another source.
 4. **Poland has goals and 1X2 odds only** — no shots, corners, fouls, cards, or Over/Under odds, ever (source file has a different, narrower schema than the other nine leagues). Ekstraklasa cannot support corner or card markets from this source.
 5. **Current season is partial** for several leagues — check `_data_inventory_summary.csv` for exact last-date-covered per league before including 2026/27 in any per-season average.
 6. Turkey has ~1.4% of matches with a missing referee/some odds fields; Belgium and Germany each have a small number of rows with incomplete stats (see inventory summary `pct_*` columns).
+7. **Ball possession has no historical baseline** — the original source never published it, and `HPos`/`APos` (added 2026-08-28) only get populated going forward from whenever `fetch_results.py` first fetches a match. Expect a thin, Low-confidence sample for most teams for a long time; this is correct, not a bug, and possession is deliberately not used as a model input (display-only) for exactly this reason — see `CLAUDE.md`.
 
 ## Data quality — verified on the 15 Aug 2026 rebuild
 

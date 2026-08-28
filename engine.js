@@ -8,6 +8,21 @@ const DC_RHO = -0.10; // fixed, literature-typical — not fitted to this datase
 const GOAL_LINES = [1.5, 2.5, 3.5];
 const CORNER_LINES = [8.5, 9.5, 10.5, 11.5];
 const CARD_LINES = [2.5, 3.5, 4.5];
+const SHOT_LINES = [22.5, 24.5, 26.5, 28.5];
+const SOT_LINES = [7.5, 8.5, 9.5, 10.5];
+const FOUL_LINES = [20.5, 22.5, 24.5, 26.5, 28.5];
+
+// Conservative — actual goals stay the dominant signal for lambda; this
+// only nudges toward a shots-on-target-based pseudo-xG proxy (see
+// goalOrXg below), never replaces goals outright. Same "quarter-strength"
+// magnitude already used for quarterKelly elsewhere in this codebase.
+// Real xG is essentially absent from this dataset's history (football-
+// data.co.uk never published it), so a hard "prefer xG, else use the SOT
+// proxy" fallback would end up using the proxy for the vast majority of
+// historical matches (SOT is populated on the same rows FTHG already is)
+// rather than just occasionally correcting a one-sided-but-lost result —
+// a blend keeps that correction real but bounded.
+const QUALITY_BLEND_WEIGHT = 0.25;
 
 function seasonWeight(season){
   const idx = SEASON_ORDER.indexOf(season);
@@ -16,18 +31,32 @@ function seasonWeight(season){
   return Math.pow(DECAY, latest - idx);
 }
 
+const EXPECTED_ROW_LEN = 20;
+
 class Engine {
   constructor(matchRows, teamMap){
-    // matchRows: [season, div, home, away, fthg, ftag, hc, ac, hy, ay, hxg, axg]
-    // hxg/axg (expected goals) are optional/trailing — rows built before this
-    // field existed, or any row where the source has no xG, simply have
-    // r[10]/r[11] undefined, which weightedSplits treats the same as null.
+    // matchRows: [season, div, home, away, fthg, ftag, hc, ac, hy, ay, hxg,
+    // axg, hs, as, hst, ast, hf, af, hpos, apos] — 20 fields. MUST stay in
+    // lockstep with build.py's build_trimmed_matches_json(): same fields,
+    // same order, append-only (new stats always added at the end, never
+    // interleaved, so older code reading early indices never breaks).
+    // Any field a given row's source doesn't have is simply undefined/null
+    // — weightedSplits treats that the same as "missing," never guesses.
     this.byDiv = {};
     this.teamMap = teamMap;
     for(const r of matchRows){
+      if(r.length !== EXPECTED_ROW_LEN){
+        throw new Error(`trimmed_matches.json row has ${r.length} fields, Engine expects ${EXPECTED_ROW_LEN} — build.py's build_trimmed_matches_json() and Engine's constructor have drifted out of sync.`);
+      }
       const w = seasonWeight(r[0]);
       if(w <= 0) continue;
-      const m = { season:r[0], div:r[1], home:r[2], away:r[3], fthg:r[4], ftag:r[5], hc:r[6], ac:r[7], hy:r[8], ay:r[9], hxg:(r[10] ?? null), axg:(r[11] ?? null), w };
+      const m = {
+        season:r[0], div:r[1], home:r[2], away:r[3], fthg:r[4], ftag:r[5],
+        hc:r[6], ac:r[7], hy:r[8], ay:r[9], hxg:(r[10] ?? null), axg:(r[11] ?? null),
+        hs:(r[12] ?? null), as:(r[13] ?? null), hst:(r[14] ?? null), ast:(r[15] ?? null),
+        hf:(r[16] ?? null), af:(r[17] ?? null), hpos:(r[18] ?? null), apos:(r[19] ?? null),
+        w,
+      };
       (this.byDiv[r[1]] ||= []).push(m);
     }
     this.leagueStats = {};
@@ -43,10 +72,30 @@ class Engine {
       const avgAg = rows.filter(r=>r.ftag!=null).reduce((s,r)=>s+r.w*r.ftag,0) / wsum;
       const cornerTotals = rows.filter(r=>r.hc!=null && r.ac!=null).map(r=>r.hc+r.ac);
       const cardTotals = rows.filter(r=>r.hy!=null && r.ay!=null).map(r=>r.hy+r.ay);
+      const shotTotals = rows.filter(r=>r.hs!=null && r.as!=null).map(r=>r.hs+r.as);
+      const sotTotals = rows.filter(r=>r.hst!=null && r.ast!=null).map(r=>r.hst+r.ast);
+      const foulTotals = rows.filter(r=>r.hf!=null && r.af!=null).map(r=>r.hf+r.af);
+
+      // Pooled goals-per-shot-on-target conversion rate (home+away combined)
+      // — the pseudo-xG multiplier goalOrXg blends in below. Literature-
+      // typical, computed once per division from real goals/SOT pairs in
+      // this dataset, not fitted/regressed — same evidentiary bar as DC_RHO.
+      const sotGoalPairs = [
+        ...rows.filter(r=>r.fthg!=null && r.hst!=null).map(r=>[r.fthg, r.hst]),
+        ...rows.filter(r=>r.ftag!=null && r.ast!=null).map(r=>[r.ftag, r.ast]),
+      ];
+      const totalSotGoals = sotGoalPairs.reduce((s,p)=>s+p[0], 0);
+      const totalSot = sotGoalPairs.reduce((s,p)=>s+p[1], 0);
+      const sotGoalRate = totalSot > 0 ? totalSotGoals / totalSot : null;
+
       this.leagueStats[div] = {
         avgHomeGoals: avgHg, avgAwayGoals: avgAg,
         cornerMean: mean(cornerTotals), cornerVar: variance(cornerTotals),
         cardMean: mean(cardTotals), cardVar: variance(cardTotals),
+        shotMean: mean(shotTotals), shotVar: variance(shotTotals),
+        sotMean: mean(sotTotals), sotVar: variance(sotTotals),
+        foulMean: mean(foulTotals), foulVar: variance(foulTotals),
+        sotGoalRate,
       };
     }
   }
@@ -58,12 +107,12 @@ class Engine {
 
   teamHomeSplits(div, team){
     const rows = (this.byDiv[div]||[]).filter(r=>r.home===team);
-    return weightedSplits(rows, 'home');
+    return weightedSplits(rows, 'home', this.leagueStats[div]?.sotGoalRate ?? null);
   }
 
   teamAwaySplits(div, team){
     const rows = (this.byDiv[div]||[]).filter(r=>r.away===team);
-    return weightedSplits(rows, 'away');
+    return weightedSplits(rows, 'away', this.leagueStats[div]?.sotGoalRate ?? null);
   }
 
   // Direct past meetings between these two teams (either venue), most recent
@@ -147,9 +196,33 @@ class Engine {
       const ratio = league.cardVar / league.cardMean;
       markets = markets.concat(negbinMarkets('Cards (Yellow)', cardMeanMatch, ratio, CARD_LINES, nUsed));
     }
+    const shotMeanMatch = homeH.shotsFor + awayA.shotsFor;
+    if(league.shotMean && league.shotVar > league.shotMean){
+      const ratio = league.shotVar / league.shotMean;
+      markets = markets.concat(negbinMarkets('Shots', shotMeanMatch, ratio, SHOT_LINES, nUsed));
+    }
+    const sotMeanMatch = homeH.sotFor + awayA.sotFor;
+    if(league.sotMean && league.sotVar > league.sotMean){
+      const ratio = league.sotVar / league.sotMean;
+      markets = markets.concat(negbinMarkets('Shots on Target', sotMeanMatch, ratio, SOT_LINES, nUsed));
+    }
+    const foulMeanMatch = homeH.foulsFor + awayA.foulsFor;
+    if(league.foulMean && league.foulVar > league.foulMean){
+      const ratio = league.foulVar / league.foulMean;
+      markets = markets.concat(negbinMarkets('Fouls', foulMeanMatch, ratio, FOUL_LINES, nUsed));
+    }
 
     markets.sort((a,b)=>b.probability - a.probability);
     const confidence = nUsed < 20 ? 'Low' : (nUsed < 60 ? 'Medium' : 'High');
+
+    // Disclosure for the shots-on-target quality blend (see goalOrXg) —
+    // only surfaced when it actually affected at least one side's number,
+    // states the exact weight/rate used, never silent.
+    let qualityCorrectionNote = null;
+    const homeBlended = homeH.nQualityBlended || 0, awayBlended = awayA.nQualityBlended || 0;
+    if((homeBlended + awayBlended) > 0 && league.sotGoalRate != null){
+      qualityCorrectionNote = `Attacking baseline blends in a shots-on-target-based pseudo-xG proxy (SOT × ${league.sotGoalRate.toFixed(3)} goals-per-shot-on-target, division-level, literature-typical, not fitted to this dataset) at ${(QUALITY_BLEND_WEIGHT*100).toFixed(0)}% weight, for ${homeBlended} of ${homeH.n} ${homeFixtureName} match(es) and ${awayBlended} of ${awayA.n} ${awayFixtureName} match(es) with no real xG recorded — actual goals still dominate the number, this only nudges it toward underlying shot quality rather than reading the scoreline alone as the full signal.`;
+    }
 
     return {
       home_hist_name: homeHist, away_hist_name: awayHist,
@@ -158,6 +231,11 @@ class Engine {
       confidence,
       dc_rho_note: `Dixon-Coles low-score correction applied with fixed rho=${DC_RHO} (literature-typical, not fitted to this dataset).`,
       form_blend_note: formBlendNote,
+      quality_correction_note: qualityCorrectionNote,
+      possession: {
+        home: { avg: homeH.possessionFor ? round2(homeH.possessionFor) : null, n: homeH.nPossessionUsed },
+        away: { avg: awayA.possessionFor ? round2(awayA.possessionFor) : null, n: awayA.nPossessionUsed },
+      },
       markets,
       h2h: this.headToHead(div, homeFixtureName, awayFixtureName),
     };
@@ -210,34 +288,67 @@ function round2(v){ return Math.round(v*100)/100; }
 // which is noisy at low sample sizes (a scrappy 1-0 and a dominant 1-0 count
 // identically under raw goals). Falls back to the actual goal count whenever
 // xG wasn't recorded for that specific match.
-function goalOrXg(r, xgField, goalField){
+// Prefers a row's expected-goals value over its actual goal count — xG is a
+// steadier signal of attacking/defensive quality than the final scoreline,
+// which is noisy at low sample sizes (a scrappy 1-0 and a dominant 1-0 count
+// identically under raw goals). When real xG wasn't recorded (true for
+// almost every row in this dataset — football-data.co.uk never published
+// it), blends in a shots-on-target-based pseudo-xG proxy at
+// QUALITY_BLEND_WEIGHT instead of using it outright — see that constant's
+// comment for why a blend, not a hard fallback. Falls back to the plain
+// goal count when neither xG nor a usable SOT figure exists for that row.
+function goalOrXg(r, xgField, sotField, goalField, sotGoalRate){
   const xg = r[xgField];
-  return xg != null ? xg : r[goalField];
+  if(xg != null) return xg;
+  const goal = r[goalField];
+  if(goal == null) return null;
+  const sot = r[sotField];
+  if(sotGoalRate == null || sot == null) return goal;
+  const pseudoXg = sot * sotGoalRate;
+  return goal * (1 - QUALITY_BLEND_WEIGHT) + pseudoXg * QUALITY_BLEND_WEIGHT;
 }
 
-function weightedSplits(rows, side){
+function weightedSplits(rows, side, sotGoalRate){
   const wsum = rows.reduce((s,r)=>s+r.w, 0);
   const n = rows.length;
-  if(wsum === 0 || n === 0) return { goalsFor:0, goalsAgainst:0, cornersFor:0, cardsFor:0, n:0, nXgUsed:0 };
-  let gf, ga, cf, cardf;
-  // nXgUsed: how many of these matches actually had xG recorded (vs. falling
-  // back to actual goals) — 0 for every division today, since no row in
-  // master.csv has xG populated yet (see DATA_README.md). This makes the
-  // fallback's effect visible/debuggable once xG data does get added,
-  // without changing any current output.
-  const nXgUsed = rows.filter(r => (side==='home' ? r.hxg : r.axg) != null).length;
+  if(wsum === 0 || n === 0) return { goalsFor:0, goalsAgainst:0, cornersFor:0, cardsFor:0,
+    shotsFor:0, sotFor:0, foulsFor:0, possessionFor:0, n:0, nXgUsed:0, nQualityBlended:0, nPossessionUsed:0 };
+  let gf, ga, cf, cardf, sf, sotf, foulf, posf;
+  // nXgUsed: how many of these matches actually had real xG recorded — 0
+  // for every division today, since no row in master.csv has real xG
+  // populated yet (see DATA_README.md). nQualityBlended: how many instead
+  // got the SOT-based pseudo-xG blend applied (goal present, real xG
+  // absent, SOT present). Both surfaced so the effect is visible/debuggable
+  // rather than a silent internal detail.
+  const xgField = side==='home' ? 'hxg' : 'axg';
+  const sotField = side==='home' ? 'hst' : 'ast';
+  const goalField = side==='home' ? 'fthg' : 'ftag';
+  const nXgUsed = rows.filter(r => r[xgField] != null).length;
+  const nQualityBlended = rows.filter(r => r[xgField] == null && r[goalField] != null && sotGoalRate != null && r[sotField] != null).length;
   if(side === 'home'){
-    gf = rows.filter(r=>goalOrXg(r,'hxg','fthg')!=null).reduce((s,r)=>s+r.w*goalOrXg(r,'hxg','fthg'),0) / wsum;
-    ga = rows.filter(r=>goalOrXg(r,'axg','ftag')!=null).reduce((s,r)=>s+r.w*goalOrXg(r,'axg','ftag'),0) / wsum;
+    gf = rows.filter(r=>goalOrXg(r,'hxg','hst','fthg',sotGoalRate)!=null).reduce((s,r)=>s+r.w*goalOrXg(r,'hxg','hst','fthg',sotGoalRate),0) / wsum;
+    ga = rows.filter(r=>goalOrXg(r,'axg','ast','ftag',sotGoalRate)!=null).reduce((s,r)=>s+r.w*goalOrXg(r,'axg','ast','ftag',sotGoalRate),0) / wsum;
     cf = rows.filter(r=>r.hc!=null).reduce((s,r)=>s+r.w*r.hc,0) / wsum;
     cardf = rows.filter(r=>r.hy!=null).reduce((s,r)=>s+r.w*r.hy,0) / wsum;
+    sf = rows.filter(r=>r.hs!=null).reduce((s,r)=>s+r.w*r.hs,0) / wsum;
+    sotf = rows.filter(r=>r.hst!=null).reduce((s,r)=>s+r.w*r.hst,0) / wsum;
+    foulf = rows.filter(r=>r.hf!=null).reduce((s,r)=>s+r.w*r.hf,0) / wsum;
+    posf = rows.filter(r=>r.hpos!=null).reduce((s,r)=>s+r.w*r.hpos,0) / wsum;
   } else {
-    gf = rows.filter(r=>goalOrXg(r,'axg','ftag')!=null).reduce((s,r)=>s+r.w*goalOrXg(r,'axg','ftag'),0) / wsum;
-    ga = rows.filter(r=>goalOrXg(r,'hxg','fthg')!=null).reduce((s,r)=>s+r.w*goalOrXg(r,'hxg','fthg'),0) / wsum;
+    gf = rows.filter(r=>goalOrXg(r,'axg','ast','ftag',sotGoalRate)!=null).reduce((s,r)=>s+r.w*goalOrXg(r,'axg','ast','ftag',sotGoalRate),0) / wsum;
+    ga = rows.filter(r=>goalOrXg(r,'hxg','hst','fthg',sotGoalRate)!=null).reduce((s,r)=>s+r.w*goalOrXg(r,'hxg','hst','fthg',sotGoalRate),0) / wsum;
     cf = rows.filter(r=>r.ac!=null).reduce((s,r)=>s+r.w*r.ac,0) / wsum;
     cardf = rows.filter(r=>r.ay!=null).reduce((s,r)=>s+r.w*r.ay,0) / wsum;
+    sf = rows.filter(r=>r.as!=null).reduce((s,r)=>s+r.w*r.as,0) / wsum;
+    sotf = rows.filter(r=>r.ast!=null).reduce((s,r)=>s+r.w*r.ast,0) / wsum;
+    foulf = rows.filter(r=>r.af!=null).reduce((s,r)=>s+r.w*r.af,0) / wsum;
+    posf = rows.filter(r=>r.apos!=null).reduce((s,r)=>s+r.w*r.apos,0) / wsum;
   }
-  return { goalsFor:gf, goalsAgainst:ga, cornersFor:cf, cardsFor:cardf, n, nXgUsed };
+  const posField = side==='home' ? 'hpos' : 'apos';
+  const nPossessionUsed = rows.filter(r => r[posField] != null).length;
+  return { goalsFor:gf, goalsAgainst:ga, cornersFor:cf, cardsFor:cardf,
+    shotsFor:sf, sotFor:sotf, foulsFor:foulf, possessionFor:posf,
+    n, nXgUsed, nQualityBlended, nPossessionUsed };
 }
 
 function poissonPmf(k, lam){
@@ -464,6 +575,9 @@ function gradeMarket(market, selection, result){
   const total = (result.fthg!=null && result.ftag!=null) ? result.fthg + result.ftag : null;
   const cornersTotal = (result.hc!=null && result.ac!=null) ? result.hc + result.ac : null;
   const cardsTotal = (result.hy!=null && result.ay!=null) ? result.hy + result.ay : null;
+  const shotsTotal = (result.hs!=null && result.as!=null) ? result.hs + result.as : null;
+  const sotTotal = (result.hst!=null && result.ast!=null) ? result.hst + result.ast : null;
+  const foulsTotal = (result.hf!=null && result.af!=null) ? result.hf + result.af : null;
 
   function ouHit(actualTotal, prefix){
     if(actualTotal == null || !market.startsWith(prefix)) return undefined;
@@ -490,6 +604,12 @@ function gradeMarket(market, selection, result){
   if(cornersHit !== undefined) return cornersHit;
   const cardsHit = ouHit(cardsTotal, 'Cards (Yellow) O/U ');
   if(cardsHit !== undefined) return cardsHit;
+  const shotsHit = ouHit(shotsTotal, 'Shots O/U ');
+  if(shotsHit !== undefined) return shotsHit;
+  const sotHit = ouHit(sotTotal, 'Shots on Target O/U ');
+  if(sotHit !== undefined) return sotHit;
+  const foulsHit = ouHit(foulsTotal, 'Fouls O/U ');
+  if(foulsHit !== undefined) return foulsHit;
 
   return null; // ungradeable with the data we have
 }

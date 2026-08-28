@@ -28,6 +28,14 @@ DC_RHO = -0.10
 CARD_LINES = [2.5, 3.5, 4.5]
 CORNER_LINES = [8.5, 9.5, 10.5, 11.5]
 GOAL_LINES = [1.5, 2.5, 3.5]
+SHOT_LINES = [22.5, 24.5, 26.5, 28.5]
+SOT_LINES = [7.5, 8.5, 9.5, 10.5]
+FOUL_LINES = [20.5, 22.5, 24.5, 26.5, 28.5]
+
+# Conservative — actual goals stay the dominant signal for lambda; this only
+# nudges toward a shots-on-target-based pseudo-xG proxy (see _goal_or_xg),
+# never replaces goals outright. Mirrors engine.js exactly -- keep in sync.
+QUALITY_BLEND_WEIGHT = 0.25
 
 
 def _season_weight(season):
@@ -73,6 +81,10 @@ class Engine:
                     'hy': _f(row, 'HY'), 'ay': _f(row, 'AY'),
                     'hr': _f(row, 'HR'), 'ar': _f(row, 'AR'),
                     'hxg': _f(row, 'HXG'), 'axg': _f(row, 'AXG'),
+                    'hs': _f(row, 'HS'), 'as': _f(row, 'AS'),
+                    'hst': _f(row, 'HST'), 'ast': _f(row, 'AST'),
+                    'hf': _f(row, 'HF'), 'af': _f(row, 'AF'),
+                    'hpos': _f(row, 'HPos'), 'apos': _f(row, 'APos'),
                     'w': w,
                 }
                 self.matches.append(parsed)
@@ -93,6 +105,22 @@ class Engine:
             # variance estimate distorts it; we use raw matches with available data)
             corner_totals = [r['hc'] + r['ac'] for r in rows if r['hc'] is not None and r['ac'] is not None]
             card_totals = [r['hy'] + r['ay'] for r in rows if r['hy'] is not None and r['ay'] is not None]
+            shot_totals = [r['hs'] + r['as'] for r in rows if r['hs'] is not None and r['as'] is not None]
+            sot_totals = [r['hst'] + r['ast'] for r in rows if r['hst'] is not None and r['ast'] is not None]
+            foul_totals = [r['hf'] + r['af'] for r in rows if r['hf'] is not None and r['af'] is not None]
+
+            # Pooled goals-per-shot-on-target conversion rate (home+away
+            # combined) -- the pseudo-xG multiplier _goal_or_xg blends in.
+            # Literature-typical, computed once per division from real
+            # goals/SOT pairs in this dataset, not fitted/regressed -- same
+            # evidentiary bar as DC_RHO. Mirrors engine.js exactly.
+            sot_goal_pairs = (
+                [(r['fthg'], r['hst']) for r in rows if r['fthg'] is not None and r['hst'] is not None]
+                + [(r['ftag'], r['ast']) for r in rows if r['ftag'] is not None and r['ast'] is not None]
+            )
+            total_sot_goals = sum(g for g, _ in sot_goal_pairs)
+            total_sot = sum(s for _, s in sot_goal_pairs)
+            sot_goal_rate = (total_sot_goals / total_sot) if total_sot > 0 else None
 
             self.league_stats[div] = {
                 'avg_home_goals': avg_hg,
@@ -101,6 +129,13 @@ class Engine:
                 'corner_var': _var(corner_totals),
                 'card_mean': _mean(card_totals),
                 'card_var': _var(card_totals),
+                'shot_mean': _mean(shot_totals),
+                'shot_var': _var(shot_totals),
+                'sot_mean': _mean(sot_totals),
+                'sot_var': _var(sot_totals),
+                'foul_mean': _mean(foul_totals),
+                'foul_var': _var(foul_totals),
+                'sot_goal_rate': sot_goal_rate,
                 'n_matches': len(rows),
             }
 
@@ -110,11 +145,11 @@ class Engine:
     def team_home_splits(self, div, team):
         """Weighted home-match stats for `team` playing at home in `div`."""
         rows = [r for r in self.by_div.get(div, []) if r['home'] == team]
-        return _weighted_splits(rows, side='home')
+        return _weighted_splits(rows, side='home', sot_goal_rate=self.league_stats.get(div, {}).get('sot_goal_rate'))
 
     def team_away_splits(self, div, team):
         rows = [r for r in self.by_div.get(div, []) if r['away'] == team]
-        return _weighted_splits(rows, side='away')
+        return _weighted_splits(rows, side='away', sot_goal_rate=self.league_stats.get(div, {}).get('sot_goal_rate'))
 
     def analyze(self, div, home_fixture_name, away_fixture_name, recent_form=None):
         if div not in self.league_stats:
@@ -205,9 +240,49 @@ class Engine:
                 'Cards (Yellow)', card_mean_match, var_ratio, CARD_LINES, n_used
             ))
 
+        # --- shots (negative binomial) ---
+        shot_mean_match = home_h['shots_for'] + away_a['shots_for']
+        if league['shot_mean'] and league['shot_var'] and league['shot_var'] > league['shot_mean']:
+            var_ratio = league['shot_var'] / league['shot_mean']
+            markets.extend(_negbin_markets(
+                'Shots', shot_mean_match, var_ratio, SHOT_LINES, n_used
+            ))
+
+        # --- shots on target (negative binomial) ---
+        sot_mean_match = home_h['sot_for'] + away_a['sot_for']
+        if league['sot_mean'] and league['sot_var'] and league['sot_var'] > league['sot_mean']:
+            var_ratio = league['sot_var'] / league['sot_mean']
+            markets.extend(_negbin_markets(
+                'Shots on Target', sot_mean_match, var_ratio, SOT_LINES, n_used
+            ))
+
+        # --- fouls (negative binomial) ---
+        foul_mean_match = home_h['fouls_for'] + away_a['fouls_for']
+        if league['foul_mean'] and league['foul_var'] and league['foul_var'] > league['foul_mean']:
+            var_ratio = league['foul_var'] / league['foul_mean']
+            markets.extend(_negbin_markets(
+                'Fouls', foul_mean_match, var_ratio, FOUL_LINES, n_used
+            ))
+
         markets.sort(key=lambda m: m['probability'], reverse=True)
 
         confidence = 'Low' if n_used < 20 else ('Medium' if n_used < 60 else 'High')
+
+        # Disclosure for the shots-on-target quality blend (see _goal_or_xg)
+        # -- only surfaced when it actually affected at least one side.
+        quality_correction_note = None
+        home_blended = home_h.get('n_quality_blended') or 0
+        away_blended = away_a.get('n_quality_blended') or 0
+        if (home_blended + away_blended) > 0 and league.get('sot_goal_rate') is not None:
+            quality_correction_note = (
+                f"Attacking baseline blends in a shots-on-target-based pseudo-xG proxy "
+                f"(SOT x {league['sot_goal_rate']:.3f} goals-per-shot-on-target, division-level, "
+                f"literature-typical, not fitted to this dataset) at {QUALITY_BLEND_WEIGHT*100:.0f}% weight, "
+                f"for {home_blended} of {home_h['n']} {home_fixture_name} match(es) and "
+                f"{away_blended} of {away_a['n']} {away_fixture_name} match(es) with no real xG recorded — "
+                f"actual goals still dominate the number, this only nudges it toward underlying shot quality "
+                f"rather than reading the scoreline alone as the full signal."
+            )
 
         return {
             'home_hist_name': home_hist,
@@ -220,6 +295,11 @@ class Engine:
             'confidence': confidence,
             'dc_rho_note': f"Dixon-Coles low-score correction applied with fixed rho={DC_RHO} (literature-typical, not fitted to this dataset).",
             'form_blend_note': form_blend_note,
+            'quality_correction_note': quality_correction_note,
+            'possession': {
+                'home': {'avg': round(home_h['possession_for'], 2) if home_h['possession_for'] else None, 'n': home_h['n_possession_used']},
+                'away': {'avg': round(away_a['possession_for'], 2) if away_a['possession_for'] else None, 'n': away_a['n_possession_used']},
+            },
             'markets': markets,
         }
 
@@ -273,35 +353,73 @@ def _var(vals):
     return sum((v - m) ** 2 for v in vals) / (len(vals) - 1)
 
 
-def _goal_or_xg(row, xg_field, goal_field):
+def _goal_or_xg(row, xg_field, sot_field, goal_field, sot_goal_rate):
     """Prefers expected goals over the actual goal count for a row — xG is a
     steadier signal of attacking/defensive quality than the final scoreline.
-    Falls back to the actual goal count whenever xG wasn't recorded."""
+    When real xG wasn't recorded (true for almost every row in this
+    dataset), blends in a shots-on-target-based pseudo-xG proxy at
+    QUALITY_BLEND_WEIGHT instead of using it outright -- see that
+    constant's comment for why a blend, not a hard fallback. Falls back to
+    the plain goal count when neither xG nor a usable SOT figure exists.
+    Mirrors engine.js's goalOrXg exactly."""
     xg = row.get(xg_field)
-    return xg if xg is not None else row.get(goal_field)
+    if xg is not None:
+        return xg
+    goal = row.get(goal_field)
+    if goal is None:
+        return None
+    sot = row.get(sot_field)
+    if sot_goal_rate is None or sot is None:
+        return goal
+    pseudo_xg = sot * sot_goal_rate
+    return goal * (1 - QUALITY_BLEND_WEIGHT) + pseudo_xg * QUALITY_BLEND_WEIGHT
 
 
-def _weighted_splits(rows, side):
+def _weighted_splits(rows, side, sot_goal_rate=None):
     wsum = sum(r['w'] for r in rows)
     n = len(rows)
     if wsum == 0 or n == 0:
-        return {'goals_for': 0, 'goals_against': 0, 'corners_for': 0, 'cards_for': 0, 'n': 0, 'n_xg_used': 0}
-    # n_xg_used: how many of these matches actually had xG recorded (vs.
-    # falling back to actual goals) — 0 today for every division, since no
-    # row in master.csv has xG populated yet (see DATA_README.md).
+        return {'goals_for': 0, 'goals_against': 0, 'corners_for': 0, 'cards_for': 0,
+                'shots_for': 0, 'sot_for': 0, 'fouls_for': 0, 'possession_for': 0,
+                'n': 0, 'n_xg_used': 0, 'n_quality_blended': 0, 'n_possession_used': 0}
+    # n_xg_used: how many of these matches actually had real xG recorded --
+    # 0 today for every division, since no row in master.csv has real xG
+    # populated yet (see DATA_README.md). n_quality_blended: how many
+    # instead got the SOT-based pseudo-xG blend applied (goal present, real
+    # xG absent, SOT present).
     xg_key = 'hxg' if side == 'home' else 'axg'
+    sot_key = 'hst' if side == 'home' else 'ast'
+    goal_key = 'fthg' if side == 'home' else 'ftag'
     n_xg_used = sum(1 for r in rows if r.get(xg_key) is not None)
+    n_quality_blended = sum(
+        1 for r in rows
+        if r.get(xg_key) is None and r.get(goal_key) is not None
+        and sot_goal_rate is not None and r.get(sot_key) is not None
+    )
     if side == 'home':
-        gf = sum(r['w'] * _goal_or_xg(r, 'hxg', 'fthg') for r in rows if _goal_or_xg(r, 'hxg', 'fthg') is not None) / wsum
-        ga = sum(r['w'] * _goal_or_xg(r, 'axg', 'ftag') for r in rows if _goal_or_xg(r, 'axg', 'ftag') is not None) / wsum
+        gf = sum(r['w'] * _goal_or_xg(r, 'hxg', 'hst', 'fthg', sot_goal_rate) for r in rows if _goal_or_xg(r, 'hxg', 'hst', 'fthg', sot_goal_rate) is not None) / wsum
+        ga = sum(r['w'] * _goal_or_xg(r, 'axg', 'ast', 'ftag', sot_goal_rate) for r in rows if _goal_or_xg(r, 'axg', 'ast', 'ftag', sot_goal_rate) is not None) / wsum
         cf = sum(r['w'] * r['hc'] for r in rows if r['hc'] is not None) / wsum
         cardf = sum(r['w'] * r['hy'] for r in rows if r['hy'] is not None) / wsum
+        sf = sum(r['w'] * r['hs'] for r in rows if r['hs'] is not None) / wsum
+        sotf = sum(r['w'] * r['hst'] for r in rows if r['hst'] is not None) / wsum
+        foulf = sum(r['w'] * r['hf'] for r in rows if r['hf'] is not None) / wsum
+        posf = sum(r['w'] * r['hpos'] for r in rows if r['hpos'] is not None) / wsum
+        n_possession_used = sum(1 for r in rows if r['hpos'] is not None)
     else:
-        gf = sum(r['w'] * _goal_or_xg(r, 'axg', 'ftag') for r in rows if _goal_or_xg(r, 'axg', 'ftag') is not None) / wsum
-        ga = sum(r['w'] * _goal_or_xg(r, 'hxg', 'fthg') for r in rows if _goal_or_xg(r, 'hxg', 'fthg') is not None) / wsum
+        gf = sum(r['w'] * _goal_or_xg(r, 'axg', 'ast', 'ftag', sot_goal_rate) for r in rows if _goal_or_xg(r, 'axg', 'ast', 'ftag', sot_goal_rate) is not None) / wsum
+        ga = sum(r['w'] * _goal_or_xg(r, 'hxg', 'hst', 'fthg', sot_goal_rate) for r in rows if _goal_or_xg(r, 'hxg', 'hst', 'fthg', sot_goal_rate) is not None) / wsum
         cf = sum(r['w'] * r['ac'] for r in rows if r['ac'] is not None) / wsum
         cardf = sum(r['w'] * r['ay'] for r in rows if r['ay'] is not None) / wsum
-    return {'goals_for': gf, 'goals_against': ga, 'corners_for': cf, 'cards_for': cardf, 'n': n, 'n_xg_used': n_xg_used}
+        sf = sum(r['w'] * r['as'] for r in rows if r['as'] is not None) / wsum
+        sotf = sum(r['w'] * r['ast'] for r in rows if r['ast'] is not None) / wsum
+        foulf = sum(r['w'] * r['af'] for r in rows if r['af'] is not None) / wsum
+        posf = sum(r['w'] * r['apos'] for r in rows if r['apos'] is not None) / wsum
+        n_possession_used = sum(1 for r in rows if r['apos'] is not None)
+    return {'goals_for': gf, 'goals_against': ga, 'corners_for': cf, 'cards_for': cardf,
+            'shots_for': sf, 'sot_for': sotf, 'fouls_for': foulf, 'possession_for': posf,
+            'n': n, 'n_xg_used': n_xg_used, 'n_quality_blended': n_quality_blended,
+            'n_possession_used': n_possession_used}
 
 
 def _poisson_pmf(k, lam):
