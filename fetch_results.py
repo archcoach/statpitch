@@ -114,6 +114,43 @@ def parse_num(raw):
         return None
 
 
+def market_group(market):
+    """Mirrors index_template.html's marketGroup() exactly -- keep in sync."""
+    if market in ('Home Win (1X2)', 'Draw (1X2)', 'Away Win (1X2)', 'Double Chance'):
+        return '1X2 & Double Chance'
+    if market.startswith('Total Goals'):
+        return 'Goals'
+    if market == 'Both Teams to Score':
+        return 'BTTS'
+    if market.startswith('Corners'):
+        return 'Corners'
+    if market.startswith('Cards'):
+        return 'Cards'
+    if market.startswith('Shots'):  # catches both "Shots O/U" and "Shots on Target O/U"
+        return 'Shots'
+    if market.startswith('Fouls'):
+        return 'Fouls'
+    return 'Other'
+
+
+def best_per_category(markets):
+    """Mirrors index_template.html's bestPerCategory() exactly -- keep in
+    sync. Keeps the single highest-probability selection per market family
+    instead of a flat top-N-by-probability cut, which lets one family with
+    several highly-correlated lines (e.g. three different Fouls lines, all
+    near-certain together) crowd out every other family. markets is already
+    probability-sorted by engine_reference.py's analyze()."""
+    seen = set()
+    out = []
+    for m in markets:
+        g = market_group(m['market'])
+        if g in seen:
+            continue
+        seen.add(g)
+        out.append(m)
+    return out
+
+
 def already_played_ungraded(results):
     """Fixtures with iso date < today and no data/results.json entry yet."""
     today = datetime.date.today().isoformat()
@@ -328,13 +365,13 @@ def main():
                     n_raw += 1
                     continue
 
-                # Match the slice(0, 10) every other snapshot path already
-                # uses (engine.js's attachLiveOdds().slice(0,10) for live
-                # panels, and every manually-logged predictions_log.json
-                # entry) -- markets is already probability-sorted by
-                # analyze(), so this keeps the same top-10 convention
-                # renderPanel()/teamTrackRecord() assume everywhere else.
-                snapshot['markets'] = snapshot['markets'][:10]
+                # Keep one row per market family (1X2/DC, Goals, BTTS,
+                # Corners, Cards, Shots, Fouls) instead of a flat top-10 by
+                # raw probability -- these snapshots never have live odds
+                # (see module docstring), so index_template.html's !hasOdds
+                # rendering path applies, which now expects this same
+                # selection (see bestPerCategory() there -- keep in sync).
+                snapshot['markets'] = best_per_category(snapshot['markets'])
                 snapshot['source'] = 'Flashscore'
                 snapshot['source_url'] = row['href']
                 snapshot['logged_at'] = now_iso

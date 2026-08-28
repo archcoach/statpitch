@@ -106,8 +106,6 @@
   table.markets td.grade{font-family:'IBM Plex Mono',monospace;text-align:center;font-weight:700;}
   table.markets td.grade.hit{color:var(--good);}
   table.markets td.grade.miss{color:var(--flag);}
-  table.markets td.group-header{background:var(--surface);color:var(--text-faint);font-family:'IBM Plex Mono',monospace;
-    font-size:10px;text-transform:uppercase;letter-spacing:0.05em;padding:5px 8px;white-space:nowrap;}
 
   .team-context{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
   .team-form-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));gap:8px;}
@@ -23001,7 +22999,7 @@ const TEAM_NEWS = {
     "fetched_at": "2026-08-28T11:18:54Z"
   }
 };
-const BUILD_TIME = "2026-08-28T14:10:31.605076+02:00";
+const BUILD_TIME = "2026-08-28T15:41:55.148192+02:00";
 
 let LEAGUES, FIXTURES, ENGINE;
 
@@ -23583,7 +23581,6 @@ function rawOddsHtml(live){
   `;
 }
 
-const MARKET_GROUP_ORDER = ['1X2 & Double Chance', 'Goals', 'BTTS', 'Corners', 'Cards', 'Shots', 'Fouls', 'Other'];
 function marketGroup(market){
   if(market==='Home Win (1X2)' || market==='Draw (1X2)' || market==='Away Win (1X2)' || market==='Double Chance') return '1X2 & Double Chance';
   if(market.startsWith('Total Goals')) return 'Goals';
@@ -23593,6 +23590,28 @@ function marketGroup(market){
   if(market.startsWith('Shots')) return 'Shots'; // catches both "Shots O/U" and "Shots on Target O/U"
   if(market.startsWith('Fouls')) return 'Fouls';
   return 'Other';
+}
+
+// Keeps only the single highest-probability selection per market family
+// (1X2/DC, Goals, BTTS, Corners, Cards, Shots, Fouls, ...). markets is
+// already sorted probability-descending by engine.js's analyze(), so this
+// is just "first occurrence per category" — no second sort needed.
+// Exists because a flat top-N-by-probability cut lets one family with
+// several highly-correlated lines (e.g. three different Fouls Under X.5
+// lines, all near-certain together) crowd out every other family — this
+// guarantees every market type this match has data for gets exactly one
+// row, so Goals/BTTS/1X2 never disappear just because Shots/Fouls happen
+// to cluster at higher raw probabilities.
+function bestPerCategory(markets){
+  const seen = new Set();
+  const out = [];
+  for(const m of markets){
+    const g = marketGroup(m.market);
+    if(seen.has(g)) continue;
+    seen.add(g);
+    out.push(m);
+  }
+  return out;
 }
 
 // Display-only helper: picks what to headline in the top-pick callout and,
@@ -23609,7 +23628,7 @@ function pickSpotlight(top, hasOdds){
 }
 
 function marketRowHtml(m, hasOdds, graded, isSpotlight){
-  const catTag = hasOdds ? `<span class="cat-tag">${marketGroup(m.market).split(' ')[0].toUpperCase()}</span>` : '';
+  const catTag = `<span class="cat-tag">${marketGroup(m.market).split(' ')[0].toUpperCase()}</span>`;
   return `
     <tr class="${isSpotlight ? 'spotlight-row' : ''}">
       <td class="market">${catTag}${m.market}</td>
@@ -23650,10 +23669,10 @@ function renderPanel(f, holder){
     return;
   }
 
-  let data, top, live;
+  let data, allMarkets, live;
   if(graded){
     data = PREDICTIONS_LOG[key];
-    top = gradeSnapshot(data.markets, result);
+    allMarkets = gradeSnapshot(data.markets, result);
     live = { source: data.source, fetched_at: data.logged_at, source_url: data.source_url };
   } else {
     data = cache[key];
@@ -23674,11 +23693,21 @@ function renderPanel(f, holder){
       return;
     }
     live = LIVE_ODDS[key];
-    top = attachLiveOdds(data.markets, live).slice(0, 10);
+    allMarkets = attachLiveOdds(data.markets, live);
   }
 
-  const hasOdds = top.some(m => m.market_prob != null);
+  const hasOdds = allMarkets.some(m => m.market_prob != null);
   const isPast = iso < todayISO();
+  // With live odds: only 1X2/Double Chance/Goals/BTTS ever carry a market
+  // price (corners/cards/shots/fouls aren't fetched, see CLAUDE.md), so
+  // that pool is naturally small and doesn't need category-deduping —
+  // slice(0,10) + edge-sort is enough. Without live odds: every market
+  // family is in play and several (Shots, Fouls) have multiple highly-
+  // correlated lines that can crowd a flat probability cut — bestPerCategory
+  // guarantees one row per family instead (1X2/DC, Goals, BTTS, Corners,
+  // Cards, Shots, Fouls all represented, not just whichever lines happened
+  // to have the single highest raw numbers).
+  const top = hasOdds ? allMarkets.slice(0, 10) : bestPerCategory(allMarkets);
   const spotlight = pickSpotlight(top, hasOdds);
 
   const colspan = 3 + (hasOdds ? 4 : 0) + (graded ? 1 : 0);
@@ -23695,13 +23724,9 @@ function renderPanel(f, holder){
     });
     rowsHtml = sorted.map(m => marketRowHtml(m, hasOdds, graded, m === spotlight)).join('');
   } else {
-    const buckets = {};
-    for(const g of MARKET_GROUP_ORDER) buckets[g] = [];
-    for(const m of top) buckets[marketGroup(m.market)].push(m);
-    rowsHtml = MARKET_GROUP_ORDER
-      .filter(g => buckets[g].length)
-      .map(g => `<tr><td colspan="${colspan}" class="group-header">${g}</td></tr>` + buckets[g].map(m => marketRowHtml(m, hasOdds, graded, m === spotlight)).join(''))
-      .join('');
+    // Already probability-descending (bestPerCategory preserves the order
+    // analyze() produced) — no re-sort needed.
+    rowsHtml = top.map(m => marketRowHtml(m, hasOdds, graded, m === spotlight)).join('');
   }
 
   const topPick = spotlight;
@@ -23742,7 +23767,7 @@ function renderPanel(f, holder){
       ${h2hHtml(data.h2h)}
       ${topPickHtml}
       <div class="odds-status">${oddsStatusHtml}</div>
-      <div class="table-caption">${hasOdds ? 'Sorted by edge vs. market, highest first.' : 'Sorted by historical probability, highest first.'}</div>
+      <div class="table-caption">${hasOdds ? 'Sorted by edge vs. market, highest first.' : 'Best pick per market type (1X2, Goals, BTTS, Corners, Cards, Shots, Fouls), sorted by historical probability, highest first.'}</div>
       <div class="table-scroll">
         <table class="markets">
           <thead><tr>
@@ -23754,7 +23779,7 @@ function renderPanel(f, holder){
         </table>
       </div>
       <div class="disclaimer">
-        ${hasOdds ? 'Ranked by edge — model probability minus the live market-implied probability — highest first, not by raw historical probability.' : 'Ranked by model-derived historical probability, not market value.'}
+        ${hasOdds ? 'Ranked by edge — model probability minus the live market-implied probability — highest first, not by raw historical probability.' : 'Shows the single highest-probability selection from each market type this match has data for (1X2/Double Chance, Goals, BTTS, Corners, Cards, Shots, Shots on Target, Fouls) — not a flat top-10 by raw probability, which would let several highly-correlated lines on one stat (e.g. multiple Fouls lines) crowd out the others.'}
         ${hasOdds ? "Market Prob. is the live price with the overround removed via Shin's method (corrects for the favourite-longshot bias documented in the project instructions, rather than just flagging it); Edge is model minus market, in percentage points — not a recommendation. ¼-Kelly is a raw output of the Kelly criterion formula (quarter-strength) using the model's probability and the live odds — a bankroll-math calculation, not a stake suggestion or betting advice. It inherits every uncertainty already listed here (fixed rho, variance approximations, sample size), and Kelly itself is known to be highly sensitive to probability-estimation error, so a nonzero number here is not an endorsement to wager anything." : ''}
         ${graded ? 'Result column grades the prediction as it stood before the match — frozen at the time it was logged, not recomputed afterward. "—" means this market couldn\'t be graded from the recorded result (e.g. no corner/card count available).' : ''}
         ${data.dc_rho_note} ${data.form_blend_note || ''} ${data.quality_correction_note || ''} Never treat these as guarantees; sample sizes and variance still apply.

@@ -768,3 +768,28 @@ cached, if you want to check the blend path specifically.
   APos` appended) since `fetch_results.py` only ever appends rows, never
   rewrites the header — if a future stat needs a new column, remember this
   step, it's easy to miss.
+- **Best-per-category market selection, no-live-odds path (added
+  2026-08-28).** Adding Shots/Shots on Target/Fouls (above) exposed a real
+  problem in the no-live-odds table: it took the top 10 markets by raw
+  historical probability, but several of the new negbin markets have
+  multiple highly-correlated lines on the *same* underlying stat (e.g.
+  three different Fouls "Under" lines that are all near-certain together)
+  — those could crowd out the flat top-10 cut entirely, silently dropping
+  Goals/BTTS/1X2 from a match panel even though they're exactly the
+  markets a user came to see. `bestPerCategory()` in `index_template.html`
+  replaces the flat cut for the no-live-odds path: it keeps exactly one
+  row — the single highest-probability selection — per market family
+  (1X2 & Double Chance, Goals, BTTS, Corners, Cards, Shots, Fouls),
+  guaranteeing every family this match has data for shows up, not just
+  whichever lines happened to have the highest raw numbers. The
+  live-odds/edge-sorted path is untouched (only 1X2/DC/Goals/BTTS ever
+  carry a live price — see "Live odds" — so that pool is small and never
+  had this crowding problem). `fetch_results.py`'s `best_per_category()`
+  mirrors this exactly in Python (replacing its old flat `markets[:10]`
+  slice) so *future* automated snapshots get full family coverage too —
+  already-graded snapshots frozen before this change can't be fixed
+  retroactively without recomputing against a `master.csv` state that's
+  since moved on, which is exactly the kind of leak `predictions_log.json`
+  snapshots must never have; a few older graded panels may still show a
+  narrower, more probability-skewed set of markets, and that's an accepted,
+  disclosed limitation rather than something to patch after the fact.
