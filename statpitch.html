@@ -22999,7 +22999,7 @@ const TEAM_NEWS = {
     "fetched_at": "2026-08-28T11:18:54Z"
   }
 };
-const BUILD_TIME = "2026-08-28T15:41:55.148192+02:00";
+const BUILD_TIME = "2026-08-28T16:19:02.764393+02:00";
 
 let LEAGUES, FIXTURES, ENGINE;
 
@@ -23698,16 +23698,23 @@ function renderPanel(f, holder){
 
   const hasOdds = allMarkets.some(m => m.market_prob != null);
   const isPast = iso < todayISO();
-  // With live odds: only 1X2/Double Chance/Goals/BTTS ever carry a market
-  // price (corners/cards/shots/fouls aren't fetched, see CLAUDE.md), so
-  // that pool is naturally small and doesn't need category-deduping —
-  // slice(0,10) + edge-sort is enough. Without live odds: every market
-  // family is in play and several (Shots, Fouls) have multiple highly-
-  // correlated lines that can crowd a flat probability cut — bestPerCategory
-  // guarantees one row per family instead (1X2/DC, Goals, BTTS, Corners,
-  // Cards, Shots, Fouls all represented, not just whichever lines happened
-  // to have the single highest raw numbers).
-  const top = hasOdds ? allMarkets.slice(0, 10) : bestPerCategory(allMarkets);
+  // With live odds: every market that actually has a fetched market price
+  // must be shown, full stop — slicing the RAW-PROBABILITY-sorted list to
+  // 10 before separating odds-bearing from non-odds-bearing markets was a
+  // real bug: corners/cards/shots/fouls markets (which never carry live
+  // odds, see "Live odds" in CLAUDE.md) routinely out-rank 1X2/Goals/BTTS
+  // selections on raw historical probability alone, so a plain slice(0,10)
+  // could silently drop most of a match's actual live-odds coverage (seen
+  // in practice: 13 markets had a live price, only 3 survived the old
+  // slice). Every market with market_prob!=null is now always included;
+  // bestPerCategory() fills in one representative for whichever families
+  // have no live odds at all, so Corners/Cards/Shots/Fouls still show
+  // their own best pick even without a price to compare against. Without
+  // live odds at all, bestPerCategory() alone drives the same one-per-
+  // family selection described there.
+  const top = hasOdds
+    ? [...allMarkets.filter(m => m.market_prob != null), ...bestPerCategory(allMarkets.filter(m => m.market_prob == null))]
+    : bestPerCategory(allMarkets);
   const spotlight = pickSpotlight(top, hasOdds);
 
   const colspan = 3 + (hasOdds ? 4 : 0) + (graded ? 1 : 0);
@@ -23767,7 +23774,7 @@ function renderPanel(f, holder){
       ${h2hHtml(data.h2h)}
       ${topPickHtml}
       <div class="odds-status">${oddsStatusHtml}</div>
-      <div class="table-caption">${hasOdds ? 'Sorted by edge vs. market, highest first.' : 'Best pick per market type (1X2, Goals, BTTS, Corners, Cards, Shots, Fouls), sorted by historical probability, highest first.'}</div>
+      <div class="table-caption">${hasOdds ? 'Every market with a live price, sorted by edge vs. market, highest first — plus the best pick from any market type with no live price fetched (marked "—").' : 'Best pick per market type (1X2, Goals, BTTS, Corners, Cards, Shots, Fouls), sorted by historical probability, highest first.'}</div>
       <div class="table-scroll">
         <table class="markets">
           <thead><tr>
