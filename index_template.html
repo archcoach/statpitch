@@ -202,6 +202,16 @@
 
   .empty{padding:48px 12px;text-align:center;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
 
+  .vb-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:10px;}
+  .vb-summary-label{font-size:13px;font-weight:600;margin-bottom:2px;}
+  .vb-summary-nums{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--text-dim);}
+  .vb-summary .refresh-btn{padding:8px 14px;font-size:12.5px;}
+  .vb-summary .refresh-btn:disabled{opacity:.5;cursor:not-allowed;}
+  .vb-caption{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-bottom:10px;line-height:1.5;}
+  table.vb-table td.vb-check{padding:9px 6px 9px 10px;width:20px;}
+  table.vb-table td.vb-check input{width:15px;height:15px;cursor:pointer;accent-color:var(--accent);}
+
   .board-detail{display:none;}
 
   @media (min-width:980px){
@@ -338,8 +348,15 @@ function renderViewScope(){
   formBtn.textContent = `Team Form (${Object.keys(TEAM_NEWS).length}/${allFixtureTeams().length})`;
   formBtn.onclick = () => { view = 'form'; renderViewScope(); renderDateScope(); renderTabs(); renderList(); };
   formBtn.onkeydown = (e) => { if(e.key==='Enter'||e.key===' ') formBtn.onclick(); };
+  const valueBtn = document.createElement('div');
+  valueBtn.className = 'scope-btn' + (view==='value' ? ' active' : '');
+  valueBtn.tabIndex = 0;
+  valueBtn.textContent = `70%+ Picks (${computeValueBets().length})`;
+  valueBtn.onclick = () => { view = 'value'; renderViewScope(); renderDateScope(); renderTabs(); renderList(); };
+  valueBtn.onkeydown = (e) => { if(e.key==='Enter'||e.key===' ') valueBtn.onclick(); };
   el.appendChild(fixturesBtn);
   el.appendChild(formBtn);
+  el.appendChild(valueBtn);
   document.getElementById('dateScope').style.display = view==='fixtures' ? 'flex' : 'none';
   document.getElementById('board').classList.toggle('is-fixtures', view === 'fixtures');
 }
@@ -372,6 +389,7 @@ function makeScopeBtn(scope, label){
 function renderTabs(){
   const tabs = document.getElementById('tabs');
   tabs.innerHTML = '';
+  if(view === 'value') return; // flat cross-match list, no league/date filtering in v1
   if(view === 'form'){
     const teams = allFixtureTeams();
     tabs.appendChild(makeTab('ALL', 'All leagues', teams.length, '#8A97A0'));
@@ -439,6 +457,10 @@ function renderList(){
 
   if(view === 'form'){
     renderTeamFormGrid(list, statsLine);
+    return;
+  }
+  if(view === 'value'){
+    renderValueBetsView(list, statsLine);
     return;
   }
 
@@ -618,6 +640,139 @@ function renderTeamFormGrid(list, statsLine){
     groupEl.appendChild(grid);
     list.appendChild(groupEl);
   }
+}
+
+// Rows the user has unchecked in the "70%+ Picks" view, keyed by
+// sel.stashedOdd.uuid (already a globally unique id per captured
+// selection). Empty by default means everything is included -- the
+// common case is "send everything," not "hand-pick a few," so the
+// default has to be all-checked, not all-unchecked.
+let valueBetExcluded = new Set();
+
+// Only matches with captured Superbet bet IDs are eligible -- there's no
+// point listing a 70%+ pick nobody can actually send to a coupon, and it
+// keeps this cheap (a handful of matches, never all 2670 fixtures).
+// Reuses pickTopMarkets() -- the exact same "one best pick per market
+// family, plus everything with a live price" set the match panel itself
+// shows -- rather than a flat top-N-by-probability cut, which would
+// reintroduce the correlated-lines-crowding-out-Goals/1X2 bug already
+// fixed once this session, just across matches instead of within one.
+function computeValueBets(){
+  const today = todayISO();
+  const rows = [];
+  for(const key in SUPERBET_BET_IDS){
+    const f = findFixtureByKey(key);
+    if(!f) continue;
+    const [div, iso, label, time, home, away] = f;
+    if(iso < today || RESULTS[key]) continue; // can't bet on an already-played match
+
+    let data = cache[key];
+    if(!data){
+      try{
+        data = ENGINE.analyze(div, home, away, {
+          home: TEAM_NEWS[div+'|'+home]?.recent_form,
+          away: TEAM_NEWS[div+'|'+away]?.recent_form,
+        });
+        cache[key] = data;
+      }catch(e){ continue; }
+    }
+    if(data.error) continue;
+
+    const allMarkets = attachLiveOdds(data.markets, LIVE_ODDS[key]);
+    const { top } = pickTopMarkets(allMarkets);
+    const entry = SUPERBET_BET_IDS[key];
+    for(const m of top){
+      if(m.probability < 0.70) continue;
+      const sel = entry.selections[m.market+'|'+m.selection];
+      if(!sel) continue;
+      rows.push({
+        key, div, home, away, iso, time,
+        market: m.market, selection: m.selection,
+        probability: m.probability, marketOdds: m.market_odds, edge: m.edge,
+        sel,
+      });
+    }
+  }
+  rows.sort((a,b) => b.probability - a.probability);
+  return rows;
+}
+
+function sendValueBetsToSuperbet(rows){
+  if(!rows.length) return;
+  const selections = rows.map(r => r.sel);
+  const payload = {
+    purchaseType: 'online',
+    betSlips: [{
+      version: 'v2', selections, stake: 2, selectedSystems: [], type: 1,
+      addedOddUuidHistory: selections.map(s => ({ oddUuid: s.stashedOdd.uuid, sourceScreen: 100 })),
+    }],
+  };
+  const encoded = utf8ToBase64(JSON.stringify(payload));
+  // No bookmarklet changes needed for multiple selections -- it already
+  // reads window.name and writes it verbatim as multiBetSlip, with no
+  // per-selection logic of its own.
+  const w = window.open('', '_blank');
+  if(!w) return; // popup blocked -- nothing more we can do
+  w.name = encoded;
+  w.location = 'https://superbet.pl/';
+}
+
+function renderValueBetsView(list, statsLine){
+  const allRows = computeValueBets();
+  statsLine.textContent = `${allRows.length} pick${allRows.length===1?'':'s'} over 70% with a live Superbet link`;
+
+  if(allRows.length === 0){
+    list.innerHTML = `<div class="empty">No 70%+ picks with a captured Superbet link yet. Run fetch_superbet_bets.py to capture more matches, or check back once today/tomorrow's fixtures are covered.</div>`;
+    return;
+  }
+
+  const included = allRows.filter(r => !valueBetExcluded.has(r.sel.stashedOdd.uuid));
+  const combinedOdds = included.reduce((p,r) => p * r.sel.stashedOdd.value, 1);
+  const combinedProb = included.reduce((p,r) => p * r.probability, 1);
+
+  const rowsHtml = allRows.map(r => {
+    const checked = !valueBetExcluded.has(r.sel.stashedOdd.uuid);
+    return `
+      <tr>
+        <td class="vb-check"><input type="checkbox" data-uuid="${r.sel.stashedOdd.uuid}" ${checked?'checked':''}></td>
+        <td>${r.home} vs ${r.away}</td>
+        <td class="market">${r.market}</td>
+        <td class="sel">${r.selection}</td>
+        <td class="prob">${(r.probability*100).toFixed(1)}%</td>
+        <td class="prob odds">${r.sel.stashedOdd.value.toFixed(2)}</td>
+      </tr>
+    `;
+  }).join('');
+
+  list.innerHTML = `
+    <div class="vb-summary">
+      <div>
+        <div class="vb-summary-label">${included.length} of ${allRows.length} selected</div>
+        <div class="vb-summary-nums">Combined odds ${combinedOdds.toFixed(2)} · combined probability ${(combinedProb*100).toFixed(1)}%</div>
+      </div>
+      <button type="button" class="refresh-btn" id="vbSendBtn" ${included.length===0?'disabled':''}>Send ${included.length} to Superbet</button>
+    </div>
+    <div class="vb-caption">Combining several 70%+ picks does not mean the combined bet has a 70%+ chance of winning — each leg still has to hit independently (assuming independence: ${included.length} legs at their own probabilities multiply to ${(combinedProb*100).toFixed(1)}% combined, shown above). Only markets with a captured Superbet link are listed; sending opens a new tab with the payload attached — click your installed bookmarklet there to drop it into the coupon.</div>
+    <div class="table-scroll">
+      <table class="markets vb-table">
+        <thead><tr>
+          <th></th><th>Match</th><th>Market</th><th>Selection</th>
+          <th style="text-align:right">Historical Prob.</th><th style="text-align:right">Superbet Odds</th>
+        </tr></thead>
+        <tbody>${rowsHtml}</tbody>
+      </table>
+    </div>
+  `;
+
+  list.querySelectorAll('.vb-check input').forEach(cb => {
+    cb.onchange = () => {
+      const uuid = cb.dataset.uuid;
+      if(cb.checked) valueBetExcluded.delete(uuid); else valueBetExcluded.add(uuid);
+      renderValueBetsView(list, statsLine);
+    };
+  });
+  const sendBtn = document.getElementById('vbSendBtn');
+  if(sendBtn) sendBtn.onclick = () => sendValueBetsToSuperbet(included);
 }
 
 function rowBadgesHtml(f){

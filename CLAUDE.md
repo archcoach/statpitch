@@ -431,6 +431,55 @@ notice on any Superbet deploy — same evidentiary bar as everything else
 reverse-engineered in this project, disclosed here rather than presented
 as a stable, supported integration.
 
+### "70%+ Picks" tab — multi-match accumulator (added 2026-08-29)
+
+A third top-level view (alongside Fixtures/Team Form) pools every market
+across every match with model probability ≥70% *and* a captured Superbet
+selection into one flat, checkbox-driven list, so several picks can be
+sent to Superbet as a single accumulator in one click instead of one
+match at a time via the per-row 🎟️ button. `computeValueBets()` (index_
+template.html) is deliberately scoped to `Object.keys(SUPERBET_BET_IDS)`
+only — no point listing a 70%+ pick nobody can act on, and it keeps the
+computation cheap (a handful of matches, never all 2670 fixtures).
+Reuses `pickTopMarkets()` (the same shared selection logic the match
+panel and the header's track-record stat already use) rather than a
+flat top-N-by-probability cut, for the same reason documented under
+"Best-per-category market selection" above: a flat cut would let
+correlated Fouls/Corners lines from one match crowd out Goals/1X2 from
+another.
+
+**Verified live before building the UI, not assumed:** does putting
+selections from *different* matches into one `multiBetSlip.selections`
+array behave as a clean accumulator, or does the same-match auto-combine
+behavior (see above) leak across matches too? Confirmed directly — a
+real Bundesliga selection (odds 1.04) plus a real Premier League
+selection (odds 1.82), written together and reloaded, produced a genuine
+2-leg accumulator at combined odds 1.89 (= 1.04 × 1.82), both legs
+retained distinctly. No bookmarklet changes were needed for this: it
+already reads `window.name` and writes it verbatim as `multiBetSlip`,
+with no per-selection logic of its own, so it works identically for 1
+selection or N.
+
+**Default is everything checked**, not an empty selection the user has
+to fill in — "send everything" is the common case here, not "hand-pick a
+few." Unchecking a row is the exception. State lives in a module-level
+`valueBetExcluded` Set keyed by `stashedOdd.uuid` (already a globally
+unique id per captured selection).
+
+**Deliberately shows combined *probability* next to combined odds, not
+just odds.** Five legs at 70% each is only a ~17% chance of the whole
+accumulator winning (assuming independence) — showing only the
+multiplied odds, with no probability context, would read as "these are
+all confident picks" when the combined bet is anything but. This is the
+same honesty bar as the Kelly/Shin/dc_rho disclosures elsewhere in this
+app; the caption spelling out "combining 70%+ picks does not mean the
+combined bet has a 70%+ chance of winning" is not optional decoration —
+skipping it would be inconsistent with everything else this app already
+discloses. The odds column shows Superbet's own captured price
+(`sel.stashedOdd.value`), not the Flashscore-derived `market_odds` shown
+elsewhere in the app — those can differ, and what matters here is what
+the accumulator will actually be priced at.
+
 ## Team news / context
 
 Qualitative context alongside the model — recent underlying-stats form and
