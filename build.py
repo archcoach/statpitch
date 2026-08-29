@@ -111,6 +111,7 @@ def main():
         team_map_json = f.read()
 
     live_odds_json = read_json_or_empty('data', 'live_odds.json')
+    superbet_bet_ids_json = read_json_or_empty('data', 'superbet_bet_ids.json')
     results_json = read_json_or_empty('data', 'results.json')
     predictions_log_json = read_json_or_empty('data', 'predictions_log.json')
     team_news_json = read_json_or_empty('data', 'team_news.json')
@@ -124,6 +125,7 @@ def main():
     final = final.replace('__TEAM_MAP_JSON__', team_map_json)
     final = final.replace('__TRIMMED_MATCHES_JSON__', trimmed_matches_json)
     final = final.replace('__LIVE_ODDS_JSON__', live_odds_json)
+    final = final.replace('__SUPERBET_BET_IDS_JSON__', superbet_bet_ids_json)
     final = final.replace('__RESULTS_JSON__', results_json)
     final = final.replace('__PREDICTIONS_LOG_JSON__', predictions_log_json)
     final = final.replace('__TEAM_NEWS_JSON__', team_news_json)

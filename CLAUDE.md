@@ -164,15 +164,25 @@ to a page at all — Flashscore's odds-comparison tool has no corners or
 cards category, for any match, not just an availability gap for specific
 fixtures. This was checked directly (2026-08-21) before concluding it,
 rather than assumed. Superbet's own site does sometimes price these
-markets directly, but automating Superbet has still not been made to work
-in this environment — re-tested the same session this finding was made:
-its markets lazy-mount and simply don't render, headless or interactive,
-regardless of scroll position, wait time, or which category tab is
-active. If corners/cards odds matter enough to chase further, the honest
-options are (a) the manual Superbet workflow below, accepting it's
-manual, or (b) finding a third odds-comparison source that lists these
-markets and testing *that* site's automatability from scratch — don't
-assume either Flashscore or Superbet will suddenly start working.
+markets directly, but automating *reading rendered odds* off Superbet's
+own site has still not been made to work in this environment — re-tested
+the same session this finding was made: its markets lazy-mount and simply
+don't render, headless or interactive, regardless of scroll position,
+wait time, or which category tab is active. If corners/cards odds matter
+enough to chase further, the honest options are (a) the manual Superbet
+workflow below, accepting it's manual, or (b) finding a third odds-
+comparison source that lists these markets and testing *that* site's
+automatability from scratch — don't assume either Flashscore or Superbet
+will suddenly start working.
+
+**Correction (2026-08-29): this finding does not extend to *clicking* a
+Superbet market, only to reading its rendered text.** See "Add to Superbet
+coupon" below — clicking the actual row container (not its accessible-tree
+text label, which is a non-interactive lazy-mount placeholder) reliably
+expands Superbet's Over/Under and BTTS sections and lets Playwright
+capture the resulting bet-slip data, headless, confirmed live. Reading
+prices off the page is still unreliable for the reasons above; that part
+of this finding stands.
 
 Workflow to refresh a match's odds manually:
 
@@ -280,6 +290,110 @@ gaps unautomated; the operative rule now is narrower: don't extend
 automation into a *new* site or market without checking it renders reliably
 headless first, the same way `fetch_odds.py` and `fetch_team_stats.py` were
 each spike-tested before being trusted with a schedule.
+
+## Add to Superbet coupon (added 2026-08-29)
+
+The user asked to click a market in the panel (their example: Total Goals
+O/U 1.5) and have it appear on Superbet's own bet slip, without logging in,
+instead of finding the match and market themselves. Two hard constraints
+shaped the design, both confirmed by live testing rather than assumed:
+
+1. **`statpitch.html` can never reach into a superbet.pl tab directly** —
+   ordinary browser same-origin security, no way around it. The hand-off
+   is a **bookmarklet** the user installs once (a link in the header,
+   "Add-to-Superbet bookmarklet" — drag it to the bookmarks bar). Clicking
+   a market's 🎟️ button opens the right Superbet match page in a new tab
+   with the selection payload attached; clicking the installed bookmarklet
+   there drops it into the coupon. **The payload travels via `window.name`,
+   not a URL hash/query param** — a first version used the hash and it
+   silently failed: confirmed live that Superbet's own SPA router rewrites
+   the URL on load (adds its own `?mdt=` param) and strips any hash
+   fragment in the process, so the payload was already gone before a user
+   could ever click the bookmarklet. `window.name` is untouched by page
+   routing and survives cross-origin navigation by design (confirmed by
+   setting it, navigating through an unrelated origin and back into
+   Superbet's own router, and reading it back unchanged) — exactly the
+   property needed here. The click handler opens a blank tab, sets `.name`
+   on it, *then* navigates it to the Superbet URL, in that order.
+2. **Superbet's bet slip lives in `localStorage['multiBetSlip']`, not
+   behind a login.** Clicking an odd on superbet.pl writes a JSON
+   selection object there; writing the same shape back yourself and
+   reloading reproduces the coupon exactly, fully anonymous. Confirmed
+   directly by capturing what a real click produces and replaying it.
+
+**The `oddId`/`uuid`/`marketId`/`marketUuid` in that object are opaque,
+per-match, per-market internal IDs with no way to derive or guess them —
+they only exist by visiting the match page and clicking that exact
+selection.** `fetch_superbet_bets.py` (new script, sibling to
+`fetch_odds.py`) does that once per fixture and writes
+`data/superbet_bet_ids.json`, keyed by the same `matchKey()` format as
+`data/live_odds.json`. Unlike prices, bet IDs don't go stale — a fixture
+already captured is never re-fetched (see `upcoming_fixtures()`), only
+retried if it came back with fewer than `TARGET_SELECTION_COUNT` (13)
+selections, so one transient miss doesn't get permanently baked in.
+
+**v1 scope, confirmed with the user: 1X2, Double Chance, Total Goals O/U
+(1.5/2.5/3.5), and Both Teams to Score — 13 selections per match.**
+Corners/Cards/Shots/Fouls are deliberately not covered yet (more accordion
+sections to click through per match, unproven at this scope) — a natural
+v2 once v1 holds up in practice, same incremental pattern as the model's
+own market coverage.
+
+**Two failure modes were found and fixed the hard way — don't re-introduce
+either if you touch this script:**
+1. Clicking a second selection into an already-non-empty slip makes
+   Superbet auto-combine it with the first into a same-game-multi at a
+   *different* combined price, not the two standalone selections wanted.
+   Fix: reset `multiBetSlip` to empty before every single click.
+2. That reset doesn't reliably stick if done on a page that has *already*
+   processed a click in the same browser tab — the SPA's own in-memory
+   state still remembers the old selection and can overwrite the reset
+   moments later. Confirmed empirically: every capture after the first
+   successful one returned the *first* selection's exact uuid/value,
+   byte for byte, when only the *page* was reset between clicks — not a
+   near-miss, an exact match, which is what gave away that something was
+   re-syncing rather than genuinely failing. The reset only sticks
+   reliably on a **fresh browser context** (not just a fresh page/tab) —
+   Superbet almost certainly syncs the bet slip across tabs of the same
+   origin via a SharedWorker or BroadcastChannel (a real product feature:
+   add a selection in one tab, see it in another), which outlives
+   individual `page.close()` calls and lives at the context level, not
+   the page level. `capture_selection()` opens one fresh context per
+   selection (plus one more for `discover_target_selections()`'s probe)
+   because of this — slower, but the only version that reliably isolates
+   each captured selection. Budget roughly 2-3 minutes per match for the
+   full 13-selection capture (~9-10s per context: launch + navigate +
+   click + read) — one early test run took ~10 minutes for a single match
+   with no clear cause (CPU stayed flat the whole time, network jitter is
+   the best guess), so don't be alarmed by an occasional slow outlier, but
+   the steady-state cost is the 2-3 minute figure. This is not a bug to
+   "optimize" away without first finding what the actual cross-tab sync
+   mechanism is and deliberately defeating it (e.g. blocking its specific
+   request), which hasn't been done yet.
+
+**Team-name spelling is resolved from the page itself, not assumed.**
+An earlier version of this script built aria-label selectors by
+interpolating `fixtures.csv`'s team name directly (e.g. "Mecz, RB Leipzig
+wygra mecz") and silently matched nothing for any team where Superbet uses
+a different spelling — confirmed on RB Leipzig, which Superbet displays as
+"RB Lipsk" (a Polish exonym, not a formatting difference `norm_loose()`
+could bridge). Fixed by `discover_target_selections()`: probe the real
+page once per fixture (read-only) to harvest Superbet's own exact button
+text, then classify each by what it structurally IS (contains "Remis w
+meczu" → Draw; a Goals/BTTS button already names its own line/direction)
+rather than by pre-guessing spelling. The one remaining ambiguity — which
+of the two non-draw "Mecz, ..." buttons is home vs away — is resolved with
+the same override-aware substring check used for matching the fixture to
+its Superbet event in the first place, via `SUPERBET_NAME_OVERRIDES`
+(same hand-maintained-cache shape as `data/flashscore_team_ids.json`: add
+an entry the first time a team logs as unmatched despite genuinely having
+a fixture listed).
+
+**This entire mechanism replays an undocumented internal Superbet API
+shape** (the exact JSON `multiBetSlip` expects) that could change without
+notice on any Superbet deploy — same evidentiary bar as everything else
+reverse-engineered in this project, disclosed here rather than presented
+as a stable, supported integration.
 
 ## Team news / context
 

@@ -186,6 +186,10 @@
   table.markets td.prob.edge.pos{color:var(--good);}
   table.markets td.prob.edge.neg{color:var(--text-dim);}
   table.markets td.prob.kelly{color:var(--text-faint);font-weight:400;}
+  table.markets td.sb-cell{padding:4px 8px;text-align:center;}
+  .sb-add-btn{background:var(--surface);border:1px solid var(--border);border-radius:5px;
+    cursor:pointer;font-size:13px;line-height:1;padding:4px 7px;}
+  .sb-add-btn:hover{border-color:var(--accent);}
   .cat-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text-faint);letter-spacing:0.05em;
     border:1px solid var(--border);border-radius:3px;padding:1px 4px;margin-right:6px;white-space:nowrap;}
   .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-top:10px;line-height:1.5;}
@@ -226,6 +230,7 @@
     <div class="subline" id="trackRecord"></div>
     <div class="subline" id="buildTime"></div>
     <div class="offline-badge"><span class="dot2"></span>runs fully offline — nothing leaves this page</div>
+    <div class="subline sb-install">🎟️ <a href="javascript:(function(){var p=window.name;if(!p){alert('No StatPitch bet found for this tab.');return;}try{var bin=atob(p);var pct='';for(var i=0;i<bin.length;i++){pct+='%'+('0'+bin.charCodeAt(i).toString(16)).slice(-2);}var json=decodeURIComponent(pct);localStorage.setItem('multiBetSlip',json);window.name='';location.reload();}catch(e){alert('StatPitch bookmarklet error: '+e.message);}})();" title="Drag this link to your bookmarks bar">Add-to-Superbet bookmarklet</a> — drag to your bookmarks bar once. Click 🎟️ next to a market to open it on Superbet, then click this bookmarklet there to drop it into your coupon.</div>
   </header>
 
   <div class="date-scope" id="viewScope"></div>
@@ -259,6 +264,7 @@ const FIXTURE_DATA_INLINE = __FIXTURES_DATA_JSON__;
 const TEAM_MAP_INLINE = __TEAM_MAP_JSON__;
 const MATCH_ROWS_INLINE = __TRIMMED_MATCHES_JSON__;
 const LIVE_ODDS = __LIVE_ODDS_JSON__;
+const SUPERBET_BET_IDS = __SUPERBET_BET_IDS_JSON__;
 const RESULTS = __RESULTS_JSON__;
 const PREDICTIONS_LOG = __PREDICTIONS_LOG_JSON__;
 const TEAM_NEWS = __TEAM_NEWS_JSON__;
@@ -941,7 +947,43 @@ function pickSpotlight(top, hasOdds){
   return top[0]; // fallback when there's no live odds: highest historical probability, as before
 }
 
-function marketRowHtml(m, hasOdds, graded, isSpotlight){
+// UTF-8-safe base64 -- plain btoa() throws on non-Latin1 characters, and
+// Polish team/market names (ł, ą, ż, etc.) show up in every captured
+// Superbet selection object.
+function utf8ToBase64(str){
+  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (_, hex) => String.fromCharCode(parseInt(hex, 16))));
+}
+
+// Only renders when fetch_superbet_bets.py has actually captured this
+// exact market/selection's internal Superbet IDs for this match -- most
+// matches won't have this for a long time, same honest-degradation
+// pattern as every other optional data source in this app (never
+// fabricated). Builds the same multiBetSlip-shaped object Superbet's own
+// site writes to localStorage when a real click happens (see CLAUDE.md's
+// "Add to Superbet" section for the full mechanism). The payload travels
+// to the new tab via window.name, not a URL hash/query param -- confirmed
+// live that Superbet's own SPA router rewrites the URL on load (adds its
+// own ?mdt= param) and strips any hash fragment in the process, so a
+// hash-based payload would already be gone before the user could click
+// the bookmarklet. window.name is untouched by page routing and survives
+// cross-origin navigation by design, which is exactly what's needed here.
+function superbetLinkHtml(key, m){
+  const entry = SUPERBET_BET_IDS[key];
+  const sel = entry?.selections?.[m.market+'|'+m.selection];
+  if(!sel) return '';
+  const payload = {
+    purchaseType: 'online',
+    betSlips: [{
+      version: 'v2', selections: [sel], stake: 2, selectedSystems: [], type: 1,
+      addedOddUuidHistory: [{ oddUuid: sel.stashedOdd.uuid, sourceScreen: 100 }],
+    }],
+  };
+  const encoded = utf8ToBase64(JSON.stringify(payload));
+  const url = `https://superbet.pl/kursy/pilka-nozna/${entry.event_slug}`;
+  return `<button type="button" class="sb-add-btn" data-sb-url="${url}" data-sb-payload="${encoded}" title="Otwórz na Superbet z tym zakładem gotowym do dodania (wymaga zainstalowanego bookmarkletu, patrz link nad tabelą)">🎟️</button>`;
+}
+
+function marketRowHtml(m, hasOdds, graded, isSpotlight, key){
   const catTag = `<span class="cat-tag">${marketGroup(m.market).split(' ')[0].toUpperCase()}</span>`;
   return `
     <tr class="${isSpotlight ? 'spotlight-row' : ''}">
@@ -955,6 +997,7 @@ function marketRowHtml(m, hasOdds, graded, isSpotlight){
       <td class="prob kelly">${m.quarter_kelly!=null ? (m.quarter_kelly*100).toFixed(1)+'%' : '—'}</td>
       ` : ''}
       ${graded ? `<td class="grade ${m.grade===true?'hit':(m.grade===false?'miss':'')}">${m.grade===true?'✓':(m.grade===false?'✗':'—')}</td>` : ''}
+      <td class="sb-cell">${superbetLinkHtml(key, m)}</td>
     </tr>
   `;
 }
@@ -1082,7 +1125,7 @@ function renderPanel(f, holder){
     // analyze() produced) — no re-sort needed.
     sorted = top;
   }
-  const rowsHtml = sorted.map(m => marketRowHtml(m, hasOdds, graded, m === spotlight)).join('');
+  const rowsHtml = sorted.map(m => marketRowHtml(m, hasOdds, graded, m === spotlight, key)).join('');
 
   const topPick = spotlight;
   const topPickHtml = topPick ? `
@@ -1131,6 +1174,7 @@ function renderPanel(f, holder){
             <th>Market</th><th>Selection</th>${sortHeaderHtml('probability','Historical Prob.')}
             ${hasOdds ? `<th style="text-align:right">Market Odds</th>${sortHeaderHtml('market_prob','Market Prob.')}<th style="text-align:right">Edge</th><th style="text-align:right" title="Quarter-Kelly bankroll fraction — a formula output, not a stake recommendation. See note below.">¼-Kelly</th>` : ''}
             ${graded ? `<th style="text-align:center">Result</th>` : ''}
+            <th></th>
           </tr></thead>
           <tbody>${rowsHtml}</tbody>
         </table>
@@ -1149,6 +1193,20 @@ function renderPanel(f, holder){
       const col = th.dataset.sort;
       marketSort = { key, col, dir: (marketSort.col === col && marketSort.dir === 'desc') ? 'asc' : 'desc' };
       renderPanel(f, holder);
+    };
+  });
+  holder.querySelectorAll('.sb-add-btn').forEach(btn => {
+    btn.onclick = () => {
+      // No 'noopener': the returned window reference is needed to set
+      // .name before navigating it, which is how the payload survives
+      // Superbet's own router (see superbetLinkHtml). The target is
+      // always our own constructed superbet.pl URL, never anything
+      // user-supplied, so the usual tabnabbing reason for noopener
+      // doesn't apply here.
+      const w = window.open('', '_blank');
+      if(!w) return; // popup blocked -- nothing more we can do
+      w.name = btn.dataset.sbPayload;
+      w.location = btn.dataset.sbUrl;
     };
   });
 }
