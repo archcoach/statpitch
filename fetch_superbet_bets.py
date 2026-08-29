@@ -87,14 +87,71 @@ LEAGUE_SLUGS = {
 }
 
 # Hand-maintained, same bootstrapping shape as data/flashscore_team_ids.json
-# -- Superbet sometimes uses a different-language exonym or a shortened
-# name that no amount of accent/punctuation normalization would bridge.
-# Add an entry here (fixtures.csv name -> a distinctive substring of
-# Superbet's own name) the first time a team logs as "no matching event"
-# despite genuinely having a fixture listed.
+# -- Superbet sometimes uses a different-language exonym or a genuinely
+# different colloquial name that no amount of normalization (including
+# core_name() below) would bridge, since the words themselves differ, not
+# just formatting. Add an entry here (fixtures.csv name -> a distinctive
+# substring of Superbet's own name) the first time a team logs as "no
+# matching event" despite genuinely having a fixture listed AND
+# core_name() alone doesn't fix it (check that first -- most mismatches
+# turned out to be club-prefix padding, not this).
 SUPERBET_NAME_OVERRIDES = {
-    'RB Leipzig': 'RB Lipsk',
+    'RB Leipzig': 'RB Lipsk',                    # Polish exonym for Leipzig
+    'FC Bayern München': 'Bayern Monachium',      # Polish exonym for Munich
+    'Real Madrid': 'Real Madryt',                 # Polish exonym for Madrid
+    'Atlético de Madrid': 'Atletico Madryt',      # Polish exonym for Madrid
+    'Spurs': 'Tottenham',                         # fixtures.csv colloquialism
+    'Man Utd': 'Manchester United',               # fixtures.csv abbreviation
+    'Man City': 'Manchester City',                # fixtures.csv abbreviation
+    "Nott'm Forest": 'Nottingham Forest',         # fixtures.csv abbreviation
+    'RCD Espanyol de Barcelona': 'Espanyol',      # Superbet drops the "de Barcelona" tail
+    'Excelsior Rotterdam': 'Excelsior',           # Superbet drops "Rotterdam" here specifically
+                                                   # (probably to disambiguate from Sparta Rotterdam
+                                                   # in the same fixture -- not a general city-suffix rule)
+    'RC Strasbourg Alsace': 'RC Strasbourg',      # Superbet drops the regional "Alsace" suffix
+    'Stade Brestois 29': 'Brest',                 # adjectival club name ("of Brest"), not padding
+    'Estac Troyes': 'Troyes',                     # ESTAC is this one club's own abbreviation, not
+                                                   # a generic prefix worth adding to NAME_PADDING_TOKENS
+    'Olympique Lyonnais': 'Olympique Lyon',       # adjectival club name ("of Lyon"), not padding
+    'Havre Athletic Club': 'Le Havre',            # different name structure entirely
+    'Internazionale': 'Inter Mediolan',           # Polish exonym for Milan, plus Superbet's own
+                                                   # shortened "Inter"
+    'Çaykur Rizespor': 'Rizespor',                # sponsor prefix, this one club's own name only
 }
+
+# Confirmed on the first real backfill attempt: EVERY Bundesliga fixture
+# failed to match (100% miss rate for D1) because fixtures.csv keeps each
+# club's formal name ("1. FC Köln", "SV Elversberg", "1. FSV Mainz 05",
+# "Bayer 04 Leverkusen") while Superbet's own listing strips it down to
+# just the core name ("FC Koln", "Elversberg", "Mainz", "Bayer
+# Leverkusen") -- not an accent/punctuation difference norm_loose() already
+# handles, a genuinely different (shorter) string, and the direction varies
+# (sometimes the padding is a prefix, sometimes a trailing squad number,
+# sometimes fixtures.csv is the SHORTER one -- "Hamburger SV" vs
+# Superbet's "Hamburger"). Stripped from both sides before comparing, so
+# it's safe even when only one side actually carries the padding.
+NAME_PADDING_TOKENS = {
+    'fc', 'sv', 'sc', 'tsg', 'vfb', 'vfl', 'fsv', 'rc', 'ac', 'cd', 'ud', 'cf', 'ca', 'as',
+    'sport', 'club',  # "Sport-Club Freiburg" splits into two tokens on the hyphen
+    'rcd', 'real',    # Spanish: "RCD Espanyol", "Real Betis"/"Real Sociedad" ("real" itself is
+                       # always generic here -- Real Madrid still needs an override, but for its
+                       # Polish-exonym city name, not this prefix)
+    'pec',            # Dutch: "PEC Zwolle"
+    'aj', 'ogc', 'sco',  # French: "AJ Auxerre", "OGC Nice", "Angers SCO"
+}
+
+
+def core_name(name):
+    """Strips club-type padding tokens and bare squad numbers (Bayer 04,
+    Mainz 05, Paderborn 07) before normalizing, so fixtures.csv's formal
+    name and Superbet's shortened one reduce to the same comparable core.
+    Falls back to the plain norm_loose() form if stripping would leave
+    nothing (defensive -- shouldn't happen with real team names)."""
+    import re
+    from fetch_team_stats import norm_loose
+    words = re.split(r'[\s.\-]+', name)
+    core = [w for w in words if w and w.lower() not in NAME_PADDING_TOKENS and not w.isdigit()]
+    return norm_loose(' '.join(core)) or norm_loose(name)
 
 
 def log(msg):
@@ -187,8 +244,8 @@ def find_league_events(page, div):
 
 def find_event_for_fixture(events, home, away):
     from fetch_team_stats import norm_loose
-    home_n = norm_loose(SUPERBET_NAME_OVERRIDES.get(home, home))
-    away_n = norm_loose(SUPERBET_NAME_OVERRIDES.get(away, away))
+    home_n = core_name(SUPERBET_NAME_OVERRIDES.get(home, home))
+    away_n = core_name(SUPERBET_NAME_OVERRIDES.get(away, away))
     if not home_n or not away_n:
         return None
     for e in events:
@@ -263,9 +320,10 @@ def discover_target_selections(browser, ua, event_url, home, away):
 
         draw = next((l for l in mecz_labels if 'Remis w meczu' in l), None)
         others = [l for l in mecz_labels if l != draw]
-        home_o, away_o = SUPERBET_NAME_OVERRIDES.get(home, home), SUPERBET_NAME_OVERRIDES.get(away, away)
-        home_label = next((l for l in others if norm_loose(home_o) in norm_loose(l)), None)
-        away_label = next((l for l in others if norm_loose(away_o) in norm_loose(l)), None)
+        home_o = core_name(SUPERBET_NAME_OVERRIDES.get(home, home))
+        away_o = core_name(SUPERBET_NAME_OVERRIDES.get(away, away))
+        home_label = next((l for l in others if home_o in norm_loose(l)), None)
+        away_label = next((l for l in others if away_o in norm_loose(l)), None)
         if home_label:
             out.append(('Home Win (1X2)', 'Home', None, strip_trailing_odds(home_label)))
         if draw:
@@ -273,8 +331,8 @@ def discover_target_selections(browser, ua, event_url, home, away):
         if away_label:
             out.append(('Away Win (1X2)', 'Away', None, strip_trailing_odds(away_label)))
 
-        dc_home = next((l for l in dc_labels if norm_loose(home_o) in norm_loose(l)), None)
-        dc_away = next((l for l in dc_labels if norm_loose(away_o) in norm_loose(l)), None)
+        dc_home = next((l for l in dc_labels if home_o in norm_loose(l)), None)
+        dc_away = next((l for l in dc_labels if away_o in norm_loose(l)), None)
         if dc_home:
             out.append(('Double Chance', 'Home or Draw', None, strip_trailing_odds(dc_home)))
         if dc_away:

@@ -389,6 +389,42 @@ its Superbet event in the first place, via `SUPERBET_NAME_OVERRIDES`
 an entry the first time a team logs as unmatched despite genuinely having
 a fixture listed).
 
+**A first real backfill attempt (still 2026-08-29) surfaced a second,
+much bigger naming problem than exonyms alone: club-name padding.**
+Bundesliga matched 0/17 fixtures on that attempt — `fixtures.csv` keeps
+each German club's formal name ("1. FC Köln", "SV Elversberg", "1. FSV
+Mainz 05", "Bayer 04 Leverkusen") while Superbet's own listing strips it
+to just the core name ("FC Koln", "Elversberg", "Mainz", "Bayer
+Leverkusen"). Not a punctuation/accent difference `norm_loose()` already
+absorbed — a genuinely shorter or differently-ordered string, and the
+direction isn't even consistent (sometimes fixtures.csv is the longer
+one, sometimes Superbet is — "Hamburger SV" vs Superbet's "Hamburger").
+The same pattern turned out to hold across every league checked: Spanish
+"Real"/"RCD"/"UD", Dutch "PEC"/"SC", French "AJ"/"OGC"/"SCO", plus a
+handful of genuinely different adjectival club names no padding rule
+could bridge (Stade Brestois → Brest, Olympique Lyonnais → Olympique
+Lyon, Havre Athletic Club → Le Havre) and more Polish exonyms beyond RB
+Lipsk (Real Madrid → Real Madryt, Atlético de Madrid → Atletico Madryt,
+Internazionale → Inter Mediolan). Fixed with `core_name()`
+(`fetch_superbet_bets.py`): strips a `NAME_PADDING_TOKENS` set of common
+club-type words/numbers from both sides before the substring check, with
+the genuinely-different names still going through
+`SUPERBET_NAME_OVERRIDES`. After this fix, a full re-check across all 8
+leagues' currently-listed fixtures showed Bundesliga and Serie A at
+100%, Premier League at 18/19 (the one miss had already kicked off and
+dropped out of the upcoming listing entirely — not a naming issue), and
+every other league's remaining misses were fixtures Superbet simply
+hadn't posted yet (confirmed by comparing miss count to how many events
+were actually listed), not further naming bugs. Treat both
+`NAME_PADDING_TOKENS` and `SUPERBET_NAME_OVERRIDES` as living lists in
+the same spirit as `flashscore_team_ids.json`'s bootstrapping: most
+teams resolve automatically, add an entry the first time a specific team
+logs as unmatched despite genuinely having a fixture listed — don't
+assume the lists above are exhaustive for leagues not yet stress-tested
+at scale (Portuguese Primeira Liga had zero fixtures posted on Superbet
+at all during this check, so it's untested; Turkish Süper Lig showed a
+few remaining gaps not yet root-caused).
+
 **This entire mechanism replays an undocumented internal Superbet API
 shape** (the exact JSON `multiBetSlip` expects) that could change without
 notice on any Superbet deploy — same evidentiary bar as everything else
