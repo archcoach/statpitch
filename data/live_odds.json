@@ -2051,142 +2051,142 @@
   },
   "D1|2026-08-29|SV Elversberg|Bayer 04 Leverkusen": {
     "1x2": {
-      "home": 5.0,
-      "draw": 4.65,
-      "away": 1.62
+      "home": 5.3,
+      "draw": 4.5,
+      "away": 1.6
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/bayer-leverkusen-4jcj2zMd/elversberg-6in2Eknb/odds/?mid=6q9MVvD5",
-    "fetched_at": "2026-08-28T10:32:20Z",
+    "fetched_at": "2026-08-29T10:58:47Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.15,
-        "under": 5.5
+        "over": 1.14,
+        "under": 5.88
       },
       "2.5": {
-        "over": 1.5,
-        "under": 2.65
+        "over": 1.47,
+        "under": 2.7
       },
       "3.5": {
         "over": 2.2,
-        "under": 1.67
+        "under": 1.72
       }
     },
     "btts": {
-      "yes": 1.58,
-      "no": 2.45
+      "yes": 1.55,
+      "no": 2.48
     }
   },
   "D1|2026-08-29|1. FC Köln|TSG Hoffenheim": {
     "1x2": {
-      "home": 2.9,
+      "home": 3.05,
       "draw": 3.75,
-      "away": 2.32
+      "away": 2.25
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/1-fc-koln-WG9pOTse/hoffenheim-hQAtP9Sl/odds/?mid=bcMB76dE",
-    "fetched_at": "2026-08-28T10:32:33Z",
+    "fetched_at": "2026-08-29T10:59:00Z",
     "goals_ou": {
       "1.5": {
         "over": 1.17,
-        "under": 5.2
+        "under": 5.43
       },
       "2.5": {
         "over": 1.56,
-        "under": 2.5
+        "under": 2.52
       },
       "3.5": {
         "over": 2.35,
-        "under": 1.62
+        "under": 1.64
       }
     },
     "btts": {
-      "yes": 1.5,
-      "no": 2.6
+      "yes": 1.49,
+      "no": 2.7
     }
   },
   "D1|2026-08-29|1. FC Union Berlin|Eintracht Frankfurt": {
     "1x2": {
       "home": 2.65,
-      "draw": 3.65,
-      "away": 2.6
+      "draw": 3.55,
+      "away": 2.63
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/eintracht-frankfurt-8vndvXTk/union-berlin-pzHW4oaE/odds/?mid=UNsSafw8",
-    "fetched_at": "2026-08-28T10:32:47Z",
+    "fetched_at": "2026-08-29T10:59:14Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.2,
-        "under": 4.83
+        "over": 1.19,
+        "under": 4.8
       },
       "2.5": {
-        "over": 1.62,
-        "under": 2.3
+        "over": 1.63,
+        "under": 2.32
       },
       "3.5": {
-        "over": 2.59,
-        "under": 1.54
+        "over": 2.55,
+        "under": 1.55
       }
     },
     "btts": {
-      "yes": 1.53,
-      "no": 2.5
+      "yes": 1.52,
+      "no": 2.55
     }
   },
   "D1|2026-08-29|1. FSV Mainz 05|SC Paderborn 07": {
     "1x2": {
-      "home": 1.68,
-      "draw": 4.2,
-      "away": 4.85
+      "home": 1.55,
+      "draw": 4.7,
+      "away": 5.93
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/mainz-EuakNmc1/paderborn-G2Op923t/odds/?mid=r7qK1G8e",
-    "fetched_at": "2026-08-28T10:33:00Z",
+    "fetched_at": "2026-08-29T10:59:28Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.2,
-        "under": 4.6
+        "over": 1.17,
+        "under": 5.25
       },
       "2.5": {
-        "over": 1.65,
-        "under": 2.27
+        "over": 1.53,
+        "under": 2.55
       },
       "3.5": {
-        "over": 2.6,
-        "under": 1.52
+        "over": 2.3,
+        "under": 1.62
       }
     },
     "btts": {
-      "yes": 1.68,
-      "no": 2.2
+      "yes": 1.67,
+      "no": 2.24
     }
   },
   "D1|2026-08-29|Borussia Dortmund|Hamburger SV": {
     "1x2": {
-      "home": 1.35,
-      "draw": 5.75,
-      "away": 8.78
+      "home": 1.39,
+      "draw": 5.6,
+      "away": 7.48
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/dortmund-nP1i5US1/hamburger-v9k3aY5F/odds/?mid=vi4nmHg2",
-    "fetched_at": "2026-08-28T10:33:17Z",
+    "fetched_at": "2026-08-29T10:59:46Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.16,
-        "under": 5.59
+        "over": 1.17,
+        "under": 5.4
       },
       "2.5": {
-        "over": 1.5,
-        "under": 2.65
+        "over": 1.52,
+        "under": 2.6
       },
       "3.5": {
-        "over": 2.25,
-        "under": 1.67
+        "over": 2.29,
+        "under": 1.66
       }
     },
     "btts": {
-      "yes": 1.85,
-      "no": 1.99
+      "yes": 1.76,
+      "no": 2.07
     }
   },
   "E0|2026-08-28|Crystal Palace|Man City": {
@@ -2219,53 +2219,53 @@
   },
   "E0|2026-08-29|Liverpool|Nott'm Forest": {
     "1x2": {
-      "home": 1.57,
-      "draw": 4.59,
-      "away": 5.92
+      "home": 1.48,
+      "draw": 5.0,
+      "away": 6.9
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/liverpool-lId4TMwf/nottingham-UsushcZr/odds/?mid=CYJLO78D",
-    "fetched_at": "2026-08-28T10:34:17Z",
+    "fetched_at": "2026-08-29T11:00:37Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.2,
-        "under": 4.7
+        "over": 1.17,
+        "under": 5.43
       },
       "2.5": {
-        "over": 1.62,
-        "under": 2.35
+        "over": 1.55,
+        "under": 2.56
       },
       "3.5": {
-        "over": 2.5,
-        "under": 1.54
+        "over": 2.37,
+        "under": 1.62
       }
     },
     "btts": {
       "yes": 1.75,
-      "no": 2.12
+      "no": 2.21
     }
   },
   "E0|2026-08-29|Bournemouth|Everton": {
     "1x2": {
       "home": 2.1,
-      "draw": 3.55,
-      "away": 3.7
+      "draw": 3.5,
+      "away": 3.65
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/bournemouth-OtpNdwrc/everton-KluSTr9s/odds/?mid=UgOYDjfe",
-    "fetched_at": "2026-08-28T10:34:32Z",
+    "fetched_at": "2026-08-29T11:00:52Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.28,
-        "under": 3.73
+        "over": 1.3,
+        "under": 3.7
       },
       "2.5": {
-        "over": 1.88,
+        "over": 1.9,
         "under": 1.95
       },
       "3.5": {
-        "over": 3.15,
-        "under": 1.37
+        "over": 3.25,
+        "under": 1.38
       }
     },
     "btts": {
@@ -2275,57 +2275,57 @@
   },
   "E0|2026-08-29|Coventry|Hull": {
     "1x2": {
-      "home": 1.9,
-      "draw": 3.55,
-      "away": 4.6
+      "home": 1.78,
+      "draw": 3.63,
+      "away": 4.9
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/coventry-GOvB22xg/hull-city-S66R0t75/odds/?mid=GUCzYBoR",
-    "fetched_at": "2026-08-28T10:34:46Z",
+    "fetched_at": "2026-08-29T11:01:06Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.28,
-        "under": 3.82
+        "over": 1.3,
+        "under": 3.69
       },
       "2.5": {
-        "over": 1.88,
-        "under": 1.95
+        "over": 1.9,
+        "under": 1.92
       },
       "3.5": {
-        "over": 3.15,
-        "under": 1.37
+        "over": 3.2,
+        "under": 1.36
       }
     },
     "btts": {
-      "yes": 1.78,
-      "no": 2.05
+      "yes": 1.83,
+      "no": 2.0
     }
   },
   "E0|2026-08-29|Spurs|Newcastle": {
     "1x2": {
-      "home": 2.3,
-      "draw": 3.8,
-      "away": 2.95
+      "home": 2.25,
+      "draw": 3.85,
+      "away": 3.35
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/newcastle-utd-p6ahwuwJ/tottenham-UDg08Ohm/odds/?mid=ry1ouThf",
-    "fetched_at": "2026-08-28T10:35:00Z",
+    "fetched_at": "2026-08-29T11:01:20Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.2,
-        "under": 4.77
+        "over": 1.19,
+        "under": 4.85
       },
       "2.5": {
-        "over": 1.63,
-        "under": 2.3
+        "over": 1.62,
+        "under": 2.37
       },
       "3.5": {
-        "over": 2.55,
-        "under": 1.53
+        "over": 2.52,
+        "under": 1.55
       }
     },
     "btts": {
-      "yes": 1.54,
+      "yes": 1.53,
       "no": 2.5
     }
   },
@@ -2359,25 +2359,25 @@
   },
   "F1|2026-08-29|RC Strasbourg Alsace|RC Lens": {
     "1x2": {
-      "home": 3.65,
-      "draw": 3.55,
-      "away": 2.1
+      "home": 3.95,
+      "draw": 3.8,
+      "away": 1.92
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/lens-IBmris38/strasbourg-nP6UzIU1/odds/?mid=z1vMwmdD",
-    "fetched_at": "2026-08-28T10:36:42Z",
+    "fetched_at": "2026-08-29T11:02:55Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.2,
-        "under": 4.65
+        "over": 1.18,
+        "under": 4.9
       },
       "2.5": {
-        "over": 1.65,
-        "under": 2.27
+        "over": 1.6,
+        "under": 2.37
       },
       "3.5": {
-        "over": 2.55,
-        "under": 1.53
+        "over": 2.47,
+        "under": 1.57
       }
     },
     "btts": {
@@ -2387,16 +2387,16 @@
   },
   "F1|2026-08-29|AJ Auxerre|Angers SCO": {
     "1x2": {
-      "home": 1.98,
-      "draw": 3.55,
-      "away": 3.95
+      "home": 2.05,
+      "draw": 3.45,
+      "away": 3.85
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/angers-SAlF91iL/auxerre-MTLr36WA/odds/?mid=EDlezEkL",
-    "fetched_at": "2026-08-28T10:36:59Z",
+    "fetched_at": "2026-08-29T11:03:09Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.33,
+        "over": 1.35,
         "under": 3.35
       },
       "2.5": {
@@ -2404,7 +2404,7 @@
         "under": 1.8
       },
       "3.5": {
-        "over": 3.5,
+        "over": 3.57,
         "under": 1.3
       }
     },
@@ -2421,63 +2421,63 @@
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/brest-Cr4VGaUl/toulouse-MLmY2yB1/odds/?mid=AckQUiDr",
-    "fetched_at": "2026-08-28T10:37:13Z",
+    "fetched_at": "2026-08-29T11:03:25Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.33,
-        "under": 3.45
+        "over": 1.3,
+        "under": 3.63
       },
       "2.5": {
-        "over": 2.0,
-        "under": 1.85
+        "over": 1.92,
+        "under": 1.88
       },
       "3.5": {
-        "over": 3.45,
-        "under": 1.32
+        "over": 3.25,
+        "under": 1.35
       }
     },
     "btts": {
-      "yes": 1.78,
-      "no": 2.05
+      "yes": 1.75,
+      "no": 2.11
     }
   },
   "F1|2026-08-29|FC Lorient|Estac Troyes": {
     "1x2": {
       "home": 1.88,
       "draw": 3.6,
-      "away": 4.4
+      "away": 4.5
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/lorient-jgNAYRGi/troyes-fsfAHubD/odds/?mid=jyitR9C7",
-    "fetched_at": "2026-08-28T10:37:26Z",
+    "fetched_at": "2026-08-29T11:03:39Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.33,
-        "under": 3.35
+        "over": 1.35,
+        "under": 3.28
       },
       "2.5": {
-        "over": 2.02,
-        "under": 1.8
+        "over": 2.1,
+        "under": 1.75
       },
       "3.5": {
-        "over": 3.6,
-        "under": 1.3
+        "over": 3.75,
+        "under": 1.28
       }
     },
     "btts": {
-      "yes": 1.9,
-      "no": 1.9
+      "yes": 1.95,
+      "no": 1.87
     }
   },
   "F1|2026-08-29|Olympique Lyonnais|Havre Athletic Club": {
     "1x2": {
-      "home": 1.5,
-      "draw": 4.6,
-      "away": 6.6
+      "home": 1.48,
+      "draw": 4.65,
+      "away": 6.75
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/le-havre-CIEe04GT/lyon-2akflumR/odds/?mid=IsqSlD4E",
-    "fetched_at": "2026-08-28T10:37:42Z",
+    "fetched_at": "2026-08-29T11:03:54Z",
     "goals_ou": {
       "1.5": {
         "over": 1.25,
@@ -2493,8 +2493,8 @@
       }
     },
     "btts": {
-      "yes": 1.95,
-      "no": 1.85
+      "yes": 1.92,
+      "no": 1.88
     }
   },
   "I1|2026-08-28|Milan|Venezia": {
@@ -2527,114 +2527,114 @@
   },
   "I1|2026-08-29|Fiorentina|Frosinone": {
     "1x2": {
-      "home": 1.65,
-      "draw": 4.2,
-      "away": 5.3
+      "home": 1.7,
+      "draw": 4.05,
+      "away": 5.0
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/fiorentina-Q3A3IbXH/frosinone-pfo9H1Wp/odds/?mid=M3PJaoYi",
-    "fetched_at": "2026-08-28T10:38:52Z",
+    "fetched_at": "2026-08-29T11:05:16Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.26,
-        "under": 4.01
+        "over": 1.25,
+        "under": 4.1
       },
       "2.5": {
-        "over": 1.8,
-        "under": 2.05
+        "over": 1.75,
+        "under": 2.1
       },
       "3.5": {
-        "over": 2.95,
-        "under": 1.4
+        "over": 2.9,
+        "under": 1.44
       }
     },
     "btts": {
-      "yes": 1.83,
-      "no": 1.98
+      "yes": 1.76,
+      "no": 2.06
     }
   },
   "I1|2026-08-29|Monza|Udinese": {
     "1x2": {
-      "home": 3.2,
-      "draw": 3.2,
-      "away": 2.4
+      "home": 3.05,
+      "draw": 3.08,
+      "away": 2.55
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/monza-4YSMlwj7/udinese-rXw8YKDE/odds/?mid=M3q1axv9",
-    "fetched_at": "2026-08-28T10:39:06Z",
+    "fetched_at": "2026-08-29T11:05:30Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.42,
-        "under": 2.95
+        "over": 1.47,
+        "under": 2.85
       },
       "2.5": {
-        "over": 2.25,
-        "under": 1.65
+        "over": 2.37,
+        "under": 1.62
       },
       "3.5": {
-        "over": 4.2,
-        "under": 1.24
+        "over": 4.55,
+        "under": 1.22
       }
     },
     "btts": {
-      "yes": 1.95,
-      "no": 1.85
+      "yes": 1.99,
+      "no": 1.83
     }
   },
   "I1|2026-08-29|Sassuolo|Torino": {
     "1x2": {
-      "home": 2.27,
-      "draw": 3.3,
-      "away": 3.3
+      "home": 2.32,
+      "draw": 3.27,
+      "away": 3.35
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/sassuolo-QDdvI0zl/torino-MZFZnvX4/odds/?mid=QaYvhfWr",
-    "fetched_at": "2026-08-28T10:39:21Z",
+    "fetched_at": "2026-08-29T11:05:44Z",
     "goals_ou": {
       "1.5": {
         "over": 1.33,
-        "under": 3.35
+        "under": 3.4
       },
       "2.5": {
-        "over": 2.02,
+        "over": 2.03,
         "under": 1.8
       },
       "3.5": {
-        "over": 3.6,
+        "over": 3.65,
         "under": 1.32
       }
     },
     "btts": {
       "yes": 1.8,
-      "no": 2.0
+      "no": 2.02
     }
   },
   "I1|2026-08-29|Juventus|Parma": {
     "1x2": {
-      "home": 1.23,
-      "draw": 6.75,
-      "away": 14.0
+      "home": 1.25,
+      "draw": 6.4,
+      "away": 14.5
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/juventus-C06aJvIB/parma-6DxlaxHN/odds/?mid=UTSRcP24",
-    "fetched_at": "2026-08-28T10:39:35Z",
+    "fetched_at": "2026-08-29T11:05:59Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.22,
-        "under": 4.4
+        "over": 1.25,
+        "under": 4.05
       },
       "2.5": {
-        "over": 1.65,
-        "under": 2.25
+        "over": 1.77,
+        "under": 2.1
       },
       "3.5": {
-        "over": 2.65,
-        "under": 1.5
+        "over": 2.92,
+        "under": 1.42
       }
     },
     "btts": {
-      "yes": 2.4,
-      "no": 1.58
+      "yes": 2.55,
+      "no": 1.54
     }
   },
   "N1|2026-08-28|FC Groningen|Fortuna Sittard": {
@@ -2667,86 +2667,86 @@
   },
   "N1|2026-08-29|Excelsior Rotterdam|Sparta Rotterdam": {
     "1x2": {
-      "home": 2.37,
-      "draw": 3.72,
-      "away": 2.8
+      "home": 2.17,
+      "draw": 3.75,
+      "away": 3.16
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/excelsior-nNlLsRUr/sparta-rotterdam-KK4FaFV3/odds/?mid=vXNlmwPE",
-    "fetched_at": "2026-08-28T10:41:17Z",
+    "fetched_at": "2026-08-29T11:07:31Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.17,
-        "under": 5.41
+        "over": 1.19,
+        "under": 5.19
       },
       "2.5": {
-        "over": 1.56,
-        "under": 2.47
+        "over": 1.62,
+        "under": 2.32
       },
       "3.5": {
-        "over": 2.35,
-        "under": 1.6
+        "over": 2.55,
+        "under": 1.54
       }
     },
     "btts": {
-      "yes": 1.5,
-      "no": 2.63
+      "yes": 1.54,
+      "no": 2.51
     }
   },
   "N1|2026-08-29|AZ|Go Ahead Eagles": {
     "1x2": {
-      "home": 1.4,
-      "draw": 5.35,
-      "away": 6.75
+      "home": 1.38,
+      "draw": 5.55,
+      "away": 7.71
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/az-alkmaar-2RxOow1i/g-a-eagles-hG8POBb8/odds/?mid=ncRdoHgR",
-    "fetched_at": "2026-08-28T10:41:31Z",
+    "fetched_at": "2026-08-29T11:07:45Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.11,
-        "under": 7.06
+        "over": 1.1,
+        "under": 7.52
       },
       "2.5": {
-        "over": 1.39,
-        "under": 3.05
+        "over": 1.35,
+        "under": 3.2
       },
       "3.5": {
-        "over": 1.95,
-        "under": 1.85
+        "over": 1.93,
+        "under": 1.92
       }
     },
     "btts": {
-      "yes": 1.58,
-      "no": 2.33
+      "yes": 1.57,
+      "no": 2.4
     }
   },
   "N1|2026-08-29|PEC Zwolle|N.E.C. Nijmegen": {
     "1x2": {
-      "home": 4.45,
-      "draw": 4.5,
-      "away": 1.69
+      "home": 3.55,
+      "draw": 4.25,
+      "away": 1.9
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/nijmegen-nRluRF0T/zwolle-r1L5w2EB/odds/?mid=rTCSueHl",
-    "fetched_at": "2026-08-28T10:41:45Z",
+    "fetched_at": "2026-08-29T11:07:59Z",
     "goals_ou": {
       "1.5": {
         "over": 1.13,
-        "under": 6.58
+        "under": 6.89
       },
       "2.5": {
-        "over": 1.43,
-        "under": 2.85
+        "over": 1.42,
+        "under": 2.9
       },
       "3.5": {
-        "over": 2.07,
-        "under": 1.75
+        "over": 2.02,
+        "under": 1.8
       }
     },
     "btts": {
-      "yes": 1.48,
-      "no": 2.6
+      "yes": 1.43,
+      "no": 2.87
     }
   },
   "P1|2026-08-28|Rio Ave FC|Sporting CP": {
@@ -2779,30 +2779,30 @@
   },
   "P1|2026-08-29|FC Alverca|Santa Clara": {
     "1x2": {
-      "home": 2.7,
-      "draw": 3.18,
-      "away": 2.75
+      "home": 2.72,
+      "draw": 3.05,
+      "away": 2.95
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/alverca-roaMksQg/santa-clara-YmQyLBJf/odds/?mid=MJqngmgl",
-    "fetched_at": "2026-08-28T10:43:23Z",
+    "fetched_at": "2026-08-29T11:09:26Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.43,
-        "under": 2.92
+        "over": 1.5,
+        "under": 2.66
       },
       "2.5": {
-        "over": 2.32,
-        "under": 1.62
+        "over": 2.55,
+        "under": 1.53
       },
       "3.5": {
-        "over": 4.3,
-        "under": 1.22
+        "over": 5.19,
+        "under": 1.18
       }
     },
     "btts": {
-      "yes": 1.98,
-      "no": 1.8
+      "yes": 2.1,
+      "no": 1.72
     }
   },
   "SP1|2026-08-27|FC Barcelona|Athletic Club": {
@@ -2891,97 +2891,97 @@
   },
   "SP1|2026-08-29|Levante UD|Real Betis": {
     "1x2": {
-      "home": 3.4,
-      "draw": 3.45,
-      "away": 2.25
+      "home": 3.3,
+      "draw": 3.38,
+      "away": 2.27
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/betis-vJbTeCGP/levante-G8FL0ShI/odds/?mid=O4LEM1zA",
-    "fetched_at": "2026-08-28T10:45:54Z",
+    "fetched_at": "2026-08-29T11:11:20Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.3,
-        "under": 3.65
+        "over": 1.28,
+        "under": 3.7
       },
       "2.5": {
-        "over": 1.99,
-        "under": 1.9
+        "over": 1.9,
+        "under": 1.92
       },
       "3.5": {
-        "over": 3.45,
+        "over": 3.25,
         "under": 1.36
       }
     },
     "btts": {
-      "yes": 1.75,
-      "no": 2.1
+      "yes": 1.72,
+      "no": 2.12
     }
   },
   "SP1|2026-08-29|Real Sociedad|RCD Espanyol de Barcelona": {
     "1x2": {
-      "home": 1.91,
-      "draw": 3.7,
-      "away": 4.1
+      "home": 1.82,
+      "draw": 3.8,
+      "away": 4.4
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/espanyol-QFfPdh1J/real-sociedad-jNvak2f3/odds/?mid=nFKoy1k3",
-    "fetched_at": "2026-08-28T10:46:08Z",
+    "fetched_at": "2026-08-29T11:11:35Z",
     "goals_ou": {
       "1.5": {
         "over": 1.28,
-        "under": 3.85
+        "under": 3.86
       },
       "2.5": {
-        "over": 1.87,
-        "under": 2.01
+        "over": 1.88,
+        "under": 1.96
       },
       "3.5": {
         "over": 3.15,
-        "under": 1.4
+        "under": 1.38
       }
     },
     "btts": {
-      "yes": 1.77,
-      "no": 2.07
+      "yes": 1.8,
+      "no": 2.05
     }
   },
   "SP1|2026-08-29|Sevilla FC|Atlético de Madrid": {
     "1x2": {
-      "home": 3.6,
-      "draw": 3.45,
-      "away": 2.15
+      "home": 4.25,
+      "draw": 3.5,
+      "away": 1.96
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/atl-madrid-jaarqpLQ/sevilla-h8oAv4Ts/odds/?mid=KSIgZvKF",
-    "fetched_at": "2026-08-28T10:46:22Z",
+    "fetched_at": "2026-08-29T11:11:48Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.3,
-        "under": 3.65
+        "over": 1.38,
+        "under": 3.25
       },
       "2.5": {
-        "over": 1.98,
-        "under": 1.9
+        "over": 2.1,
+        "under": 1.75
       },
       "3.5": {
-        "over": 3.35,
-        "under": 1.36
+        "over": 3.85,
+        "under": 1.28
       }
     },
     "btts": {
-      "yes": 1.77,
-      "no": 2.08
+      "yes": 1.92,
+      "no": 1.88
     }
   },
   "D1|2026-08-30|Sport-Club Freiburg|SV Werder Bremen": {
     "1x2": {
-      "home": 2.0,
-      "draw": 3.65,
-      "away": 3.85
+      "home": 1.95,
+      "draw": 3.7,
+      "away": 4.05
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/freiburg-fiEQZ7C7/werder-bremen-Ig1f1fy3/odds/?mid=vBft9bGL",
-    "fetched_at": "2026-08-28T10:33:35Z",
+    "fetched_at": "2026-08-29T11:00:03Z",
     "goals_ou": {
       "1.5": {
         "over": 1.25,
@@ -2989,15 +2989,15 @@
       },
       "2.5": {
         "over": 1.75,
-        "under": 2.07
+        "under": 2.1
       },
       "3.5": {
-        "over": 2.9,
-        "under": 1.43
+        "over": 2.8,
+        "under": 1.44
       }
     },
     "btts": {
-      "yes": 1.66,
+      "yes": 1.67,
       "no": 2.2
     }
   },
@@ -3005,15 +3005,15 @@
     "1x2": {
       "home": 2.2,
       "draw": 3.7,
-      "away": 3.25
+      "away": 3.2
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/augsburg-fTVNku3I/schalke-0Ija0Ej9/odds/?mid=AgoC3xvq",
-    "fetched_at": "2026-08-28T10:33:49Z",
+    "fetched_at": "2026-08-29T11:00:19Z",
     "goals_ou": {
       "1.5": {
         "over": 1.22,
-        "under": 4.25
+        "under": 4.3
       },
       "2.5": {
         "over": 1.72,
@@ -3026,63 +3026,63 @@
     },
     "btts": {
       "yes": 1.6,
-      "no": 2.32
+      "no": 2.35
     }
   },
   "E0|2026-08-30|Chelsea|Brighton": {
     "1x2": {
-      "home": 1.85,
-      "draw": 4.05,
+      "home": 1.83,
+      "draw": 4.08,
       "away": 4.1
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/brighton-2XrRecc3/chelsea-4fGZN2oK/odds/?mid=849SZXGE",
-    "fetched_at": "2026-08-28T10:35:14Z",
+    "fetched_at": "2026-08-29T11:01:35Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.2,
-        "under": 4.61
+        "over": 1.19,
+        "under": 4.8
       },
       "2.5": {
-        "over": 1.62,
-        "under": 2.27
+        "over": 1.6,
+        "under": 2.35
       },
       "3.5": {
-        "over": 2.55,
-        "under": 1.52
+        "over": 2.5,
+        "under": 1.56
       }
     },
     "btts": {
-      "yes": 1.6,
-      "no": 2.35
+      "yes": 1.58,
+      "no": 2.37
     }
   },
   "E0|2026-08-30|Leeds|Brentford": {
     "1x2": {
       "home": 2.6,
-      "draw": 3.45,
+      "draw": 3.35,
       "away": 2.75
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/brentford-xYe7DwID/leeds-tUxUbLR2/odds/?mid=KQ1EQTw1",
-    "fetched_at": "2026-08-28T10:35:28Z",
+    "fetched_at": "2026-08-29T11:01:52Z",
     "goals_ou": {
       "1.5": {
         "over": 1.28,
         "under": 3.7
       },
       "2.5": {
-        "over": 1.88,
-        "under": 1.92
+        "over": 1.92,
+        "under": 1.9
       },
       "3.5": {
-        "over": 3.25,
+        "over": 3.3,
         "under": 1.36
       }
     },
     "btts": {
-      "yes": 1.7,
-      "no": 2.12
+      "yes": 1.72,
+      "no": 2.15
     }
   },
   "E0|2026-08-30|Sunderland|Fulham": {
@@ -3093,11 +3093,11 @@
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/fulham-69ZiU2Om/sunderland-WSzc94ws/odds/?mid=zBcwskOs",
-    "fetched_at": "2026-08-28T10:35:43Z",
+    "fetched_at": "2026-08-29T11:02:08Z",
     "goals_ou": {
       "1.5": {
         "over": 1.33,
-        "under": 3.3
+        "under": 3.35
       },
       "2.5": {
         "over": 2.02,
@@ -3110,21 +3110,21 @@
     },
     "btts": {
       "yes": 1.82,
-      "no": 2.0
+      "no": 2.02
     }
   },
   "E0|2026-08-30|Man Utd|Ipswich": {
     "1x2": {
-      "home": 1.43,
+      "home": 1.44,
       "draw": 5.1,
       "away": 7.5
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/ipswich-thqhB2MB/manchester-united-ppjDR086/odds/?mid=4S67nB0K",
-    "fetched_at": "2026-08-28T10:36:01Z",
+    "fetched_at": "2026-08-29T11:02:23Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.18,
+        "over": 1.19,
         "under": 4.8
       },
       "2.5": {
@@ -3132,64 +3132,64 @@
         "under": 2.35
       },
       "3.5": {
-        "over": 2.47,
+        "over": 2.5,
         "under": 1.55
       }
     },
     "btts": {
       "yes": 1.85,
-      "no": 1.98
+      "no": 2.0
     }
   },
   "F1|2026-08-30|Paris FC|OGC Nice": {
     "1x2": {
       "home": 2.12,
-      "draw": 3.35,
+      "draw": 3.4,
       "away": 3.75
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/nice-YagoQJpq/paris-fc-0OEHEprs/odds/?mid=KAX5sVdl",
-    "fetched_at": "2026-08-28T10:37:55Z",
+    "fetched_at": "2026-08-29T11:04:09Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.35,
-        "under": 3.25
+        "over": 1.34,
+        "under": 3.3
       },
       "2.5": {
-        "over": 2.07,
-        "under": 1.77
+        "over": 2.05,
+        "under": 1.8
       },
       "3.5": {
         "over": 3.6,
-        "under": 1.28
+        "under": 1.3
       }
     },
     "btts": {
-      "yes": 1.87,
-      "no": 1.92
+      "yes": 1.85,
+      "no": 1.95
     }
   },
   "F1|2026-08-30|Stade Rennais FC|Le Mans FC": {
     "1x2": {
       "home": 1.45,
-      "draw": 5.0,
+      "draw": 5.05,
       "away": 7.0
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/le-mans-ER0NeOOp/rennes-d2nnj1IE/odds/?mid=SzyEu9R0",
-    "fetched_at": "2026-08-28T10:38:09Z",
+    "fetched_at": "2026-08-29T11:04:24Z",
     "goals_ou": {
       "1.5": {
         "over": 1.18,
-        "under": 4.89
+        "under": 4.95
       },
       "2.5": {
         "over": 1.57,
-        "under": 2.4
+        "under": 2.42
       },
       "3.5": {
         "over": 2.42,
-        "under": 1.56
+        "under": 1.57
       }
     },
     "btts": {
@@ -3199,13 +3199,13 @@
   },
   "F1|2026-08-30|AS Monaco|Olympique de Marseille": {
     "1x2": {
-      "home": 2.45,
-      "draw": 3.7,
-      "away": 2.75
+      "home": 2.5,
+      "draw": 3.65,
+      "away": 2.7
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/marseille-SblU3Hee/monaco-2PIvr8o4/odds/?mid=OvnzmiZQ",
-    "fetched_at": "2026-08-28T10:38:23Z",
+    "fetched_at": "2026-08-29T11:04:39Z",
     "goals_ou": {
       "1.5": {
         "over": 1.18,
@@ -3217,7 +3217,7 @@
       },
       "3.5": {
         "over": 2.42,
-        "under": 1.58
+        "under": 1.6
       }
     },
     "btts": {
@@ -3227,21 +3227,21 @@
   },
   "I1|2026-08-30|Napoli|Como": {
     "1x2": {
-      "home": 2.5,
-      "draw": 3.15,
+      "home": 2.52,
+      "draw": 3.12,
       "away": 3.1
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/como-ttyLthOA/napoli-69Dxbc61/odds/?mid=fHs9cG8L",
-    "fetched_at": "2026-08-28T10:39:49Z",
+    "fetched_at": "2026-08-29T11:06:14Z",
     "goals_ou": {
       "1.5": {
         "over": 1.45,
-        "under": 2.85
+        "under": 2.8
       },
       "2.5": {
         "over": 2.35,
-        "under": 1.61
+        "under": 1.6
       },
       "3.5": {
         "over": 4.5,
@@ -3249,8 +3249,8 @@
       }
     },
     "btts": {
-      "yes": 1.97,
-      "no": 1.83
+      "yes": 2.0,
+      "no": 1.82
     }
   },
   "I1|2026-08-30|Cagliari|Internazionale": {
@@ -3261,67 +3261,67 @@
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/cagliari-SCGVmKHb/inter-Iw7eKK25/odds/?mid=U9xYyrto",
-    "fetched_at": "2026-08-28T10:40:06Z",
+    "fetched_at": "2026-08-29T11:06:30Z",
     "goals_ou": {
       "1.5": {
         "over": 1.3,
-        "under": 3.59
+        "under": 3.6
       },
       "2.5": {
-        "over": 1.92,
-        "under": 1.88
+        "over": 1.9,
+        "under": 1.92
       },
       "3.5": {
-        "over": 3.3,
-        "under": 1.33
+        "over": 3.25,
+        "under": 1.34
       }
     },
     "btts": {
       "yes": 2.17,
-      "no": 1.67
+      "no": 1.68
     }
   },
   "I1|2026-08-30|Lazio|Genoa": {
     "1x2": {
-      "home": 2.0,
-      "draw": 3.15,
-      "away": 4.4
+      "home": 2.1,
+      "draw": 3.12,
+      "away": 4.2
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/genoa-d0PJxeie/lazio-URcSl02h/odds/?mid=xfWZe3XG",
-    "fetched_at": "2026-08-28T10:40:19Z",
+    "fetched_at": "2026-08-29T11:06:44Z",
     "goals_ou": {
       "1.5": {
         "over": 1.45,
-        "under": 2.81
+        "under": 2.8
       },
       "2.5": {
         "over": 2.35,
         "under": 1.6
       },
       "3.5": {
-        "over": 4.45,
+        "over": 4.5,
         "under": 1.22
       }
     },
     "btts": {
-      "yes": 2.07,
-      "no": 1.75
+      "yes": 2.05,
+      "no": 1.78
     }
   },
   "N1|2026-08-30|FC Utrecht|PSV": {
     "1x2": {
-      "home": 4.35,
-      "draw": 4.4,
-      "away": 1.67
+      "home": 5.09,
+      "draw": 4.65,
+      "away": 1.64
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/psv-M9UEHJWi/utrecht-p6QXMgOj/odds/?mid=jgGzvZo1",
-    "fetched_at": "2026-08-28T10:42:00Z",
+    "fetched_at": "2026-08-29T11:08:13Z",
     "goals_ou": {
       "1.5": {
         "over": 1.12,
-        "under": 7.06
+        "under": 7.2
       },
       "2.5": {
         "over": 1.4,
@@ -3334,50 +3334,50 @@
     },
     "btts": {
       "yes": 1.46,
-      "no": 2.7
+      "no": 2.65
     }
   },
   "N1|2026-08-30|Feyenoord|ADO Den Haag": {
     "1x2": {
-      "home": 1.16,
-      "draw": 8.75,
-      "away": 16.0
+      "home": 1.17,
+      "draw": 8.5,
+      "away": 15.84
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/den-haag-lAgLCkT3/feyenoord-8zjySeoN/odds/?mid=nJUgqUNt",
-    "fetched_at": "2026-08-28T10:42:13Z",
+    "fetched_at": "2026-08-29T11:08:27Z",
     "goals_ou": {
       "1.5": {
         "over": 1.08,
         "under": 8.53
       },
       "2.5": {
-        "over": 1.3,
+        "over": 1.29,
         "under": 3.6
       },
       "3.5": {
-        "over": 1.76,
+        "over": 1.75,
         "under": 2.1
       }
     },
     "btts": {
-      "yes": 1.85,
-      "no": 1.92
+      "yes": 1.82,
+      "no": 1.95
     }
   },
   "N1|2026-08-30|Willem II|sc Heerenveen": {
     "1x2": {
-      "home": 3.95,
+      "home": 3.97,
       "draw": 4.3,
       "away": 1.78
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/heerenveen-EDjXSyWG/willem-ii-6u3qag0G/odds/?mid=djJrxDGD",
-    "fetched_at": "2026-08-28T10:42:28Z",
+    "fetched_at": "2026-08-29T11:08:42Z",
     "goals_ou": {
       "1.5": {
         "over": 1.14,
-        "under": 6.5
+        "under": 6.46
       },
       "2.5": {
         "over": 1.46,
@@ -3389,51 +3389,51 @@
       }
     },
     "btts": {
-      "yes": 1.47,
-      "no": 2.65
+      "yes": 1.48,
+      "no": 2.62
     }
   },
   "N1|2026-08-30|Telstar|Ajax": {
     "1x2": {
-      "home": 4.8,
-      "draw": 4.6,
-      "away": 1.6
+      "home": 5.37,
+      "draw": 4.85,
+      "away": 1.54
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/ajax-8UOvIwnb/telstar-Aw0qTPat/odds/?mid=fqY1s8hg",
-    "fetched_at": "2026-08-28T10:42:42Z",
+    "fetched_at": "2026-08-29T11:08:57Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.13,
-        "under": 6.58
+        "over": 1.12,
+        "under": 6.89
       },
       "2.5": {
         "over": 1.42,
-        "under": 2.87
+        "under": 2.95
       },
       "3.5": {
-        "over": 2.05,
-        "under": 1.78
+        "over": 2.02,
+        "under": 1.8
       }
     },
     "btts": {
-      "yes": 1.49,
-      "no": 2.57
+      "yes": 1.53,
+      "no": 2.5
     }
   },
   "N1|2026-08-30|SC Cambuur|FC Twente": {
     "1x2": {
-      "home": 8.25,
+      "home": 8.82,
       "draw": 5.45,
       "away": 1.35
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/cambuur-QRyYgO7J/twente-dhOKTHGA/odds/?mid=29yAunN5",
-    "fetched_at": "2026-08-28T10:42:55Z",
+    "fetched_at": "2026-08-29T11:09:11Z",
     "goals_ou": {
       "1.5": {
         "over": 1.13,
-        "under": 6.46
+        "under": 6.54
       },
       "2.5": {
         "over": 1.43,
@@ -3445,75 +3445,75 @@
       }
     },
     "btts": {
-      "yes": 1.69,
+      "yes": 1.7,
       "no": 2.12
     }
   },
   "P1|2026-08-29|FC Arouca|Marítimo M.": {
     "1x2": {
-      "home": 2.17,
+      "home": 2.18,
       "draw": 3.3,
-      "away": 3.5
+      "away": 3.52
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/arouca-fJqfm7CG/maritimo-noguvetP/odds/?mid=fXsfiRN0",
-    "fetched_at": "2026-08-28T10:43:40Z",
+    "fetched_at": "2026-08-29T11:09:40Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.38,
-        "under": 3.25
+        "over": 1.35,
+        "under": 3.36
       },
       "2.5": {
-        "over": 2.1,
-        "under": 1.75
+        "over": 2.07,
+        "under": 1.76
       },
       "3.5": {
-        "over": 3.7,
-        "under": 1.28
+        "over": 3.76,
+        "under": 1.29
       }
     },
     "btts": {
-      "yes": 1.88,
-      "no": 1.9
+      "yes": 1.85,
+      "no": 1.95
     }
   },
   "P1|2026-08-29|Académico|FC Porto": {
     "1x2": {
-      "home": 9.46,
-      "draw": 5.2,
-      "away": 1.34
+      "home": 10.0,
+      "draw": 5.6,
+      "away": 1.3
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/academico-viseu-GrRgeTHo/fc-porto-S2NmScGp/odds/?mid=GKHEBe9F",
-    "fetched_at": "2026-08-28T10:43:55Z",
+    "fetched_at": "2026-08-29T11:09:55Z",
     "goals_ou": {
       "1.5": {
         "over": 1.22,
-        "under": 4.31
+        "under": 4.45
       },
       "2.5": {
         "over": 1.7,
-        "under": 2.15
+        "under": 2.18
       },
       "3.5": {
-        "over": 2.75,
-        "under": 1.45
+        "over": 2.78,
+        "under": 1.46
       }
     },
     "btts": {
-      "yes": 2.1,
-      "no": 1.72
+      "yes": 2.15,
+      "no": 1.69
     }
   },
   "P1|2026-08-30|CD Nacional|Estrela Amadora": {
     "1x2": {
-      "home": 2.37,
-      "draw": 3.3,
+      "home": 2.4,
+      "draw": 3.32,
       "away": 3.1
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/estrela-da-amadora-hrYABE5k/nacional-4ETLrR7n/odds/?mid=CjNR5Qxf",
-    "fetched_at": "2026-08-28T10:44:09Z",
+    "fetched_at": "2026-08-29T11:10:09Z",
     "goals_ou": {
       "1.5": {
         "over": 1.33,
@@ -3530,18 +3530,18 @@
     },
     "btts": {
       "yes": 1.75,
-      "no": 2.02
+      "no": 2.05
     }
   },
   "P1|2026-08-30|Casa Pia AC|Moreirense FC": {
     "1x2": {
-      "home": 2.45,
+      "home": 2.37,
       "draw": 3.1,
-      "away": 3.18
+      "away": 3.4
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/casa-pia-QFHt9Zgs/moreirense-8d9NGt9H/odds/?mid=8fYmD8pK",
-    "fetched_at": "2026-08-28T10:44:24Z",
+    "fetched_at": "2026-08-29T11:10:24Z",
     "goals_ou": {
       "1.5": {
         "over": 1.48,
@@ -3557,75 +3557,75 @@
       }
     },
     "btts": {
-      "yes": 2.07,
-      "no": 1.71
+      "yes": 2.1,
+      "no": 1.72
     }
   },
   "P1|2026-08-30|FC Famalicão|Gil Vicente FC": {
     "1x2": {
       "home": 2.2,
       "draw": 3.2,
-      "away": 3.7
+      "away": 3.75
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/famalicao-ABBgitC3/gil-vicente-CS0fFFd8/odds/?mid=4QJJ7n8s",
-    "fetched_at": "2026-08-28T10:44:42Z",
+    "fetched_at": "2026-08-29T11:10:38Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.45,
-        "under": 2.9
+        "over": 1.41,
+        "under": 2.95
       },
       "2.5": {
-        "over": 2.3,
-        "under": 1.63
+        "over": 2.27,
+        "under": 1.65
       },
       "3.5": {
-        "over": 4.35,
+        "over": 4.27,
         "under": 1.23
       }
     },
     "btts": {
       "yes": 1.97,
-      "no": 1.8
+      "no": 1.82
     }
   },
   "SP1|2026-08-30|Real Madrid|Málaga CF": {
     "1x2": {
       "home": 1.14,
-      "draw": 10.0,
-      "away": 20.0
+      "draw": 10.2,
+      "away": 22.0
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/malaga-25tIqYiJ/real-madrid-W8mj7MDD/odds/?mid=K8SaDccd",
-    "fetched_at": "2026-08-28T10:46:35Z",
+    "fetched_at": "2026-08-29T11:12:03Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.09,
-        "under": 7.6
+        "over": 1.1,
+        "under": 7.25
       },
       "2.5": {
-        "over": 1.34,
-        "under": 3.45
+        "over": 1.33,
+        "under": 3.35
       },
       "3.5": {
-        "over": 1.84,
-        "under": 2.06
+        "over": 1.85,
+        "under": 2.01
       }
     },
     "btts": {
-      "yes": 2.21,
-      "no": 1.68
+      "yes": 2.22,
+      "no": 1.65
     }
   },
   "SP1|2026-08-30|RC Deportivo|Valencia CF": {
     "1x2": {
-      "home": 2.58,
+      "home": 2.57,
       "draw": 3.12,
       "away": 3.15
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/dep-a-coruna-Q51ZzMS6/valencia-CQeaytrD/odds/?mid=OpVK0KDj",
-    "fetched_at": "2026-08-28T10:46:50Z",
+    "fetched_at": "2026-08-29T11:12:17Z",
     "goals_ou": {
       "1.5": {
         "over": 1.47,
@@ -3637,7 +3637,7 @@
       },
       "3.5": {
         "over": 4.6,
-        "under": 1.21
+        "under": 1.22
       }
     },
     "btts": {
@@ -3647,13 +3647,13 @@
   },
   "SP1|2026-08-30|Celta|Athletic Club": {
     "1x2": {
-      "home": 2.45,
+      "home": 2.47,
       "draw": 3.3,
-      "away": 3.1
+      "away": 3.05
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/ath-bilbao-IP5zl0cJ/celta-vigo-8pvUZFhf/odds/?mid=h2vk6tjT",
-    "fetched_at": "2026-08-28T10:47:03Z",
+    "fetched_at": "2026-08-29T11:12:32Z",
     "goals_ou": {
       "1.5": {
         "over": 1.36,
@@ -3669,51 +3669,51 @@
       }
     },
     "btts": {
-      "yes": 1.84,
+      "yes": 1.85,
       "no": 1.98
     }
   },
   "T1|2026-08-30|Eyüpspor|Alanyaspor": {
     "1x2": {
       "home": 3.2,
-      "draw": 3.25,
+      "draw": 3.33,
       "away": 2.35
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/alanyaspor-IcN8oPcJ/eyupspor-276zKCgt/odds/?mid=0QzAj8GF",
-    "fetched_at": "2026-08-28T10:47:51Z",
+    "fetched_at": "2026-08-29T11:13:35Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.38,
-        "under": 3.2
+        "over": 1.36,
+        "under": 3.28
       },
       "2.5": {
-        "over": 2.12,
-        "under": 1.74
+        "over": 2.1,
+        "under": 1.77
       },
       "3.5": {
-        "over": 3.85,
-        "under": 1.27
+        "over": 3.8,
+        "under": 1.28
       }
     },
     "btts": {
-      "yes": 1.85,
+      "yes": 1.88,
       "no": 1.92
     }
   },
   "T1|2026-08-30|Istanbul Basaksehir|Kasimpasa": {
     "1x2": {
       "home": 1.7,
-      "draw": 3.95,
-      "away": 4.98
+      "draw": 3.96,
+      "away": 4.85
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/basaksehir-YqP5NmC1/kasimpasa-dOlaIG4l/odds/?mid=6NwIlnoS",
-    "fetched_at": "2026-08-28T10:48:05Z",
+    "fetched_at": "2026-08-29T11:13:49Z",
     "goals_ou": {
       "1.5": {
         "over": 1.25,
-        "under": 4.25
+        "under": 4.17
       },
       "2.5": {
         "over": 1.77,
@@ -3726,18 +3726,18 @@
     },
     "btts": {
       "yes": 1.78,
-      "no": 2.01
+      "no": 2.02
     }
   },
   "T1|2026-08-30|Samsunspor|Fenerbahçe": {
     "1x2": {
-      "home": 5.16,
-      "draw": 4.2,
+      "home": 5.1,
+      "draw": 4.24,
       "away": 1.62
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/fenerbahce-MsbmracL/samsunspor-pSc6z7bf/odds/?mid=Sx8Te3he",
-    "fetched_at": "2026-08-28T10:48:40Z",
+    "fetched_at": "2026-08-29T11:14:25Z",
     "goals_ou": {
       "1.5": {
         "over": 1.2,
@@ -3753,26 +3753,26 @@
       }
     },
     "btts": {
-      "yes": 1.67,
+      "yes": 1.68,
       "no": 2.15
     }
   },
   "E0|2026-08-31|Aston Villa|Arsenal": {
     "1x2": {
-      "home": 6.0,
+      "home": 6.5,
       "draw": 4.3,
-      "away": 1.57
+      "away": 1.55
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/arsenal-hA1Zm19f/aston-villa-W00wmLO0/odds/?mid=27MtCUO7",
-    "fetched_at": "2026-08-28T10:36:14Z",
+    "fetched_at": "2026-08-29T11:02:37Z",
     "goals_ou": {
       "1.5": {
         "over": 1.28,
         "under": 3.85
       },
       "2.5": {
-        "over": 1.85,
+        "over": 1.8,
         "under": 2.0
       },
       "3.5": {
@@ -3781,36 +3781,36 @@
       }
     },
     "btts": {
-      "yes": 1.9,
-      "no": 1.9
+      "yes": 1.92,
+      "no": 1.87
     }
   },
   "I1|2026-08-31|Lecce|Roma": {
     "1x2": {
-      "home": 7.5,
-      "draw": 4.3,
-      "away": 1.5
+      "home": 7.75,
+      "draw": 4.35,
+      "away": 1.49
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/as-roma-zVqqL0ma/lecce-G8lYsMgU/odds/?mid=8tg7weHk",
-    "fetched_at": "2026-08-28T10:40:34Z",
+    "fetched_at": "2026-08-29T11:06:59Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.36,
-        "under": 3.25
+        "over": 1.34,
+        "under": 3.3
       },
       "2.5": {
-        "over": 2.1,
-        "under": 1.77
+        "over": 2.05,
+        "under": 1.8
       },
       "3.5": {
-        "over": 3.75,
-        "under": 1.28
+        "over": 3.6,
+        "under": 1.3
       }
     },
     "btts": {
-      "yes": 2.3,
-      "no": 1.61
+      "yes": 2.25,
+      "no": 1.65
     }
   },
   "I1|2026-08-31|Atalanta|Bologna": {
@@ -3821,18 +3821,18 @@
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/atalanta-8C9JjMXu/bologna-0M9xNN8N/odds/?mid=EqX2s4IN",
-    "fetched_at": "2026-08-28T10:40:49Z",
+    "fetched_at": "2026-08-29T11:07:14Z",
     "goals_ou": {
       "1.5": {
-        "over": 1.28,
+        "over": 1.3,
         "under": 3.65
       },
       "2.5": {
-        "over": 1.9,
+        "over": 1.92,
         "under": 1.93
       },
       "3.5": {
-        "over": 3.25,
+        "over": 3.3,
         "under": 1.37
       }
     },
@@ -3843,13 +3843,13 @@
   },
   "P1|2026-08-31|SL Benfica|Estoril Praia": {
     "1x2": {
-      "home": 1.2,
+      "home": 1.18,
       "draw": 8.25,
       "away": 16.75
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/benfica-zBkyuyRI/estoril-htoKuYZl/odds/?mid=xCws2rxJ",
-    "fetched_at": "2026-08-28T10:44:56Z",
+    "fetched_at": "2026-08-29T11:10:52Z",
     "goals_ou": {
       "1.5": {
         "over": 1.12,
@@ -3860,7 +3860,7 @@
         "under": 3.13
       },
       "3.5": {
-        "over": 2.0,
+        "over": 1.98,
         "under": 1.91
       }
     },
@@ -3873,11 +3873,11 @@
     "1x2": {
       "home": 1.75,
       "draw": 3.68,
-      "away": 4.87
+      "away": 4.93
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/braga-dpUer7ht/vitoria-guimaraes-pQYVZyD2/odds/?mid=tlt2k5hD",
-    "fetched_at": "2026-08-28T10:45:11Z",
+    "fetched_at": "2026-08-29T11:11:06Z",
     "goals_ou": {
       "1.5": {
         "over": 1.33,
@@ -3889,23 +3889,23 @@
       },
       "3.5": {
         "over": 3.45,
-        "under": 1.33
+        "under": 1.32
       }
     },
     "btts": {
-      "yes": 1.87,
-      "no": 1.88
+      "yes": 1.9,
+      "no": 1.85
     }
   },
   "SP1|2026-08-31|CA Osasuna|Getafe CF": {
     "1x2": {
-      "home": 2.25,
+      "home": 2.22,
       "draw": 3.15,
-      "away": 3.85
+      "away": 4.0
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/getafe-dboeiWOt/osasuna-ETdxjU8a/odds/?mid=GCwMKu5M",
-    "fetched_at": "2026-08-28T10:47:18Z",
+    "fetched_at": "2026-08-29T11:12:45Z",
     "goals_ou": {
       "1.5": {
         "over": 1.65,
@@ -3928,12 +3928,12 @@
   "SP1|2026-08-31|FC Barcelona|Rayo Vallecano": {
     "1x2": {
       "home": 1.2,
-      "draw": 8.0,
+      "draw": 8.25,
       "away": 15.0
     },
     "source": "Flashscore (best of 7 bookmakers)",
     "source_url": "https://www.flashscore.com/match/football/barcelona-SKbpVP5K/rayo-vallecano-8bcjFy6O/odds/?mid=GvI6ON5c",
-    "fetched_at": "2026-08-28T10:47:32Z",
+    "fetched_at": "2026-08-29T11:12:59Z",
     "goals_ou": {
       "1.5": {
         "over": 1.11,
@@ -3941,7 +3941,7 @@
       },
       "2.5": {
         "over": 1.38,
-        "under": 3.15
+        "under": 3.25
       },
       "3.5": {
         "over": 1.97,
@@ -3949,8 +3949,36 @@
       }
     },
     "btts": {
-      "yes": 1.95,
-      "no": 1.87
+      "yes": 2.0,
+      "no": 1.83
+    }
+  },
+  "SP1|2026-09-03|Real Sociedad|Celta": {
+    "1x2": {
+      "home": 2.31,
+      "draw": 3.15,
+      "away": 3.15
+    },
+    "source": "Flashscore (best of 1 bookmakers)",
+    "source_url": "https://www.flashscore.com/match/football/celta-vigo-8pvUZFhf/real-sociedad-jNvak2f3/odds/?mid=GzrJ32nL",
+    "fetched_at": "2026-08-29T11:13:13Z",
+    "goals_ou": {
+      "1.5": {
+        "over": 1.42,
+        "under": 2.75
+      },
+      "2.5": {
+        "over": 2.3,
+        "under": 1.58
+      },
+      "3.5": {
+        "over": 4.25,
+        "under": 1.2
+      }
+    },
+    "btts": {
+      "yes": 1.98,
+      "no": 1.78
     }
   }
 }

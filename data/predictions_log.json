@@ -9390,5 +9390,553 @@
     "source": "Flashscore",
     "source_url": "https://www.flashscore.com/match/football/ath-bilbao-IP5zl0cJ/barcelona-SKbpVP5K/?mid=0Atuqenl",
     "logged_at": "2026-08-28T11:15:42Z"
+  },
+  "D1|2026-08-28|FC Bayern München|VfB Stuttgart": {
+    "home_hist_name": "Bayern Munich",
+    "away_hist_name": "Stuttgart",
+    "lambda_home": 3.84,
+    "lambda_away": 0.97,
+    "n_home_matches": 102,
+    "n_away_matches": 102,
+    "n_used": 102,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for FC Bayern München (2.0-game weight from last 3) and VfB Stuttgart (2.0-game weight from last 3) against n=102 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "quality_correction_note": "Attacking baseline blends in a shots-on-target-based pseudo-xG proxy (SOT x 0.332 goals-per-shot-on-target, division-level, literature-typical, not fitted to this dataset) at 25% weight, for 102 of 102 FC Bayern München match(es) and 102 of 102 VfB Stuttgart match(es) with no real xG recorded — actual goals still dominate the number, this only nudges it toward underlying shot quality rather than reading the scoreline alone as the full signal.",
+    "possession": {
+      "home": {
+        "avg": null,
+        "n": 0
+      },
+      "away": {
+        "avg": null,
+        "n": 0
+      }
+    },
+    "markets": [
+      {
+        "market": "Fouls O/U 28.5",
+        "selection": "Under 28.5",
+        "probability": 0.956094654215261,
+        "n": 102
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.954900766295349,
+        "n": 102
+      },
+      {
+        "market": "Shots O/U 22.5",
+        "selection": "Over 22.5",
+        "probability": 0.9538017230080331,
+        "n": 102
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.9522197399698422,
+        "n": 102
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.8087998410780065,
+        "n": 102
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.7717914655804266,
+        "n": 102
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.609400640932749,
+        "n": 102
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/bayern-munich-nVp0wiqd/vfb-stuttgart-nJQmYp1B/?mid=xrtCcyAe",
+    "logged_at": "2026-08-29T10:56:15Z"
+  },
+  "E0|2026-08-28|Crystal Palace|Man City": {
+    "home_hist_name": "Crystal Palace",
+    "away_hist_name": "Man City",
+    "lambda_home": 0.98,
+    "lambda_away": 1.53,
+    "n_home_matches": 114,
+    "n_away_matches": 114,
+    "n_used": 114,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Crystal Palace (2.0-game weight from last 3) and Man City (2.0-game weight from last 3) against n=114 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "quality_correction_note": "Attacking baseline blends in a shots-on-target-based pseudo-xG proxy (SOT x 0.323 goals-per-shot-on-target, division-level, literature-typical, not fitted to this dataset) at 25% weight, for 114 of 114 Crystal Palace match(es) and 114 of 114 Man City match(es) with no real xG recorded — actual goals still dominate the number, this only nudges it toward underlying shot quality rather than reading the scoreline alone as the full signal.",
+    "possession": {
+      "home": {
+        "avg": null,
+        "n": 0
+      },
+      "away": {
+        "avg": null,
+        "n": 0
+      }
+    },
+    "markets": [
+      {
+        "market": "Fouls O/U 28.5",
+        "selection": "Under 28.5",
+        "probability": 0.9568727038450755,
+        "n": 114
+      },
+      {
+        "market": "Shots O/U 22.5",
+        "selection": "Over 22.5",
+        "probability": 0.8392628922537596,
+        "n": 114
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.769808082137016,
+        "n": 114
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.7583420031982772,
+        "n": 114
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7570050442847944,
+        "n": 114
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7468219533225003,
+        "n": 114
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.5002558685030843,
+        "n": 114
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/crystal-palace-AovF1Mia/manchester-city-Wtn9Stg0/?mid=C0b6Sk9l",
+    "logged_at": "2026-08-29T10:56:15Z"
+  },
+  "F1|2026-08-28|LOSC Lille|Paris Saint-Germain": {
+    "home_hist_name": "Lille",
+    "away_hist_name": "Paris SG",
+    "lambda_home": 1.35,
+    "lambda_away": 1.47,
+    "n_home_matches": 108,
+    "n_away_matches": 108,
+    "n_used": 108,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for LOSC Lille (2.0-game weight from last 3) and Paris Saint-Germain (2.0-game weight from last 3) against n=108 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "quality_correction_note": "Attacking baseline blends in a shots-on-target-based pseudo-xG proxy (SOT x 0.321 goals-per-shot-on-target, division-level, literature-typical, not fitted to this dataset) at 25% weight, for 108 of 108 LOSC Lille match(es) and 108 of 108 Paris Saint-Germain match(es) with no real xG recorded — actual goals still dominate the number, this only nudges it toward underlying shot quality rather than reading the scoreline alone as the full signal.",
+    "possession": {
+      "home": {
+        "avg": null,
+        "n": 0
+      },
+      "away": {
+        "avg": null,
+        "n": 0
+      }
+    },
+    "markets": [
+      {
+        "market": "Fouls O/U 28.5",
+        "selection": "Under 28.5",
+        "probability": 0.9135201446965113,
+        "n": 108
+      },
+      {
+        "market": "Shots on Target O/U 7.5",
+        "selection": "Over 7.5",
+        "probability": 0.8739408788355933,
+        "n": 108
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7843831049887153,
+        "n": 108
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7568201914670929,
+        "n": 108
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.6653786977723782,
+        "n": 108
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.5824882567130213,
+        "n": 108
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/lille-pfDZL71o/psg-CjhkPw0k/?mid=INhYSVse",
+    "logged_at": "2026-08-29T10:56:15Z"
+  },
+  "I1|2026-08-28|Milan|Venezia": {
+    "home_hist_name": "Milan",
+    "away_hist_name": "Venezia",
+    "lambda_home": 2.34,
+    "lambda_away": 0.65,
+    "n_home_matches": 114,
+    "n_away_matches": 38,
+    "n_used": 38,
+    "confidence": "Medium",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Milan (2.0-game weight from last 3) and Venezia (2.0-game weight from last 3) against n=38 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "quality_correction_note": "Attacking baseline blends in a shots-on-target-based pseudo-xG proxy (SOT x 0.308 goals-per-shot-on-target, division-level, literature-typical, not fitted to this dataset) at 25% weight, for 114 of 114 Milan match(es) and 38 of 38 Venezia match(es) with no real xG recorded — actual goals still dominate the number, this only nudges it toward underlying shot quality rather than reading the scoreline alone as the full signal.",
+    "possession": {
+      "home": {
+        "avg": null,
+        "n": 0
+      },
+      "away": {
+        "avg": null,
+        "n": 0
+      }
+    },
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.922724802768075,
+        "n": 38
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8067582109374316,
+        "n": 38
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.8044493700974028,
+        "n": 38
+      },
+      {
+        "market": "Shots on Target O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.7831453581602382,
+        "n": 38
+      },
+      {
+        "market": "Fouls O/U 20.5",
+        "selection": "Over 20.5",
+        "probability": 0.7676036038331066,
+        "n": 38
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5623079122933126,
+        "n": 38
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/ac-milan-8Sa8HInO/venezia-MkPmVv50/?mid=fciFyZo2",
+    "logged_at": "2026-08-29T10:56:15Z"
+  },
+  "N1|2026-08-28|FC Groningen|Fortuna Sittard": {
+    "home_hist_name": "Groningen",
+    "away_hist_name": "For Sittard",
+    "lambda_home": 1.99,
+    "lambda_away": 0.78,
+    "n_home_matches": 87,
+    "n_away_matches": 104,
+    "n_used": 87,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for FC Groningen (2.0-game weight from last 3) and Fortuna Sittard (2.0-game weight from last 3) against n=87 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "quality_correction_note": "Attacking baseline blends in a shots-on-target-based pseudo-xG proxy (SOT x 0.316 goals-per-shot-on-target, division-level, literature-typical, not fitted to this dataset) at 25% weight, for 86 of 87 FC Groningen match(es) and 103 of 104 Fortuna Sittard match(es) with no real xG recorded — actual goals still dominate the number, this only nudges it toward underlying shot quality rather than reading the scoreline alone as the full signal.",
+    "possession": {
+      "home": {
+        "avg": 1.45,
+        "n": 1
+      },
+      "away": {
+        "avg": 0.49,
+        "n": 1
+      }
+    },
+    "markets": [
+      {
+        "market": "Fouls O/U 28.5",
+        "selection": "Under 28.5",
+        "probability": 0.9182650336704302,
+        "n": 87
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.8715302055808278,
+        "n": 87
+      },
+      {
+        "market": "Shots O/U 28.5",
+        "selection": "Under 28.5",
+        "probability": 0.8101296776376283,
+        "n": 87
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7927662046503702,
+        "n": 87
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.7742492209471799,
+        "n": 87
+      },
+      {
+        "market": "Cards (Yellow) O/U 4.5",
+        "selection": "Under 4.5",
+        "probability": 0.761889171998059,
+        "n": 87
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.521486677769821,
+        "n": 87
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/groningen-MBUGcjb9/sittard-YH8HX5iP/?mid=YZz3PZW7",
+    "logged_at": "2026-08-29T10:56:15Z"
+  },
+  "P1|2026-08-28|Rio Ave FC|Sporting CP": {
+    "home_hist_name": "Rio Ave",
+    "away_hist_name": "Sp Lisbon",
+    "lambda_home": 0.9,
+    "lambda_away": 2.04,
+    "n_home_matches": 86,
+    "n_away_matches": 104,
+    "n_used": 86,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Rio Ave FC (2.0-game weight from last 3) and Sporting CP (2.0-game weight from last 3) against n=86 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "quality_correction_note": "Attacking baseline blends in a shots-on-target-based pseudo-xG proxy (SOT x 0.316 goals-per-shot-on-target, division-level, literature-typical, not fitted to this dataset) at 25% weight, for 86 of 86 Rio Ave FC match(es) and 103 of 104 Sporting CP match(es) with no real xG recorded — actual goals still dominate the number, this only nudges it toward underlying shot quality rather than reading the scoreline alone as the full signal.",
+    "possession": {
+      "home": {
+        "avg": 1.12,
+        "n": 1
+      },
+      "away": {
+        "avg": 1.15,
+        "n": 1
+      }
+    },
+    "markets": [
+      {
+        "market": "Double Chance",
+        "selection": "Away or Draw",
+        "probability": 0.8519102904717786,
+        "n": 86
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8495381533845567,
+        "n": 86
+      },
+      {
+        "market": "Fouls O/U 20.5",
+        "selection": "Over 20.5",
+        "probability": 0.8076051615481259,
+        "n": 86
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.8020397684366536,
+        "n": 86
+      },
+      {
+        "market": "Shots O/U 22.5",
+        "selection": "Over 22.5",
+        "probability": 0.734579949939128,
+        "n": 86
+      },
+      {
+        "market": "Corners O/U 8.5",
+        "selection": "Over 8.5",
+        "probability": 0.7342084260307077,
+        "n": 86
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.5271698239565403,
+        "n": 86
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/rio-ave-jPzXLi4l/sporting-cp-tljXuHBC/?mid=4buZ3476",
+    "logged_at": "2026-08-29T10:56:15Z"
+  },
+  "SP1|2026-08-28|R. Racing Club|Elche CF": {
+    "home_hist_name": "Racing Santander",
+    "away_hist_name": "Elche",
+    "lambda_home": 2.55,
+    "lambda_away": 1.49,
+    "n_home_matches": 1,
+    "n_away_matches": 76,
+    "n_used": 1,
+    "confidence": "Low",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for R. Racing Club (2.0-game weight from last 3) and Elche CF (2.0-game weight from last 3) against n=1 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "quality_correction_note": "Attacking baseline blends in a shots-on-target-based pseudo-xG proxy (SOT x 0.315 goals-per-shot-on-target, division-level, literature-typical, not fitted to this dataset) at 25% weight, for 1 of 1 R. Racing Club match(es) and 76 of 76 Elche CF match(es) with no real xG recorded — actual goals still dominate the number, this only nudges it toward underlying shot quality rather than reading the scoreline alone as the full signal.",
+    "possession": {
+      "home": {
+        "avg": null,
+        "n": 0
+      },
+      "away": {
+        "avg": null,
+        "n": 0
+      }
+    },
+    "markets": [
+      {
+        "market": "Fouls O/U 28.5",
+        "selection": "Under 28.5",
+        "probability": 0.9989726203409995,
+        "n": 1
+      },
+      {
+        "market": "Shots on Target O/U 10.5",
+        "selection": "Under 10.5",
+        "probability": 0.9580535936512116,
+        "n": 1
+      },
+      {
+        "market": "Total Goals O/U 1.5",
+        "selection": "Over 1.5",
+        "probability": 0.9177287147827952,
+        "n": 1
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8028294336988828,
+        "n": 1
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.7934076465316204,
+        "n": 1
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7603234157772285,
+        "n": 1
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "Yes",
+        "probability": 0.7207644666509352,
+        "n": 1
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/elche-4jl02tPF/racing-santander-nVpEwOrl/?mid=CrPiFJSq",
+    "logged_at": "2026-08-29T10:56:15Z"
+  },
+  "SP1|2026-08-28|Deportivo Alavés|Villarreal CF": {
+    "home_hist_name": "Alaves",
+    "away_hist_name": "Villarreal",
+    "lambda_home": 1.42,
+    "lambda_away": 1.01,
+    "n_home_matches": 96,
+    "n_away_matches": 116,
+    "n_used": 96,
+    "confidence": "High",
+    "dc_rho_note": "Dixon-Coles low-score correction applied with fixed rho=-0.1 (literature-typical, not fitted to this dataset).",
+    "form_blend_note": "Recent-form blend applied for Deportivo Alavés (2.0-game weight from last 3) and Villarreal CF (2.0-game weight from last 3) against n=96 historical — prefers real xG per match over goals when available, nudges each team's own attacking output only (no separate recent-defense modeling), weighted so it can never overwhelm the historical number. A heuristic recency adjustment, not a fitted or validated parameter.",
+    "quality_correction_note": "Attacking baseline blends in a shots-on-target-based pseudo-xG proxy (SOT x 0.315 goals-per-shot-on-target, division-level, literature-typical, not fitted to this dataset) at 25% weight, for 96 of 96 Deportivo Alavés match(es) and 116 of 116 Villarreal CF match(es) with no real xG recorded — actual goals still dominate the number, this only nudges it toward underlying shot quality rather than reading the scoreline alone as the full signal.",
+    "possession": {
+      "home": {
+        "avg": 1.13,
+        "n": 1
+      },
+      "away": {
+        "avg": 0.89,
+        "n": 1
+      }
+    },
+    "markets": [
+      {
+        "market": "Shots O/U 28.5",
+        "selection": "Under 28.5",
+        "probability": 0.8563099416640425,
+        "n": 96
+      },
+      {
+        "market": "Cards (Yellow) O/U 2.5",
+        "selection": "Over 2.5",
+        "probability": 0.8511251989809937,
+        "n": 96
+      },
+      {
+        "market": "Fouls O/U 20.5",
+        "selection": "Over 20.5",
+        "probability": 0.8278289232209306,
+        "n": 96
+      },
+      {
+        "market": "Total Goals O/U 3.5",
+        "selection": "Under 3.5",
+        "probability": 0.7715209413472743,
+        "n": 96
+      },
+      {
+        "market": "Corners O/U 11.5",
+        "selection": "Under 11.5",
+        "probability": 0.7527170845848205,
+        "n": 96
+      },
+      {
+        "market": "Double Chance",
+        "selection": "Home or Draw",
+        "probability": 0.7440430913082837,
+        "n": 96
+      },
+      {
+        "market": "Both Teams to Score",
+        "selection": "No",
+        "probability": 0.5042596854949564,
+        "n": 96
+      }
+    ],
+    "source": "Flashscore",
+    "source_url": "https://www.flashscore.com/match/football/alaves-hxt57t2q/villarreal-lUatW5jE/?mid=6ots82LG",
+    "logged_at": "2026-08-29T10:56:15Z"
   }
 }
