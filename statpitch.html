@@ -172,6 +172,9 @@
   table.markets.standings-table td.pos{font-family:'IBM Plex Mono',monospace;color:var(--text-faint);text-align:center;width:24px;}
   table.markets th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;
     letter-spacing:0.05em;color:var(--text-faint);padding:6px 8px;border-bottom:1px solid var(--border);white-space:nowrap;}
+  table.markets th.sortable{cursor:pointer;user-select:none;}
+  table.markets th.sortable:hover{color:var(--text);}
+  table.markets th.sortable.active{color:var(--accent);}
   table.markets td{padding:9px 10px;border-bottom:1px solid var(--border);font-size:12.5px;white-space:nowrap;}
   table.markets tbody tr:hover{background:var(--surface);}
   table.markets tr.spotlight-row, table.markets tr.spotlight-row:hover{background:rgba(76,141,255,.08);}
@@ -23759,7 +23762,7 @@ const TEAM_NEWS = {
     "fetched_at": "2026-08-29T11:33:24Z"
   }
 };
-const BUILD_TIME = "2026-08-29T13:44:42.564318+02:00";
+const BUILD_TIME = "2026-08-29T13:51:33.010925+02:00";
 
 let LEAGUES, FIXTURES, ENGINE;
 
@@ -23770,6 +23773,12 @@ let searchTerm = '';
 let seen = JSON.parse(localStorage.getItem('statpitch-seen') || '{}');
 let expandedKey = null;
 const cache = {};
+// User-controlled markets-table sort (Historical Prob. / Market Prob.
+// column click). Keyed to the match so switching fixtures falls back to
+// the table's own default order (edge-sort when live odds exist, else
+// bestPerCategory's probability order) instead of carrying a sort choice
+// from a different match's table into this one.
+let marketSort = { key: null, col: null, dir: 'desc' };
 
 // Desktop gets a persistent two-pane layout (fixture list + sticky detail
 // pane) instead of the mobile inline-accordion; see .board.is-fixtures in
@@ -24438,9 +24447,19 @@ function marketRowHtml(m, hasOdds, graded, isSpotlight){
   `;
 }
 
+// Historical Prob. / Market Prob. column headers are click-to-sort (state
+// in the module-level marketSort var); every other column stays static —
+// only these two were asked for. Arrow shows the active column/direction.
+function sortHeaderHtml(col, label){
+  const active = marketSort.col === col;
+  const arrow = active ? (marketSort.dir === 'desc' ? ' ▼' : ' ▲') : '';
+  return `<th class="sortable${active?' active':''}" data-sort="${col}" style="text-align:right">${label}${arrow}</th>`;
+}
+
 function renderPanel(f, holder){
   const [div, iso, label, time, home, away] = f;
   const key = matchKey(f);
+  if(marketSort.key !== key) marketSort = { key, col: null, dir: 'desc' };
   const contextHtml = teamContextHtml(div, home, away);
   // Which side is home/away only ever appeared in the fixture-list row to
   // the left, not inside the panel itself — on the two-pane desktop layout
@@ -24524,23 +24543,37 @@ function renderPanel(f, holder){
   const spotlight = pickSpotlight(top, hasOdds);
 
   const colspan = 3 + (hasOdds ? 4 : 0) + (graded ? 1 : 0);
-  let rowsHtml;
-  if(hasOdds){
+  let sorted;
+  if(marketSort.col){
+    // User clicked a sortable column header (Historical Prob. / Market
+    // Prob.) — that choice overrides the table's own default ordering
+    // below until they click again or open a different match. Rows with
+    // no value for the clicked column (e.g. Market Prob. on a market with
+    // no live price) always sink to the bottom, regardless of direction.
+    const { col, dir } = marketSort;
+    sorted = top.slice().sort((a,b) => {
+      const av = a[col], bv = b[col];
+      if(av == null && bv == null) return 0;
+      if(av == null) return 1;
+      if(bv == null) return -1;
+      return dir === 'asc' ? (av - bv) : (bv - av);
+    });
+  } else if(hasOdds){
     // Sort by edge (model minus market) when a live price exists — the
     // whole point of this view is to surface value, not just whatever the
     // model itself considers most probable. Rows with no market price for
     // that selection sink to the bottom rather than interrupting the sort.
-    const sorted = top.slice().sort((a,b) => {
+    sorted = top.slice().sort((a,b) => {
       const ae = a.market_prob != null ? a.edge : -Infinity;
       const be = b.market_prob != null ? b.edge : -Infinity;
       return be - ae;
     });
-    rowsHtml = sorted.map(m => marketRowHtml(m, hasOdds, graded, m === spotlight)).join('');
   } else {
     // Already probability-descending (bestPerCategory preserves the order
     // analyze() produced) — no re-sort needed.
-    rowsHtml = top.map(m => marketRowHtml(m, hasOdds, graded, m === spotlight)).join('');
+    sorted = top;
   }
+  const rowsHtml = sorted.map(m => marketRowHtml(m, hasOdds, graded, m === spotlight)).join('');
 
   const topPick = spotlight;
   const topPickHtml = topPick ? `
@@ -24586,8 +24619,8 @@ function renderPanel(f, holder){
       <div class="table-scroll">
         <table class="markets">
           <thead><tr>
-            <th>Market</th><th>Selection</th><th style="text-align:right">Historical Prob.</th>
-            ${hasOdds ? `<th style="text-align:right">Market Odds</th><th style="text-align:right">Market Prob.</th><th style="text-align:right">Edge</th><th style="text-align:right" title="Quarter-Kelly bankroll fraction — a formula output, not a stake recommendation. See note below.">¼-Kelly</th>` : ''}
+            <th>Market</th><th>Selection</th>${sortHeaderHtml('probability','Historical Prob.')}
+            ${hasOdds ? `<th style="text-align:right">Market Odds</th>${sortHeaderHtml('market_prob','Market Prob.')}<th style="text-align:right">Edge</th><th style="text-align:right" title="Quarter-Kelly bankroll fraction — a formula output, not a stake recommendation. See note below.">¼-Kelly</th>` : ''}
             ${graded ? `<th style="text-align:center">Result</th>` : ''}
           </tr></thead>
           <tbody>${rowsHtml}</tbody>
@@ -24601,6 +24634,13 @@ function renderPanel(f, holder){
       </div>
     </div>
   `;
+  holder.querySelectorAll('th.sortable').forEach(th => {
+    th.onclick = () => {
+      const col = th.dataset.sort;
+      marketSort = { key, col, dir: (marketSort.col === col && marketSort.dir === 'desc') ? 'asc' : 'desc' };
+      renderPanel(f, holder);
+    };
+  });
 }
 
 function renderTrackRecord(){

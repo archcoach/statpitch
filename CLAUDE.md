@@ -839,3 +839,22 @@ cached, if you want to check the blend path specifically.
   only in the Team Context cards above. Degrades the same way everywhere
   else in this app: a team with no fetched `recent_form` shows the
   existing "no fresh team news" empty state, never a fabricated row.
+- **Click-to-sort on Historical Prob. / Market Prob. columns (added
+  2026-08-29).** Scoped to exactly the two columns asked for, not every
+  numeric column in the table. Module-level `marketSort = {key, col, dir}`
+  state (`key` is the match's own key, so opening a different match always
+  falls back to the table's existing default order — edge-sort when live
+  odds exist, else `bestPerCategory()`'s probability order — instead of
+  carrying a sort choice across matches). `sortHeaderHtml(col, label)`
+  renders the header with an active-state class and a ▼/▲ arrow;
+  `renderPanel()` attaches the actual click handlers with
+  `holder.querySelectorAll('th.sortable')` *after* setting `innerHTML`,
+  same as every other dynamically-built click target in this file (rows,
+  tabs, buttons) — there's no inline `onclick=` attribute anywhere else in
+  index_template.html and no reason to start here. First click on a column
+  sorts descending; a second click on the *same* column toggles ascending;
+  clicking a different column resets to descending. Rows with no value for
+  the clicked column (e.g. Market Prob. on a market with no live price)
+  always sink to the bottom regardless of direction — same "missing data
+  never gets a fabricated position" rule the rest of the table already
+  follows for `—` cells.
