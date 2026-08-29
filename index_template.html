@@ -93,6 +93,11 @@
 
   .panel{background:var(--surface-2);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;
     padding:20px 20px 22px;margin-top:-6px;margin-bottom:6px;font-size:13.5px;}
+  .panel-teams{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14.5px;font-weight:600;margin-bottom:10px;}
+  .panel-teams .pt-vs{color:var(--text-faint);font-weight:400;font-size:12px;}
+  .pt-tag{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:0.05em;padding:1px 5px;
+    border-radius:3px;margin-right:6px;border:1px solid var(--border);color:var(--text-faint);vertical-align:1px;}
+  .pt-tag.home{color:var(--accent);border-color:var(--accent);}
   .panel .meta-line{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-faint);margin-bottom:14px;display:flex;gap:14px;flex-wrap:wrap;}
   .panel .conf{padding:1px 7px;border-radius:10px;font-weight:600;}
   .conf.High{background:rgba(107,203,119,.15);color:var(--good);}
@@ -138,6 +143,19 @@
   .h2h-list li{padding:4px 0;border-top:1px solid var(--border);color:var(--text-dim);}
   .h2h-list li:first-child{border-top:none;}
   .h2h-season{font-family:'IBM Plex Mono',monospace;color:var(--text-faint);margin-right:6px;}
+
+  .rf-wrap{display:flex;gap:16px;flex-wrap:wrap;}
+  .rf-col{flex:1 1 220px;min-width:0;}
+  .rf-team-name{font-size:12px;font-weight:600;color:var(--text-dim);margin-bottom:4px;}
+  .rf-table{width:100%;border-collapse:collapse;font-size:11.5px;}
+  .rf-table td{padding:3px 4px;border-top:1px solid var(--border);color:var(--text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .rf-table tr:first-child td{border-top:none;}
+  .rf-table td.rf-date{font-family:'IBM Plex Mono',monospace;color:var(--text-faint);}
+  .rf-table td.rf-score{font-family:'IBM Plex Mono',monospace;text-align:right;}
+  .rf-table td.rf-result{font-family:'IBM Plex Mono',monospace;font-weight:700;text-align:center;width:16px;}
+  .rf-table td.rf-result.W{color:var(--good);}
+  .rf-table td.rf-result.D{color:var(--text-dim);}
+  .rf-table td.rf-result.L{color:var(--bad);}
 
   .top-pick{background:var(--surface);border:1px solid var(--accent);border-radius:10px;padding:16px 18px;
     margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
@@ -780,6 +798,39 @@ function h2hHtml(h2h){
   return `<div class="h2h"><div class="h2h-title">Head-to-Head (last ${h2h.length})</div><ul class="h2h-list">${rows}</ul></div>`;
 }
 
+// Complements h2hHtml() above: h2h is these two teams' meetings against EACH
+// OTHER across all seasons, this is each team's own recent results against
+// anyone, this season — same TEAM_NEWS.recent_form data already summarized
+// as W/D/L chips in teamCardHtml(), just laid out as a dated table since
+// that's what was asked for here specifically. Never fabricates a row: a
+// team with no fetched recent_form just shows the same "no fresh team news"
+// empty state used everywhere else.
+function recentFormTableHtml(teamName, entry){
+  const form = entry?.recent_form || [];
+  if(!form.length) return `<div class="tc-empty">no recent-season results fetched for ${teamName} yet</div>`;
+  const rows = form.map(r => `
+    <tr>
+      <td class="rf-date">${r.date}</td>
+      <td>${r.venue==='H'?'vs ':'@ '}${r.opponent}</td>
+      <td class="rf-score">${r.score}</td>
+      <td class="rf-result ${r.result}">${r.result}</td>
+    </tr>
+  `).join('');
+  return `<table class="rf-table"><tbody>${rows}</tbody></table>`;
+}
+
+function recentFormHtml(div, home, away){
+  return `
+    <div class="h2h">
+      <div class="h2h-title">Recent Results This Season</div>
+      <div class="rf-wrap">
+        <div class="rf-col"><div class="rf-team-name">${home}</div>${recentFormTableHtml(home, TEAM_NEWS[div+'|'+home])}</div>
+        <div class="rf-col"><div class="rf-team-name">${away}</div>${recentFormTableHtml(away, TEAM_NEWS[div+'|'+away])}</div>
+      </div>
+    </div>
+  `;
+}
+
 // Renders fetched market odds with no model comparison — used when the
 // probability model can't run at all (e.g. a newly-promoted team with zero
 // history), so there's nothing to compute an edge against. Never invents a
@@ -885,6 +936,18 @@ function renderPanel(f, holder){
   const [div, iso, label, time, home, away] = f;
   const key = matchKey(f);
   const contextHtml = teamContextHtml(div, home, away);
+  // Which side is home/away only ever appeared in the fixture-list row to
+  // the left, not inside the panel itself — on the two-pane desktop layout
+  // that row can be scrolled out of view, and everything in here (lambda
+  // home/away, "Home"/"Away" selections in the markets table) reads as
+  // meaningless without it. Repeat it explicitly, in the panel itself.
+  const panelTeamsHtml = `
+    <div class="panel-teams">
+      <span><span class="pt-tag home">HOME</span>${home}</span>
+      <span class="pt-vs">vs</span>
+      <span><span class="pt-tag away">AWAY</span>${away}</span>
+    </div>
+  `;
 
   const result = RESULTS[key];
   const graded = result && PREDICTIONS_LOG[key];
@@ -897,6 +960,7 @@ function renderPanel(f, holder){
     // self-referential — computed from the very match it's predicting.
     holder.innerHTML = `
       <div class="panel">
+        ${panelTeamsHtml}
         <div class="result-badge">FINAL ${result.fthg!=null?result.fthg:'?'} – ${result.ftag!=null?result.ftag:'?'}${result.hc!=null&&result.ac!=null?` · corners ${result.hc}-${result.ac}`:''}</div>
         ${contextHtml}
         <div class="odds-status"><span>no prediction was logged before this match — most likely one side had no prior history at kickoff, so there was nothing to grade</span></div>
@@ -920,12 +984,12 @@ function renderPanel(f, holder){
         });
         cache[key] = data;
       }catch(e){
-        holder.innerHTML = `<div class="panel"><div class="error">Something went wrong computing this: ${e.message}</div>${contextHtml}</div>`;
+        holder.innerHTML = `<div class="panel">${panelTeamsHtml}<div class="error">Something went wrong computing this: ${e.message}</div>${contextHtml}</div>`;
         return;
       }
     }
     if(data.error){
-      holder.innerHTML = `<div class="panel"><div class="error">${data.error}</div>${contextHtml}${rawOddsHtml(LIVE_ODDS[key])}</div>`;
+      holder.innerHTML = `<div class="panel">${panelTeamsHtml}<div class="error">${data.error}</div>${contextHtml}${rawOddsHtml(LIVE_ODDS[key])}</div>`;
       return;
     }
     live = LIVE_ODDS[key];
@@ -1000,6 +1064,7 @@ function renderPanel(f, holder){
 
   holder.innerHTML = `
     <div class="panel">
+      ${panelTeamsHtml}
       <div class="meta-line">
         <span>λ home ${data.lambda_home} · λ away ${data.lambda_away}</span>
         <span>n = ${data.n_used} (home:${data.n_home_matches} / away:${data.n_away_matches})</span>
@@ -1008,6 +1073,7 @@ function renderPanel(f, holder){
       ${resultBadgeHtml}
       ${contextHtml}
       ${h2hHtml(data.h2h)}
+      ${recentFormHtml(div, home, away)}
       ${topPickHtml}
       <div class="odds-status">${oddsStatusHtml}</div>
       <div class="table-caption">${hasOdds ? 'Every market with a live price, sorted by edge vs. market, highest first — plus the best pick from any market type with no live price fetched (marked "—").' : 'Best pick per market type (1X2, Goals, BTTS, Corners, Cards, Shots, Fouls), sorted by historical probability, highest first.'}</div>

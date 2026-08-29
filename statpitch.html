@@ -93,6 +93,11 @@
 
   .panel{background:var(--surface-2);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;
     padding:20px 20px 22px;margin-top:-6px;margin-bottom:6px;font-size:13.5px;}
+  .panel-teams{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14.5px;font-weight:600;margin-bottom:10px;}
+  .panel-teams .pt-vs{color:var(--text-faint);font-weight:400;font-size:12px;}
+  .pt-tag{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:0.05em;padding:1px 5px;
+    border-radius:3px;margin-right:6px;border:1px solid var(--border);color:var(--text-faint);vertical-align:1px;}
+  .pt-tag.home{color:var(--accent);border-color:var(--accent);}
   .panel .meta-line{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-faint);margin-bottom:14px;display:flex;gap:14px;flex-wrap:wrap;}
   .panel .conf{padding:1px 7px;border-radius:10px;font-weight:600;}
   .conf.High{background:rgba(107,203,119,.15);color:var(--good);}
@@ -138,6 +143,19 @@
   .h2h-list li{padding:4px 0;border-top:1px solid var(--border);color:var(--text-dim);}
   .h2h-list li:first-child{border-top:none;}
   .h2h-season{font-family:'IBM Plex Mono',monospace;color:var(--text-faint);margin-right:6px;}
+
+  .rf-wrap{display:flex;gap:16px;flex-wrap:wrap;}
+  .rf-col{flex:1 1 220px;min-width:0;}
+  .rf-team-name{font-size:12px;font-weight:600;color:var(--text-dim);margin-bottom:4px;}
+  .rf-table{width:100%;border-collapse:collapse;font-size:11.5px;}
+  .rf-table td{padding:3px 4px;border-top:1px solid var(--border);color:var(--text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .rf-table tr:first-child td{border-top:none;}
+  .rf-table td.rf-date{font-family:'IBM Plex Mono',monospace;color:var(--text-faint);}
+  .rf-table td.rf-score{font-family:'IBM Plex Mono',monospace;text-align:right;}
+  .rf-table td.rf-result{font-family:'IBM Plex Mono',monospace;font-weight:700;text-align:center;width:16px;}
+  .rf-table td.rf-result.W{color:var(--good);}
+  .rf-table td.rf-result.D{color:var(--text-dim);}
+  .rf-table td.rf-result.L{color:var(--bad);}
 
   .top-pick{background:var(--surface);border:1px solid var(--accent);border-radius:10px;padding:16px 18px;
     margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
@@ -17242,7 +17260,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/arsenal/hA1Zm19f/results/",
-    "fetched_at": "2026-08-28T10:40:33Z"
+    "fetched_at": "2026-08-29T10:58:46Z"
   },
   "E0|Coventry": {
     "recent_form": [
@@ -17284,7 +17302,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/coventry/GOvB22xg/results/",
-    "fetched_at": "2026-08-28T10:42:42Z"
+    "fetched_at": "2026-08-29T11:01:01Z"
   },
   "F1|Olympique de Marseille": {
     "recent_form": [
@@ -17326,7 +17344,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/marseille/SblU3Hee/results/",
-    "fetched_at": "2026-08-28T10:53:01Z"
+    "fetched_at": "2026-08-29T11:10:28Z"
   },
   "F1|RC Strasbourg Alsace": {
     "recent_form": [
@@ -17361,7 +17379,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/strasbourg/nP6UzIU1/results/",
-    "fetched_at": "2026-08-28T10:54:49Z"
+    "fetched_at": "2026-08-29T11:12:01Z"
   },
   "D1|SC Paderborn 07": {
     "recent_form": [
@@ -17396,7 +17414,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/paderborn/G2Op923t/results/",
-    "fetched_at": "2026-08-28T10:38:00Z"
+    "fetched_at": "2026-08-29T10:56:43Z"
   },
   "SP1|Málaga CF": {
     "recent_form": [
@@ -17438,7 +17456,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/malaga/25tIqYiJ/results/",
-    "fetched_at": "2026-08-28T11:17:25Z"
+    "fetched_at": "2026-08-29T11:32:20Z"
   },
   "E0|Hull": {
     "recent_form": [
@@ -17473,7 +17491,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/hull-city/S66R0t75/results/",
-    "fetched_at": "2026-08-28T10:44:18Z"
+    "fetched_at": "2026-08-29T11:02:27Z"
   },
   "SP1|RC Deportivo": {
     "recent_form": [
@@ -17522,7 +17540,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/dep-a-coruna/Q51ZzMS6/results/",
-    "fetched_at": "2026-08-28T11:18:05Z"
+    "fetched_at": "2026-08-29T11:32:35Z"
   },
   "T1|Çorum": {
     "recent_form": [
@@ -17571,7 +17589,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/corum-fk/0vne21BK/results/",
-    "fetched_at": "2026-08-28T11:27:12Z"
+    "fetched_at": "2026-08-29T11:40:41Z"
   },
   "E0|Aston Villa": {
     "recent_form": [
@@ -17613,7 +17631,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/aston-villa/W00wmLO0/results/",
-    "fetched_at": "2026-08-28T10:40:58Z"
+    "fetched_at": "2026-08-29T10:59:12Z"
   },
   "E0|Bournemouth": {
     "recent_form": [
@@ -17648,7 +17666,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/bournemouth/OtpNdwrc/results/",
-    "fetched_at": "2026-08-28T10:41:33Z"
+    "fetched_at": "2026-08-29T10:59:46Z"
   },
   "E0|Brentford": {
     "recent_form": [
@@ -17697,7 +17715,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/brentford/xYe7DwID/results/",
-    "fetched_at": "2026-08-28T10:41:48Z"
+    "fetched_at": "2026-08-29T11:00:03Z"
   },
   "E0|Brighton": {
     "recent_form": [
@@ -17746,7 +17764,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/brighton/2XrRecc3/results/",
-    "fetched_at": "2026-08-28T10:42:02Z"
+    "fetched_at": "2026-08-29T11:00:19Z"
   },
   "E0|Chelsea": {
     "recent_form": [
@@ -17761,7 +17779,7 @@ const TEAM_NEWS = {
         "possession": 66.0,
         "shots": 26.0,
         "shots_on_target": 7.0,
-        "passes": 696,
+        "passes": 697,
         "pass_accuracy": 92.0
       },
       {
@@ -17795,7 +17813,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/chelsea/4fGZN2oK/results/",
-    "fetched_at": "2026-08-28T10:42:18Z"
+    "fetched_at": "2026-08-29T11:00:36Z"
   },
   "E0|Crystal Palace": {
     "recent_form": [
@@ -17854,12 +17872,12 @@ const TEAM_NEWS = {
         "venue": "A",
         "result": "W",
         "score": "4-0",
-        "xg_for": 3.94,
-        "xg_against": 0.35,
+        "xg_for": 4.13,
+        "xg_against": 0.36,
         "possession": 68.0,
         "shots": 29.0,
         "shots_on_target": 10.0,
-        "passes": 657,
+        "passes": 658,
         "pass_accuracy": 93.0
       },
       {
@@ -17886,7 +17904,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/everton/KluSTr9s/results/",
-    "fetched_at": "2026-08-28T10:43:19Z"
+    "fetched_at": "2026-08-29T11:01:26Z"
   },
   "E0|Fulham": {
     "recent_form": [
@@ -17897,7 +17915,7 @@ const TEAM_NEWS = {
         "result": "W",
         "score": "3-0",
         "xg_for": 2.89,
-        "xg_against": 0.15,
+        "xg_against": 0.14,
         "possession": 79.0,
         "shots": 29.0,
         "shots_on_target": 8.0,
@@ -17928,7 +17946,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/fulham/69ZiU2Om/results/",
-    "fetched_at": "2026-08-28T10:43:44Z"
+    "fetched_at": "2026-08-29T11:01:52Z"
   },
   "E0|Ipswich": {
     "recent_form": [
@@ -17970,7 +17988,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/ipswich/thqhB2MB/results/",
-    "fetched_at": "2026-08-28T10:44:42Z"
+    "fetched_at": "2026-08-29T11:02:52Z"
   },
   "E0|Leeds": {
     "recent_form": [
@@ -17980,8 +17998,8 @@ const TEAM_NEWS = {
         "venue": "A",
         "result": "W",
         "score": "2-0",
-        "xg_for": 2.25,
-        "xg_against": 0.86,
+        "xg_for": 2.01,
+        "xg_against": 0.83,
         "possession": 50.0,
         "shots": 13.0,
         "shots_on_target": 5.0,
@@ -18012,7 +18030,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/leeds/tUxUbLR2/results/",
-    "fetched_at": "2026-08-28T10:45:07Z"
+    "fetched_at": "2026-08-29T11:03:17Z"
   },
   "E0|Liverpool": {
     "recent_form": [
@@ -18054,7 +18072,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/liverpool/lId4TMwf/results/",
-    "fetched_at": "2026-08-28T10:45:33Z"
+    "fetched_at": "2026-08-29T11:03:42Z"
   },
   "E0|Man City": {
     "recent_form": [
@@ -18152,7 +18170,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/manchester-united/ppjDR086/results/",
-    "fetched_at": "2026-08-28T10:46:02Z"
+    "fetched_at": "2026-08-29T11:04:00Z"
   },
   "E0|Newcastle": {
     "recent_form": [
@@ -18194,7 +18212,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/newcastle-utd/p6ahwuwJ/results/",
-    "fetched_at": "2026-08-28T10:46:26Z"
+    "fetched_at": "2026-08-29T11:04:25Z"
   },
   "E0|Nott'm Forest": {
     "recent_form": [
@@ -18204,12 +18222,12 @@ const TEAM_NEWS = {
         "venue": "H",
         "result": "L",
         "score": "0-2",
-        "xg_for": 0.86,
-        "xg_against": 2.25,
+        "xg_for": 0.83,
+        "xg_against": 2.01,
         "possession": 50.0,
         "shots": 8.0,
         "shots_on_target": 3.0,
-        "passes": 453,
+        "passes": 454,
         "pass_accuracy": 76.0
       },
       {
@@ -18236,7 +18254,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/nottingham/UsushcZr/results/",
-    "fetched_at": "2026-08-28T10:46:49Z"
+    "fetched_at": "2026-08-29T11:04:48Z"
   },
   "E0|Spurs": {
     "recent_form": [
@@ -18285,7 +18303,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/tottenham/UDg08Ohm/results/",
-    "fetched_at": "2026-08-28T10:47:02Z"
+    "fetched_at": "2026-08-29T11:05:03Z"
   },
   "E0|Sunderland": {
     "recent_form": [
@@ -18320,7 +18338,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/sunderland/WSzc94ws/results/",
-    "fetched_at": "2026-08-28T10:47:36Z"
+    "fetched_at": "2026-08-29T11:05:37Z"
   },
   "F1|AJ Auxerre": {
     "recent_form": [
@@ -18355,7 +18373,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/auxerre/MTLr36WA/results/",
-    "fetched_at": "2026-08-28T10:48:11Z"
+    "fetched_at": "2026-08-29T11:06:12Z"
   },
   "F1|AS Monaco": {
     "recent_form": [
@@ -18404,7 +18422,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/monaco/2PIvr8o4/results/",
-    "fetched_at": "2026-08-28T10:48:28Z"
+    "fetched_at": "2026-08-29T11:06:32Z"
   },
   "F1|Angers SCO": {
     "recent_form": [
@@ -18439,7 +18457,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/angers/SAlF91iL/results/",
-    "fetched_at": "2026-08-28T10:49:02Z"
+    "fetched_at": "2026-08-29T11:07:07Z"
   },
   "F1|Estac Troyes": {
     "recent_form": [
@@ -18474,7 +18492,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/troyes/fsfAHubD/results/",
-    "fetched_at": "2026-08-28T10:49:36Z"
+    "fetched_at": "2026-08-29T11:07:42Z"
   },
   "F1|FC Lorient": {
     "recent_form": [
@@ -18509,7 +18527,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/lorient/jgNAYRGi/results/",
-    "fetched_at": "2026-08-28T10:50:12Z"
+    "fetched_at": "2026-08-29T11:08:15Z"
   },
   "F1|Havre Athletic Club": {
     "recent_form": [
@@ -18544,7 +18562,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/le-havre/CIEe04GT/results/",
-    "fetched_at": "2026-08-28T10:50:46Z"
+    "fetched_at": "2026-08-29T11:08:50Z"
   },
   "F1|LOSC Lille": {
     "recent_form": [
@@ -18614,7 +18632,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/le-mans/ER0NeOOp/results/",
-    "fetched_at": "2026-08-28T10:51:53Z"
+    "fetched_at": "2026-08-29T11:09:24Z"
   },
   "F1|OGC Nice": {
     "recent_form": [
@@ -18656,7 +18674,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/nice/YagoQJpq/results/",
-    "fetched_at": "2026-08-28T10:52:19Z"
+    "fetched_at": "2026-08-29T11:09:48Z"
   },
   "F1|Olympique Lyonnais": {
     "recent_form": [
@@ -18705,7 +18723,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/lyon/2akflumR/results/",
-    "fetched_at": "2026-08-28T10:52:37Z"
+    "fetched_at": "2026-08-29T11:10:03Z"
   },
   "F1|Paris FC": {
     "recent_form": [
@@ -18740,7 +18758,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/paris-fc/0OEHEprs/results/",
-    "fetched_at": "2026-08-28T10:53:36Z"
+    "fetched_at": "2026-08-29T11:11:02Z"
   },
   "F1|RC Lens": {
     "recent_form": [
@@ -18782,7 +18800,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/lens/IBmris38/results/",
-    "fetched_at": "2026-08-28T10:54:14Z"
+    "fetched_at": "2026-08-29T11:11:27Z"
   },
   "F1|Stade Brestois 29": {
     "recent_form": [
@@ -18817,7 +18835,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/brest/Cr4VGaUl/results/",
-    "fetched_at": "2026-08-28T10:55:22Z"
+    "fetched_at": "2026-08-29T11:12:35Z"
   },
   "F1|Stade Rennais FC": {
     "recent_form": [
@@ -18852,7 +18870,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/rennes/d2nnj1IE/results/",
-    "fetched_at": "2026-08-28T10:55:57Z"
+    "fetched_at": "2026-08-29T11:13:09Z"
   },
   "F1|Toulouse FC": {
     "recent_form": [
@@ -18887,7 +18905,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/toulouse/MLmY2yB1/results/",
-    "fetched_at": "2026-08-28T10:56:31Z"
+    "fetched_at": "2026-08-29T11:13:43Z"
   },
   "I1|Atalanta": {
     "recent_form": [
@@ -18897,12 +18915,12 @@ const TEAM_NEWS = {
         "venue": "A",
         "result": "W",
         "score": "1-0",
-        "xg_for": 0.97,
-        "xg_against": 0.71,
+        "xg_for": 1.23,
+        "xg_against": 0.67,
         "possession": 50.0,
         "shots": 14.0,
         "shots_on_target": 4.0,
-        "passes": 482,
+        "passes": 480,
         "pass_accuracy": 88.0
       },
       {
@@ -18936,7 +18954,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/atalanta/8C9JjMXu/results/",
-    "fetched_at": "2026-08-28T10:56:46Z"
+    "fetched_at": "2026-08-29T11:13:58Z"
   },
   "I1|Bologna": {
     "recent_form": [
@@ -18971,7 +18989,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/bologna/0M9xNN8N/results/",
-    "fetched_at": "2026-08-28T10:57:23Z"
+    "fetched_at": "2026-08-29T11:14:32Z"
   },
   "I1|Cagliari": {
     "recent_form": [
@@ -19013,7 +19031,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/cagliari/SCGVmKHb/results/",
-    "fetched_at": "2026-08-28T10:57:48Z"
+    "fetched_at": "2026-08-29T11:14:57Z"
   },
   "I1|Como": {
     "recent_form": [
@@ -19055,7 +19073,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/como/ttyLthOA/results/",
-    "fetched_at": "2026-08-28T10:58:14Z"
+    "fetched_at": "2026-08-29T11:15:22Z"
   },
   "I1|Fiorentina": {
     "recent_form": [
@@ -19097,7 +19115,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/fiorentina/Q3A3IbXH/results/",
-    "fetched_at": "2026-08-28T10:58:39Z"
+    "fetched_at": "2026-08-29T11:15:47Z"
   },
   "I1|Frosinone": {
     "recent_form": [
@@ -19139,7 +19157,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/frosinone/pfo9H1Wp/results/",
-    "fetched_at": "2026-08-28T10:59:03Z"
+    "fetched_at": "2026-08-29T11:16:11Z"
   },
   "I1|Genoa": {
     "recent_form": [
@@ -19181,7 +19199,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/genoa/d0PJxeie/results/",
-    "fetched_at": "2026-08-28T10:59:28Z"
+    "fetched_at": "2026-08-29T11:16:37Z"
   },
   "I1|Internazionale": {
     "recent_form": [
@@ -19230,7 +19248,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/inter/Iw7eKK25/results/",
-    "fetched_at": "2026-08-28T10:59:44Z"
+    "fetched_at": "2026-08-29T11:16:52Z"
   },
   "I1|Juventus": {
     "recent_form": [
@@ -19279,7 +19297,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/juventus/C06aJvIB/results/",
-    "fetched_at": "2026-08-28T10:59:58Z"
+    "fetched_at": "2026-08-29T11:17:06Z"
   },
   "I1|Lazio": {
     "recent_form": [
@@ -19321,7 +19339,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/lazio/URcSl02h/results/",
-    "fetched_at": "2026-08-28T11:00:22Z"
+    "fetched_at": "2026-08-29T11:17:29Z"
   },
   "I1|Lecce": {
     "recent_form": [
@@ -19363,7 +19381,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/lecce/G8lYsMgU/results/",
-    "fetched_at": "2026-08-28T11:00:46Z"
+    "fetched_at": "2026-08-29T11:17:54Z"
   },
   "I1|Milan": {
     "recent_form": [
@@ -19454,7 +19472,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/monza/4YSMlwj7/results/",
-    "fetched_at": "2026-08-28T11:01:27Z"
+    "fetched_at": "2026-08-29T11:18:19Z"
   },
   "I1|Napoli": {
     "recent_form": [
@@ -19489,7 +19507,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/napoli/69Dxbc61/results/",
-    "fetched_at": "2026-08-28T11:02:01Z"
+    "fetched_at": "2026-08-29T11:18:54Z"
   },
   "I1|Parma": {
     "recent_form": [
@@ -19531,7 +19549,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/parma/6DxlaxHN/results/",
-    "fetched_at": "2026-08-28T11:02:29Z"
+    "fetched_at": "2026-08-29T11:19:19Z"
   },
   "I1|Roma": {
     "recent_form": [
@@ -19580,7 +19598,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/as-roma/zVqqL0ma/results/",
-    "fetched_at": "2026-08-28T11:02:43Z"
+    "fetched_at": "2026-08-29T11:19:33Z"
   },
   "I1|Sassuolo": {
     "recent_form": [
@@ -19622,7 +19640,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/sassuolo/QDdvI0zl/results/",
-    "fetched_at": "2026-08-28T11:03:06Z"
+    "fetched_at": "2026-08-29T11:19:58Z"
   },
   "I1|Torino": {
     "recent_form": [
@@ -19664,7 +19682,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/torino/MZFZnvX4/results/",
-    "fetched_at": "2026-08-28T11:03:32Z"
+    "fetched_at": "2026-08-29T11:20:25Z"
   },
   "I1|Udinese": {
     "recent_form": [
@@ -19706,7 +19724,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/udinese/rXw8YKDE/results/",
-    "fetched_at": "2026-08-28T11:03:56Z"
+    "fetched_at": "2026-08-29T11:20:49Z"
   },
   "I1|Venezia": {
     "recent_form": [
@@ -19797,7 +19815,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/den-haag/lAgLCkT3/results/",
-    "fetched_at": "2026-08-28T11:04:34Z"
+    "fetched_at": "2026-08-29T11:21:04Z"
   },
   "N1|AZ": {
     "recent_form": [
@@ -19846,7 +19864,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/az-alkmaar/2RxOow1i/results/",
-    "fetched_at": "2026-08-28T11:04:48Z"
+    "fetched_at": "2026-08-29T11:21:20Z"
   },
   "N1|Excelsior Rotterdam": {
     "recent_form": [
@@ -19888,7 +19906,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/excelsior/nNlLsRUr/results/",
-    "fetched_at": "2026-08-28T11:05:28Z"
+    "fetched_at": "2026-08-29T11:22:01Z"
   },
   "N1|FC Groningen": {
     "recent_form": [
@@ -19986,7 +20004,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/utrecht/p6QXMgOj/results/",
-    "fetched_at": "2026-08-28T11:06:10Z"
+    "fetched_at": "2026-08-29T11:22:31Z"
   },
   "N1|Feyenoord": {
     "recent_form": [
@@ -20035,7 +20053,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/feyenoord/8zjySeoN/results/",
-    "fetched_at": "2026-08-28T11:06:26Z"
+    "fetched_at": "2026-08-29T11:22:46Z"
   },
   "N1|Fortuna Sittard": {
     "recent_form": [
@@ -20133,7 +20151,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/nijmegen/nRluRF0T/results/",
-    "fetched_at": "2026-08-28T11:07:10Z"
+    "fetched_at": "2026-08-29T11:23:16Z"
   },
   "N1|PEC Zwolle": {
     "recent_form": [
@@ -20182,7 +20200,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/zwolle/r1L5w2EB/results/",
-    "fetched_at": "2026-08-28T11:07:25Z"
+    "fetched_at": "2026-08-29T11:23:30Z"
   },
   "N1|PSV": {
     "recent_form": [
@@ -20231,7 +20249,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/psv/M9UEHJWi/results/",
-    "fetched_at": "2026-08-28T11:07:38Z"
+    "fetched_at": "2026-08-29T11:23:45Z"
   },
   "N1|SC Cambuur": {
     "recent_form": [
@@ -20280,7 +20298,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/cambuur/QRyYgO7J/results/",
-    "fetched_at": "2026-08-28T11:07:52Z"
+    "fetched_at": "2026-08-29T11:23:59Z"
   },
   "N1|Sparta Rotterdam": {
     "recent_form": [
@@ -20329,7 +20347,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/sparta-rotterdam/KK4FaFV3/results/",
-    "fetched_at": "2026-08-28T11:08:07Z"
+    "fetched_at": "2026-08-29T11:24:13Z"
   },
   "N1|sc Heerenveen": {
     "recent_form": [
@@ -20378,7 +20396,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/heerenveen/EDjXSyWG/results/",
-    "fetched_at": "2026-08-28T11:09:10Z"
+    "fetched_at": "2026-08-29T11:25:16Z"
   },
   "P1|Académico": {
     "recent_form": [
@@ -20427,7 +20445,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/academico-viseu/GrRgeTHo/results/",
-    "fetched_at": "2026-08-28T11:09:25Z"
+    "fetched_at": "2026-08-29T11:25:31Z"
   },
   "P1|CD Nacional": {
     "recent_form": [
@@ -20476,7 +20494,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/nacional/4ETLrR7n/results/",
-    "fetched_at": "2026-08-28T11:09:40Z"
+    "fetched_at": "2026-08-29T11:25:48Z"
   },
   "P1|Casa Pia AC": {
     "recent_form": [
@@ -20525,7 +20543,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/casa-pia/QFHt9Zgs/results/",
-    "fetched_at": "2026-08-28T11:09:55Z"
+    "fetched_at": "2026-08-29T11:26:04Z"
   },
   "P1|Estoril Praia": {
     "recent_form": [
@@ -20574,7 +20592,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/estoril/htoKuYZl/results/",
-    "fetched_at": "2026-08-28T11:10:09Z"
+    "fetched_at": "2026-08-29T11:26:18Z"
   },
   "P1|FC Alverca": {
     "recent_form": [
@@ -20623,7 +20641,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/alverca/roaMksQg/results/",
-    "fetched_at": "2026-08-28T11:10:39Z"
+    "fetched_at": "2026-08-29T11:26:47Z"
   },
   "P1|FC Arouca": {
     "recent_form": [
@@ -20672,7 +20690,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/arouca/fJqfm7CG/results/",
-    "fetched_at": "2026-08-28T11:10:53Z"
+    "fetched_at": "2026-08-29T11:27:03Z"
   },
   "P1|FC Famalicão": {
     "recent_form": [
@@ -20721,7 +20739,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/famalicao/ABBgitC3/results/",
-    "fetched_at": "2026-08-28T11:11:07Z"
+    "fetched_at": "2026-08-29T11:27:18Z"
   },
   "P1|FC Porto": {
     "recent_form": [
@@ -20770,7 +20788,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/fc-porto/S2NmScGp/results/",
-    "fetched_at": "2026-08-28T11:11:22Z"
+    "fetched_at": "2026-08-29T11:27:31Z"
   },
   "P1|Gil Vicente FC": {
     "recent_form": [
@@ -20812,7 +20830,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/gil-vicente/CS0fFFd8/results/",
-    "fetched_at": "2026-08-28T11:11:47Z"
+    "fetched_at": "2026-08-29T11:27:55Z"
   },
   "P1|Marítimo M.": {
     "recent_form": [
@@ -20861,7 +20879,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/maritimo/noguvetP/results/",
-    "fetched_at": "2026-08-28T11:12:00Z"
+    "fetched_at": "2026-08-29T11:28:08Z"
   },
   "P1|Rio Ave FC": {
     "recent_form": [
@@ -20959,7 +20977,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/santa-clara/YmQyLBJf/results/",
-    "fetched_at": "2026-08-28T11:13:20Z"
+    "fetched_at": "2026-08-29T11:29:17Z"
   },
   "P1|Sporting CP": {
     "recent_form": [
@@ -21050,7 +21068,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/osasuna/ETdxjU8a/results/",
-    "fetched_at": "2026-08-28T11:14:52Z"
+    "fetched_at": "2026-08-29T11:30:36Z"
   },
   "SP1|Celta": {
     "recent_form": [
@@ -21092,7 +21110,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/celta-vigo/8pvUZFhf/results/",
-    "fetched_at": "2026-08-28T11:15:16Z"
+    "fetched_at": "2026-08-29T11:31:00Z"
   },
   "SP1|Elche CF": {
     "recent_form": [
@@ -21183,7 +21201,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/barcelona/SKbpVP5K/results/",
-    "fetched_at": "2026-08-28T11:16:19Z"
+    "fetched_at": "2026-08-29T11:31:17Z"
   },
   "SP1|Getafe CF": {
     "recent_form": [
@@ -21232,7 +21250,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/getafe/dboeiWOt/results/",
-    "fetched_at": "2026-08-28T11:16:34Z"
+    "fetched_at": "2026-08-29T11:31:32Z"
   },
   "SP1|Levante UD": {
     "recent_form": [
@@ -21274,7 +21292,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/levante/G8FL0ShI/results/",
-    "fetched_at": "2026-08-28T11:17:00Z"
+    "fetched_at": "2026-08-29T11:31:56Z"
   },
   "SP1|R. Racing Club": {
     "recent_form": [
@@ -21358,7 +21376,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/espanyol/QFfPdh1J/results/",
-    "fetched_at": "2026-08-28T11:18:30Z"
+    "fetched_at": "2026-08-29T11:32:58Z"
   },
   "SP1|Real Betis": {
     "recent_form": [
@@ -21407,7 +21425,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/betis/vJbTeCGP/results/",
-    "fetched_at": "2026-08-28T11:19:09Z"
+    "fetched_at": "2026-08-29T11:33:39Z"
   },
   "SP1|Real Madrid": {
     "recent_form": [
@@ -21456,7 +21474,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/real-madrid/W8mj7MDD/results/",
-    "fetched_at": "2026-08-28T11:19:24Z"
+    "fetched_at": "2026-08-29T11:33:52Z"
   },
   "SP1|Real Sociedad": {
     "recent_form": [
@@ -21505,7 +21523,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/real-sociedad/jNvak2f3/results/",
-    "fetched_at": "2026-08-28T11:19:41Z"
+    "fetched_at": "2026-08-29T11:34:06Z"
   },
   "SP1|Sevilla FC": {
     "recent_form": [
@@ -21547,7 +21565,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/sevilla/h8oAv4Ts/results/",
-    "fetched_at": "2026-08-28T11:20:06Z"
+    "fetched_at": "2026-08-29T11:34:28Z"
   },
   "SP1|Valencia CF": {
     "recent_form": [
@@ -21589,7 +21607,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/valencia/CQeaytrD/results/",
-    "fetched_at": "2026-08-28T11:20:30Z"
+    "fetched_at": "2026-08-29T11:34:53Z"
   },
   "SP1|Villarreal CF": {
     "recent_form": [
@@ -21680,7 +21698,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/alanyaspor/IcN8oPcJ/results/",
-    "fetched_at": "2026-08-28T11:21:09Z"
+    "fetched_at": "2026-08-29T11:35:18Z"
   },
   "T1|Amedspor": {
     "recent_form": [
@@ -21722,7 +21740,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/amedspor/EHdgkFvm/results/",
-    "fetched_at": "2026-08-28T11:21:38Z"
+    "fetched_at": "2026-08-29T11:35:42Z"
   },
   "T1|Besiktas": {
     "recent_form": [
@@ -21771,10 +21789,24 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/besiktas/IDmErJCR/results/",
-    "fetched_at": "2026-08-28T11:21:53Z"
+    "fetched_at": "2026-08-29T11:35:56Z"
   },
   "T1|Erzurumspor": {
     "recent_form": [
+      {
+        "date": "2026-08-28",
+        "opponent": "Genclerbirligi",
+        "venue": "A",
+        "result": "D",
+        "score": "1-1",
+        "xg_for": 0.86,
+        "xg_against": 0.76,
+        "possession": 53.0,
+        "shots": 9.0,
+        "shots_on_target": 4.0,
+        "passes": 457,
+        "pass_accuracy": 80.0
+      },
       {
         "date": "2026-08-21",
         "opponent": "Galatasaray",
@@ -21802,18 +21834,11 @@ const TEAM_NEWS = {
         "shots_on_target": 1.0,
         "passes": 505,
         "pass_accuracy": 87.0
-      },
-      {
-        "date": "2026-08-04",
-        "opponent": "Alanyaspor (Tur)",
-        "venue": "A",
-        "result": "D",
-        "score": "0-0"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/erzurumspor-fk/xQZ3CpVE/results/",
-    "fetched_at": "2026-08-28T11:22:17Z"
+    "fetched_at": "2026-08-29T11:36:10Z"
   },
   "T1|Eyüpspor": {
     "recent_form": [
@@ -21855,7 +21880,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/eyupspor/276zKCgt/results/",
-    "fetched_at": "2026-08-28T11:22:41Z"
+    "fetched_at": "2026-08-29T11:36:35Z"
   },
   "T1|Fenerbahçe": {
     "recent_form": [
@@ -21904,7 +21929,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/fenerbahce/MsbmracL/results/",
-    "fetched_at": "2026-08-28T11:22:57Z"
+    "fetched_at": "2026-08-29T11:36:49Z"
   },
   "T1|Galatasaray": {
     "recent_form": [
@@ -21953,7 +21978,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/galatasaray/riaqqurF/results/",
-    "fetched_at": "2026-08-28T11:23:14Z"
+    "fetched_at": "2026-08-29T11:37:04Z"
   },
   "T1|Gaziantep": {
     "recent_form": [
@@ -21995,10 +22020,24 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/gaziantep/ITkIKZ7q/results/",
-    "fetched_at": "2026-08-28T11:23:41Z"
+    "fetched_at": "2026-08-29T11:37:27Z"
   },
   "T1|Gençlerbirligi": {
     "recent_form": [
+      {
+        "date": "2026-08-28",
+        "opponent": "Erzurumspor",
+        "venue": "H",
+        "result": "D",
+        "score": "1-1",
+        "xg_for": 0.76,
+        "xg_against": 0.86,
+        "possession": 47.0,
+        "shots": 16.0,
+        "shots_on_target": 5.0,
+        "passes": 400,
+        "pass_accuracy": 80.0
+      },
       {
         "date": "2026-08-23",
         "opponent": "Goztepe",
@@ -22026,18 +22065,11 @@ const TEAM_NEWS = {
         "shots_on_target": 3.0,
         "passes": 281,
         "pass_accuracy": 77.0
-      },
-      {
-        "date": "2026-07-24",
-        "opponent": "Kasimpasa (Tur)",
-        "venue": "A",
-        "result": "L",
-        "score": "0-3"
       }
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/genclerbirligi/GOPqBIRK/results/",
-    "fetched_at": "2026-08-28T11:24:05Z"
+    "fetched_at": "2026-08-29T11:37:42Z"
   },
   "T1|Göztepe": {
     "recent_form": [
@@ -22079,7 +22111,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/goztepe/0MJlDkrA/results/",
-    "fetched_at": "2026-08-28T11:24:29Z"
+    "fetched_at": "2026-08-29T11:38:06Z"
   },
   "T1|Istanbul Basaksehir": {
     "recent_form": [
@@ -22128,7 +22160,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/basaksehir/YqP5NmC1/results/",
-    "fetched_at": "2026-08-28T11:24:47Z"
+    "fetched_at": "2026-08-29T11:38:22Z"
   },
   "T1|Kasimpasa": {
     "recent_form": [
@@ -22170,7 +22202,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/kasimpasa/dOlaIG4l/results/",
-    "fetched_at": "2026-08-28T11:25:12Z"
+    "fetched_at": "2026-08-29T11:38:46Z"
   },
   "T1|Kocaelispor": {
     "recent_form": [
@@ -22219,7 +22251,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/kocaelispor/hfvQIzKf/results/",
-    "fetched_at": "2026-08-28T11:25:28Z"
+    "fetched_at": "2026-08-29T11:39:00Z"
   },
   "T1|Konyaspor": {
     "recent_form": [
@@ -22261,7 +22293,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/konyaspor/YazuCbCE/results/",
-    "fetched_at": "2026-08-28T11:25:53Z"
+    "fetched_at": "2026-08-29T11:39:25Z"
   },
   "T1|Samsunspor": {
     "recent_form": [
@@ -22303,7 +22335,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/samsunspor/pSc6z7bf/results/",
-    "fetched_at": "2026-08-28T11:26:18Z"
+    "fetched_at": "2026-08-29T11:39:49Z"
   },
   "T1|Trabzonspor": {
     "recent_form": [
@@ -22352,7 +22384,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/trabzonspor/MmsYDc03/results/",
-    "fetched_at": "2026-08-28T11:26:35Z"
+    "fetched_at": "2026-08-29T11:40:04Z"
   },
   "T1|Çaykur Rizespor": {
     "recent_form": [
@@ -22394,7 +22426,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/rizespor/EFRnJdkr/results/",
-    "fetched_at": "2026-08-28T11:26:58Z"
+    "fetched_at": "2026-08-29T11:40:27Z"
   },
   "N1|Go Ahead Eagles": {
     "recent_form": [
@@ -22443,7 +22475,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/g-a-eagles/hG8POBb8/results/",
-    "fetched_at": "2026-08-28T11:06:55Z"
+    "fetched_at": "2026-08-29T11:23:00Z"
   },
   "P1|Vitória SC": {
     "recent_form": [
@@ -22492,7 +22524,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/vitoria-guimaraes/pQYVZyD2/results/",
-    "fetched_at": "2026-08-28T11:13:46Z"
+    "fetched_at": "2026-08-29T11:29:32Z"
   },
   "SP1|Athletic Club": {
     "recent_form": [
@@ -22534,7 +22566,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/ath-bilbao/IP5zl0cJ/results/",
-    "fetched_at": "2026-08-28T11:14:11Z"
+    "fetched_at": "2026-08-29T11:29:57Z"
   },
   "SP1|Atlético de Madrid": {
     "recent_form": [
@@ -22583,7 +22615,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/atl-madrid/jaarqpLQ/results/",
-    "fetched_at": "2026-08-28T11:14:28Z"
+    "fetched_at": "2026-08-29T11:30:12Z"
   },
   "F1|Paris Saint-Germain": {
     "recent_form": [
@@ -22793,7 +22825,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/1-fc-koln/WG9pOTse/results/",
-    "fetched_at": "2026-08-28T10:32:38Z"
+    "fetched_at": "2026-08-29T10:51:38Z"
   },
   "D1|1. FC Union Berlin": {
     "recent_form": [
@@ -22828,7 +22860,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/union-berlin/pzHW4oaE/results/",
-    "fetched_at": "2026-08-28T10:33:12Z"
+    "fetched_at": "2026-08-29T10:52:12Z"
   },
   "D1|1. FSV Mainz 05": {
     "recent_form": [
@@ -22863,7 +22895,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/mainz/EuakNmc1/results/",
-    "fetched_at": "2026-08-28T10:33:46Z"
+    "fetched_at": "2026-08-29T10:52:47Z"
   },
   "D1|Bayer 04 Leverkusen": {
     "recent_form": [
@@ -22898,7 +22930,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/bayer-leverkusen/4jcj2zMd/results/",
-    "fetched_at": "2026-08-28T10:34:21Z"
+    "fetched_at": "2026-08-29T10:53:22Z"
   },
   "D1|Borussia Dortmund": {
     "recent_form": [
@@ -22947,7 +22979,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/dortmund/nP1i5US1/results/",
-    "fetched_at": "2026-08-28T10:34:37Z"
+    "fetched_at": "2026-08-29T10:53:38Z"
   },
   "D1|Eintracht Frankfurt": {
     "recent_form": [
@@ -22989,7 +23021,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/eintracht-frankfurt/8vndvXTk/results/",
-    "fetched_at": "2026-08-28T10:35:06Z"
+    "fetched_at": "2026-08-29T10:54:07Z"
   },
   "D1|FC Augsburg": {
     "recent_form": [
@@ -23024,7 +23056,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/augsburg/fTVNku3I/results/",
-    "fetched_at": "2026-08-28T10:35:44Z"
+    "fetched_at": "2026-08-29T10:54:42Z"
   },
   "D1|FC Schalke 04": {
     "recent_form": [
@@ -23066,7 +23098,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/schalke/0Ija0Ej9/results/",
-    "fetched_at": "2026-08-28T10:36:25Z"
+    "fetched_at": "2026-08-29T10:55:07Z"
   },
   "D1|Hamburger SV": {
     "recent_form": [
@@ -23101,7 +23133,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/hamburger/v9k3aY5F/results/",
-    "fetched_at": "2026-08-28T10:37:00Z"
+    "fetched_at": "2026-08-29T10:55:41Z"
   },
   "D1|RB Leipzig": {
     "recent_form": [
@@ -23143,7 +23175,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/rb-leipzig/KbS1suSm/results/",
-    "fetched_at": "2026-08-28T10:37:23Z"
+    "fetched_at": "2026-08-29T10:56:08Z"
   },
   "D1|SV Elversberg": {
     "recent_form": [
@@ -23178,7 +23210,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/elversberg/6in2Eknb/results/",
-    "fetched_at": "2026-08-28T10:38:35Z"
+    "fetched_at": "2026-08-29T10:57:18Z"
   },
   "D1|SV Werder Bremen": {
     "recent_form": [
@@ -23213,7 +23245,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/werder-bremen/Ig1f1fy3/results/",
-    "fetched_at": "2026-08-28T10:39:13Z"
+    "fetched_at": "2026-08-29T10:57:53Z"
   },
   "D1|Sport-Club Freiburg": {
     "recent_form": [
@@ -23262,7 +23294,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/freiburg/fiEQZ7C7/results/",
-    "fetched_at": "2026-08-28T10:39:28Z"
+    "fetched_at": "2026-08-29T10:58:09Z"
   },
   "D1|TSG Hoffenheim": {
     "recent_form": [
@@ -23311,7 +23343,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/hoffenheim/hQAtP9Sl/results/",
-    "fetched_at": "2026-08-28T10:39:44Z"
+    "fetched_at": "2026-08-29T10:58:28Z"
   },
   "N1|Ajax": {
     "recent_form": [
@@ -23321,13 +23353,13 @@ const TEAM_NEWS = {
         "venue": "H",
         "result": "W",
         "score": "5-3",
-        "xg_for": 4.63,
-        "xg_against": 0.86,
+        "xg_for": 4.9,
+        "xg_against": 0.91,
         "possession": 55.0,
         "shots": 26.0,
         "shots_on_target": 15.0,
-        "passes": 543,
-        "pass_accuracy": 92.0
+        "passes": 545,
+        "pass_accuracy": 91.0
       },
       {
         "date": "2026-08-20",
@@ -23360,7 +23392,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/ajax/8UOvIwnb/results/",
-    "fetched_at": "2026-08-28T11:05:03Z"
+    "fetched_at": "2026-08-29T11:21:37Z"
   },
   "N1|FC Twente": {
     "recent_form": [
@@ -23409,7 +23441,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/twente/dhOKTHGA/results/",
-    "fetched_at": "2026-08-28T11:05:57Z"
+    "fetched_at": "2026-08-29T11:22:17Z"
   },
   "N1|Telstar": {
     "recent_form": [
@@ -23451,7 +23483,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/telstar/Aw0qTPat/results/",
-    "fetched_at": "2026-08-28T11:08:31Z"
+    "fetched_at": "2026-08-29T11:24:38Z"
   },
   "N1|Willem II": {
     "recent_form": [
@@ -23493,7 +23525,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/willem-ii/6u3qag0G/results/",
-    "fetched_at": "2026-08-28T11:08:55Z"
+    "fetched_at": "2026-08-29T11:25:02Z"
   },
   "P1|Estrela Amadora": {
     "recent_form": [
@@ -23542,7 +23574,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/estrela-da-amadora/hrYABE5k/results/",
-    "fetched_at": "2026-08-28T11:10:24Z"
+    "fetched_at": "2026-08-29T11:26:33Z"
   },
   "P1|Moreirense FC": {
     "recent_form": [
@@ -23584,7 +23616,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/moreirense/8d9NGt9H/results/",
-    "fetched_at": "2026-08-28T11:12:24Z"
+    "fetched_at": "2026-08-29T11:28:33Z"
   },
   "P1|SC Braga": {
     "recent_form": [
@@ -23594,12 +23626,12 @@ const TEAM_NEWS = {
         "venue": "A",
         "result": "D",
         "score": "0-0",
-        "xg_for": 0.41,
-        "xg_against": 0.45,
+        "xg_for": 0.47,
+        "xg_against": 0.78,
         "possession": 49.0,
         "shots": 9.0,
         "shots_on_target": 4.0,
-        "passes": 474,
+        "passes": 475,
         "pass_accuracy": 84.0
       },
       {
@@ -23633,7 +23665,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/braga/dpUer7ht/results/",
-    "fetched_at": "2026-08-28T11:12:52Z"
+    "fetched_at": "2026-08-29T11:28:48Z"
   },
   "P1|SL Benfica": {
     "recent_form": [
@@ -23643,12 +23675,12 @@ const TEAM_NEWS = {
         "venue": "A",
         "result": "W",
         "score": "3-1",
-        "xg_for": 1.75,
-        "xg_against": 0.28,
-        "possession": 58.0,
+        "xg_for": 2.19,
+        "xg_against": 0.35,
+        "possession": 59.0,
         "shots": 15.0,
         "shots_on_target": 8.0,
-        "passes": 604,
+        "passes": 603,
         "pass_accuracy": 88.0
       },
       {
@@ -23682,7 +23714,7 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/benfica/zBkyuyRI/results/",
-    "fetched_at": "2026-08-28T11:13:06Z"
+    "fetched_at": "2026-08-29T11:29:03Z"
   },
   "SP1|Rayo Vallecano": {
     "recent_form": [
@@ -23724,10 +23756,10 @@ const TEAM_NEWS = {
     ],
     "form_source": "Flashscore (automated)",
     "form_source_url": "https://www.flashscore.com/team/rayo-vallecano/8bcjFy6O/results/",
-    "fetched_at": "2026-08-28T11:18:54Z"
+    "fetched_at": "2026-08-29T11:33:24Z"
   }
 };
-const BUILD_TIME = "2026-08-29T13:14:34.068427+02:00";
+const BUILD_TIME = "2026-08-29T13:44:42.564318+02:00";
 
 let LEAGUES, FIXTURES, ENGINE;
 
@@ -24272,6 +24304,39 @@ function h2hHtml(h2h){
   return `<div class="h2h"><div class="h2h-title">Head-to-Head (last ${h2h.length})</div><ul class="h2h-list">${rows}</ul></div>`;
 }
 
+// Complements h2hHtml() above: h2h is these two teams' meetings against EACH
+// OTHER across all seasons, this is each team's own recent results against
+// anyone, this season — same TEAM_NEWS.recent_form data already summarized
+// as W/D/L chips in teamCardHtml(), just laid out as a dated table since
+// that's what was asked for here specifically. Never fabricates a row: a
+// team with no fetched recent_form just shows the same "no fresh team news"
+// empty state used everywhere else.
+function recentFormTableHtml(teamName, entry){
+  const form = entry?.recent_form || [];
+  if(!form.length) return `<div class="tc-empty">no recent-season results fetched for ${teamName} yet</div>`;
+  const rows = form.map(r => `
+    <tr>
+      <td class="rf-date">${r.date}</td>
+      <td>${r.venue==='H'?'vs ':'@ '}${r.opponent}</td>
+      <td class="rf-score">${r.score}</td>
+      <td class="rf-result ${r.result}">${r.result}</td>
+    </tr>
+  `).join('');
+  return `<table class="rf-table"><tbody>${rows}</tbody></table>`;
+}
+
+function recentFormHtml(div, home, away){
+  return `
+    <div class="h2h">
+      <div class="h2h-title">Recent Results This Season</div>
+      <div class="rf-wrap">
+        <div class="rf-col"><div class="rf-team-name">${home}</div>${recentFormTableHtml(home, TEAM_NEWS[div+'|'+home])}</div>
+        <div class="rf-col"><div class="rf-team-name">${away}</div>${recentFormTableHtml(away, TEAM_NEWS[div+'|'+away])}</div>
+      </div>
+    </div>
+  `;
+}
+
 // Renders fetched market odds with no model comparison — used when the
 // probability model can't run at all (e.g. a newly-promoted team with zero
 // history), so there's nothing to compute an edge against. Never invents a
@@ -24377,6 +24442,18 @@ function renderPanel(f, holder){
   const [div, iso, label, time, home, away] = f;
   const key = matchKey(f);
   const contextHtml = teamContextHtml(div, home, away);
+  // Which side is home/away only ever appeared in the fixture-list row to
+  // the left, not inside the panel itself — on the two-pane desktop layout
+  // that row can be scrolled out of view, and everything in here (lambda
+  // home/away, "Home"/"Away" selections in the markets table) reads as
+  // meaningless without it. Repeat it explicitly, in the panel itself.
+  const panelTeamsHtml = `
+    <div class="panel-teams">
+      <span><span class="pt-tag home">HOME</span>${home}</span>
+      <span class="pt-vs">vs</span>
+      <span><span class="pt-tag away">AWAY</span>${away}</span>
+    </div>
+  `;
 
   const result = RESULTS[key];
   const graded = result && PREDICTIONS_LOG[key];
@@ -24389,6 +24466,7 @@ function renderPanel(f, holder){
     // self-referential — computed from the very match it's predicting.
     holder.innerHTML = `
       <div class="panel">
+        ${panelTeamsHtml}
         <div class="result-badge">FINAL ${result.fthg!=null?result.fthg:'?'} – ${result.ftag!=null?result.ftag:'?'}${result.hc!=null&&result.ac!=null?` · corners ${result.hc}-${result.ac}`:''}</div>
         ${contextHtml}
         <div class="odds-status"><span>no prediction was logged before this match — most likely one side had no prior history at kickoff, so there was nothing to grade</span></div>
@@ -24412,12 +24490,12 @@ function renderPanel(f, holder){
         });
         cache[key] = data;
       }catch(e){
-        holder.innerHTML = `<div class="panel"><div class="error">Something went wrong computing this: ${e.message}</div>${contextHtml}</div>`;
+        holder.innerHTML = `<div class="panel">${panelTeamsHtml}<div class="error">Something went wrong computing this: ${e.message}</div>${contextHtml}</div>`;
         return;
       }
     }
     if(data.error){
-      holder.innerHTML = `<div class="panel"><div class="error">${data.error}</div>${contextHtml}${rawOddsHtml(LIVE_ODDS[key])}</div>`;
+      holder.innerHTML = `<div class="panel">${panelTeamsHtml}<div class="error">${data.error}</div>${contextHtml}${rawOddsHtml(LIVE_ODDS[key])}</div>`;
       return;
     }
     live = LIVE_ODDS[key];
@@ -24492,6 +24570,7 @@ function renderPanel(f, holder){
 
   holder.innerHTML = `
     <div class="panel">
+      ${panelTeamsHtml}
       <div class="meta-line">
         <span>λ home ${data.lambda_home} · λ away ${data.lambda_away}</span>
         <span>n = ${data.n_used} (home:${data.n_home_matches} / away:${data.n_away_matches})</span>
@@ -24500,6 +24579,7 @@ function renderPanel(f, holder){
       ${resultBadgeHtml}
       ${contextHtml}
       ${h2hHtml(data.h2h)}
+      ${recentFormHtml(div, home, away)}
       ${topPickHtml}
       <div class="odds-status">${oddsStatusHtml}</div>
       <div class="table-caption">${hasOdds ? 'Every market with a live price, sorted by edge vs. market, highest first — plus the best pick from any market type with no live price fetched (marked "—").' : 'Best pick per market type (1X2, Goals, BTTS, Corners, Cards, Shots, Fouls), sorted by historical probability, highest first.'}</div>

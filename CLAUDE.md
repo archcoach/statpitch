@@ -812,3 +812,30 @@ cached, if you want to check the blend path specifically.
   is not the same claim as "this pool can't be crowded out by a *different,
   larger* pool sorted the same list" — check what a slice runs on, not
   just how many items end up meeting the criteria you care about.
+- **Explicit HOME/AWAY panel header, and a per-team recent-results table
+  (added 2026-08-29).** Two user-reported issues, both about the match
+  panel losing track of which team is which once you're looking at it in
+  isolation. First: which side is home vs. away was only ever shown in the
+  fixture-list row (`.teams` div in `renderFixtureRow`) — on the two-pane
+  desktop layout that row can be scrolled out of view while the detail
+  pane is still open, leaving `λ home`/`λ away` and every "Home"/"Away"
+  market selection with nothing nearby to anchor them to an actual club
+  name. Fixed by having `renderPanel()` build a `panelTeamsHtml` string
+  once (tagged `HOME`/`AWAY` via `.pt-tag`, blue accent border on HOME
+  only — deliberately not green/red, which are already `.good`/`.bad`
+  semantics elsewhere and would misread as "home is favored") and render
+  it as the first thing inside `.panel`, on every branch (the no-
+  prediction-logged branch, both error branches, and the main render) —
+  not just the happy path, since a newly-promoted team's zero-history
+  panel needs this exactly as much as a fully-modeled one does. Second:
+  `recentFormTableHtml()`/`recentFormHtml()` add a dated per-team results
+  table (date, opponent with vs/@ for venue, score, W/D/L) next to
+  `h2hHtml()`'s table — h2h is these two teams' meetings against *each
+  other* across all seasons, this is each team's own recent run of results
+  against anyone, *this season*. Reuses the same `TEAM_NEWS[div+'|'+team]
+  .recent_form` data already summarized as compact W/D/L chips in
+  `teamCardHtml()` — no new data source, no new fetch — just a second,
+  more detailed presentation of it inline with the model output instead of
+  only in the Team Context cards above. Degrades the same way everywhere
+  else in this app: a team with no fetched `recent_form` shows the
+  existing "no fresh team news" empty state, never a fabricated row.
