@@ -189,6 +189,12 @@
   .cat-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text-faint);letter-spacing:0.05em;
     border:1px solid var(--border);border-radius:3px;padding:1px 4px;margin-right:6px;white-space:nowrap;}
   .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-top:10px;line-height:1.5;}
+  .disclaimer summary{cursor:pointer;text-transform:uppercase;letter-spacing:0.05em;font-size:10px;
+    color:var(--text-dim);list-style:none;}
+  .disclaimer summary::-webkit-details-marker{display:none;}
+  .disclaimer summary::before{content:'▸ ';}
+  .disclaimer[open] summary::before{content:'▾ ';}
+  .disclaimer[open] summary{margin-bottom:6px;}
 
   .empty{padding:48px 12px;text-align:center;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
 
@@ -910,6 +916,18 @@ function bestPerCategory(markets){
   return out;
 }
 
+// Shared between renderPanel() (the live match panel) and
+// renderTrackRecord() (the header's top-pick-accuracy stat) so "top pick"
+// means exactly the same selection in both places — every market with a
+// real live price, plus one representative per family with none.
+function pickTopMarkets(markets){
+  const hasOdds = markets.some(m => m.market_prob != null);
+  const top = hasOdds
+    ? [...markets.filter(m => m.market_prob != null), ...bestPerCategory(markets.filter(m => m.market_prob == null))]
+    : bestPerCategory(markets);
+  return { top, hasOdds };
+}
+
 // Display-only helper: picks what to headline in the top-pick callout and,
 // when live odds exist, what the full table sorts by. Never touches
 // engine.js's markets array or its probability sort (line ~151) — this only
@@ -1015,7 +1033,6 @@ function renderPanel(f, holder){
     allMarkets = attachLiveOdds(data.markets, live);
   }
 
-  const hasOdds = allMarkets.some(m => m.market_prob != null);
   const isPast = iso < todayISO();
   // With live odds: every market that actually has a fetched market price
   // must be shown, full stop — slicing the RAW-PROBABILITY-sorted list to
@@ -1030,10 +1047,8 @@ function renderPanel(f, holder){
   // have no live odds at all, so Corners/Cards/Shots/Fouls still show
   // their own best pick even without a price to compare against. Without
   // live odds at all, bestPerCategory() alone drives the same one-per-
-  // family selection described there.
-  const top = hasOdds
-    ? [...allMarkets.filter(m => m.market_prob != null), ...bestPerCategory(allMarkets.filter(m => m.market_prob == null))]
-    : bestPerCategory(allMarkets);
+  // family selection described there. See pickTopMarkets() above.
+  const { top, hasOdds } = pickTopMarkets(allMarkets);
   const spotlight = pickSpotlight(top, hasOdds);
 
   const colspan = 3 + (hasOdds ? 4 : 0) + (graded ? 1 : 0);
@@ -1120,12 +1135,13 @@ function renderPanel(f, holder){
           <tbody>${rowsHtml}</tbody>
         </table>
       </div>
-      <div class="disclaimer">
+      <details class="disclaimer">
+        <summary>Methodology notes</summary>
         ${hasOdds ? 'Ranked by edge — model probability minus the live market-implied probability — highest first, not by raw historical probability.' : 'Shows the single highest-probability selection from each market type this match has data for (1X2/Double Chance, Goals, BTTS, Corners, Cards, Shots, Shots on Target, Fouls) — not a flat top-10 by raw probability, which would let several highly-correlated lines on one stat (e.g. multiple Fouls lines) crowd out the others.'}
         ${hasOdds ? "Market Prob. is the live price with the overround removed via Shin's method (corrects for the favourite-longshot bias documented in the project instructions, rather than just flagging it); Edge is model minus market, in percentage points — not a recommendation. ¼-Kelly is a raw output of the Kelly criterion formula (quarter-strength) using the model's probability and the live odds — a bankroll-math calculation, not a stake suggestion or betting advice. It inherits every uncertainty already listed here (fixed rho, variance approximations, sample size), and Kelly itself is known to be highly sensitive to probability-estimation error, so a nonzero number here is not an endorsement to wager anything." : ''}
         ${graded ? 'Result column grades the prediction as it stood before the match — frozen at the time it was logged, not recomputed afterward. "—" means this market couldn\'t be graded from the recorded result (e.g. no corner/card count available).' : ''}
-        ${data.dc_rho_note} ${data.form_blend_note || ''} ${data.quality_correction_note || ''} Never treat these as guarantees; sample sizes and variance still apply.
-      </div>
+        ${data.dc_rho_note} ${data.shrinkage_note || ''} ${data.form_blend_note || ''} ${data.quality_correction_note || ''} Never treat these as guarantees; sample sizes and variance still apply.
+      </details>
     </div>
   `;
   holder.querySelectorAll('th.sortable').forEach(th => {
@@ -1137,9 +1153,19 @@ function renderPanel(f, holder){
   });
 }
 
+// The blended figure below counts every displayed market row across every
+// graded match — including secondary "best pick in this category" rows
+// for Corners/Cards/Shots/Fouls shown even with no live odds to compare
+// against, many sitting at 55-70% probability. That's a fair measure of
+// "how often does a displayed number hit," but it understates what a user
+// would actually act on: the single top pick per match (pickTopMarkets()
+// + pickSpotlight(), same selection the match panel headlines). Showing
+// both, rather than replacing one with the other, keeps the honest full
+// picture instead of only surfacing whichever number looks better.
 function renderTrackRecord(){
   const el = document.getElementById('trackRecord');
   let hits = 0, misses = 0;
+  let topHits = 0, topMisses = 0;
   for(const key in PREDICTIONS_LOG){
     const result = RESULTS[key];
     if(!result) continue;
@@ -1148,11 +1174,22 @@ function renderTrackRecord(){
       if(m.grade === true) hits++;
       else if(m.grade === false) misses++;
     }
+    const { top, hasOdds } = pickTopMarkets(graded);
+    const spotlight = pickSpotlight(top, hasOdds);
+    if(spotlight?.grade === true) topHits++;
+    else if(spotlight?.grade === false) topMisses++;
   }
   const total = hits + misses;
-  el.textContent = total > 0
-    ? `Track record: ${hits}/${total} graded picks correct (${(hits/total*100).toFixed(0)}%)`
-    : 'Track record: no graded picks yet';
+  const topTotal = topHits + topMisses;
+  if(total === 0){
+    el.textContent = 'Track record: no graded picks yet';
+    return;
+  }
+  const parts = [`Track record: ${hits}/${total} graded picks correct (${(hits/total*100).toFixed(0)}%)`];
+  if(topTotal > 0){
+    parts.push(`top pick only: ${topHits}/${topTotal} (${(topHits/topTotal*100).toFixed(0)}%)`);
+  }
+  el.textContent = parts.join(' · ');
 }
 
 function init(){

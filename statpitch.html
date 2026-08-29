@@ -189,6 +189,12 @@
   .cat-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text-faint);letter-spacing:0.05em;
     border:1px solid var(--border);border-radius:3px;padding:1px 4px;margin-right:6px;white-space:nowrap;}
   .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text-faint);margin-top:10px;line-height:1.5;}
+  .disclaimer summary{cursor:pointer;text-transform:uppercase;letter-spacing:0.05em;font-size:10px;
+    color:var(--text-dim);list-style:none;}
+  .disclaimer summary::-webkit-details-marker{display:none;}
+  .disclaimer summary::before{content:'▸ ';}
+  .disclaimer[open] summary::before{content:'▾ ';}
+  .disclaimer[open] summary{margin-bottom:6px;}
 
   .empty{padding:48px 12px;text-align:center;color:var(--text-faint);font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
 
@@ -265,6 +271,33 @@ const FOUL_LINES = [20.5, 22.5, 24.5, 26.5, 28.5];
 // rather than just occasionally correcting a one-sided-but-lost result —
 // a blend keeps that correction real but bounded.
 const QUALITY_BLEND_WEIGHT = 0.25;
+
+// Added 2026-08-29 after a calibration audit against predictions_log.json/
+// results.json (1,024 graded market-rows): the model was systematically
+// overconfident, worst in the 90-100% predicted bucket (93.9% predicted vs
+// 85.0% actual, -8.9pp) and worst by market in 1X2 specifically (76.6%
+// predicted vs 66.7% actual, -9.9pp, n=183 — a real, large-sample gap, not
+// noise). Total Goals O/U markets — built from the same lambdas — were
+// separately confirmed well-calibrated (+0.0pp), which narrows this to the
+// SPLIT between lambdaHome/lambdaAway rather than their sum: an
+// unregularized attack/defense ratio (team's own weighted average ÷ league
+// average) lets a team that over- or under-performed in its own weighted
+// sample push that ratio to an extreme the model then treats as fact,
+// which barely moves the total but skews the home/away split — exactly
+// what 1X2 (sensitive to the split) vs. Goals O/U (sensitive to the sum)
+// would show if this is the real mechanism. Standard fix: shrink each
+// ratio toward 1 (league-average team) in proportion to how much evidence
+// backs it — shrinkRatio() below. K=15 is an order-of-magnitude choice
+// (roughly half a home/away season, comparable to the Medium/High
+// confidence boundary at n=60), not fitted to this dataset — same
+// evidentiary bar as DC_RHO. Deliberately scoped to the goals model only:
+// corners/cards/shots/fouls use each team's own weighted stat directly,
+// not a ratio against a league average, so today's finding doesn't apply
+// to them — extending shrinkage there would need its own audit first.
+const ATTACK_SHRINKAGE_K = 15;
+function shrinkRatio(ratio, n){
+  return 1 + (ratio - 1) * (n / (n + ATTACK_SHRINKAGE_K));
+}
 
 function seasonWeight(season){
   const idx = SEASON_ORDER.indexOf(season);
@@ -392,12 +425,12 @@ class Engine {
     const nHome = homeH.n, nAway = awayA.n, nUsed = Math.min(nHome, nAway);
     if(nHome === 0 || nAway === 0) return { error: 'Insufficient home/away split data for one of these teams.' };
 
-    const homeAttack = league.avgHomeGoals ? homeH.goalsFor / league.avgHomeGoals : 1;
-    const awayDefense = league.avgAwayGoals ? awayA.goalsAgainst / league.avgAwayGoals : 1;
+    const homeAttack = shrinkRatio(league.avgHomeGoals ? homeH.goalsFor / league.avgHomeGoals : 1, homeH.n);
+    const awayDefense = shrinkRatio(league.avgAwayGoals ? awayA.goalsAgainst / league.avgAwayGoals : 1, awayA.n);
     let lambdaHome = league.avgHomeGoals * homeAttack * awayDefense;
 
-    const awayAttack = league.avgAwayGoals ? awayA.goalsFor / league.avgAwayGoals : 1;
-    const homeDefense = league.avgHomeGoals ? homeH.goalsAgainst / league.avgHomeGoals : 1;
+    const awayAttack = shrinkRatio(league.avgAwayGoals ? awayA.goalsFor / league.avgAwayGoals : 1, awayA.n);
+    const homeDefense = shrinkRatio(league.avgHomeGoals ? homeH.goalsAgainst / league.avgHomeGoals : 1, homeH.n);
     let lambdaAway = league.avgAwayGoals * awayAttack * homeDefense;
 
     // Recent-form blend (fresh signal on top of multi-season history) — see
@@ -466,6 +499,10 @@ class Engine {
       qualityCorrectionNote = `Attacking baseline blends in a shots-on-target-based pseudo-xG proxy (SOT × ${league.sotGoalRate.toFixed(3)} goals-per-shot-on-target, division-level, literature-typical, not fitted to this dataset) at ${(QUALITY_BLEND_WEIGHT*100).toFixed(0)}% weight, for ${homeBlended} of ${homeH.n} ${homeFixtureName} match(es) and ${awayBlended} of ${awayA.n} ${awayFixtureName} match(es) with no real xG recorded — actual goals still dominate the number, this only nudges it toward underlying shot quality rather than reading the scoreline alone as the full signal.`;
     }
 
+    const homeShrinkPct = round2(100 * ATTACK_SHRINKAGE_K / (homeH.n + ATTACK_SHRINKAGE_K));
+    const awayShrinkPct = round2(100 * ATTACK_SHRINKAGE_K / (awayA.n + ATTACK_SHRINKAGE_K));
+    const shrinkageNote = `Attack/defense ratios shrunk toward the league average based on sample size (K=${ATTACK_SHRINKAGE_K}, not fitted) — ${homeFixtureName}'s pulled ${homeShrinkPct}% toward 1.0 (n=${homeH.n}), ${awayFixtureName}'s ${awayShrinkPct}% (n=${awayA.n}). Softens the win/draw/loss split for thinner samples without changing the total-goals estimate — added after a calibration audit found 1X2 overconfident (76.6% predicted vs 66.7% actual, n=183) while Goals O/U was already well-calibrated.`;
+
     return {
       home_hist_name: homeHist, away_hist_name: awayHist,
       lambda_home: round2(lambdaHome), lambda_away: round2(lambdaAway),
@@ -474,6 +511,7 @@ class Engine {
       dc_rho_note: `Dixon-Coles low-score correction applied with fixed rho=${DC_RHO} (literature-typical, not fitted to this dataset).`,
       form_blend_note: formBlendNote,
       quality_correction_note: qualityCorrectionNote,
+      shrinkage_note: shrinkageNote,
       possession: {
         home: { avg: homeH.possessionFor ? round2(homeH.possessionFor) : null, n: homeH.nPossessionUsed },
         away: { avg: awayA.possessionFor ? round2(awayA.possessionFor) : null, n: awayA.nPossessionUsed },
@@ -23762,7 +23800,7 @@ const TEAM_NEWS = {
     "fetched_at": "2026-08-29T11:33:24Z"
   }
 };
-const BUILD_TIME = "2026-08-29T13:51:33.010925+02:00";
+const BUILD_TIME = "2026-08-29T14:07:47.063130+02:00";
 
 let LEAGUES, FIXTURES, ENGINE;
 
@@ -24416,6 +24454,18 @@ function bestPerCategory(markets){
   return out;
 }
 
+// Shared between renderPanel() (the live match panel) and
+// renderTrackRecord() (the header's top-pick-accuracy stat) so "top pick"
+// means exactly the same selection in both places — every market with a
+// real live price, plus one representative per family with none.
+function pickTopMarkets(markets){
+  const hasOdds = markets.some(m => m.market_prob != null);
+  const top = hasOdds
+    ? [...markets.filter(m => m.market_prob != null), ...bestPerCategory(markets.filter(m => m.market_prob == null))]
+    : bestPerCategory(markets);
+  return { top, hasOdds };
+}
+
 // Display-only helper: picks what to headline in the top-pick callout and,
 // when live odds exist, what the full table sorts by. Never touches
 // engine.js's markets array or its probability sort (line ~151) — this only
@@ -24521,7 +24571,6 @@ function renderPanel(f, holder){
     allMarkets = attachLiveOdds(data.markets, live);
   }
 
-  const hasOdds = allMarkets.some(m => m.market_prob != null);
   const isPast = iso < todayISO();
   // With live odds: every market that actually has a fetched market price
   // must be shown, full stop — slicing the RAW-PROBABILITY-sorted list to
@@ -24536,10 +24585,8 @@ function renderPanel(f, holder){
   // have no live odds at all, so Corners/Cards/Shots/Fouls still show
   // their own best pick even without a price to compare against. Without
   // live odds at all, bestPerCategory() alone drives the same one-per-
-  // family selection described there.
-  const top = hasOdds
-    ? [...allMarkets.filter(m => m.market_prob != null), ...bestPerCategory(allMarkets.filter(m => m.market_prob == null))]
-    : bestPerCategory(allMarkets);
+  // family selection described there. See pickTopMarkets() above.
+  const { top, hasOdds } = pickTopMarkets(allMarkets);
   const spotlight = pickSpotlight(top, hasOdds);
 
   const colspan = 3 + (hasOdds ? 4 : 0) + (graded ? 1 : 0);
@@ -24626,12 +24673,13 @@ function renderPanel(f, holder){
           <tbody>${rowsHtml}</tbody>
         </table>
       </div>
-      <div class="disclaimer">
+      <details class="disclaimer">
+        <summary>Methodology notes</summary>
         ${hasOdds ? 'Ranked by edge — model probability minus the live market-implied probability — highest first, not by raw historical probability.' : 'Shows the single highest-probability selection from each market type this match has data for (1X2/Double Chance, Goals, BTTS, Corners, Cards, Shots, Shots on Target, Fouls) — not a flat top-10 by raw probability, which would let several highly-correlated lines on one stat (e.g. multiple Fouls lines) crowd out the others.'}
         ${hasOdds ? "Market Prob. is the live price with the overround removed via Shin's method (corrects for the favourite-longshot bias documented in the project instructions, rather than just flagging it); Edge is model minus market, in percentage points — not a recommendation. ¼-Kelly is a raw output of the Kelly criterion formula (quarter-strength) using the model's probability and the live odds — a bankroll-math calculation, not a stake suggestion or betting advice. It inherits every uncertainty already listed here (fixed rho, variance approximations, sample size), and Kelly itself is known to be highly sensitive to probability-estimation error, so a nonzero number here is not an endorsement to wager anything." : ''}
         ${graded ? 'Result column grades the prediction as it stood before the match — frozen at the time it was logged, not recomputed afterward. "—" means this market couldn\'t be graded from the recorded result (e.g. no corner/card count available).' : ''}
-        ${data.dc_rho_note} ${data.form_blend_note || ''} ${data.quality_correction_note || ''} Never treat these as guarantees; sample sizes and variance still apply.
-      </div>
+        ${data.dc_rho_note} ${data.shrinkage_note || ''} ${data.form_blend_note || ''} ${data.quality_correction_note || ''} Never treat these as guarantees; sample sizes and variance still apply.
+      </details>
     </div>
   `;
   holder.querySelectorAll('th.sortable').forEach(th => {
@@ -24643,9 +24691,19 @@ function renderPanel(f, holder){
   });
 }
 
+// The blended figure below counts every displayed market row across every
+// graded match — including secondary "best pick in this category" rows
+// for Corners/Cards/Shots/Fouls shown even with no live odds to compare
+// against, many sitting at 55-70% probability. That's a fair measure of
+// "how often does a displayed number hit," but it understates what a user
+// would actually act on: the single top pick per match (pickTopMarkets()
+// + pickSpotlight(), same selection the match panel headlines). Showing
+// both, rather than replacing one with the other, keeps the honest full
+// picture instead of only surfacing whichever number looks better.
 function renderTrackRecord(){
   const el = document.getElementById('trackRecord');
   let hits = 0, misses = 0;
+  let topHits = 0, topMisses = 0;
   for(const key in PREDICTIONS_LOG){
     const result = RESULTS[key];
     if(!result) continue;
@@ -24654,11 +24712,22 @@ function renderTrackRecord(){
       if(m.grade === true) hits++;
       else if(m.grade === false) misses++;
     }
+    const { top, hasOdds } = pickTopMarkets(graded);
+    const spotlight = pickSpotlight(top, hasOdds);
+    if(spotlight?.grade === true) topHits++;
+    else if(spotlight?.grade === false) topMisses++;
   }
   const total = hits + misses;
-  el.textContent = total > 0
-    ? `Track record: ${hits}/${total} graded picks correct (${(hits/total*100).toFixed(0)}%)`
-    : 'Track record: no graded picks yet';
+  const topTotal = topHits + topMisses;
+  if(total === 0){
+    el.textContent = 'Track record: no graded picks yet';
+    return;
+  }
+  const parts = [`Track record: ${hits}/${total} graded picks correct (${(hits/total*100).toFixed(0)}%)`];
+  if(topTotal > 0){
+    parts.push(`top pick only: ${topHits}/${topTotal} (${(topHits/topTotal*100).toFixed(0)}%)`);
+  }
+  el.textContent = parts.join(' · ');
 }
 
 function init(){

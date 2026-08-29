@@ -37,6 +37,32 @@ FOUL_LINES = [20.5, 22.5, 24.5, 26.5, 28.5]
 # never replaces goals outright. Mirrors engine.js exactly -- keep in sync.
 QUALITY_BLEND_WEIGHT = 0.25
 
+# Added 2026-08-29 after a calibration audit against predictions_log.json/
+# results.json (1,024 graded market-rows): the model was systematically
+# overconfident, worst in the 90-100% predicted bucket (93.9% predicted vs
+# 85.0% actual, -8.9pp) and worst by market in 1X2 specifically (76.6%
+# predicted vs 66.7% actual, -9.9pp, n=183 -- a real, large-sample gap, not
+# noise). Total Goals O/U markets -- built from the same lambdas -- were
+# separately confirmed well-calibrated (+0.0pp), which narrows this to the
+# SPLIT between lambda_home/lambda_away rather than their sum: an
+# unregularized attack/defense ratio (team's own weighted average / league
+# average) lets a team that over- or under-performed in its own weighted
+# sample push that ratio to an extreme the model then treats as fact,
+# which barely moves the total but skews the home/away split. Standard
+# fix: shrink each ratio toward 1 (league-average team) in proportion to
+# how much evidence backs it -- shrink_ratio() below. K=15 is an order-of-
+# magnitude choice (roughly half a home/away season, comparable to the
+# Medium/High confidence boundary at n=60), not fitted to this dataset --
+# same evidentiary bar as DC_RHO. Deliberately scoped to the goals model
+# only: corners/cards/shots/fouls use each team's own weighted stat
+# directly, not a ratio against a league average, so today's finding
+# doesn't apply to them. Mirrors engine.js exactly -- keep in sync.
+ATTACK_SHRINKAGE_K = 15
+
+
+def _shrink_ratio(ratio, n):
+    return 1 + (ratio - 1) * (n / (n + ATTACK_SHRINKAGE_K))
+
 
 def _season_weight(season):
     try:
@@ -185,12 +211,12 @@ class Engine:
             return {'error': 'Insufficient home/away split data for one of these teams.'}
 
         # --- Step 2: matchup adjustment (attack strength vs opponent allowance) ---
-        home_attack = home_h['goals_for'] / league['avg_home_goals'] if league['avg_home_goals'] else 1.0
-        away_defense = away_a['goals_against'] / league['avg_away_goals'] if league['avg_away_goals'] else 1.0
+        home_attack = _shrink_ratio(home_h['goals_for'] / league['avg_home_goals'] if league['avg_home_goals'] else 1.0, n_home)
+        away_defense = _shrink_ratio(away_a['goals_against'] / league['avg_away_goals'] if league['avg_away_goals'] else 1.0, n_away)
         lambda_home = league['avg_home_goals'] * home_attack * away_defense
 
-        away_attack = away_a['goals_for'] / league['avg_away_goals'] if league['avg_away_goals'] else 1.0
-        home_defense = home_h['goals_against'] / league['avg_home_goals'] if league['avg_home_goals'] else 1.0
+        away_attack = _shrink_ratio(away_a['goals_for'] / league['avg_away_goals'] if league['avg_away_goals'] else 1.0, n_away)
+        home_defense = _shrink_ratio(home_h['goals_against'] / league['avg_home_goals'] if league['avg_home_goals'] else 1.0, n_home)
         lambda_away = league['avg_away_goals'] * away_attack * home_defense
 
         # --- Recent-form blend (see _blend_recent_form for the weighting
@@ -284,6 +310,17 @@ class Engine:
                 f"rather than reading the scoreline alone as the full signal."
             )
 
+        home_shrink_pct = round(100 * ATTACK_SHRINKAGE_K / (n_home + ATTACK_SHRINKAGE_K), 2)
+        away_shrink_pct = round(100 * ATTACK_SHRINKAGE_K / (n_away + ATTACK_SHRINKAGE_K), 2)
+        shrinkage_note = (
+            f"Attack/defense ratios shrunk toward the league average based on sample size "
+            f"(K={ATTACK_SHRINKAGE_K}, not fitted) — {home_fixture_name}'s pulled {home_shrink_pct}% "
+            f"toward 1.0 (n={n_home}), {away_fixture_name}'s {away_shrink_pct}% (n={n_away}). Softens "
+            f"the win/draw/loss split for thinner samples without changing the total-goals estimate — "
+            f"added after a calibration audit found 1X2 overconfident (76.6% predicted vs 66.7% actual, "
+            f"n=183) while Goals O/U was already well-calibrated."
+        )
+
         return {
             'home_hist_name': home_hist,
             'away_hist_name': away_hist,
@@ -296,6 +333,7 @@ class Engine:
             'dc_rho_note': f"Dixon-Coles low-score correction applied with fixed rho={DC_RHO} (literature-typical, not fitted to this dataset).",
             'form_blend_note': form_blend_note,
             'quality_correction_note': quality_correction_note,
+            'shrinkage_note': shrinkage_note,
             'possession': {
                 'home': {'avg': round(home_h['possession_for'], 2) if home_h['possession_for'] else None, 'n': home_h['n_possession_used']},
                 'away': {'avg': round(away_a['possession_for'], 2) if away_a['possession_for'] else None, 'n': away_a['n_possession_used']},

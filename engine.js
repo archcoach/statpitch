@@ -24,6 +24,33 @@ const FOUL_LINES = [20.5, 22.5, 24.5, 26.5, 28.5];
 // a blend keeps that correction real but bounded.
 const QUALITY_BLEND_WEIGHT = 0.25;
 
+// Added 2026-08-29 after a calibration audit against predictions_log.json/
+// results.json (1,024 graded market-rows): the model was systematically
+// overconfident, worst in the 90-100% predicted bucket (93.9% predicted vs
+// 85.0% actual, -8.9pp) and worst by market in 1X2 specifically (76.6%
+// predicted vs 66.7% actual, -9.9pp, n=183 — a real, large-sample gap, not
+// noise). Total Goals O/U markets — built from the same lambdas — were
+// separately confirmed well-calibrated (+0.0pp), which narrows this to the
+// SPLIT between lambdaHome/lambdaAway rather than their sum: an
+// unregularized attack/defense ratio (team's own weighted average ÷ league
+// average) lets a team that over- or under-performed in its own weighted
+// sample push that ratio to an extreme the model then treats as fact,
+// which barely moves the total but skews the home/away split — exactly
+// what 1X2 (sensitive to the split) vs. Goals O/U (sensitive to the sum)
+// would show if this is the real mechanism. Standard fix: shrink each
+// ratio toward 1 (league-average team) in proportion to how much evidence
+// backs it — shrinkRatio() below. K=15 is an order-of-magnitude choice
+// (roughly half a home/away season, comparable to the Medium/High
+// confidence boundary at n=60), not fitted to this dataset — same
+// evidentiary bar as DC_RHO. Deliberately scoped to the goals model only:
+// corners/cards/shots/fouls use each team's own weighted stat directly,
+// not a ratio against a league average, so today's finding doesn't apply
+// to them — extending shrinkage there would need its own audit first.
+const ATTACK_SHRINKAGE_K = 15;
+function shrinkRatio(ratio, n){
+  return 1 + (ratio - 1) * (n / (n + ATTACK_SHRINKAGE_K));
+}
+
 function seasonWeight(season){
   const idx = SEASON_ORDER.indexOf(season);
   if(idx === -1) return 0;
@@ -150,12 +177,12 @@ class Engine {
     const nHome = homeH.n, nAway = awayA.n, nUsed = Math.min(nHome, nAway);
     if(nHome === 0 || nAway === 0) return { error: 'Insufficient home/away split data for one of these teams.' };
 
-    const homeAttack = league.avgHomeGoals ? homeH.goalsFor / league.avgHomeGoals : 1;
-    const awayDefense = league.avgAwayGoals ? awayA.goalsAgainst / league.avgAwayGoals : 1;
+    const homeAttack = shrinkRatio(league.avgHomeGoals ? homeH.goalsFor / league.avgHomeGoals : 1, homeH.n);
+    const awayDefense = shrinkRatio(league.avgAwayGoals ? awayA.goalsAgainst / league.avgAwayGoals : 1, awayA.n);
     let lambdaHome = league.avgHomeGoals * homeAttack * awayDefense;
 
-    const awayAttack = league.avgAwayGoals ? awayA.goalsFor / league.avgAwayGoals : 1;
-    const homeDefense = league.avgHomeGoals ? homeH.goalsAgainst / league.avgHomeGoals : 1;
+    const awayAttack = shrinkRatio(league.avgAwayGoals ? awayA.goalsFor / league.avgAwayGoals : 1, awayA.n);
+    const homeDefense = shrinkRatio(league.avgHomeGoals ? homeH.goalsAgainst / league.avgHomeGoals : 1, homeH.n);
     let lambdaAway = league.avgAwayGoals * awayAttack * homeDefense;
 
     // Recent-form blend (fresh signal on top of multi-season history) — see
@@ -224,6 +251,10 @@ class Engine {
       qualityCorrectionNote = `Attacking baseline blends in a shots-on-target-based pseudo-xG proxy (SOT × ${league.sotGoalRate.toFixed(3)} goals-per-shot-on-target, division-level, literature-typical, not fitted to this dataset) at ${(QUALITY_BLEND_WEIGHT*100).toFixed(0)}% weight, for ${homeBlended} of ${homeH.n} ${homeFixtureName} match(es) and ${awayBlended} of ${awayA.n} ${awayFixtureName} match(es) with no real xG recorded — actual goals still dominate the number, this only nudges it toward underlying shot quality rather than reading the scoreline alone as the full signal.`;
     }
 
+    const homeShrinkPct = round2(100 * ATTACK_SHRINKAGE_K / (homeH.n + ATTACK_SHRINKAGE_K));
+    const awayShrinkPct = round2(100 * ATTACK_SHRINKAGE_K / (awayA.n + ATTACK_SHRINKAGE_K));
+    const shrinkageNote = `Attack/defense ratios shrunk toward the league average based on sample size (K=${ATTACK_SHRINKAGE_K}, not fitted) — ${homeFixtureName}'s pulled ${homeShrinkPct}% toward 1.0 (n=${homeH.n}), ${awayFixtureName}'s ${awayShrinkPct}% (n=${awayA.n}). Softens the win/draw/loss split for thinner samples without changing the total-goals estimate — added after a calibration audit found 1X2 overconfident (76.6% predicted vs 66.7% actual, n=183) while Goals O/U was already well-calibrated.`;
+
     return {
       home_hist_name: homeHist, away_hist_name: awayHist,
       lambda_home: round2(lambdaHome), lambda_away: round2(lambdaAway),
@@ -232,6 +263,7 @@ class Engine {
       dc_rho_note: `Dixon-Coles low-score correction applied with fixed rho=${DC_RHO} (literature-typical, not fitted to this dataset).`,
       form_blend_note: formBlendNote,
       quality_correction_note: qualityCorrectionNote,
+      shrinkage_note: shrinkageNote,
       possession: {
         home: { avg: homeH.possessionFor ? round2(homeH.possessionFor) : null, n: homeH.nPossessionUsed },
         away: { avg: awayA.possessionFor ? round2(awayA.possessionFor) : null, n: awayA.nPossessionUsed },

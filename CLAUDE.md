@@ -692,6 +692,10 @@ cached, if you want to check the blend path specifically.
   ~0.31-0.34 by division, see "The model") and its `QUALITY_BLEND_WEIGHT
   = 0.25` blend strength are a real modeling choice with real uncertainty
   — disclosed via `quality_correction_note`, same as the other two.
+- `ATTACK_SHRINKAGE_K = 15` (the attack/defense ratio shrinkage constant,
+  see "Result grading" / calibration audit below) is the same kind of
+  disclosed, not-fitted assumption — surfaced via `shrinkage_note` on
+  every analysis, not just when it happens to matter.
 
 ## Style / conventions used so far
 
@@ -858,3 +862,55 @@ cached, if you want to check the blend path specifically.
   always sink to the bottom regardless of direction — same "missing data
   never gets a fabricated position" rule the rest of the table already
   follows for `—` cells.
+- **Calibration audit, attack/defense shrinkage, top-pick-accuracy stat,
+  and a collapsible methodology note (added 2026-08-29).** Prompted by
+  "68% feels low" — ran a real audit against `predictions_log.json`/
+  `results.json` (1,024 graded market-rows, 106 matches) instead of
+  guessing. Two findings, not one:
+  1. **The 68% header figure was measuring the wrong thing.** It averages
+     every displayed row across every match, including secondary
+     "best-in-category" Corners/Cards/Shots/Fouls picks shown even with no
+     live odds to compare against — many sitting at 55-70%. The actual
+     top pick per match (`pickTopMarkets()` + `pickSpotlight()`, the same
+     selection the panel headlines) hit 84.5% against an 86.4% average
+     predicted probability — both higher and better-calibrated. Fixed by
+     showing **both** numbers in the header (`renderTrackRecord()`), not
+     replacing one with the other — the blended figure is still honest,
+     it just isn't the number a user would act on. `pickTopMarkets()` was
+     extracted out of `renderPanel()` so both places compute "top pick"
+     identically instead of two independent selection rules drifting
+     apart later.
+  2. **A real, separate overconfidence bias.** By predicted-probability
+     bucket, every bucket ran hot (predicted > actual), worst at 90-100%
+     (93.9% predicted vs 85.0% actual, -8.9pp). By market, 1X2 was the
+     worst large-sample offender (76.6% vs 66.7% actual, -9.9pp, n=183)
+     while Total Goals O/U — built from the *same* lambdas — was already
+     well-calibrated (+0.0pp). Since 1X2 is sensitive to the *split*
+     between `lambdaHome`/`lambdaAway` and Goals O/U to their *sum*, this
+     points at the attack/defense ratios themselves: `team's own weighted
+     average ÷ league average` has no regularization, so a team that
+     over/under-performed in its own weighted sample pushes that ratio to
+     an extreme the model treats as fact. Fixed with `shrinkRatio()` /
+     `_shrink_ratio()` (engine.js / engine_reference.py) — empirical-Bayes-
+     style shrinkage of each ratio toward 1.0, weighted by that side's own
+     `n` (home team's home-match count, away team's away-match count)
+     against `ATTACK_SHRINKAGE_K = 15` (order-of-magnitude choice, roughly
+     half a season, not fitted — same evidentiary bar as `DC_RHO`).
+     Deliberately scoped to the goals model only — corners/cards/shots/
+     fouls use each team's own weighted stat directly, not a ratio against
+     a league average, so this specific finding doesn't apply there;
+     extending shrinkage to those would need its own audit, not a
+     drive-by. Disclosed via a new `shrinkage_note`, same transparency bar
+     as `dc_rho_note`/`quality_correction_note`. Parity-checked the usual
+     way (Newcastle vs Liverpool E0, Marseille vs Strasbourg F1, with and
+     without `recentForm`) — both engines produce identical lambdas.
+     **This only affects future `analyze()` calls — already-frozen
+     `predictions_log.json` snapshots are untouched, so the header's 68%/
+     84% won't move until new matches get graded under the new formula.**
+  Separately, the disclaimer paragraph under the markets table (Dixon-
+  Coles rho, the shrinkage note, the quality-blend note, the ¼-Kelly
+  caveat) is now a collapsed `<details>`/`<summary>` ("▸ Methodology
+  notes") instead of always-visible text — the user found it cluttering,
+  but CLAUDE.md's own honesty rules say not to strip this disclosure for a
+  cleaner UI, so the content is unchanged and still one click away, just
+  not forced inline by default.
